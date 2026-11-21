@@ -9,7 +9,7 @@
 */
 
 
-.not-found {
+.not-found-section {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -38,18 +38,18 @@
     line-height: 1;
 }
 
-.not-found .section-eyebrow {
+.not-found-section .section-eyebrow {
     margin: 0.5rem 0 1rem;
 }
 
-.not-found h1 {
+.not-found-section h1 {
     margin: 0;
 
     font-size: clamp(2.25rem, 7vw, 4rem);
     line-height: 1.15;
 }
 
-.not-found h1 span {
+.not-found-section h1 span {
     color: var(--color-accent);
 }
 
@@ -156,7 +156,7 @@
 
 @media (max-width: 768px) {
 
-    .not-found {
+    .not-found-section {
         min-height: 0;
         padding-block: 3.5rem;
     }
@@ -173,7 +173,7 @@
 
     /* Slightly larger side gutters than 4% so text doesn't hug the edge */
 
-    .not-found {
+    .not-found-section {
         --gutter-x: 1.25rem;
 
         padding-block: 2.5rem 3rem;
@@ -192,7 +192,7 @@
 
 @media (max-width: 360px) {
 
-    .not-found h1 {
+    .not-found-section h1 {
         font-size: 2rem;
     }
 }

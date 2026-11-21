@@ -123,7 +123,7 @@
 */
 
 
-.island-groups {
+.island-groups-section {
     padding: 5rem 4%;
 
     background-color: var(--color-background);
@@ -271,7 +271,7 @@
 */
 
 
-.featured-region {
+.featured-region-section {
     padding-block: 3.5rem;
 
     background-color: var(--color-background-secondary);
@@ -408,7 +408,7 @@
 */
 
 
-.regional-favorites {
+.regional-favorites-section {
     padding: 3.5rem 4%;
 
     background-color: var(--color-background);
@@ -565,7 +565,7 @@
 */
 
 
-.regions-cta {
+.regions-cta-section {
     padding-block: 3.5rem;
 
     background-color: var(--color-background-secondary);
@@ -704,11 +704,11 @@
         line-height: 1.5;
     }
 
-    .regional-food-group--scrollable > h3 {
+    .regional-food-group-scrollable > h3 {
         margin-bottom: 0.5rem;
     }
 
-    .regional-food-group--scrollable > .scroll-hint {
+    .regional-food-group-scrollable > .scroll-hint {
         display: block;
 
         margin-bottom: 0.75rem;
@@ -727,13 +727,13 @@
 
     /* Section spacing */
 
-    .island-groups {
+    .island-groups-section {
         padding-block: 3.5rem;
     }
 
-    .featured-region,
-    .regional-favorites,
-    .regions-cta {
+    .featured-region-section,
+    .regional-favorites-section,
+    .regions-cta-section {
         padding-block: 2.5rem;
     }
 
@@ -786,11 +786,11 @@
     /* Visayas has only two dishes, which fit side by side above 640px, so its
        swipe hint only shows on phones */
 
-    .regional-food-group--phone-scroll > h3 {
+    .regional-food-group-phone-scroll > h3 {
         margin-bottom: 0.5rem;
     }
 
-    .regional-food-group--phone-scroll > .scroll-hint {
+    .regional-food-group-phone-scroll > .scroll-hint {
         display: block;
 
         margin-bottom: 0.75rem;
@@ -804,14 +804,14 @@
 
     /* Slightly larger side gutters than 4% so text doesn't hug the edge */
 
-    .island-groups,
-    .regional-favorites {
+    .island-groups-section,
+    .regional-favorites-section {
         padding-left: 1.25rem;
         padding-right: 1.25rem;
     }
 
-    .featured-region,
-    .regions-cta {
+    .featured-region-section,
+    .regions-cta-section {
         --gutter-x: 1.25rem;
     }
 

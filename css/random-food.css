@@ -19,12 +19,12 @@
 
 /*
 
-    Also used by .surprise-pick-button and .random-cta-button
+    Also used by .featured-dish-button and .random-cta-button
 
 */
 
 .random-intro-button,
-.surprise-pick-button,
+.featured-dish-button,
 .random-cta-button {
     display: inline-flex;
     justify-content: center;
@@ -45,13 +45,13 @@
 }
 
 .random-intro-button:hover,
-.surprise-pick-button:hover,
+.featured-dish-button:hover,
 .random-cta-button:hover {
     background-color: var(--color-accent);
 }
 
 .random-intro-button:active,
-.surprise-pick-button:active,
+.featured-dish-button:active,
 .random-cta-button:active {
     transform: translateY(1px);
 }
@@ -72,25 +72,25 @@
 
 */
 
-.surprise-pick {
+.featured-dish-section {
     padding-block: 5rem;
 
     background-color: var(--color-background);
 }
 
-.surprise-pick-container {
+.featured-dish-container {
     max-width: 1200px;
     margin: 0 auto;
 }
 
-.surprise-pick-fallback {
+.featured-dish {
     display: grid;
     align-items: center;
     gap: 4rem;
     grid-template-columns: 1fr 1fr;
 }
 
-.surprise-pick-image {
+.featured-dish-image {
     position: relative;
 
     overflow: hidden;
@@ -99,14 +99,14 @@
     border-radius: var(--radius-md);
 }
 
-.surprise-pick-image img {
+.featured-dish-image img {
     width: 100%;
     height: 100%;
 
     object-fit: cover;
 }
 
-.surprise-image-label {
+.featured-dish-image-label {
     position: absolute;
     bottom: 1.25rem;
     left: 1.25rem;
@@ -122,30 +122,30 @@
     letter-spacing: 0.08em;
 }
 
-.surprise-pick-content {
+.featured-dish-content {
     min-width: 0;
     max-width: 520px;
 }
 
-.surprise-pick-content h2 {
+.featured-dish-content h2 {
     margin: 0;
 
     font-size: 3.5rem;
     line-height: 1.15;
 }
 
-.surprise-pick-content h2 span {
+.featured-dish-content h2 span {
     color: var(--color-accent);
 }
 
-.surprise-pick-content > p {
+.featured-dish-content > p {
     margin: 1.25rem 0;
 
     font-size: 0.95rem;
     line-height: 1.9;
 }
 
-.surprise-food-details {
+.featured-dish-details {
     display: flex;
     flex-wrap: wrap;
     gap: 1rem 2rem;
@@ -156,20 +156,20 @@
     border-bottom: 1px solid var(--color-border);
 }
 
-.random-pick-actions {
+.featured-dish-actions {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     gap: 0.75rem 1rem;
 }
 
-.surprise-detail {
+.featured-dish-detail {
     display: flex;
     flex-direction: column;
     gap: 0.45rem;
 }
 
-.detail-label {
+.featured-dish-detail-label {
     color: var(--color-primary);
 
     font-size: 0.7rem;
@@ -177,13 +177,13 @@
     letter-spacing: 0.08em;
 }
 
-.surprise-detail strong {
+.featured-dish-detail strong {
     color: var(--color-heading);
 
     font-size: 0.85rem;
 }
 
-.random-recipe-link {
+.featured-dish-recipe-link {
     display: inline-flex;
     align-items: center;
 
@@ -197,7 +197,7 @@
     text-underline-offset: 0.18em;
 }
 
-.random-recipe-link:hover {
+.featured-dish-recipe-link:hover {
     text-decoration-thickness: 2px;
     text-underline-offset: 0.25em;
 }
@@ -212,7 +212,7 @@
 */
 
 
-.random-discoveries {
+.random-discoveries-section {
     padding-block: 3.5rem;
 
     background-color: var(--color-background-secondary);
@@ -272,23 +272,6 @@
 
     max-width: 1200px;
     margin: 0 auto;
-}
-
-.random-food-card {
-    overflow: hidden;
-
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-md);
-
-    background-color: var(--color-background);
-
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.random-food-card:hover {
-    box-shadow: var(--shadow-card);
-
-    transform: translateY(-4px);
 }
 
 .random-food-card-image {
@@ -364,7 +347,7 @@
 */
 
 
-.random-cta {
+.random-cta-section {
     padding-block: 3.5rem;
 
     background-color: var(--color-background);
@@ -409,8 +392,8 @@
 
 
 .random-intro-button:focus-visible,
-.surprise-pick-button:focus-visible,
-.random-recipe-link:focus-visible,
+.featured-dish-button:focus-visible,
+.featured-dish-recipe-link:focus-visible,
 .discoveries-link:focus-visible,
 .random-food-card-content a:focus-visible,
 .random-cta-button:focus-visible {
@@ -431,7 +414,7 @@
 
 @media (max-width: 1024px) {
 
-    .surprise-pick-fallback {
+    .featured-dish {
         gap: 2.5rem;
     }
 
@@ -445,20 +428,20 @@
 
 @media (max-width: 900px) {
 
-    .surprise-pick-fallback {
+    .featured-dish {
         gap: 2rem;
         grid-template-columns: 1fr;
     }
 
-    .surprise-pick-image {
+    .featured-dish-image {
         height: 340px;
     }
 
-    .surprise-pick-content {
+    .featured-dish-content {
         max-width: none;
     }
 
-    .surprise-pick-content h2 {
+    .featured-dish-content h2 {
         font-size: clamp(2.25rem, 7vw, 3.5rem);
     }
 
@@ -493,12 +476,12 @@
     /* Section spacing: the featured dish section keeps a little extra
        room, the rest are tighter */
 
-    .surprise-pick {
+    .featured-dish-section {
         padding-block: 3.5rem;
     }
 
-    .random-discoveries,
-    .random-cta {
+    .random-discoveries-section,
+    .random-cta-section {
         padding-block: 2.5rem;
     }
 
@@ -537,7 +520,7 @@
         grid-auto-columns: 80%;
     }
 
-    .surprise-pick-image {
+    .featured-dish-image {
         height: 280px;
     }
 }
@@ -549,9 +532,9 @@
 
     /* Slightly larger side gutters than 4% so text doesn't hug the edge */
 
-    .surprise-pick,
-    .random-discoveries,
-    .random-cta {
+    .featured-dish-section,
+    .random-discoveries-section,
+    .random-cta-section {
         --gutter-x: 1.25rem;
     }
 
@@ -559,11 +542,11 @@
 
     /* Featured dish */
 
-    .surprise-pick-image {
+    .featured-dish-image {
         height: 240px;
     }
 
-    .surprise-image-label {
+    .featured-dish-image-label {
         bottom: 1rem;
         left: 1rem;
     }
@@ -588,12 +571,10 @@
 
 @media (prefers-reduced-motion: reduce) {
 
-    .random-food-card,
     .random-food-card-image img {
         transition: none;
     }
 
-    .random-food-card:hover,
     .random-food-card:hover .random-food-card-image img {
         transform: none;
     }

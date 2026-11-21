@@ -42,7 +42,7 @@
 
 */
 
-.food-categories {
+.food-categories-section {
     padding: 4rem 4% 5rem;
 
     background-color: var(--color-background);
@@ -182,7 +182,7 @@
 */
 
 
-.food-directory {
+.food-directory-section {
     padding-block: 3.5rem;
 
     background-color: var(--color-background-secondary);
@@ -222,7 +222,7 @@
     white-space: nowrap;
 }
 
-.food-directory-section {
+.food-directory-group {
     margin-bottom: 3.5rem;
 }
 
@@ -609,7 +609,7 @@
 */
 
 
-.regional-discovery {
+.regional-discovery-section {
     padding: 3.5rem 4%;
 
     background-color: var(--color-background);
@@ -764,12 +764,12 @@
     /* Section spacing: the first section after the intro keeps a little
        extra room, the rest are tighter (same as the other pages) */
 
-    .food-categories {
+    .food-categories-section {
         padding-block: 3.5rem;
     }
 
-    .food-directory,
-    .regional-discovery {
+    .food-directory-section,
+    .regional-discovery-section {
         padding-block: 2.5rem;
     }
 
@@ -808,7 +808,7 @@
         margin-bottom: 2rem;
     }
 
-    .food-directory-section {
+    .food-directory-group {
         margin-bottom: 2.5rem;
     }
 }
@@ -847,12 +847,12 @@
 
     /* Slightly larger side gutters than 4% so text doesn't hug the edge */
 
-    .food-directory {
+    .food-directory-section {
         --gutter-x: 1.25rem;
     }
 
-    .food-categories,
-    .regional-discovery {
+    .food-categories-section,
+    .regional-discovery-section {
         padding-left: 1.25rem;
         padding-right: 1.25rem;
     }
@@ -873,7 +873,7 @@
         margin-bottom: 1.75rem;
     }
 
-    .food-directory-section {
+    .food-directory-group {
         margin-bottom: 2rem;
     }
 

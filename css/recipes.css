@@ -61,7 +61,7 @@
 */
 
 
-.recipe-spotlight {
+.recipe-spotlight-section {
     padding-block: 2rem 3rem;
 
     background-color: var(--color-background);
@@ -220,7 +220,7 @@
 */
 
 
-.recipe-collection {
+.recipe-collection-section {
     padding-block: 3rem;
 
     background-color: var(--color-background-secondary);
@@ -267,20 +267,6 @@
 .recipe-card {
     display: flex;
     flex-direction: column;
-    overflow: hidden;
-
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-md);
-
-    background-color: var(--color-background);
-
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-
-.recipe-card:hover {
-    box-shadow: var(--shadow-card);
-
-    transform: translateY(-5px);
 }
 
 .recipe-card-image {
@@ -302,7 +288,7 @@
 
     object-fit: cover;
 
-    transition: transform 0.4s ease;
+    transition: transform 0.3s ease;
 }
 
 .recipe-card:hover .recipe-card-image img {
@@ -408,7 +394,7 @@
 */
 
 
-.recipe-methods {
+.recipe-methods-section {
     padding-block: 3.5rem;
 
     background-color: var(--color-background);
@@ -509,7 +495,7 @@
 */
 
 
-.recipe-cta {
+.recipe-cta-section {
     padding-block: 3.5rem;
 
     background-color: var(--color-background);
@@ -637,13 +623,13 @@
         padding-block: 2.25rem 2rem;
     }
 
-    .recipe-spotlight {
+    .recipe-spotlight-section {
         padding-block: 1.75rem 2.5rem;
     }
 
-    .recipe-collection,
-    .recipe-methods,
-    .recipe-cta {
+    .recipe-collection-section,
+    .recipe-methods-section,
+    .recipe-cta-section {
         padding-block: 2.5rem;
     }
 
@@ -703,10 +689,10 @@
 
     /* Slightly larger side gutters than 4% so text doesn't hug the edge */
 
-    .recipe-spotlight,
-    .recipe-collection,
-    .recipe-methods,
-    .recipe-cta {
+    .recipe-spotlight-section,
+    .recipe-collection-section,
+    .recipe-methods-section,
+    .recipe-cta-section {
         --gutter-x: 1.25rem;
     }
 
@@ -762,12 +748,10 @@
 
 @media (prefers-reduced-motion: reduce) {
 
-    .recipe-card,
     .recipe-card-image img {
         transition: none;
     }
 
-    .recipe-card:hover,
     .recipe-card:hover .recipe-card-image img {
         transform: none;
     }

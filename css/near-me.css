@@ -9,7 +9,7 @@
 */
 
 
-.near-spots {
+.near-spots-section {
     padding-block: 5rem;
 
     background-color: var(--color-background);
@@ -102,7 +102,7 @@
 */
 
 
-.near-explore {
+.near-explore-section {
     padding-block: 3.5rem;
 
     background-color: var(--color-background-secondary);
@@ -115,14 +115,14 @@
     margin: 0 auto;
 }
 
-.near-explore h2 {
+.near-explore-section h2 {
     margin: 1.1rem 0;
 
     font-size: clamp(1.75rem, 4vw, 2.25rem);
     line-height: 1.3;
 }
 
-.near-explore p {
+.near-explore-section p {
     margin-bottom: 1.75rem;
 
     font-size: 0.875rem;
@@ -175,11 +175,11 @@
 
     /* Section spacing */
 
-    .near-spots {
+    .near-spots-section {
         padding-block: 3.5rem;
     }
 
-    .near-explore {
+    .near-explore-section {
         padding-block: 2.5rem;
     }
 
@@ -210,8 +210,8 @@
 
     /* Slightly larger side gutters than the default 4% so text doesn't hug the edge */
 
-    .near-spots,
-    .near-explore {
+    .near-spots-section,
+    .near-explore-section {
         --gutter-x: 1.25rem;
     }
 

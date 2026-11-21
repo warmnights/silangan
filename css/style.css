@@ -814,7 +814,7 @@ main:focus {
     pointer-events: none;
 }
 
-.hero-mountains--back {
+.hero-mountains-back {
     bottom: calc(var(--mountain-height) * 0.2);
     z-index: 1;
 
@@ -835,7 +835,7 @@ main:focus {
 */
 
 
-.near-me {
+.near-me-section {
     padding: 5rem 4%;
 }
 
@@ -894,7 +894,7 @@ main:focus {
     margin-bottom: 0;
 }
 
-.status-dot {
+.restaurant-status-dot {
     width: 8px;
     height: 8px;
     border-radius: 50%;
@@ -936,7 +936,7 @@ main:focus {
 */
 
 
-.fresh-finds {
+.fresh-finds-section {
     padding: 3.5rem 4%;
 }
 
@@ -982,7 +982,11 @@ main:focus {
     grid-template-columns: repeat(3, 1fr);
 }
 
-.fresh-find-card {
+/* ---------- Card (shared base) ----------
+   Border, radius, background and hover lift shared by the home page
+   cards. Each card keeps its own class for its image height and text. */
+
+.card {
     overflow: hidden;
 
     border: 1px solid var(--color-border);
@@ -993,10 +997,28 @@ main:focus {
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.fresh-find-card:hover {
+.card:hover {
     box-shadow: var(--shadow-card);
 
     transform: translateY(-5px);
+}
+
+/* Use on cards that sit inside a section with the secondary background,
+   so the card stays darker than the section behind it. */
+
+.card-on-secondary {
+    background-color: var(--color-background);
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .card {
+        transition: none;
+    }
+
+    .card:hover {
+        transform: none;
+    }
 }
 
 .fresh-find-card > img {
@@ -1066,7 +1088,7 @@ main:focus {
 */
 
 
-.trivia {
+.trivia-section {
     padding: 3.5rem 4%;
 }
 
@@ -1165,7 +1187,7 @@ main:focus {
 */
 
 
-.regional-discoveries {
+.regional-discoveries-section {
     padding: 3.5rem 4%;
 }
 
@@ -1187,23 +1209,6 @@ main:focus {
     display: grid;
     gap: 1.5rem;
     grid-template-columns: repeat(3, 1fr);
-}
-
-.regional-card {
-    overflow: hidden;
-
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-md);
-
-    background-color: var(--color-background-secondary);
-
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.regional-card:hover {
-    box-shadow: var(--shadow-card);
-
-    transform: translateY(-5px);
 }
 
 .regional-card > img {
@@ -1266,7 +1271,7 @@ main:focus {
 */
 
 
-.popular-foods {
+.popular-foods-section {
     padding: 3.5rem 4%;
 }
 
@@ -1288,23 +1293,6 @@ main:focus {
     display: grid;
     gap: 1.5rem;
     grid-template-columns: repeat(3, 1fr);
-}
-
-.popular-food-card {
-    overflow: hidden;
-
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-md);
-
-    background-color: var(--color-background-secondary);
-
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.popular-food-card:hover {
-    box-shadow: var(--shadow-card);
-
-    transform: translateY(-5px);
 }
 
 .popular-food-card > img {
@@ -1393,7 +1381,7 @@ main:focus {
 */
 
 
-.random-food {
+.random-food-section {
     padding: 3.5rem 4%;
 }
 
@@ -1442,6 +1430,61 @@ main:focus {
     background-color: var(--color-background);
 
     transform: translateY(-2px);
+}
+
+
+/*
+
+
+    FORM FIELDS
+
+
+*/
+
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    color: var(--color-heading);
+
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+/*
+
+    1rem stops iPhones from zooming the page when a field is tapped
+
+*/
+
+.form-group input {
+    width: 100%;
+    padding: 1rem 1.1rem;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    outline: none;
+
+    color: var(--color-text);
+    background-color: var(--color-background);
+
+    font-size: 1rem;
+
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-group input:focus {
+    border-color: var(--color-accent);
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-accent) 20%, transparent);
+}
+
+.form-group input::placeholder {
+    color: var(--color-text-muted);
 }
 
 
@@ -1926,15 +1969,15 @@ main:focus {
 
     /* Section spacing */
 
-    .near-me {
+    .near-me-section {
         padding: 3.5rem 4%;
     }
 
-    .fresh-finds,
-    .trivia,
-    .regional-discoveries,
-    .popular-foods,
-    .random-food {
+    .fresh-finds-section,
+    .trivia-section,
+    .regional-discoveries-section,
+    .popular-foods-section,
+    .random-food-section {
         padding: 2.5rem 4%;
     }
 
@@ -2017,12 +2060,12 @@ main:focus {
 
     /* Slightly larger side gutters than 4% so text doesn't hug the edge */
 
-    .near-me,
-    .fresh-finds,
-    .trivia,
-    .regional-discoveries,
-    .popular-foods,
-    .random-food {
+    .near-me-section,
+    .fresh-finds-section,
+    .trivia-section,
+    .regional-discoveries-section,
+    .popular-foods-section,
+    .random-food-section {
         padding-left: 1.25rem;
         padding-right: 1.25rem;
     }
