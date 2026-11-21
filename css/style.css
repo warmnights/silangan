@@ -235,6 +235,28 @@ main:focus {
     padding: 0;
 }
 
+/*
+
+    Hides text from the screen but keeps it for screen readers.
+    Used for headings that give the page a correct outline.
+
+*/
+
+.visually-hidden {
+    position: absolute;
+
+    overflow: hidden;
+
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    border: 0;
+
+    white-space: nowrap;
+    clip-path: inset(50%);
+}
+
 
 /*
 
@@ -1100,6 +1122,10 @@ main:focus {
 }
 
 @media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
 
     .card {
         transition: none;
