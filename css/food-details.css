@@ -1,0 +1,112 @@
+/*
+
+
+    DISH DETAILS (COMING SOON)
+
+
+*/
+
+
+.food-detail-section {
+    padding-block: 3.5rem 5rem;
+}
+
+.food-detail-message {
+    max-width: 600px;
+    margin: 2rem auto 0;
+
+    text-align: center;
+}
+
+.food-detail-message h1 {
+    margin: 0 0 1rem;
+
+    font-size: clamp(2rem, 5vw, 3rem);
+    line-height: 1.2;
+}
+
+.food-detail-message p {
+    margin: 0 0 2rem;
+
+    color: var(--color-text-muted);
+
+    line-height: 1.9;
+}
+
+.food-detail-actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+
+
+/*
+
+    Buttons
+
+*/
+
+.food-detail-button,
+.food-detail-button-outline {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+    min-height: 44px;
+    padding: 0.9rem 1.5rem;
+    border: 2px solid var(--color-primary);
+    border-radius: var(--radius-sm);
+
+    font-size: 0.9rem;
+    font-weight: 600;
+    line-height: 1.5;
+
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.food-detail-button {
+    color: var(--color-background);
+    background-color: var(--color-primary);
+}
+
+.food-detail-button:hover {
+    border-color: var(--color-accent);
+
+    background-color: var(--color-accent);
+}
+
+.food-detail-button-outline {
+    color: var(--color-primary);
+    background-color: transparent;
+}
+
+.food-detail-button-outline:hover {
+    color: var(--color-background);
+    background-color: var(--color-primary);
+}
+
+.food-detail-button:active,
+.food-detail-button-outline:active {
+    transform: translateY(1px);
+}
+
+
+/*
+
+
+    RESPONSIVE
+
+
+*/
+
+
+@media (max-width: 640px) {
+    .food-detail-section {
+        padding-block: 2.5rem 3.5rem;
+    }
+
+    .food-detail-actions {
+        flex-direction: column;
+    }
+}
