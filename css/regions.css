@@ -9,12 +9,17 @@
 */
 
 
-.regions-intro-content {
+.page-hero-split-content {
     max-width: 600px;
 }
 
-.regions-intro-content .section-eyebrow {
+.page-hero-split-content .section-eyebrow {
     margin-bottom: 1.25rem;
+}
+
+.featured-region-content .section-eyebrow,
+.regions-cta-content .section-eyebrow {
+    margin-bottom: 1rem;
 }
 
 /*
@@ -23,7 +28,7 @@
 
 */
 
-.regions-intro-content .section-eyebrow,
+.page-hero-split-content .section-eyebrow,
 .island-groups-header .section-eyebrow,
 .featured-region-content .section-eyebrow,
 .regional-favorites-header .section-eyebrow,
@@ -31,61 +36,11 @@
     color: var(--color-primary);
 }
 
-.regions-intro-content h1 {
+.page-hero-split-content h1 {
     font-size: clamp(2.5rem, 5.5vw, 5.5rem);
 }
 
-.regions-intro-content > p {
-    max-width: 500px;
-    margin: 1.5rem 0 2rem;
-
-    line-height: 1.9;
-}
-
-/*
-
-    Dark text: white on the gold primary color is only about 1.8:1 contrast
-
-*/
-
-.regions-intro-button {
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-
-    padding: 0.9rem 1.5rem;
-    border-radius: var(--radius-sm);
-
-    color: var(--color-background);
-    background-color: var(--color-primary);
-
-    font-size: 0.9rem;
-    font-weight: 600;
-
-    transition: background-color 0.2s ease;
-}
-
-.regions-intro-button:hover {
-    background-color: var(--color-accent);
-}
-
-.regions-intro-image {
-    position: relative;
-
-    overflow: hidden;
-
-    height: 430px;
-    border-radius: var(--radius-lg);
-}
-
-.regions-intro-image img {
-    width: 100%;
-    height: 100%;
-
-    object-fit: cover;
-}
-
-.regions-intro-image-caption {
+.page-hero-split-image-caption {
     position: absolute;
     right: 0;
     bottom: 0;
@@ -100,13 +55,13 @@
     );
 }
 
-.regions-intro-image-caption span {
+.page-hero-split-image-caption span {
     font-size: 0.75rem;
     font-weight: 700;
     letter-spacing: 2px;
 }
 
-.regions-intro-image-caption p {
+.page-hero-split-image-caption p {
     margin: 0.5rem 0 0;
 
     font-family: var(--font-heading);
@@ -323,10 +278,6 @@
     font-size: 0.8rem;
     font-weight: 600;
     letter-spacing: 2px;
-}
-
-.featured-region-content .section-eyebrow {
-    margin-bottom: 1rem;
 }
 
 .featured-region-content h2 {
@@ -578,10 +529,6 @@
     margin: 0 auto;
 }
 
-.regions-cta-content .section-eyebrow {
-    margin-bottom: 1rem;
-}
-
 .regions-cta-content h2 {
     margin: 0;
 
@@ -595,27 +542,6 @@
 
     font-size: 0.95rem;
     line-height: 1.9;
-}
-
-.regions-cta-button {
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-
-    padding: 0.9rem 1.5rem;
-    border-radius: var(--radius-sm);
-
-    color: var(--color-background);
-    background-color: var(--color-primary);
-
-    font-size: 0.9rem;
-    font-weight: 600;
-
-    transition: background-color 0.2s ease;
-}
-
-.regions-cta-button:hover {
-    background-color: var(--color-accent);
 }
 
 
@@ -649,15 +575,15 @@
 
     /* Intro: text on top, photo below */
 
-    .regions-intro-content {
+    .page-hero-split-content {
         max-width: none;
     }
 
-    .regions-intro-content h1 {
+    .page-hero-split-content h1 {
         font-size: clamp(2.5rem, 8vw, 4.5rem);
     }
 
-    .regions-intro-image {
+    .page-hero-split-image {
         height: 340px;
     }
 
@@ -775,7 +701,7 @@
         grid-auto-columns: 80%;
     }
 
-    .regions-intro-image {
+    .page-hero-split-image {
         height: 280px;
     }
 
@@ -817,15 +743,15 @@
 
     /* Intro */
 
-    .regions-intro-image {
+    .page-hero-split-image {
         height: 240px;
     }
 
-    .regions-intro-image-caption {
+    .page-hero-split-image-caption {
         padding: 1.25rem;
     }
 
-    .regions-intro-image-caption p {
+    .page-hero-split-image-caption p {
         font-size: 1.25rem;
     }
 
@@ -874,7 +800,7 @@
 
 @media (max-width: 360px) {
 
-    .regions-intro-content h1 {
+    .page-hero-split-content h1 {
         font-size: 2.25rem;
     }
 }

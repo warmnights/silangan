@@ -17,45 +17,6 @@
     margin-bottom: 2rem;
 }
 
-/*
-
-    Also used by .featured-dish-button and .random-cta-button
-
-*/
-
-.random-intro-button,
-.featured-dish-button,
-.random-cta-button {
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-
-    min-height: 44px;
-    padding: 0.9rem 1.5rem;
-    border-radius: var(--radius-sm);
-
-    color: var(--color-background);
-    background-color: var(--color-primary);
-
-    font-size: 0.9rem;
-    font-weight: 600;
-    line-height: 1.5;
-
-    transition: background-color 0.2s ease;
-}
-
-.random-intro-button:hover,
-.featured-dish-button:hover,
-.random-cta-button:hover {
-    background-color: var(--color-accent);
-}
-
-.random-intro-button:active,
-.featured-dish-button:active,
-.random-cta-button:active {
-    transform: translateY(1px);
-}
-
 
 /*
 
@@ -391,12 +352,9 @@
 */
 
 
-.random-intro-button:focus-visible,
-.featured-dish-button:focus-visible,
 .featured-dish-recipe-link:focus-visible,
 .discoveries-link:focus-visible,
-.random-food-card-content a:focus-visible,
-.random-cta-button:focus-visible {
+.random-food-card-content a:focus-visible {
     outline: 2px solid var(--color-primary);
 }
 

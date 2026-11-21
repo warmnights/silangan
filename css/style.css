@@ -58,6 +58,25 @@
 /*
 
 
+    BREAKPOINTS
+
+    Every page file uses the same set of max-width breakpoints:
+
+    1024px, 900px, 768px, 640px, 480px, 360px
+
+    This file adds three more, on purpose:
+
+    1180px  tightens the nav spacing just before it collapses
+    1080px  the nav becomes a hamburger menu (nav.js checks 1081px)
+    800px   the home hero switches to its mobile layout
+
+
+*/
+
+
+/*
+
+
     VARIABLES
 
 
@@ -79,7 +98,6 @@
     --color-primary: #E8B84A;
     --color-secondary: #C98F47;
     --color-accent: #E8633A;
-    --color-crimson: #C8283F;
 
     --color-white: #FFFFFF;
     --color-black: #000000;
@@ -95,7 +113,6 @@
 
     --container-width: 1400px;
     --site-nav-height: 88px;
-    --gutter: clamp(16px, 4vw, 32px);
 }
 
 
@@ -562,6 +579,83 @@ main:focus {
 
     min-height: 580px;
     padding-block: 5rem;
+}
+
+.page-hero-split-content > p {
+    max-width: 520px;
+    margin: 1.5rem 0 2rem;
+
+    line-height: 1.9;
+}
+
+.page-hero-split-image {
+    position: relative;
+
+    overflow: hidden;
+
+    height: 430px;
+    border-radius: var(--radius-lg);
+}
+
+.page-hero-split-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+
+/*
+
+
+    BUTTONS
+
+    .button is the filled button. Add .button-outline next to it
+    for the outlined version: class="button button-outline"
+
+    Dark text: white on the gold primary color is only about 1.8:1 contrast
+
+
+*/
+
+
+.button {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+    min-height: 44px;
+    padding: 0.9rem 1.5rem;
+    border: 1px solid var(--color-primary);
+    border-radius: var(--radius-sm);
+
+    color: var(--color-background);
+    background-color: var(--color-primary);
+
+    font-size: 0.9rem;
+    font-weight: 600;
+    line-height: 1.5;
+
+    transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.button:hover {
+    border-color: var(--color-accent);
+
+    background-color: var(--color-accent);
+}
+
+.button:active {
+    transform: translateY(1px);
+}
+
+.button-outline {
+    color: var(--color-primary);
+    background-color: transparent;
+}
+
+.button-outline:hover {
+    color: var(--color-background);
 }
 
 

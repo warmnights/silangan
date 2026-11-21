@@ -13,44 +13,6 @@
     grid-template-columns: 1fr 0.9fr;
 }
 
-.top-foods-intro-content > p {
-    max-width: 520px;
-    margin: 1.5rem 0 2rem;
-
-    line-height: 1.9;
-}
-
-.top-foods-intro-button {
-    display: inline-flex;
-
-    padding: 0.9rem 1.5rem;
-    border-radius: var(--radius-sm);
-
-    color: var(--color-background);
-    background-color: var(--color-primary);
-
-    font-size: 0.9rem;
-    font-weight: 600;
-}
-
-.top-foods-intro-button:hover {
-    background-color: var(--color-secondary);
-}
-
-.top-foods-intro-image {
-    overflow: hidden;
-
-    height: 420px;
-    border-radius: var(--radius-lg);
-}
-
-.top-foods-intro-image img {
-    width: 100%;
-    height: 100%;
-
-    object-fit: cover;
-}
-
 
 /*
 
@@ -335,23 +297,6 @@
     line-height: 1.9;
 }
 
-.top-foods-cta-button {
-    display: inline-flex;
-
-    padding: 0.9rem 1.5rem;
-    border-radius: var(--radius-sm);
-
-    color: var(--color-background);
-    background-color: var(--color-primary);
-
-    font-size: 0.9rem;
-    font-weight: 600;
-}
-
-.top-foods-cta-button:hover {
-    background-color: var(--color-secondary);
-}
-
 
 /*
 
@@ -362,11 +307,9 @@
 */
 
 
-.top-foods-intro-button:focus-visible,
 .featured-food-link:focus-visible,
 .filipino-food-info > a:focus-visible,
-.food-source-link:focus-visible,
-.top-foods-cta-button:focus-visible {
+.food-source-link:focus-visible {
     outline: 2px solid var(--color-accent);
     outline-offset: 3px;
 }
@@ -417,7 +360,7 @@
         grid-template-columns: 1fr;
     }
 
-    .top-foods-intro-image {
+    .page-hero-split-image {
         height: 340px;
     }
 
@@ -519,7 +462,7 @@
 
     /* Keep the distinct food-spread image visible on phones. */
 
-    .top-foods-intro-image {
+    .page-hero-split-image {
         height: 220px;
     }
 
@@ -546,7 +489,7 @@
 
     /* Intro */
 
-    .top-foods-intro-image {
+    .page-hero-split-image {
         height: 200px;
     }
 

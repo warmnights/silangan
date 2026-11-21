@@ -9,7 +9,8 @@
 */
 
 
-.foods-intro .section-eyebrow {
+.foods-intro .section-eyebrow,
+.regional-discovery-content .section-eyebrow {
     margin-bottom: 1rem;
 }
 
@@ -374,10 +375,6 @@
     height: 100%;
 
     object-fit: cover;
-}
-
-.regional-discovery-content .section-eyebrow {
-    margin-bottom: 1rem;
 }
 
 .regional-discovery-content h2 {
