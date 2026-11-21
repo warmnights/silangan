@@ -1,38 +1,3 @@
-/*
-
-
-    LOCATION SEARCH ISN'T AVAILABLE
-
-
-*/
-
-
-.near-intro {
-    padding-block: 3.5rem;
-
-    background-color: var(--color-background-secondary);
-
-    text-align: center;
-}
-
-.near-intro-content {
-    max-width: 850px;
-    margin: 0 auto;
-}
-
-.near-intro h1 {
-    margin: 0 0 1.25rem;
-
-    font-size: clamp(2.5rem, 7vw, 5rem);
-    line-height: 1.15;
-}
-
-.near-intro-content > p {
-    max-width: 650px;
-    margin: 0 auto;
-
-    line-height: 1.8;
-}
 
 
 /*
@@ -210,10 +175,6 @@
 
     /* Section spacing */
 
-    .near-intro {
-        padding-block: 2.75rem 3rem;
-    }
-
     .near-spots {
         padding-block: 3.5rem;
     }
@@ -249,7 +210,6 @@
 
     /* Slightly larger side gutters than the default 4% so text doesn't hug the edge */
 
-    .near-intro,
     .near-spots,
     .near-explore {
         --gutter-x: 1.25rem;
@@ -263,15 +223,5 @@
 
     .near-spots-location {
         white-space: normal;
-    }
-}
-
-
-/* ---------- Very small phones (up to 360px) ---------- */
-
-@media (max-width: 360px) {
-
-    .near-intro h1 {
-        font-size: 2.25rem;
     }
 }

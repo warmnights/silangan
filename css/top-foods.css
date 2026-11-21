@@ -10,28 +10,7 @@
 
 
 .top-foods-intro {
-    --gutter-x: 8%;
-
-    display: grid;
-    align-items: center;
-    gap: 4rem;
     grid-template-columns: 1fr 0.9fr;
-
-    min-height: 580px;
-    padding-block: 5rem;
-
-    background-color: var(--color-background-secondary);
-}
-
-.top-foods-intro h1 {
-    margin: 0;
-
-    font-size: clamp(2.5rem, 7vw, 5rem);
-    line-height: 1.15;
-}
-
-.top-foods-intro h1 span {
-    color: var(--color-accent);
 }
 
 .top-foods-intro-content > p {
@@ -418,14 +397,6 @@
 
 @media (max-width: 1024px) {
 
-    .top-foods-intro {
-        --gutter-x: 6%;
-
-        gap: 2.5rem;
-
-        padding-block: 4rem;
-    }
-
     .filipino-food-grid {
         gap: 1.5rem;
     }
@@ -443,12 +414,7 @@
     /* Intro: text on top, image below */
 
     .top-foods-intro {
-        --gutter-x: 5%;
-
         grid-template-columns: 1fr;
-
-        min-height: 0;
-        padding-block: 3.5rem;
     }
 
     .top-foods-intro-image {
@@ -572,7 +538,6 @@
 
     /* Fixed 1.25rem side gutters so text doesn't hug the edge */
 
-    .top-foods-intro,
     .featured-food,
     .filipino-favorites,
     .top-foods-cta {
@@ -580,10 +545,6 @@
     }
 
     /* Intro */
-
-    .top-foods-intro {
-        padding-block: 2.5rem 3rem;
-    }
 
     .top-foods-intro-image {
         height: 200px;
@@ -615,15 +576,5 @@
 
     .filipino-food-info {
         padding: 1.25rem;
-    }
-}
-
-
-/* ---------- Very small phones (up to 360px) ---------- */
-
-@media (max-width: 360px) {
-
-    .top-foods-intro h1 {
-        font-size: 2.25rem;
     }
 }

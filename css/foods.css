@@ -9,19 +9,6 @@
 */
 
 
-.foods-intro {
-    padding-block: 3.5rem;
-
-    background-color: var(--color-background-secondary);
-
-    text-align: center;
-}
-
-.foods-intro-content {
-    max-width: 850px;
-    margin: 0 auto;
-}
-
 .foods-intro .section-eyebrow {
     margin-bottom: 1rem;
 }
@@ -37,25 +24,6 @@
 .food-directory-header .section-eyebrow,
 .regional-discovery-content .section-eyebrow {
     color: var(--color-heading);
-}
-
-.foods-intro h1 {
-    margin: 0;
-
-    font-size: clamp(2.5rem, 7vw, 5rem);
-    line-height: 1.15;
-}
-
-.foods-intro h1 span {
-    color: var(--color-accent);
-}
-
-.foods-intro-content p {
-    max-width: 650px;
-    margin: 1.25rem auto 0;
-
-    font-size: 0.95rem;
-    line-height: 1.9;
 }
 
 
@@ -796,10 +764,6 @@
     /* Section spacing: the first section after the intro keeps a little
        extra room, the rest are tighter (same as the other pages) */
 
-    .foods-intro {
-        padding-block: 2.75rem 3rem;
-    }
-
     .food-categories {
         padding-block: 3.5rem;
     }
@@ -883,7 +847,6 @@
 
     /* Slightly larger side gutters than 4% so text doesn't hug the edge */
 
-    .foods-intro,
     .food-directory {
         --gutter-x: 1.25rem;
     }
@@ -956,16 +919,6 @@
 
     .regional-discovery-image {
         height: 220px;
-    }
-}
-
-
-/* ---------- Very small phones (up to 360px) ---------- */
-
-@media (max-width: 360px) {
-
-    .foods-intro h1 {
-        font-size: 2.25rem;
     }
 }
 

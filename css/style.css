@@ -504,13 +504,82 @@ main:focus {
 /*
 
 
+    PAGE HERO: TEXT INTRO AT THE TOP OF A PAGE
+
+
+*/
+
+/*
+
+    .page-hero is the base: background, title and accent word.
+    Add one layout next to it:
+
+    .page-hero-centered  text only, centered (wrap the text in
+                         .page-hero-content)
+    .page-hero-split     text on one side, image on the other
+
+    A page's own CSS only adds what is different (a larger title,
+    extra spacing, and so on).
+
+*/
+
+.page-hero {
+    background-color: var(--color-background-secondary);
+}
+
+.page-hero-centered {
+    padding-block: 3.5rem;
+
+    text-align: center;
+}
+
+.page-hero-content {
+    max-width: 850px;
+    margin: 0 auto;
+}
+
+.page-hero h1 {
+    margin: 0;
+
+    font-size: clamp(2.5rem, 7vw, 5rem);
+    line-height: 1.15;
+}
+
+.page-hero h1 span {
+    color: var(--color-accent);
+}
+
+.page-hero-content > p {
+    max-width: 650px;
+    margin: 1.25rem auto 0;
+
+    font-size: 0.95rem;
+    line-height: 1.9;
+}
+
+.page-hero-split {
+    --gutter-x: 8%;
+
+    display: grid;
+    align-items: center;
+    gap: 4rem;
+    grid-template-columns: 1fr 1fr;
+
+    min-height: 580px;
+    padding-block: 5rem;
+}
+
+
+/*
+
+
     HERO: DISCOVER FILIPINO DISHES, REGION BY REGION
 
 
 */
 
 
-.intro {
+.hero {
     --mountain-height: clamp(400px, 28vw, 420px);
     --sun-size: clamp(320px, 40vw, 660px);
     --gutter-x: 1.5rem;
@@ -528,7 +597,7 @@ main:focus {
     text-align: center;
 }
 
-.intro-sky {
+.hero-sky {
     position: absolute;
     inset: 0;
     z-index: -1;
@@ -541,7 +610,7 @@ main:focus {
     pointer-events: none;
 }
 
-.intro-sun {
+.hero-sun {
     position: absolute;
     bottom: calc(var(--mountain-height) * 0.2 - var(--sun-size) / 2);
     left: calc(50% - var(--sun-size) / 2);
@@ -553,15 +622,15 @@ main:focus {
     pointer-events: none;
 }
 
-.intro-sun img {
+.hero-sun img {
     width: 100%;
     height: 100%;
 
     opacity: 0.3;
 }
 
-.intro-sun::before,
-.intro-sun::after {
+.hero-sun::before,
+.hero-sun::after {
     content: "";
 
     position: absolute;
@@ -569,31 +638,31 @@ main:focus {
     border-radius: 50%;
 }
 
-.intro-sun::before {
+.hero-sun::before {
     inset: -7%;
 
     border: 1px dashed color-mix(in srgb, var(--color-primary) 35%, transparent);
 }
 
-.intro-sun::after {
+.hero-sun::after {
     inset: -16%;
 
     border: 1px solid color-mix(in srgb, var(--color-primary) 15%, transparent);
 }
 
-.intro-content {
+.hero-content {
     position: relative;
     z-index: 4;
 
     width: 100%;
 }
 
-.intro-content > * {
+.hero-content > * {
     max-width: 680px;
     margin-inline: auto;
 }
 
-.intro h1 {
+.hero h1 {
     max-width: 14em;
     margin: 0 auto 1.25rem;
 
@@ -605,7 +674,7 @@ main:focus {
     text-wrap: balance;
 }
 
-.intro h1 em {
+.hero h1 em {
     display: block;
 
     color: var(--color-primary);
@@ -613,7 +682,7 @@ main:focus {
     font-style: normal;
 }
 
-.intro-tagline {
+.hero-tagline {
     margin: 0 auto 2rem;
 
     color: var(--color-text-muted);
@@ -629,7 +698,7 @@ main:focus {
 
 */
 
-.intro-search {
+.hero-search {
     display: flex;
     align-items: center;
     gap: 0.9rem;
@@ -644,21 +713,21 @@ main:focus {
     backdrop-filter: blur(6px);
 }
 
-.intro-search:focus-within {
+.hero-search:focus-within {
     border-color: var(--color-primary);
 
     background-color: color-mix(in srgb, var(--color-text) 12%, transparent);
     box-shadow: 0 0 0 3px var(--color-border);
 }
 
-.intro-search img {
+.hero-search img {
     flex-shrink: 0;
 
     width: 26px;
     height: 26px;
 }
 
-.intro-search input {
+.hero-search input {
     flex: 1;
 
     min-width: 0;
@@ -672,12 +741,12 @@ main:focus {
     font-size: 1.15rem;
 }
 
-.intro-search input::placeholder {
+.hero-search input::placeholder {
     color: var(--color-text-muted);
     opacity: 1;
 }
 
-.intro-search button {
+.hero-search button {
     padding: 0.7rem 1.4rem;
     border: none;
     border-radius: var(--radius-pill);
@@ -691,7 +760,7 @@ main:focus {
     cursor: pointer;
 }
 
-.intro-search button:hover {
+.hero-search button:hover {
     color: var(--color-background);
     background-color: var(--color-primary);
 }
@@ -730,7 +799,7 @@ main:focus {
     background-color: color-mix(in srgb, var(--color-primary) 18%, transparent);
 }
 
-.intro-mountains {
+.hero-mountains {
     position: absolute;
     bottom: 0;
     left: 0;
@@ -745,7 +814,7 @@ main:focus {
     pointer-events: none;
 }
 
-.intro-mountains--back {
+.hero-mountains--back {
     bottom: calc(var(--mountain-height) * 0.2);
     z-index: 1;
 
@@ -1731,6 +1800,17 @@ main:focus {
     .trivia-info {
         padding: 2.25rem;
     }
+
+    /* Page hero: split layout */
+
+    .page-hero-split {
+        --gutter-x: 6%;
+
+        gap: 2.5rem;
+
+        padding-block: 4rem;
+    }
+
 }
 
 
@@ -1785,6 +1865,18 @@ main:focus {
         align-items: flex-start;
         gap: 0.5rem;
     }
+
+    /* Page hero: split layout stacks, text on top and image below */
+
+    .page-hero-split {
+        --gutter-x: 5%;
+
+        grid-template-columns: 1fr;
+
+        min-height: 0;
+        padding-block: 3.5rem;
+    }
+
 }
 
 
@@ -1792,7 +1884,7 @@ main:focus {
 
 @media (max-width: 800px) {
 
-    .intro {
+    .hero {
         --mountain-height: 150px;
         --sun-size: 72vw;
         --gutter-x: 1.25rem;
@@ -1800,29 +1892,29 @@ main:focus {
         padding-block: 3rem calc(var(--mountain-height) + 2rem);
     }
 
-    .intro-sun::before {
+    .hero-sun::before {
         inset: -10%;
     }
 
-    .intro-sun::after {
+    .hero-sun::after {
         display: none;
     }
 
-    .intro h1 {
+    .hero h1 {
         font-size: clamp(2.25rem, 11vw, 3.25rem);
     }
 
-    .intro-tagline {
+    .hero-tagline {
         margin-bottom: 1.5rem;
     }
 
-    .intro-search {
+    .hero-search {
         gap: 0.7rem;
 
         padding-left: 1rem;
     }
 
-    .intro-search button {
+    .hero-search button {
         padding: 0.7rem 1.1rem;
     }
 }
@@ -1852,7 +1944,7 @@ main:focus {
 
     /* Hero */
 
-    .intro {
+    .hero {
         min-height: 520px;
         padding-block: 5rem 5.5rem;
     }
@@ -1894,6 +1986,13 @@ main:focus {
     .random-food-container {
         padding: 3rem 1.5rem;
     }
+
+    /* Page hero */
+
+    .page-hero-centered {
+        padding-block: 2.75rem 3rem;
+    }
+
 }
 
 
@@ -1938,24 +2037,24 @@ main:focus {
 
     /* Hero */
 
-    .intro {
+    .hero {
         --gutter-x: 1rem;
 
         padding-block: 4rem 4.5rem;
     }
 
-    .intro-search {
+    .hero-search {
         gap: 0.5rem;
 
         padding: 0.4rem 0.4rem 0.4rem 1rem;
     }
 
-    .intro-search img {
+    .hero-search img {
         width: 20px;
         height: 20px;
     }
 
-    .intro-search button {
+    .hero-search button {
         font-size: 0.85rem;
     }
 
@@ -2003,6 +2102,21 @@ main:focus {
     .footer-logo {
         font-size: 1.75rem;
     }
+
+    /* Page hero: fixed side gutters and a little less space on top */
+
+    .page-hero {
+        --gutter-x: 1.25rem;
+    }
+
+    .page-hero-centered {
+        padding-top: 2.5rem;
+    }
+
+    .page-hero-split {
+        padding-block: 2.5rem 3rem;
+    }
+
 }
 
 
@@ -2010,11 +2124,11 @@ main:focus {
 
 @media (max-width: 360px) {
 
-    .intro-search {
+    .hero-search {
         padding-left: 0.875rem;
     }
 
-    .intro-search button {
+    .hero-search button {
         padding-right: 0.75rem;
         padding-left: 0.75rem;
     }
@@ -2022,6 +2136,11 @@ main:focus {
     .footer-main {
         grid-template-columns: 1fr;
     }
+
+    .page-hero h1 {
+        font-size: 2.25rem;
+    }
+
 }
 
 
@@ -2029,20 +2148,20 @@ main:focus {
 
 @media (max-width: 1080px) and (orientation: landscape) and (max-height: 600px) {
 
-    .intro {
+    .hero {
         --gutter-x: 1.25rem;
 
         min-height: 0;
         padding-block: 1rem;
     }
 
-    .intro h1 {
+    .hero h1 {
         margin-bottom: 0.75rem;
 
         font-size: clamp(2rem, 4vw, 2.75rem);
     }
 
-    .intro-tagline {
+    .hero-tagline {
         margin-bottom: 1rem;
     }
 
@@ -2061,7 +2180,7 @@ main:focus {
     .site-nav-actions a,
     .breadcrumb a,
     .search-suggestions a,
-    .intro-search button,
+    .hero-search button,
     .near-me-link,
     .fresh-finds-link,
     .fresh-find-info a,

@@ -9,38 +9,12 @@
 */
 
 
-.random-intro {
-    padding-block: 3.5rem;
-
-    background-color: var(--color-background-secondary);
-
-    text-align: center;
-}
-
-.random-intro-content {
-    max-width: 850px;
-    margin: 0 auto;
-}
-
-.random-intro-content h1 {
-    margin: 0;
-
-    font-size: clamp(2.5rem, 7vw, 5rem);
-    line-height: 1.15;
-}
-
-.random-intro-content h1 span {
+.random-intro h1 span {
     display: block;
-
-    color: var(--color-accent);
 }
 
-.random-intro-content p {
-    max-width: 650px;
-    margin: 1.25rem auto 2rem;
-
-    font-size: 0.95rem;
-    line-height: 1.9;
+.random-intro .page-hero-content > p {
+    margin-bottom: 2rem;
 }
 
 /*
@@ -519,10 +493,6 @@
     /* Section spacing: the featured dish section keeps a little extra
        room, the rest are tighter */
 
-    .random-intro {
-        padding-block: 2.75rem 3rem;
-    }
-
     .surprise-pick {
         padding-block: 3.5rem;
     }
@@ -579,7 +549,6 @@
 
     /* Slightly larger side gutters than 4% so text doesn't hug the edge */
 
-    .random-intro,
     .surprise-pick,
     .random-discoveries,
     .random-cta {
@@ -587,10 +556,6 @@
     }
 
     /* Intro */
-
-    .random-intro {
-        padding-top: 2.5rem;
-    }
 
     /* Featured dish */
 
@@ -615,16 +580,6 @@
 
     .random-food-card-content {
         padding: 1.25rem;
-    }
-}
-
-
-/* ---------- Very small phones (up to 360px) ---------- */
-
-@media (max-width: 360px) {
-
-    .random-intro-content h1 {
-        font-size: 2.25rem;
     }
 }
 
