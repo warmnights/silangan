@@ -145,7 +145,7 @@
 }
 
 .near-explore-button:hover {
-    color: var(--color-white);
+    color: var(--color-background);
     background-color: var(--color-accent);
 }
 

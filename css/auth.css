@@ -80,7 +80,7 @@
 }
 
 .auth-browse-link:hover {
-    color: var(--color-white);
+    color: var(--color-background);
     background-color: var(--color-accent);
 }
 

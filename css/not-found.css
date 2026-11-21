@@ -99,7 +99,7 @@
 }
 
 .not-found-button-outline:hover {
-    color: var(--color-white);
+    color: var(--color-background);
 }
 
 .not-found-links {

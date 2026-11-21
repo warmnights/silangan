@@ -81,6 +81,9 @@
     --color-accent: #E8633A;
     --color-crimson: #C8283F;
 
+    --color-white: #FFFFFF;
+    --color-black: #000000;
+
     --color-border: rgba(232, 184, 74, 0.28);
 
     --shadow-card: 0 8px 24px rgba(10, 0, 2, 0.5);
@@ -278,14 +281,6 @@ main:focus {
 
 */
 
-
-/*
-
-    The header is the sticky part. A sticky element only stays stuck
-    inside its parent, so position: sticky lives here (the parent is the
-    whole page) and not on .site-nav (whose parent would be this header).
-
-*/
 
 .site-header {
     position: sticky;
