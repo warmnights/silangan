@@ -264,4 +264,4 @@ Add the class in the HTML, then set only the gutter and the vertical spacing in 
 - updates `aria-expanded` and `aria-label` on the toggle button
 - closes the menu on Escape, on a click outside it, on a link click, and when the window grows past 1080px
 
-Page stylesheets and pages do not need any other script. The More dropdown is a `<details>` element and is not handled by the script (see [bugs.md](bugs.md), item 2).
+Page stylesheets and pages do not need any other script. The More dropdown is a `<details>` element and is not handled by the script (see [bugs.md](bugs.md), item 1).

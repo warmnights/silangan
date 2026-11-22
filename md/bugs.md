@@ -6,39 +6,27 @@
 
 **Scope of the review.** The review covered 15 HTML pages, 14 CSS files and 1 JS file, checked against [global.md](global.md) and the guides. It was a read of the code only. The pages were not opened in a browser, so items marked **Check in browser** still need a visual check.
 
-**Status.** Nothing here stops the site from working. Item 1 matters for submission. The rest can be done in order.
+**Status.** Nothing here stops the site from working. The items can be done in order.
 
 This file is a snapshot. When an item is fixed, remove it from the table and the list below.
 
 | # | Problem | Where | Priority | Effort |
 |---|---|---|---|---|
-| 1 | The code zip uses backslash paths | the project `.zip` | High for submission | 2 minutes |
-| 2 | The More menu does not close on Escape or outside click | `js/nav.js` | Medium | Small |
-| 3 | The home page says search works, but search is disabled | `index.html` | Medium | Small |
-| 4 | Four border radii are not variables | 3 CSS files | Low | Small |
-| 5 | A stale comment in `style.css` | `style.css:264` | Low | 1 minute |
-| 6 | The menu button has no `aria-controls` | 15 HTML files | Low | Small |
-| 7 | The Log In page does not mark Log In as current | `login.html` | Low | 1 minute |
-| 8 | Some home page buttons repeat `.button` styles | `style.css` | Low | Medium |
-| 9 | Three `transition: all` rules | `style.css` | Low | Small |
-| 10 | Stray blank line in the nav on every page | 15 HTML files | Cosmetic | Small |
-| 11 | `isolation` sits in the position block of `.hero` | `style.css` | Cosmetic | 1 minute |
-| 12 | Two short state rules skip the blank line between groups | `style.css`, `auth.css` | Cosmetic | 1 minute |
+| 1 | The More menu does not close on Escape or outside click | `js/nav.js` | Medium | Small |
+| 2 | The home page says search works, but search is disabled | `index.html` | Medium | Small |
+| 3 | Four border radii are not variables | 3 CSS files | Low | Small |
+| 4 | A stale comment in `style.css` | `style.css:264` | Low | 1 minute |
+| 5 | The menu button has no `aria-controls` | 15 HTML files | Low | Small |
+| 6 | The Log In page does not mark Log In as current | `login.html` | Low | 1 minute |
+| 7 | Some home page buttons repeat `.button` styles | `style.css` | Low | Medium |
+| 8 | Three `transition: all` rules | `style.css` | Low | Small |
+| 9 | Stray blank line in the nav on every page | 15 HTML files | Cosmetic | Small |
+| 10 | `isolation` sits in the position block of `.hero` | `style.css` | Cosmetic | 1 minute |
+| 11 | Two short state rules skip the blank line between groups | `style.css`, `auth.css` | Cosmetic | 1 minute |
 
 ---
 
-## 1. The code zip uses backslash paths
-
-**Problem.** The entries in the project zip are stored as `css\auth.css` and `pages\foods.html`, with backslashes. Some Windows zip tools do this. Windows opens such a zip correctly. On macOS and Linux, and in some tools, the files extract with names like `css\auth.css` in one flat folder. Every `href="css/style.css"` then fails and the site shows unstyled.
-
-**Impact.** A reviewer who opens the project on another system sees a broken site.
-
-**Fix.**
-- Make the zip from GitHub: repo page, **Code**, **Download ZIP**. GitHub zips use `/` paths.
-- Or use 7-Zip, or right-click the project folder in File Explorer and choose **Send to**, **Compressed (zipped) folder**.
-- Test it: unzip into a new folder and open `index.html`. Check that styles, images and fonts load.
-
-## 2. The More menu does not close on Escape or outside click
+## 1. The More menu does not close on Escape or outside click
 
 **Problem.** "More" in the nav is a `<details>` element. `js/nav.js` handles only the hamburger menu (`.is-open`). On a wide screen the More menu stays open when the page is clicked or Escape is pressed. It closes only when "More" is clicked again.
 
@@ -66,7 +54,7 @@ This file is a snapshot. When an item is fixed, remove it from the table and the
     }
 ```
 
-## 3. The home page says search works, but search is disabled
+## 2. The home page says search works, but search is disabled
 
 **Problem.** The home hero says "Search Filipino dishes by name or ingredient." The search input and the Search button both have `disabled`, so nothing can be typed. The two "Try a search" chips (Chicken Adobo, Sinigang) open the "coming soon" page.
 
@@ -80,7 +68,7 @@ This file is a snapshot. When an item is fixed, remove it from the table and the
 
 The README lists search as a known limitation.
 
-## 4. Four border radii are not variables
+## 3. Four border radii are not variables
 
 [global.md](global.md) says to use the `--radius-*` variables instead of pixel values. These four still use pixels:
 
@@ -93,13 +81,13 @@ The README lists search as a known limitation.
 
 **Fix.** The three `20px` ones are small labels and tags, so `var(--radius-pill)` looks almost the same. For `14px`, use `var(--radius-md)` (12px) or `var(--radius-lg)` (16px). Check each in the browser, because the shape changes slightly.
 
-## 5. A stale comment in `style.css`
+## 4. A stale comment in `style.css`
 
 Line 264 has a banner that reads "NOT USED ON THIS PAGE (kept for other pages)" above `.section-eyebrow`. It dates from when the file served one page. `.section-eyebrow` is now used on many pages.
 
 **Fix.** Rename the banner to `SECTION EYEBROW`, or remove it.
 
-## 6. The menu button has no `aria-controls`
+## 5. The menu button has no `aria-controls`
 
 The hamburger button has `aria-expanded` but does not name the element it controls. Screen readers use `aria-controls` to link the button to the menu.
 
@@ -118,7 +106,7 @@ The hamburger button has `aria-expanded` but does not name the element it contro
 <ul id="site-nav-menu" class="site-nav-links list-reset">
 ```
 
-## 7. The Log In page does not mark Log In as current
+## 6. The Log In page does not mark Log In as current
 
 On `login.html` the **Log In** button in the nav links to the same page but has no `aria-current="page"`.
 
@@ -130,31 +118,31 @@ On `login.html` the **Log In** button in the nav links to the same page but has 
 
 Sign Up is not in the nav, so `signup.html` needs nothing.
 
-## 8. Some home page buttons repeat `.button` styles
+## 7. Some home page buttons repeat `.button` styles
 
 `.random-food-button` has its own padding, radius, weight and hover. `.fresh-finds-link` looks like `.button-outline` (primary border, small radius, 0.9rem, weight 600). The home page was written before the shared `.button`, so these were not moved over.
 
 **Fix (optional).** Replace them with `class="button"` and `class="button button-outline"` in `index.html`, and delete the old rules. `.near-me-link` and the other link-style buttons on the home page need the same check. Do this last and look at the home page afterwards, because sizes change slightly (padding and font size differ by a few pixels).
 
-## 9. Three `transition: all` rules
+## 8. Three `transition: all` rules
 
 `style.css` lines 982, 1082 and 1481 use `transition: all 0.2s ease`. It animates every property that changes, which can include layout properties by accident.
 
 **Fix.** List the properties that change on hover, for example `transition: color 0.2s ease, background-color 0.2s ease;`.
 
-## 10. Stray blank line in the nav
+## 9. Stray blank line in the nav
 
 Every page has an empty line inside `<div class="site-nav-actions">`, between the Log In link and the closing `</div>`. It has no visible effect.
 
 **Fix.** Delete the blank line in each page.
 
-## 11. `isolation` sits in the position block of `.hero`
+## 10. `isolation` sits in the position block of `.hero`
 
 [css-property-guide.md](css-property-guide.md) puts `isolation` in the layout group. In `.hero`, it is written under `position`.
 
 **Fix.** Move `isolation: isolate;` to the layout block, after `display` and `align-items` and before `overflow`.
 
-## 12. Two short state rules skip the blank line between groups
+## 11. Two short state rules skip the blank line between groups
 
 The property guide separates groups with a blank line in every rule. Two short rules keep a box-model property and a visual property together:
 
@@ -175,7 +163,7 @@ The property guide separates groups with a blank line in every rule. Two short r
 - The header and footer are identical on all pages apart from the path prefix and `aria-current`.
 - All 81 images have `width` and `height`, and every input has a label or `aria-label`.
 - Font weights used (400, 600, 700) match the weights loaded.
-- CSS property order matches [css-property-guide.md](css-property-guide.md) in all 14 files, apart from items 11 and 12.
+- CSS property order matches [css-property-guide.md](css-property-guide.md) in all 14 files, apart from items 10 and 11.
 - Only the documented breakpoints are used, plus a landscape height query and pointer-type queries.
 
 ## Informational, not issues
@@ -186,10 +174,10 @@ The property guide separates groups with a blank line in every rule. Two short r
 
 ## Check in browser before submitting
 
-1. Open the More menu, then click outside it and press Escape (item 2).
-2. Home hero: the search box, the tagline and the nav logo (item 3).
+1. Open the More menu, then click outside it and press Escape (item 1).
+2. Home hero: the search box, the tagline and the nav logo (item 2).
 3. Hover the buttons on Log In, Near Me and the 404 page. White text must not appear on orange.
 4. Foods, top foods and regions cards at 360px wide. Link text such as "Discover La Paz Batchoy →" should fit on one line.
 5. Reload a long page such as foods with the Network tab open. Content should not jump as images load, and `.woff2` fonts should load with no 404s.
 6. Turn on "reduce motion" in the system settings. Smooth scrolling and card lifts should stop.
-7. Unzip the final submission into a new folder and open `index.html` (item 1).
+7. Download the shared Google Drive folder to a new location and open `index.html`. The `css`, `pages`, `js` and `assets` folders must still be in place, and the styles, images and fonts must load.

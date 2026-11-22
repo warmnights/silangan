@@ -132,7 +132,7 @@ The scores make useful evidence for reviewers and show what to fix next.
 None of these needs a framework. Each is 20 to 60 lines in `js/`, loaded with `defer` like `nav.js`, and each is built so the page still works if the script fails (progressive enhancement). Adding any of them lifts the "one script" constraint in [overview.md](overview.md), so that document and [global.md](global.md) are updated in the same change.
 
 ### 2.1 Close the More menu properly
-**Effort:** small. The fix is in [bugs.md](bugs.md), item 2. It is a short first script with a visible result.
+**Effort:** small. The fix is in [bugs.md](bugs.md), item 1. It is a short first script with a visible result.
 
 ### 2.2 Dish search and filter
 **Effort:** medium. **Needs:** `querySelectorAll`, `addEventListener`, `data-` attributes.
@@ -231,7 +231,7 @@ These need no code.
 
 ## Suggested order
 
-1. Fix [bugs.md](bugs.md) items 1 to 3.
+1. Fix [bugs.md](bugs.md) items 1 and 2.
 2. Do 1.1 (share previews) and 1.7 (run Lighthouse and the validators).
 3. Do 1.2 (resize images), the largest performance win left.
 4. Pick one Stage 2 feature, probably 2.2 (dish search), because the home page already promises it.

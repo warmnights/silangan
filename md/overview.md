@@ -1,6 +1,6 @@
 # Silangan: Project Overview
 
-> **Purpose:** This page describes what the site is, how the project is laid out, and which document answers which question.
+> **Purpose:** Start here. This page describes what the site is, how the project is laid out, and which document answers which question.
 > **Audience:** The site's author, teachers and reviewers, and anyone who needs to work on the site without breaking its conventions.
 
 ---
@@ -16,6 +16,7 @@ Silangan is a Filipino food and culture website made as a school project. It let
 | Fonts | Fraunces (headings) and Poppins (body), self-hosted as `.woff2` |
 | Look | Dark maroon background, gold primary color, orange accent |
 | Hosting | Vercel (static) |
+| Submission | The files inside the root folder are uploaded to a Google Drive folder, and the folder link is sent to the instructor |
 | Pages | 15 HTML files: `index.html`, `404.html`, and 13 in `pages/` |
 
 ### Design principle
@@ -125,5 +126,5 @@ When two documents seem to disagree, the order of authority is: the code in `css
 2. **Match a neighbor.** Copy the closest existing section, card or page, then change the content. Page structure and the header and footer are copied, not rewritten.
 3. **Follow the guides.** HTML in [html-writing-guide.md](html-writing-guide.md), stylesheets in [css-writing-guide.md](css-writing-guide.md), property order in [css-property-guide.md](css-property-guide.md).
 4. **Check paths.** Pages in `pages/` use `../` to reach the root. `index.html` uses none.
-5. **Test.** Resize to 360px, 768px and 1280px, tab through the page with the keyboard, and open the page from a fresh unzip of the project.
+5. **Test.** Resize to 360px, 768px and 1280px, tab through the page with the keyboard, and open the page from a fresh copy of the project folder.
 6. **Update the documents.** If a convention changes, change the guide in the same edit.
