@@ -157,11 +157,11 @@
 
     /*
 
-        HEADER: Only the background of the navigation bar, its logo box and its dropdown.
+        HEADER: Only the background of the navigation bar and its dropdown. It is the same dark red as the page.
 
     */
 
-    --header-bg: var(--color-card);
+    --header-bg: var(--page-bg);
 
     /*
 
@@ -407,9 +407,9 @@ main:focus {
 
     min-height: var(--site-nav-height);
     padding-block: 0.5rem;
-    border-bottom: 1px solid var(--color-background-secondary);
+    border-bottom: 1px solid var(--color-border);
 
-    color: var(--color-ink);
+    color: var(--color-text);
     background-color: var(--header-bg);
 }
 
@@ -438,14 +438,14 @@ main:focus {
 }
 
 .site-nav-links a:hover {
-    color: var(--color-ink);
+    color: var(--color-secondary);
 
     text-decoration: underline;
     text-underline-offset: 0.2em;
 }
 
 .site-nav-links a[aria-current="page"] {
-    color: var(--color-ink);
+    color: var(--color-secondary);
 
     font-weight: 600;
 }
@@ -466,14 +466,14 @@ main:focus {
 }
 
 .site-nav-dropdown > summary:hover {
-    color: var(--color-ink);
+    color: var(--color-secondary);
 
     text-decoration: underline;
     text-underline-offset: 0.2em;
 }
 
 .site-nav-dropdown:has([aria-current="page"]) > summary {
-    color: var(--color-ink);
+    color: var(--color-secondary);
 
     font-weight: 600;
 }
@@ -510,7 +510,7 @@ main:focus {
     min-width: 11rem;
     margin: 0;
     padding: 0.35rem;
-    border: 1px solid var(--color-background-secondary);
+    border: 1px solid var(--color-border);
     border-radius: var(--radius-sm);
 
     background-color: var(--header-bg);
@@ -524,7 +524,7 @@ main:focus {
 }
 
 .site-nav-dropdown-menu a:hover {
-    background-color: var(--color-background-secondary);
+    background-color: color-mix(in srgb, var(--color-secondary) 15%, transparent);
 }
 
 .site-nav-actions {
@@ -544,7 +544,7 @@ main:focus {
 }
 
 .site-nav-cta:hover {
-    color: var(--color-ink);
+    color: var(--color-secondary);
 
     text-decoration: underline;
     text-underline-offset: 0.2em;
@@ -773,12 +773,6 @@ main:focus {
     --sun-size: clamp(380px, 48vw, 780px);
     --gutter-x: 1.5rem;
 
-    /* The hero sits on its own light sky, so it keeps dark text */
-    --color-text: var(--color-ink);
-    --color-heading: var(--color-ink);
-    --color-text-muted: var(--color-ink-muted);
-    --focus-ring: var(--color-primary);
-
     position: relative;
 
     display: flex;
@@ -876,7 +870,7 @@ main:focus {
 .hero h1 em {
     display: block;
 
-    color: var(--color-primary);
+    color: var(--color-secondary);
 
     font-style: normal;
 }
@@ -913,7 +907,7 @@ main:focus {
 }
 
 .hero-search:focus-within {
-    border-color: var(--color-primary);
+    border-color: var(--color-secondary);
 
     background-color: color-mix(in srgb, var(--color-text) 12%, transparent);
     box-shadow: 0 0 0 3px var(--color-border);
@@ -950,8 +944,8 @@ main:focus {
     border: none;
     border-radius: var(--radius-pill);
 
-    color: var(--color-primary);
-    background-color: color-mix(in srgb, var(--color-primary) 15%, transparent);
+    color: var(--button-text);
+    background-color: var(--button-bg);
 
     font-size: 0.9rem;
     font-weight: 700;
@@ -960,8 +954,8 @@ main:focus {
 }
 
 .hero-search button:hover {
-    color: var(--color-background);
-    background-color: var(--color-primary);
+    color: var(--button-text-hover);
+    background-color: var(--button-bg-hover);
 }
 
 .search-suggestions {
@@ -977,7 +971,7 @@ main:focus {
 .search-suggestions-label {
     margin-right: 0.25rem;
 
-    color: var(--color-primary);
+    color: var(--color-secondary);
 
     font-family: var(--font-heading);
     font-size: 1.15rem;
@@ -993,9 +987,9 @@ main:focus {
 }
 
 .search-suggestions a:hover {
-    border-color: var(--color-primary);
+    border-color: var(--color-secondary);
 
-    background-color: color-mix(in srgb, var(--color-primary) 18%, transparent);
+    background-color: color-mix(in srgb, var(--color-secondary) 18%, transparent);
 }
 
 .hero-mountains {
@@ -1906,10 +1900,10 @@ main:focus {
         height: 44px;
         margin-left: auto;
         padding: 0;
-        border: 1px solid var(--color-ink);
+        border: 1px solid var(--color-border);
         border-radius: var(--radius-sm);
 
-        color: var(--color-ink);
+        color: var(--color-text);
         background-color: transparent;
 
         cursor: pointer;
@@ -1917,11 +1911,11 @@ main:focus {
     }
 
     .site-nav-toggle:hover {
-        background-color: var(--color-background-secondary);
+        background-color: color-mix(in srgb, var(--color-secondary) 15%, transparent);
     }
 
     .site-nav-toggle:focus-visible {
-        outline: 2px solid var(--color-accent);
+        outline: 2px solid var(--color-secondary);
         outline-offset: 2px;
     }
 
@@ -1961,7 +1955,7 @@ main:focus {
 
         margin: 0.75rem 0 0;
         padding-top: 0.25rem;
-        border-top: 1px solid var(--color-background-secondary);
+        border-top: 1px solid var(--color-border);
     }
 
     .site-nav-links > li {
