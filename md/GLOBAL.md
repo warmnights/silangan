@@ -64,7 +64,7 @@ Utility and shared classes: `.container`, `.full-bleed`, `.list-reset`, `.visual
 
 Page stylesheets do not restyle these.
 
-- **Site header and navigation:** `.site-header`, `.site-nav`, `.site-nav-logo`, `.site-nav-toggle`, `.site-nav-links`, `.site-nav-dropdown`, `.site-nav-dropdown-menu`, `.site-nav-actions`, `.site-nav-cta`. This includes the hamburger menu below 1080px, where `nav.js` toggles `.is-open`. The header is sticky at `z-index: 10`, and the More menu is `z-index: 11`. The bar is 88px tall, or 69px at 1080px and below.
+- **Site header and navigation:** `.site-header`, `.site-nav`, `.site-nav-logo`, `.site-nav-toggle`, `.site-nav-links`, `.site-nav-dropdown`, `.site-nav-dropdown-menu`, `.site-nav-actions`, `.site-nav-cta`. This includes the hamburger menu below 1080px, where `nav.js` toggles `.is-open`. The header is sticky at `z-index: 10`, and the More menu is `z-index: 11`. The bar is 68px tall, or 61px at 1080px and below. That height is `--site-nav-height`, so anything that has to sit below the header (the Terms and Privacy contents box, the hero height, anchor offsets) uses the variable instead of a pixel value.
 - **Footer:** `.footer`, `.footer-main`, `.footer-logo`, `.footer-brand`, `.footer-brand-tagline`, `.footer-links`, `.footer-about`, `.footer-explore-link`, `.footer-bottom`, `.footer-legal`. Footer text is `var(--color-background)` on a `var(--color-primary)` background.
 - **Restaurant notice:** `.restaurant-preview-notice` and its `p` (used on the home page and Near Me).
 - **Home page sections:** `.hero`, `.near-me-section`, `.fresh-finds-section`, `.trivia-section`, `.regional-discoveries-section`, `.popular-foods-section`, `.random-food-section` and their parts. These live in `style.css`, not in a page file.
@@ -197,7 +197,7 @@ All media queries for `style.css` are collected at the bottom. Breakpoints are l
     --radius-pill: 999px;
 
     --container-width: 1400px;
-    --site-nav-height: 88px;
+    --site-nav-height: 68px;
 }
 ```
 
@@ -211,6 +211,7 @@ All media queries for `style.css` are collected at the bottom. Breakpoints are l
 Notes:
 
 - `--gutter-x` is not in `:root`. It is set per element (`.full-bleed` defaults it to `4%`). `--mountain-height` and `--sun-size` belong only to `.hero`.
+- `--site-nav-height` is the real height of the header: 68px on desktop and 61px at 1080px and below, where the 44px menu button and its padding set it. The hero and the scroll offsets use it. When the header's padding, logo or button size changes, change this value to match.
 - `--color-white` and `--color-black` are only for text over photos and for shadows. White is never used as text on `--color-accent`.
 - Palette names: `--color-background` is Dark Sangria, `--color-surface` is Smoked Moss, `--color-primary` is Golden Caramel, `--color-heading` is a lighter caramel, `--color-secondary` is a sand tone and `--color-accent` is coral.
 - Contrast on `--color-background` (WCAG AA needs 4.5:1 for small text): text 15:1, muted text 7.8:1, heading 9.7:1, primary caramel 5.4:1, coral accent 5.5:1.
