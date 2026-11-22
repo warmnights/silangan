@@ -29,7 +29,7 @@
 .not-found-code {
     display: block;
 
-    color: var(--color-accent);
+    color: var(--color-secondary);
     opacity: 0.25;
 
     font-family: var(--font-heading);
@@ -50,7 +50,7 @@
 }
 
 .not-found-section h1 span {
-    color: var(--color-accent);
+    color: var(--color-secondary);
 }
 
 .not-found-content > p {

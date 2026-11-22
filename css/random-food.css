@@ -96,7 +96,7 @@
 }
 
 .featured-dish-content h2 span {
-    color: var(--color-accent);
+    color: var(--color-secondary);
 }
 
 .featured-dish-content > p {
@@ -131,7 +131,7 @@
 }
 
 .featured-dish-detail-label {
-    color: var(--color-primary);
+    color: var(--color-secondary);
 
     font-size: 0.7rem;
     font-weight: 600;
@@ -150,7 +150,7 @@
 
     min-height: 44px;
 
-    color: var(--color-primary);
+    color: var(--color-secondary);
 
     font-size: 0.9rem;
     font-weight: 600;
@@ -196,7 +196,7 @@
 }
 
 .random-discoveries-header h2 span {
-    color: var(--color-accent);
+    color: var(--color-secondary);
 }
 
 .random-discoveries-header p {
@@ -215,7 +215,7 @@
     min-height: 44px;
     margin-bottom: 0.4rem;
 
-    color: var(--color-primary);
+    color: var(--color-secondary);
 
     font-size: 0.9rem;
     font-weight: 600;
@@ -331,7 +331,7 @@
 .random-cta-content h2 span {
     display: block;
 
-    color: var(--color-accent);
+    color: var(--color-secondary);
 }
 
 .random-cta-content p {
@@ -355,7 +355,7 @@
 .featured-dish-recipe-link:focus-visible,
 .discoveries-link:focus-visible,
 .random-food-card-content a:focus-visible {
-    outline: 2px solid var(--color-primary);
+    outline: 2px solid var(--color-secondary);
 }
 
 
@@ -415,7 +415,7 @@
         overscroll-behavior-x: contain;
         scroll-snap-type: x mandatory;
         scrollbar-width: thin;
-        scrollbar-color: var(--color-accent) transparent;
+        scrollbar-color: var(--color-secondary) transparent;
         -webkit-overflow-scrolling: touch;
 
         padding: 0.5rem 0 1.25rem;

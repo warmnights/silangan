@@ -21,10 +21,10 @@
     display: inline-block;
 
     padding: 0.55rem 1rem;
-    border: 1px solid var(--color-accent);
+    border: 1px solid var(--color-secondary);
     border-radius: var(--radius-pill);
 
-    color: var(--color-primary);
+    color: var(--color-secondary);
 
     font-size: 0.7rem;
     font-weight: 600;
@@ -167,11 +167,11 @@
 }
 
 .legal-block li::marker {
-    color: var(--color-primary);
+    color: var(--color-secondary);
 }
 
 .legal-block p a {
-    color: var(--color-primary);
+    color: var(--color-secondary);
 
     font-weight: 600;
     text-decoration: underline;

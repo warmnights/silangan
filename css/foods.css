@@ -212,7 +212,7 @@
 
 .food-count {
     padding: 0.65rem 1rem;
-    border: 1px solid var(--color-accent);
+    border: 1px solid var(--color-secondary);
     border-radius: var(--radius-pill);
 
     color: var(--color-heading);
@@ -465,7 +465,7 @@
         overscroll-behavior-x: contain;
         scroll-snap-type: x mandatory;
         scrollbar-width: thin;
-        scrollbar-color: var(--color-accent) transparent;
+        scrollbar-color: var(--color-secondary) transparent;
         -webkit-overflow-scrolling: touch;
 
         padding: 0 0 1rem;

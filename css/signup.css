@@ -27,17 +27,17 @@
 
     margin-top: 0.2rem;
 
-    accent-color: var(--color-primary);
+    accent-color: var(--color-secondary);
 }
 
 .terms-agree a {
-    color: var(--color-accent);
+    color: var(--color-secondary);
 
     font-weight: 600;
 }
 
 .terms-agree a:hover {
-    color: var(--color-primary);
+    color: var(--color-text);
 }
 
 

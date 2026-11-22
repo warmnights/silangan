@@ -94,7 +94,7 @@
 }
 
 .philippines-map-content h2 span {
-    color: var(--color-accent);
+    color: var(--color-secondary);
 }
 
 .philippines-map-content > p {
@@ -155,7 +155,7 @@
     height: 1.15rem;
 
     fill: none;
-    stroke: var(--color-primary);
+    stroke: var(--color-secondary);
     stroke-width: 1.8;
     stroke-linecap: round;
     stroke-linejoin: round;
@@ -218,7 +218,7 @@
 }
 
 .map-cta-content h2 span {
-    color: var(--color-accent);
+    color: var(--color-secondary);
 }
 
 .map-cta-content p {
@@ -240,7 +240,7 @@
 
 .map-island-item:focus-visible,
 .map-explore-button:focus-visible {
-    outline: 2px solid var(--color-primary);
+    outline: 2px solid var(--color-secondary);
 }
 
 

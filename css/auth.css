@@ -38,7 +38,7 @@
 }
 
 .auth-content h1 span {
-    color: var(--color-accent);
+    color: var(--color-secondary);
 }
 
 .auth-description {
@@ -58,6 +58,7 @@
     background-color: var(--color-background);
 
     font-size: 0.9rem;
+    color: var(--color-ink);
     line-height: 1.65;
 }
 
@@ -85,7 +86,7 @@
 }
 
 .auth-browse-link:focus-visible {
-    outline: 3px solid var(--color-accent);
+    outline: 3px solid var(--color-secondary);
     outline-offset: 2px;
 }
 
@@ -137,17 +138,17 @@
 }
 
 .remember-me input {
-    accent-color: var(--color-primary);
+    accent-color: var(--color-secondary);
 }
 
 .forgot-password {
-    color: var(--color-accent);
+    color: var(--color-secondary);
 
     font-weight: 600;
 }
 
 .forgot-password:hover {
-    color: var(--color-primary);
+    color: var(--color-text);
 }
 
 .auth-button {
@@ -177,7 +178,7 @@
 .social-button:disabled {
     border: 1px solid var(--color-border);
 
-    color: var(--color-text);
+    color: var(--color-ink);
     background-color: var(--color-background);
     opacity: 1;
 
@@ -233,7 +234,7 @@
     border: 1px solid var(--color-border);
     border-radius: var(--radius-sm);
 
-    color: var(--color-heading);
+    color: var(--color-ink);
     background-color: var(--color-background);
 
     font-size: 0.9rem;
@@ -271,13 +272,13 @@
 .signup-text a {
     margin-left: 0.25rem;
 
-    color: var(--color-accent);
+    color: var(--color-secondary);
 
     font-weight: 600;
 }
 
 .signup-text a:hover {
-    color: var(--color-primary);
+    color: var(--color-text);
 }
 
 

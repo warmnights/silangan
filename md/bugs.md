@@ -79,16 +79,16 @@ The README lists search as a known limitation.
 ## Informational, not issues
 
 - **`404.html` uses root paths** (`/css/style.css`). This is correct on Vercel. It looks unstyled when the file is opened straight from a folder, so test it through the live site or a local server.
-- **Wine accent text on the tan background** has 4.8:1 contrast. That passes WCAG AA (4.5:1) with little room, so the color is not lightened and the text is not shrunk.
+- **Wine accent on the red page** is only 1.8:1, so page-level accent text and focus rings use light caramel (`--color-secondary`, 7.5:1). The wine accent stays on light parts such as form field focus borders.
 - **Open Graph tags** (the preview card when the link is shared) are not set. This is an improvement, not a fix. See [improvement-plan.md](improvement-plan.md).
 
 ## Check in browser before submitting
 
 1. Open the More menu, then click outside it and press Escape (item 1).
 2. Home hero: the search box, the tagline and the nav logo (item 2).
-3. Hover the buttons on Log In, Near Me and the 404 page. The text must stay cream or tan on the mahogany, never dark. The step from Dark Chocolate to mahogany is small, so check that the hover is still easy to see.
+3. Hover the buttons on Log In, Near Me and the 404 page. The text must turn cream or tan on the mahogany, never stay dark. The buttons are golden caramel with dark sangria text, so check that the hover to mahogany is easy to see.
 4. Home hero with the new palette: the headline, tagline, search box and chips over the current hero images. The hero text uses `--color-text` (dark), so it needs a light enough image. Check it again when the images change.
-5. Tab through a page with cards. The focus ring inside a dark card should be caramel, and on the tan and cream bands it should be mahogany.
+5. Tab through a page with cards. The focus ring inside a golden caramel card should be dark sangria, and on the tan and cream bands it should be mahogany. In the footer it should be light caramel.
 6. Home page buttons (Near Me, fresh finds, popular foods and the surprise dish) at 1280px and 360px wide. They use the shared button classes, so size and hover color changed slightly.
 7. The photo corners on the Log In page, now `--radius-lg`.
 8. Foods, top foods and regions cards at 360px wide. Link text such as "Discover La Paz Batchoy →" should fit on one line.

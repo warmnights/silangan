@@ -33,7 +33,7 @@
 .featured-region-content .section-eyebrow,
 .regional-favorites-header .section-eyebrow,
 .regions-cta-content .section-eyebrow {
-    color: var(--color-primary);
+    color: var(--color-secondary);
 }
 
 .page-hero-split-content h1 {
@@ -109,7 +109,7 @@
 
     margin: 0;
 
-    color: var(--color-primary);
+    color: var(--color-secondary);
 
     font-size: 0.8rem;
     font-weight: 600;
@@ -168,7 +168,7 @@
     height: 42px;
     border-radius: 50%;
 
-    color: var(--color-text);
+    color: var(--color-ink);
     background-color: var(--color-background);
 
     font-family: var(--font-heading);
@@ -276,7 +276,7 @@
     padding: 0.65rem 1rem;
     border-radius: var(--radius-pill);
 
-    color: var(--color-text);
+    color: var(--color-ink);
     background-color: var(--color-secondary);
 
     font-size: 0.8rem;
@@ -291,7 +291,7 @@
 }
 
 .featured-region-content h2 span {
-    color: var(--color-accent);
+    color: var(--color-secondary);
 }
 
 .featured-region-content > p {
@@ -325,7 +325,7 @@
     height: 35px;
     border-radius: 50%;
 
-    color: var(--color-text);
+    color: var(--color-ink);
     background-color: var(--color-background);
 
     font-size: 0.7rem;
@@ -342,7 +342,7 @@
 .featured-region-link {
     display: inline-block;
 
-    color: var(--color-primary);
+    color: var(--color-secondary);
 
     font-size: 0.9rem;
     font-weight: 600;
@@ -395,7 +395,7 @@
 .regional-view-all {
     flex-shrink: 0;
 
-    color: var(--color-primary);
+    color: var(--color-secondary);
 
     font-size: 0.85rem;
     font-weight: 600;
@@ -459,7 +459,7 @@
     padding: 0.5rem 0.8rem;
     border-radius: var(--radius-pill);
 
-    color: var(--color-text);
+    color: var(--color-ink);
     background-color: var(--color-background);
 
     font-size: 0.8rem;
@@ -507,7 +507,7 @@
 }
 
 .regional-source-note a {
-    color: var(--color-primary);
+    color: var(--color-secondary);
 
     font-weight: 600;
     text-decoration: underline;
@@ -622,7 +622,7 @@
         overscroll-behavior-x: contain;
         scroll-snap-type: x mandatory;
         scrollbar-width: thin;
-        scrollbar-color: var(--color-accent) transparent;
+        scrollbar-color: var(--color-secondary) transparent;
         -webkit-overflow-scrolling: touch;
 
         padding: 0.5rem 0 1.25rem;

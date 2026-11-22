@@ -71,7 +71,7 @@ A `@media print` block in `recipes.css` that hides the nav, footer and buttons a
 ### 1.4 A dark theme
 **Effort:** medium. **Needs:** CSS only.
 
-The site is light now: a tan page with dark chocolate cards. Every color is a variable, so a dark version for visitors who prefer it is one block:
+The site is light now: a tan page with golden caramel cards. Every color is a variable, so a dark version for visitors who prefer it is one block:
 
 ```css
 @media (prefers-color-scheme: dark) {

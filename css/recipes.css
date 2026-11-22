@@ -226,7 +226,7 @@
 
     margin: 0 0 0.75rem;
 
-    color: var(--color-primary);
+    color: var(--color-secondary);
 
     font-size: 0.875rem;
     font-weight: 600;
@@ -277,7 +277,7 @@
     padding: 0.5rem 0.8rem;
     border-radius: var(--radius-sm);
 
-    color: var(--color-text);
+    color: var(--color-ink);
     background-color: var(--color-background);
 
     font-size: 0.75rem;
@@ -327,7 +327,7 @@
 
     min-height: 44px;
     padding: 0.65rem 0.75rem;
-    border: 1px solid var(--button-outline-border);
+    border: 1px solid var(--color-ink);
     border-radius: var(--radius-sm);
 
     font-size: 0.875rem;
@@ -341,7 +341,7 @@
 }
 
 .recipe-card-method-link {
-    color: var(--button-outline-text);
+    color: var(--color-ink);
     background-color: var(--color-background);
 }
 
@@ -350,11 +350,12 @@
 }
 
 .recipe-card-source-link {
-    color: var(--color-text);
-    background-color: var(--color-secondary);
+    color: var(--color-background-secondary);
+    background-color: var(--color-ink);
 }
 
 .recipe-card-source-link:hover {
+    color: var(--color-ink);
     background-color: var(--color-background);
 }
 
@@ -494,7 +495,7 @@
 }
 
 .recipe-cta-container h2 span {
-    color: var(--color-accent);
+    color: var(--color-secondary);
 }
 
 .recipe-cta-container p {
@@ -581,7 +582,7 @@
         overscroll-behavior-x: contain;
         scroll-snap-type: x mandatory;
         scrollbar-width: thin;
-        scrollbar-color: var(--color-accent) transparent;
+        scrollbar-color: var(--color-secondary) transparent;
         -webkit-overflow-scrolling: touch;
 
         padding: 0.5rem 0 1.25rem;

@@ -110,7 +110,7 @@
     padding: 0.4rem 0.8rem;
     border-radius: var(--radius-pill);
 
-    color: var(--color-text);
+    color: var(--color-ink);
     background-color: var(--color-background);
 
     font-size: 0.75rem;
@@ -170,10 +170,10 @@
 
 .collection-note {
     padding: 0.55rem 1rem;
-    border: 1px solid var(--color-primary);
+    border: 1px solid var(--color-secondary);
     border-radius: var(--radius-pill);
 
-    color: var(--color-primary);
+    color: var(--color-secondary);
 
     font-size: 0.8rem;
     font-weight: 600;
@@ -403,7 +403,7 @@
         overscroll-behavior-x: contain;
         scroll-snap-type: x mandatory;
         scrollbar-width: thin;
-        scrollbar-color: var(--color-accent) transparent;
+        scrollbar-color: var(--color-secondary) transparent;
         -webkit-overflow-scrolling: touch;
 
         padding: 0.5rem 0 1.25rem;
@@ -416,7 +416,7 @@
     .filipino-favorites-header .filipino-favorites-scroll-hint {
         display: block;
 
-        color: var(--color-primary);
+        color: var(--color-secondary);
 
         font-size: 0.8rem;
         font-weight: 600;
