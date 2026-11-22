@@ -172,7 +172,8 @@
     --band-bg: transparent;
     --band-bg-alt: transparent;
 
-    --page-texture: url('../assets/images/backgrounds/texture-red.webp');
+    --page-texture: url('../assets/images/backgrounds/texture-burgundy.webp');
+    --page-overlay: rgba(0, 0, 0, 0.3);
 
     --shadow-card: 0 8px 24px rgba(14, 4, 5, 0.5);
 
@@ -216,10 +217,10 @@ body {
 
     color: var(--color-text);
     background-color: var(--page-bg);
-    background-image: var(--page-texture);
-    background-size: max(100%, 1200px) auto;
+    background-image: linear-gradient(var(--page-overlay), var(--page-overlay)), var(--page-texture);
+    background-size: auto, 754px 955px;
     background-position: center top;
-    background-repeat: repeat-y;
+    background-repeat: repeat;
 
     font-family: var(--font-body);
     font-size: 1rem;
