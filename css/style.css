@@ -261,7 +261,7 @@ main:focus {
 /*
 
 
-    NOT USED ON THIS PAGE (kept for other pages)
+    SECTION EYEBROW
 
 
 */
@@ -696,10 +696,10 @@ main:focus {
     --gutter-x: 1.5rem;
 
     position: relative;
-    isolation: isolate;
 
     display: flex;
     align-items: center;
+    isolation: isolate;
     overflow: hidden;
 
     min-height: calc(100svh - var(--site-nav-height));
@@ -979,7 +979,7 @@ main:focus {
     font-size: 0.9rem;
     font-weight: 600;
 
-    transition: all 0.2s ease;
+    transition: color 0.2s ease, background-color 0.2s ease;
 }
 
 .near-me-link:hover {
@@ -1079,7 +1079,7 @@ main:focus {
     font-size: 0.9rem;
     font-weight: 600;
 
-    transition: all 0.2s ease;
+    transition: color 0.2s ease, background-color 0.2s ease;
 }
 
 .fresh-finds-link:hover {
@@ -1283,7 +1283,7 @@ main:focus {
 
     width: fit-content;
     padding: 0.5rem 1rem;
-    border-radius: 20px;
+    border-radius: var(--radius-pill);
 
     color: var(--color-primary);
     background-color: color-mix(in srgb, var(--color-primary) 20%, transparent);
@@ -1478,7 +1478,7 @@ main:focus {
     font-size: 0.9rem;
     font-weight: 600;
 
-    transition: all 0.2s ease;
+    transition: color 0.2s ease, background-color 0.2s ease;
 }
 
 .popular-foods-footer a:hover {
@@ -1595,6 +1595,7 @@ main:focus {
 
 .form-group input:focus {
     border-color: var(--color-accent);
+
     box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-accent) 20%, transparent);
 }
 

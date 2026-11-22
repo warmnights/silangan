@@ -244,6 +244,7 @@
 
 .social-button:hover:not(:disabled) {
     border-color: var(--color-accent);
+
     background-color: var(--color-surface);
 }
 
@@ -294,7 +295,7 @@
     overflow: hidden;
 
     height: 570px;
-    border-radius: 14px;
+    border-radius: var(--radius-lg);
 }
 
 .auth-image img {

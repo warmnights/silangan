@@ -270,7 +270,7 @@
     left: 1.25rem;
 
     padding: 0.65rem 1rem;
-    border-radius: 20px;
+    border-radius: var(--radius-pill);
 
     color: var(--color-background);
     background-color: var(--color-secondary);
@@ -449,7 +449,7 @@
     left: 1rem;
 
     padding: 0.5rem 0.8rem;
-    border-radius: 20px;
+    border-radius: var(--radius-pill);
 
     color: var(--color-heading);
     background-color: var(--color-background);
