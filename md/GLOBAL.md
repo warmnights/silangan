@@ -68,7 +68,7 @@ Page stylesheets do not restyle these.
 - **Site header and navigation:** `.site-header`, `.site-nav`, `.site-nav-logo`, `.site-nav-toggle`, `.site-nav-links`, `.site-nav-dropdown`, `.site-nav-dropdown-menu`, `.site-nav-actions`, `.site-nav-cta`. This includes the hamburger menu below 1080px, where `nav.js` toggles `.is-open`. The header is sticky at `z-index: 10`, and the More menu is `z-index: 11`. The bar is 68px tall, or 61px at 1080px and below. That height is `--site-nav-height`, so anything that has to sit below the header (the Terms and Privacy contents box, the hero height, anchor offsets) uses the variable instead of a pixel value.
 - **Footer:** `.footer`, `.footer-main`, `.footer-logo`, `.footer-brand`, `.footer-brand-tagline`, `.footer-links`, `.footer-about`, `.footer-explore-link`, `.footer-bottom`, `.footer-legal`. Footer text is `var(--color-background)` and `var(--color-background-secondary)` on a `var(--color-surface)` background.
 - **Restaurant notice:** `.restaurant-preview-notice` and its `p` (used on the home page and Near Me).
-- **Home page sections:** `.hero`, `.near-me-section`, `.fresh-finds-section`, `.trivia-section`, `.regional-discoveries-section`, `.popular-foods-section`, `.random-food-section` and their parts. These live in `style.css`, not in a page file. Each one is a full-width band (`full-bleed`), and the bands alternate `--band-bg` and `--band-bg-alt` down the page, like the other pages.
+- **Home page sections:** `.hero`, `.near-me-section`, `.fresh-finds-section`, `.trivia-section`, `.regional-discoveries-section`, `.popular-foods-section`, `.random-food-section` and their parts. These live in `style.css`, not in a page file. Each one is a full-width band (`full-bleed`) with a transparent background, so the page texture shows through, like the other pages.
 
 ---
 
@@ -120,7 +120,7 @@ Page stylesheets do not restyle these.
 
 ### Cards
 
-`.card` is the shared base for home page cards: border, radius, background and hover lift. Each card keeps its own class for its image height and text. `.card-on-secondary` is used when the card sits on the lighter band (`--band-bg-alt`). Both card backgrounds are the dark surface color now, so it looks the same as `.card`, but the class stays so a different background can be set again. Card colors come from the `--card-*` variables. See [colors.md](colors.md#3-cards). `.trivia-card` stays separate from `.card` on purpose.
+`.card` is the shared base for home page cards: border, radius, background and hover lift. Each card keeps its own class for its image height and text. `.card-on-secondary` is used when the card sits on a band that has its own background (`--band-bg-alt`). Both card backgrounds are the dark surface color now, so it looks the same as `.card`, but the class stays so a different background can be set again. Card colors come from the `--card-*` variables. See [colors.md](colors.md#3-cards). `.trivia-card` stays separate from `.card` on purpose.
 
 ```css
 .card {
@@ -145,7 +145,7 @@ Page stylesheets do not restyle these.
 
 | Class | Purpose |
 | --- | --- |
-| `.page-hero` | Background `var(--band-bg-alt)`. Always used with `full-bleed`. |
+| `.page-hero` | Background `var(--band-bg-alt)` (transparent). Always used with `full-bleed`. |
 | `.page-hero-centered` | `padding-block: 3.5rem`, centered text |
 | `.page-hero-content` | `max-width: 850px`, centered. Holds the breadcrumb, eyebrow, `<h1>` and paragraph. |
 | `.page-hero-split` | Two columns (`1fr 1fr`), `gap: 4rem`, `min-height: 580px`, `padding-block: 5rem`, `--gutter-x: 8%`. Used by Regions and Top Foods. |
@@ -237,12 +237,14 @@ All media queries for `style.css` are collected at the bottom. Breakpoints are l
 
     /*
 
-        FULL-WIDTH BANDS: Only the background. Used by every full-width section, the page hero and the page itself.
+        FULL-WIDTH BANDS: Only the background. Used by every full-width section and the page hero. Both are transparent, so the page texture shows through. Set a color to make a band solid.
 
     */
 
-    --band-bg: var(--color-background);
-    --band-bg-alt: var(--color-background-secondary);
+    --band-bg: transparent;
+    --band-bg-alt: transparent;
+
+    --page-texture: url('../assets/images/backgrounds/texture.webp');
 
     --shadow-card: 0 8px 24px rgba(14, 4, 5, 0.5);
 

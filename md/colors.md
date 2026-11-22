@@ -83,34 +83,23 @@ Notes:
 
 ---
 
-## 4. Full-width bands
+## 4. Full-width bands and the page texture
 
 Only the background. A band is a full-width section, such as a hero or a section with its own background.
 
 | Variable | Changes | Starts as |
 | --- | --- | --- |
-| `--band-bg` | The darker (tan) band, and the page background behind everything | `--color-background` |
-| `--band-bg-alt` | The lighter (cream) band that alternates with it, and every page hero | `--color-background-secondary` |
+| `--band-bg` | The first band color, used by every other section on a page | `transparent` |
+| `--band-bg-alt` | The second band color, used by every page hero and every other section | `transparent` |
+| `--page-texture` | The image painted on the page behind everything | `assets/images/backgrounds/texture.webp` |
 
-Bands alternate down each page. **L** is the lighter band (`--band-bg-alt`) and **D** is the darker one (`--band-bg`):
+Both band variables are transparent, so no section covers the page. The texture shows through behind every section. It is a soft brush-stroke pattern in tan and cream (`#DDC5A3` to `#F2D8B5`) on a `--color-background` base. The image repeats top to bottom with no visible seam, and it is at least 1200px wide, so on a phone the middle of it shows.
 
-| Page | Bands, top to bottom |
-| --- | --- |
-| Home | image hero, then D L D L D L |
-| All Foods | L D L D |
-| Top Foods | L D L D |
-| Regions | L D L D L |
-| Recipes | L D L D D |
-| Random Food | L D L D |
-| Near Me | L D L |
-| Map | L D D |
-| Terms, Privacy | L D |
-| Log In, Sign Up, Forgot Password, 404 | L |
-| Food Details | D |
+Keep the texture between tan and cream. The wine accent text is 4.8:1 on tan, so a darker patch would drop it under 4.5:1.
 
-The navigation bar and the footer are full width too, but they are not bands. The navigation bar uses `--color-background`, and the footer uses `--color-surface` (dark chocolate) with light text.
+To bring the alternating bands back, set `--band-bg` and `--band-bg-alt` to `var(--color-background)` and `var(--color-background-secondary)`, and set the body `background-image` to `none`. To make one section solid, set the background in that section's own rule.
 
-To make one band different from the rest, set the background in that section's own rule instead of using the variables.
+The navigation bar and the footer are full width too, but they are not bands. The navigation bar uses `--color-background` and stays solid, and the footer uses `--color-surface` (dark chocolate) with light text.
 
 ---
 
@@ -139,7 +128,7 @@ When text and background colors change, check each pair with a contrast checker.
 | --- | --- |
 | `--button-text` | `--button-bg` |
 | `--button-text-hover` | `--button-bg-hover` |
-| `--button-outline-text` | the band behind it, `--band-bg` and `--band-bg-alt` |
+| `--button-outline-text` | the page background, from tan to cream |
 | `--card-title`, `--card-text`, `--card-label`, `--card-link` | both `--card-bg` and `--card-bg-alt` |
 | `--color-text` and `--color-heading` | both bands |
 
@@ -151,5 +140,5 @@ The current pairs are listed in [global.md](global.md#7-variables).
 
 - A new button uses `class="button"`, or `class="button button-outline"`. A page button written with its own class takes its colors from the `--button-*` variables.
 - A new card uses `class="card"`, with `card-on-secondary` when it sits on a lighter band. A page card background uses `var(--card-bg)` or `var(--card-bg-alt)`, and its border uses `var(--card-border)`.
-- A new full-width section sets `background-color: var(--band-bg)` or `var(--band-bg-alt)` and carries `full-bleed` in the HTML.
+- A new full-width section carries `full-bleed` in the HTML and needs no background, because the page texture shows through. Add `background-color: var(--band-bg)` only to make it solid.
 - The base colors are not used directly for these three things.

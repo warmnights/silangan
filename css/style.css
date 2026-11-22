@@ -146,12 +146,14 @@
 
     /*
 
-        FULL-WIDTH BANDS: Only the background. Used by every full-width section, the page hero and the page itself.
+        FULL-WIDTH BANDS: Only the background. Used by every full-width section and the page hero. Both are transparent, so the page texture shows through. Set a color to make a band solid.
 
     */
 
-    --band-bg: var(--color-background);
-    --band-bg-alt: var(--color-background-secondary);
+    --band-bg: transparent;
+    --band-bg-alt: transparent;
+
+    --page-texture: url('../assets/images/backgrounds/texture.webp');
 
     --shadow-card: 0 8px 24px rgba(14, 4, 5, 0.5);
 
@@ -194,7 +196,11 @@ body {
     margin: 0;
 
     color: var(--color-text);
-    background-color: var(--band-bg);
+    background-color: var(--color-background);
+    background-image: var(--page-texture);
+    background-size: max(100%, 1200px) auto;
+    background-position: center top;
+    background-repeat: repeat-y;
 
     font-family: var(--font-body);
     font-size: 1rem;
