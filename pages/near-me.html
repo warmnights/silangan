@@ -32,7 +32,8 @@
                     class="site-nav-toggle"
                     type="button"
                     aria-label="Open menu"
-                    aria-expanded="false">
+                    aria-expanded="false"
+                    aria-controls="site-nav-menu">
                     <svg class="icon-menu" viewBox="0 0 24 24" aria-hidden="true">
                         <path d="M4 7h16M4 12h16M4 17h16"></path>
                     </svg>
@@ -41,7 +42,7 @@
                     </svg>
                 </button>
 
-                <ul class="site-nav-links list-reset">
+                <ul class="site-nav-links list-reset" id="site-nav-menu">
                     <li><a href="top-foods.html">Top Foods</a></li>
                     <li><a href="near-me.html" aria-current="page">Near Me</a></li>
                     <li><a href="regions.html">Regions</a></li>
@@ -62,7 +63,6 @@
                     <a href="login.html" class="site-nav-cta">
                         Log In
                     </a>
-
                 </div>
             </nav>
         </header>
