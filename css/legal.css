@@ -65,7 +65,7 @@
 
 .legal-toc {
     position: sticky;
-    top: 6.5rem;
+    top: calc(var(--site-nav-height) + 1rem);
 
     padding: 1.5rem;
     border-radius: var(--radius-md);
