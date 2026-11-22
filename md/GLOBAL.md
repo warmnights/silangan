@@ -172,24 +172,24 @@ All media queries for `style.css` are collected at the bottom. Breakpoints are l
     --font-heading: 'Fraunces', Georgia, serif;
     --font-body: 'Poppins', system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
 
-    --color-background: #2B0609;
-    --color-background-secondary: #4A0A14;
-    --color-surface: #3A0810;
+    --color-background: #2C0E11;
+    --color-background-secondary: #451519;
+    --color-surface: #322C25;
 
-    --color-text: #FBF1DC;
-    --color-text-muted: #FBF1DCB3;
-    --color-heading: #F0C766;
+    --color-text: #F5EADB;
+    --color-text-muted: #F5EADBB3;
+    --color-heading: #DDB98A;
 
-    --color-primary: #E8B84A;
-    --color-secondary: #C98F47;
-    --color-accent: #E8633A;
+    --color-primary: #B28558;
+    --color-secondary: #CFA577;
+    --color-accent: #E06C52;
 
     --color-white: #FFFFFF;
     --color-black: #000000;
 
-    --color-border: rgba(232, 184, 74, 0.28);
+    --color-border: rgba(178, 133, 88, 0.28);
 
-    --shadow-card: 0 8px 24px rgba(10, 0, 2, 0.5);
+    --shadow-card: 0 8px 24px rgba(14, 4, 5, 0.5);
 
     --radius-sm: 8px;
     --radius-md: 12px;
@@ -212,9 +212,10 @@ Notes:
 
 - `--gutter-x` is not in `:root`. It is set per element (`.full-bleed` defaults it to `4%`). `--mountain-height` and `--sun-size` belong only to `.hero`.
 - `--color-white` and `--color-black` are only for text over photos and for shadows. White is never used as text on `--color-accent`.
-- Contrast on `--color-background` (WCAG AA needs 4.5:1 for small text): text 16.5:1, muted text 8.4:1, heading gold 11.5:1, primary gold 10:1, orange accent 5.5:1.
-- Contrast on `--color-background-secondary` (hero bands and cards): text 13.9:1, muted text 7.3:1, heading gold 9.7:1, orange accent 4.7:1. The orange `.section-eyebrow` on a secondary background is the closest pair to the limit, so it is not made darker or smaller.
-
+- Palette names: `--color-background` is Dark Sangria, `--color-surface` is Smoked Moss, `--color-primary` is Golden Caramel, `--color-heading` is a lighter caramel, `--color-secondary` is a sand tone and `--color-accent` is coral.
+- Contrast on `--color-background` (WCAG AA needs 4.5:1 for small text): text 15:1, muted text 7.8:1, heading 9.7:1, primary caramel 5.4:1, coral accent 5.5:1.
+- Contrast on `--color-background-secondary` (hero bands and cards): text 12.9:1, muted text 6.9:1, heading 8.3:1, primary caramel 4.7:1, coral accent 4.7:1. The coral `.section-eyebrow` and the primary caramel links on a secondary background are the closest pairs to the limit, so they are not made darker or smaller.
+- Dark text on filled buttons: `--color-background` on `--color-primary` is 5.4:1, on `--color-accent` 5.5:1 and on `--color-secondary` 7.9:1.
 ---
 
 ## 8. Fonts

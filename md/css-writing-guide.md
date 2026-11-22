@@ -52,7 +52,7 @@ Sections follow the order they appear on the page. Media queries come last.
 ```
 
 - Numbers carry a leading zero (`0.2s`, `0.5rem`). Zero has no unit (`margin: 0`).
-- Hex colors are uppercase (`#2B0609`) and written only inside `:root`.
+- Hex colors are uppercase (`#2C0E11`) and written only inside `:root`.
 - Strings in selectors and `content` use double quotes (`[aria-current="page"]`, `content: ""`).
 - Property order and blank lines inside a rule follow [css-property-guide.md](css-property-guide.md).
 

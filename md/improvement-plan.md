@@ -31,7 +31,7 @@ Pasting the link into Messenger, Discord or a group chat currently gives a plain
 <meta property="og:image" content="https://silangan-ph.vercel.app/assets/images/readme/silangan-hero.png">
 <meta property="og:url" content="https://silangan-ph.vercel.app/">
 <meta property="og:type" content="website">
-<meta name="theme-color" content="#2B0609">
+<meta name="theme-color" content="#2C0E11">
 ```
 
 Also:
@@ -76,7 +76,7 @@ Every color is a variable, so a light version is one block:
 ```css
 @media (prefers-color-scheme: light) {
     :root {
-        --color-background: #FBF1DC;
+        --color-background: #F5EADB;
         /* ... the other colors ... */
     }
 }

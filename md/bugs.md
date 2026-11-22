@@ -79,14 +79,14 @@ The README lists search as a known limitation.
 ## Informational, not issues
 
 - **`404.html` uses root paths** (`/css/style.css`). This is correct on Vercel. It looks unstyled when the file is opened straight from a folder, so test it through the live site or a local server.
-- **Orange eyebrow text on the secondary background** has 4.67:1 contrast. That passes WCAG AA (4.5:1) with little room, so the text is not darkened or shrunk.
+- **Coral eyebrow text on the secondary background** has 4.68:1 contrast. That passes WCAG AA (4.5:1) with little room, so the text is not darkened or shrunk.
 - **Open Graph tags** (the preview card when the link is shared) are not set. This is an improvement, not a fix. See [improvement-plan.md](improvement-plan.md).
 
 ## Check in browser before submitting
 
 1. Open the More menu, then click outside it and press Escape (item 1).
 2. Home hero: the search box, the tagline and the nav logo (item 2).
-3. Hover the buttons on Log In, Near Me and the 404 page. White text must not appear on orange.
+3. Hover the buttons on Log In, Near Me and the 404 page. White text must not appear on coral.
 4. Home page buttons (Near Me, fresh finds, popular foods and the surprise dish) at 1280px and 360px wide. They use the shared button classes, so size and hover color changed slightly.
 5. The photo corners on the Log In page, now `--radius-lg`.
 6. Foods, top foods and regions cards at 360px wide. Link text such as "Discover La Paz Batchoy →" should fit on one line.
