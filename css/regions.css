@@ -51,7 +51,7 @@
     color: var(--color-white);
     background: linear-gradient(
         transparent,
-        color-mix(in srgb, var(--color-background) 85%, transparent)
+        color-mix(in srgb, var(--color-surface) 85%, transparent)
     );
 }
 
@@ -124,6 +124,7 @@
 
 .island-card {
     --color-heading: var(--card-title);
+    --focus-ring: var(--card-link);
 
     overflow: hidden;
 
@@ -167,7 +168,7 @@
     height: 42px;
     border-radius: 50%;
 
-    color: var(--color-heading);
+    color: var(--color-text);
     background-color: var(--color-background);
 
     font-family: var(--font-heading);
@@ -275,7 +276,7 @@
     padding: 0.65rem 1rem;
     border-radius: var(--radius-pill);
 
-    color: var(--color-background);
+    color: var(--color-text);
     background-color: var(--color-secondary);
 
     font-size: 0.8rem;
@@ -324,7 +325,7 @@
     height: 35px;
     border-radius: 50%;
 
-    color: var(--color-heading);
+    color: var(--color-text);
     background-color: var(--color-background);
 
     font-size: 0.7rem;
@@ -424,6 +425,7 @@
 
 .regional-food-card {
     --color-heading: var(--card-title);
+    --focus-ring: var(--card-link);
 
     overflow: hidden;
 
@@ -457,7 +459,7 @@
     padding: 0.5rem 0.8rem;
     border-radius: var(--radius-pill);
 
-    color: var(--color-heading);
+    color: var(--color-text);
     background-color: var(--color-background);
 
     font-size: 0.8rem;

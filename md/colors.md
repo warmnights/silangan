@@ -34,20 +34,20 @@ Used by `.button` and `.button-outline`, and by the page buttons: the Browse lin
 
 | Variable | Changes | Starts as |
 | --- | --- | --- |
-| `--button-bg` | Filled button: background | `--color-primary` |
-| `--button-text` | Filled button: text | `--color-background` |
-| `--button-border` | Filled `.button`: border. Page buttons have no border. | `--color-primary` |
-| `--button-bg-hover` | Every button: background on hover | `--color-accent` |
-| `--button-text-hover` | Every button: text on hover | `--color-background` |
-| `--button-border-hover` | Every `.button`: border on hover | `--color-accent` |
-| `--button-outline-text` | Outline button: text | `--color-primary` |
-| `--button-outline-border` | Outline button: border | `--color-primary` |
+| `--button-bg` | Filled button: background | `--color-surface` |
+| `--button-text` | Filled button: text | `--color-background-secondary` |
+| `--button-border` | Filled `.button`: border. Page buttons have no border. | `--color-surface` |
+| `--button-bg-hover` | Every button: background on hover | `--color-primary` |
+| `--button-text-hover` | Every button: text on hover | `--color-background-secondary` |
+| `--button-border-hover` | Every `.button`: border on hover | `--color-primary` |
+| `--button-outline-text` | Outline button: text | `--color-surface` |
+| `--button-outline-border` | Outline button: border | `--color-surface` |
 
 Notes:
 
 - An outline button (`button button-outline`) has a see-through background. It turns into the hover colors when hovered.
-- `.recipe-card-method-link` is an outline-style button, so it uses the two outline variables. Its background stays on the page background.
-- `.recipe-card-source-link` uses the filled colors, but its hover stays on `--color-secondary`.
+- `.recipe-card-method-link` is an outline-style button, so it uses the two outline variables. Its background stays on the page background (tan).
+- `.recipe-card-source-link` sits on a dark recipe card, where a dark button would disappear. It is caramel (`--color-secondary`) with dark text, and turns tan on hover.
 - Disabled buttons (the Log In, Sign Up and Forgot Password submit buttons) have their own muted look and do not use these variables.
 
 ---
@@ -60,24 +60,24 @@ Used by every card: `.card` (fresh finds, regional discoveries, popular foods, r
 
 | Variable | Changes | Starts as |
 | --- | --- | --- |
-| `--card-bg` | Background of a card on a darker band | `--color-background-secondary` |
-| `--card-bg-alt` | Background of a card on a lighter band (`.card-on-secondary`, the All Foods and Top Foods cards) | `--color-background` |
+| `--card-bg` | Background of a card on the darker band | `--color-surface` |
+| `--card-bg-alt` | Background of a card on the lighter band (`.card-on-secondary`, the All Foods and Top Foods cards) | `--color-surface` |
 | `--card-border` | Border of the cards that have one | `--color-border` |
 
-A card sits on one kind of band, so the two backgrounds are separate. A card on a dark band uses `--card-bg`. A card on a light band uses `--card-bg-alt`, which is darker than the band so the card stands out.
+A card sits on one kind of band, so the two backgrounds are separate controls. Both start as the dark surface color, which stands out on the tan band and on the cream band. Set `--card-bg-alt` to another color to make cards on the lighter band different.
 
 ### Text, from most to least important
 
 | Level | Variable | Changes | Starts as |
 | --- | --- | --- | --- |
-| 1 | `--card-title` | The card title (`h3`, `h4`) | `--color-heading` |
-| 2 | `--card-text` | The description | `--color-text` |
-| 3 | `--card-label` | Category, location and other small captions | `--color-primary` |
-| 4 | `--card-link` | Links such as "Discover Kinunot" | `--color-primary` |
+| 1 | `--card-title` | The card title (`h3`, `h4`) | `--color-background-secondary` |
+| 2 | `--card-text` | The description | `--color-background` |
+| 3 | `--card-label` | Category, location and other small captions | `--color-secondary` |
+| 4 | `--card-link` | Links such as "Discover Kinunot", and the focus ring inside a card | `--color-secondary` |
 
 Notes:
 
-- `--card-title` is applied by giving each card its own `--color-heading`. Small tags inside a card that use the heading color (island numbers, recipe categories) follow it.
+- `--card-title` is applied by giving each card its own `--color-heading`. Because of that, `--color-heading` is cream inside a card, so small chips over photos (island numbers, region tags, recipe categories) use a tan background with `--color-text`, not the heading color.
 - The trivia highlight and the restaurant status line use the base palette.
 - A border exists only where a card already had one. The featured food and recipe panels, the island cards and the Terms and Privacy contents box have none. The All Foods and Regions food cards have a faint border of their own that does not follow `--card-border`.
 
@@ -89,14 +89,14 @@ Only the background. A band is a full-width section, such as a hero or a section
 
 | Variable | Changes | Starts as |
 | --- | --- | --- |
-| `--band-bg` | The darker band, and the page background behind everything | `--color-background` |
-| `--band-bg-alt` | The lighter band that alternates with it, and every page hero | `--color-background-secondary` |
+| `--band-bg` | The darker (tan) band, and the page background behind everything | `--color-background` |
+| `--band-bg-alt` | The lighter (cream) band that alternates with it, and every page hero | `--color-background-secondary` |
 
 Bands alternate down each page. **L** is the lighter band (`--band-bg-alt`) and **D** is the darker one (`--band-bg`):
 
 | Page | Bands, top to bottom |
 | --- | --- |
-| Home | image hero, then the page background (D) |
+| Home | image hero, then D L D L D L |
 | All Foods | L D L D |
 | Top Foods | L D L D |
 | Regions | L D L D L |
@@ -108,7 +108,7 @@ Bands alternate down each page. **L** is the lighter band (`--band-bg-alt`) and 
 | Log In, Sign Up, Forgot Password, 404 | L |
 | Food Details | D |
 
-The navigation bar and the footer are full width too, but they are not bands. They use the base palette (`--color-background` and `--color-primary`).
+The navigation bar and the footer are full width too, but they are not bands. The navigation bar uses `--color-background`, and the footer uses `--color-surface` (dark chocolate) with light text.
 
 To make one band different from the rest, set the background in that section's own rule instead of using the variables.
 
@@ -123,10 +123,11 @@ These still use the base palette directly, so change them through `--color-*` or
 - Form fields and labels
 - Hero search box and its suggestion chips
 - The "Social" sign-in buttons and the 404 link chips
-- The caramel "random food" box on the home page
+- The mahogany "random food" box on the home page
 - Image cards on All Foods (the category cards)
 - Tags and number badges
-- Focus rings and the skip link
+- The skip link
+- The focus ring, which has its own variable, `--focus-ring`. It is the primary color on the bands. Dark surfaces set it to a lighter color (see [global.md](global.md#7-variables)).
 
 ---
 

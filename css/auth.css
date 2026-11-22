@@ -246,7 +246,7 @@
 .social-button:hover:not(:disabled) {
     border-color: var(--color-accent);
 
-    background-color: var(--color-surface);
+    background-color: var(--color-background-secondary);
 }
 
 .social-button:focus-visible {
@@ -314,8 +314,8 @@
 
     background: linear-gradient(
         to top,
-        color-mix(in srgb, var(--color-background) 88%, transparent),
-        color-mix(in srgb, var(--color-background) 5%, transparent) 75%
+        color-mix(in srgb, var(--color-surface) 88%, transparent),
+        color-mix(in srgb, var(--color-surface) 5%, transparent) 75%
     );
 }
 

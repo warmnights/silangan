@@ -56,7 +56,7 @@ Pages in `pages/` use `../` to reach the root. `index.html` uses no prefix. `404
 | `a` | `color: inherit`, no underline |
 | `img`, `svg` | `display: block`, `max-width: 100%`, `height: auto` |
 | `input`, `button` | `font-family: inherit` |
-| `:focus-visible` | 3px solid `var(--color-primary)` outline with a 3px offset |
+| `:focus-visible` | 3px solid `var(--focus-ring)` outline with a 3px offset. `--focus-ring` is the primary color on the light bands. Dark surfaces (cards, the footer, the random food box) set it to a lighter color so the ring stays visible. |
 | `main:focus` | no outline |
 
 Utility and shared classes: `.container`, `.full-bleed`, `.list-reset`, `.visually-hidden`, `.section-eyebrow`, `.skip-link`.
@@ -66,9 +66,9 @@ Utility and shared classes: `.container`, `.full-bleed`, `.list-reset`, `.visual
 Page stylesheets do not restyle these.
 
 - **Site header and navigation:** `.site-header`, `.site-nav`, `.site-nav-logo`, `.site-nav-toggle`, `.site-nav-links`, `.site-nav-dropdown`, `.site-nav-dropdown-menu`, `.site-nav-actions`, `.site-nav-cta`. This includes the hamburger menu below 1080px, where `nav.js` toggles `.is-open`. The header is sticky at `z-index: 10`, and the More menu is `z-index: 11`. The bar is 68px tall, or 61px at 1080px and below. That height is `--site-nav-height`, so anything that has to sit below the header (the Terms and Privacy contents box, the hero height, anchor offsets) uses the variable instead of a pixel value.
-- **Footer:** `.footer`, `.footer-main`, `.footer-logo`, `.footer-brand`, `.footer-brand-tagline`, `.footer-links`, `.footer-about`, `.footer-explore-link`, `.footer-bottom`, `.footer-legal`. Footer text is `var(--color-background)` on a `var(--color-primary)` background.
+- **Footer:** `.footer`, `.footer-main`, `.footer-logo`, `.footer-brand`, `.footer-brand-tagline`, `.footer-links`, `.footer-about`, `.footer-explore-link`, `.footer-bottom`, `.footer-legal`. Footer text is `var(--color-background)` and `var(--color-background-secondary)` on a `var(--color-surface)` background.
 - **Restaurant notice:** `.restaurant-preview-notice` and its `p` (used on the home page and Near Me).
-- **Home page sections:** `.hero`, `.near-me-section`, `.fresh-finds-section`, `.trivia-section`, `.regional-discoveries-section`, `.popular-foods-section`, `.random-food-section` and their parts. These live in `style.css`, not in a page file.
+- **Home page sections:** `.hero`, `.near-me-section`, `.fresh-finds-section`, `.trivia-section`, `.regional-discoveries-section`, `.popular-foods-section`, `.random-food-section` and their parts. These live in `style.css`, not in a page file. Each one is a full-width band (`full-bleed`), and the bands alternate `--band-bg` and `--band-bg-alt` down the page, like the other pages.
 
 ---
 
@@ -114,13 +114,13 @@ Page stylesheets do not restyle these.
 }
 ```
 
-- Hover is the same on every button: `--button-bg-hover`, `--button-text-hover` and `--button-border-hover`, which start as the accent color. There is no per-page hover color.
+- Hover is the same on every button: `--button-bg-hover`, `--button-text-hover` and `--button-border-hover`, which start as the primary color. There is no per-page hover color.
 - The page buttons (Log In, All Foods, Map, Near Me and Recipes) take the same `--button-*` variables. The full list is in [colors.md](colors.md#2-buttons).
-- Text on the accent color uses `var(--color-background)`, not white. White on the accent reaches only 3.35:1 contrast, and dark text reaches 5.54:1.
+- Button text is light (`--color-background-secondary`) on the dark button and on the primary hover color. Dark text (`--color-text`) is used on caramel (`--color-secondary`) fills.
 
 ### Cards
 
-`.card` is the shared base for home page cards: border, radius, background and hover lift. Each card keeps its own class for its image height and text. `.card-on-secondary` is used when the card sits on a lighter band (`--band-bg-alt`), so the card stays darker than the band. Card colors come from the `--card-*` variables. See [colors.md](colors.md#3-cards). `.trivia-card` stays separate from `.card` on purpose.
+`.card` is the shared base for home page cards: border, radius, background and hover lift. Each card keeps its own class for its image height and text. `.card-on-secondary` is used when the card sits on the lighter band (`--band-bg-alt`). Both card backgrounds are the dark surface color now, so it looks the same as `.card`, but the class stays so a different background can be set again. Card colors come from the `--card-*` variables. See [colors.md](colors.md#3-cards). `.trivia-card` stays separate from `.card` on purpose.
 
 ```css
 .card {
@@ -178,39 +178,68 @@ All media queries for `style.css` are collected at the bottom. Breakpoints are l
     --font-heading: 'Fraunces', Georgia, serif;
     --font-body: 'Poppins', system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
 
-    --color-background: #2C0E11;
-    --color-background-secondary: #451519;
-    --color-surface: #322C25;
+    --color-background: #DDC5A3;
+    --color-background-secondary: #F2D8B5;
+    --color-surface: #342721;
 
-    --color-text: #F5EADB;
-    --color-text-muted: #F5EADBB3;
-    --color-heading: #DDB98A;
+    --color-text: #2C0E11;
+    --color-text-muted: #2C0E11B3;
+    --color-heading: #2C0E11;
 
-    --color-primary: #B28558;
-    --color-secondary: #CFA577;
-    --color-accent: #E06C52;
+    --color-primary: #60241E;
+    --color-secondary: #D8B98B;
+    --color-accent: #8E2F3C;
 
     --color-white: #FFFFFF;
     --color-black: #000000;
 
-    --color-border: rgba(178, 133, 88, 0.28);
+    --color-border: rgba(182, 139, 80, 0.35);
 
-    --button-bg: var(--color-primary);
-    --button-text: var(--color-background);
-    --button-border: var(--color-primary);
-    --button-bg-hover: var(--color-accent);
-    --button-text-hover: var(--color-background);
-    --button-border-hover: var(--color-accent);
-    --button-outline-text: var(--color-primary);
-    --button-outline-border: var(--color-primary);
+    --focus-ring: var(--color-primary);
 
-    --card-bg: var(--color-background-secondary);
-    --card-bg-alt: var(--color-background);
+    /*
+
+        QUICK COLOR CONTROLS
+
+    */
+
+    /*
+
+        BUTTONS: Used by .button, .button-outline and the page buttons (log in, all foods, map, near me, recipes).
+
+    */
+
+    --button-bg: var(--color-surface);
+    --button-text: var(--color-background-secondary);
+    --button-border: var(--color-surface);
+
+    --button-bg-hover: var(--color-primary);
+    --button-text-hover: var(--color-background-secondary);
+    --button-border-hover: var(--color-primary);
+
+    --button-outline-text: var(--color-surface);
+    --button-outline-border: var(--color-surface);
+
+    /*
+
+        CARDS: Used by .card and the page cards (fresh finds, trivia, recipes, regions, top foods, all foods).
+
+    */
+
+    --card-bg: var(--color-surface);
+    --card-bg-alt: var(--color-surface);
     --card-border: var(--color-border);
-    --card-title: var(--color-heading);
-    --card-text: var(--color-text);
-    --card-label: var(--color-primary);
-    --card-link: var(--color-primary);
+
+    --card-title: var(--color-background-secondary);
+    --card-text: var(--color-background);
+    --card-label: var(--color-secondary);
+    --card-link: var(--color-secondary);
+
+    /*
+
+        FULL-WIDTH BANDS: Only the background. Used by every full-width section, the page hero and the page itself.
+
+    */
 
     --band-bg: var(--color-background);
     --band-bg-alt: var(--color-background-secondary);
@@ -241,10 +270,16 @@ Notes:
 - `--gutter-x` is not in `:root`. It is set per element (`.full-bleed` defaults it to `4%`). `--mountain-height` and `--sun-size` belong only to `.hero`.
 - `--site-nav-height` is the real height of the header: 68px on desktop and 61px at 1080px and below, where the 44px menu button and its padding set it. The hero and the scroll offsets use it. When the header's padding, logo or button size changes, change this value to match.
 - `--color-white` and `--color-black` are only for text over photos and for shadows. White is never used as text on `--color-accent`.
-- Palette names: `--color-background` is Dark Sangria, `--color-surface` is Smoked Moss, `--color-primary` is Golden Caramel, `--color-heading` is a lighter caramel, `--color-secondary` is a sand tone and `--color-accent` is coral.
-- Contrast on `--color-background` (WCAG AA needs 4.5:1 for small text): text 15:1, muted text 7.8:1, heading 9.7:1, primary caramel 5.4:1, coral accent 5.5:1.
-- Contrast on `--color-background-secondary` (hero bands and cards): text 12.9:1, muted text 6.9:1, heading 8.3:1, primary caramel 4.7:1, coral accent 4.7:1. The coral `.section-eyebrow` and the primary caramel links on a secondary background are the closest pairs to the limit, so they are not made darker or smaller.
-- Dark text on filled buttons: `--color-background` on `--color-primary` is 5.4:1, on `--color-accent` 5.5:1 and on `--color-secondary` 7.9:1.
+- Palette names: `--color-background` is Tan (`#DDC5A3`), the page and the darker band. `--color-background-secondary` is Cream, the lighter band and every page hero. `--color-surface` is Dark Chocolate (`#342721`), the background of cards, buttons and the footer. `--color-text` and `--color-heading` are Dark Sangria. `--color-primary` is Mahogany, `--color-secondary` is Caramel and `--color-accent` is Wine.
+- Tan and Dark Chocolate are the two main colors. The other colors are chosen to keep the contrast below.
+- `--focus-ring` is the color of the keyboard focus ring. It is the primary color on the light bands. `.card`, `.trivia-card`, `.restaurant-preview-notice` and the page cards set it to `--card-link` (caramel), the footer sets it to caramel, and the random food box sets it to cream, so the ring stays visible on dark surfaces.
+- Contrast on `--color-background` (WCAG AA needs 4.5:1 for small text): text 10.7:1, muted text 5.2:1, primary mahogany 7.1:1, wine accent 4.8:1.
+- Contrast on `--color-background-secondary` (hero bands): text 13.0:1, muted text 5.8:1, primary mahogany 8.6:1, wine accent 5.8:1.
+- Contrast on `--color-surface` (cards and the footer): card title (cream) 10.5:1, card text and footer headings (tan) 8.6:1, card label and link (caramel) 7.7:1.
+- Filled buttons: cream on Dark Chocolate 10.5:1, cream on the primary hover color 8.6:1. Tan on primary (the random food box heading and the featured dish label) 7.1:1. Dark text on caramel 9.5:1.
+- The wine accent on tan (4.8:1) is the closest pair to the limit, so it is not made lighter or smaller.
+- Caramel on tan or cream is only 1.1 to 1.4:1, so caramel is used only on dark surfaces, or as a fill with dark text. Mahogany on Dark Chocolate is 1.2:1, so the button hover change (Dark Chocolate to mahogany) is a small step in color. The light text keeps it readable.
+- Small labels over photos (island numbers, region tags, recipe categories) use a tan or caramel chip with `--color-text`, never `--color-heading`, because `--color-heading` turns cream inside a card.
 ---
 
 ## 8. Fonts

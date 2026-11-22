@@ -54,6 +54,7 @@
 
 .featured-food-card {
     --color-heading: var(--card-title);
+    --focus-ring: var(--card-link);
 
     display: grid;
     grid-template-columns: 1.1fr 0.9fr;
@@ -109,7 +110,7 @@
     padding: 0.4rem 0.8rem;
     border-radius: var(--radius-pill);
 
-    color: var(--color-heading);
+    color: var(--color-text);
     background-color: var(--color-background);
 
     font-size: 0.75rem;
@@ -192,6 +193,7 @@
 
 .filipino-food-card {
     --color-heading: var(--card-title);
+    --focus-ring: var(--card-link);
 
     overflow: hidden;
 
@@ -316,7 +318,7 @@
 .featured-food-link:focus-visible,
 .filipino-food-info > a:focus-visible,
 .food-source-link:focus-visible {
-    outline: 2px solid var(--color-accent);
+    outline: 2px solid var(--focus-ring);
     outline-offset: 3px;
 }
 
@@ -328,7 +330,7 @@
 */
 
 .filipino-food-image:focus-visible {
-    outline: 2px solid var(--color-accent);
+    outline: 2px solid var(--focus-ring);
     outline-offset: -4px;
 }
 

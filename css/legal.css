@@ -64,6 +64,9 @@
 }
 
 .legal-toc {
+    --color-heading: var(--card-title);
+    --focus-ring: var(--card-link);
+
     position: sticky;
     top: calc(var(--site-nav-height) + 1rem);
 
@@ -89,18 +92,18 @@
 .legal-toc li {
     margin-bottom: 0.6rem;
 
-    color: var(--color-primary);
+    color: var(--card-label);
 
     font-size: 0.85rem;
     line-height: 1.5;
 }
 
 .legal-toc a {
-    color: var(--color-text);
+    color: var(--card-text);
 }
 
 .legal-toc a:hover {
-    color: var(--color-primary);
+    color: var(--card-link);
 
     text-decoration: underline;
     text-underline-offset: 0.18em;

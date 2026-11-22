@@ -130,6 +130,7 @@ Reusable values live in `:root`, grouped with a blank line between groups.
 | Colors | `--color-*` | `--color-primary`, `--color-text-muted` |
 | Quick color controls | `--button-*`, `--card-*`, `--band-*` | `--button-bg`, `--card-title`, `--band-bg-alt` |
 | Shadows | `--shadow-*` | `--shadow-card` |
+| Focus ring | `--focus-ring` | `--focus-ring` |
 | Radius | `--radius-*` | `--radius-sm`, `--radius-md`, `--radius-lg`, `--radius-pill` |
 | Sizes | named for the thing | `--container-width`, `--site-nav-height` |
 

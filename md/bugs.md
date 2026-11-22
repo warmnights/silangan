@@ -79,17 +79,19 @@ The README lists search as a known limitation.
 ## Informational, not issues
 
 - **`404.html` uses root paths** (`/css/style.css`). This is correct on Vercel. It looks unstyled when the file is opened straight from a folder, so test it through the live site or a local server.
-- **Coral eyebrow text on the secondary background** has 4.68:1 contrast. That passes WCAG AA (4.5:1) with little room, so the text is not darkened or shrunk.
+- **Wine accent text on the tan background** has 4.8:1 contrast. That passes WCAG AA (4.5:1) with little room, so the color is not lightened and the text is not shrunk.
 - **Open Graph tags** (the preview card when the link is shared) are not set. This is an improvement, not a fix. See [improvement-plan.md](improvement-plan.md).
 
 ## Check in browser before submitting
 
 1. Open the More menu, then click outside it and press Escape (item 1).
 2. Home hero: the search box, the tagline and the nav logo (item 2).
-3. Hover the buttons on Log In, Near Me and the 404 page. White text must not appear on coral.
-4. Home page buttons (Near Me, fresh finds, popular foods and the surprise dish) at 1280px and 360px wide. They use the shared button classes, so size and hover color changed slightly.
-5. The photo corners on the Log In page, now `--radius-lg`.
-6. Foods, top foods and regions cards at 360px wide. Link text such as "Discover La Paz Batchoy →" should fit on one line.
-7. Reload a long page such as foods with the Network tab open. Content should not jump as images load, and `.woff2` fonts should load with no 404s.
-8. Turn on "reduce motion" in the system settings. Smooth scrolling and card lifts should stop.
-9. Download the shared Google Drive folder to a new location and open `index.html`. The `css`, `pages`, `js` and `assets` folders must still be in place, and the styles, images and fonts must load.
+3. Hover the buttons on Log In, Near Me and the 404 page. The text must stay cream or tan on the mahogany, never dark. The step from Dark Chocolate to mahogany is small, so check that the hover is still easy to see.
+4. Home hero with the new palette: the headline, tagline, search box and chips over the current hero images. The hero text uses `--color-text` (dark), so it needs a light enough image. Check it again when the images change.
+5. Tab through a page with cards. The focus ring inside a dark card should be caramel, and on the tan and cream bands it should be mahogany.
+6. Home page buttons (Near Me, fresh finds, popular foods and the surprise dish) at 1280px and 360px wide. They use the shared button classes, so size and hover color changed slightly.
+7. The photo corners on the Log In page, now `--radius-lg`.
+8. Foods, top foods and regions cards at 360px wide. Link text such as "Discover La Paz Batchoy →" should fit on one line.
+9. Reload a long page such as foods with the Network tab open. Content should not jump as images load, and `.woff2` fonts should load with no 404s.
+10. Turn on "reduce motion" in the system settings. Smooth scrolling and card lifts should stop.
+11. Download the shared Google Drive folder to a new location and open `index.html`. The `css`, `pages`, `js` and `assets` folders must still be in place, and the styles, images and fonts must load.

@@ -87,56 +87,71 @@
     --font-heading: 'Fraunces', Georgia, serif;
     --font-body: 'Poppins', system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
 
-    --color-background: #2C0E11;
-    --color-background-secondary: #451519;
-    --color-surface: #322C25;
+    --color-background: #DDC5A3;
+    --color-background-secondary: #F2D8B5;
+    --color-surface: #342721;
 
-    --color-text: #F5EADB;
-    --color-text-muted: #F5EADBB3;
-    --color-heading: #DDB98A;
+    --color-text: #2C0E11;
+    --color-text-muted: #2C0E11B3;
+    --color-heading: #2C0E11;
 
-    --color-primary: #B28558;
-    --color-secondary: #CFA577;
-    --color-accent: #E06C52;
+    --color-primary: #60241E;
+    --color-secondary: #D8B98B;
+    --color-accent: #8E2F3C;
 
     --color-white: #FFFFFF;
     --color-black: #000000;
 
-    --color-border: rgba(178, 133, 88, 0.28);
+    --color-border: rgba(182, 139, 80, 0.35);
+
+    --focus-ring: var(--color-primary);
 
     /*
 
         QUICK COLOR CONTROLS
 
-        Change one of these to restyle one kind of element at a time.
-        Each starts as one of the base colors above, so changing a base
-        color still changes everything that has not been overridden here.
-        The full list is in md/colors.md.
+    */
+
+    /*
+
+        BUTTONS: Used by .button, .button-outline and the page buttons (log in, all foods, map, near me, recipes).
 
     */
 
-    /* BUTTONS: Used by .button, .button-outline and the page buttons (log in, all foods, map, near me, recipes). */
-    --button-bg: var(--color-primary);              /* filled button: background */
-    --button-text: var(--color-background);         /* filled button: text */
-    --button-border: var(--color-primary);          /* filled button: border (only .button has one) */
-    --button-bg-hover: var(--color-accent);         /* every button: background on hover */
-    --button-text-hover: var(--color-background);   /* every button: text on hover */
-    --button-border-hover: var(--color-accent);     /* every button: border on hover */
-    --button-outline-text: var(--color-primary);    /* outline button: text */
-    --button-outline-border: var(--color-primary);  /* outline button: border */
+    --button-bg: var(--color-surface);
+    --button-text: var(--color-background-secondary);
+    --button-border: var(--color-surface);
 
-    /* CARDS: Used by .card and the page cards (fresh finds, trivia, recipes, regions, top foods, all foods). */
-    --card-bg: var(--color-background-secondary);  /* card on a dark band: background */
-    --card-bg-alt: var(--color-background);        /* card on a lighter band (.card-on-secondary): background */
-    --card-border: var(--color-border);            /* card: border */
-    --card-title: var(--color-heading);            /* card: title (level 1) */
-    --card-text: var(--color-text);                /* card: description text (level 2) */
-    --card-label: var(--color-primary);            /* card: category, location and small captions (level 3) */
-    --card-link: var(--color-primary);             /* card: links such as Discover Kinunot */
+    --button-bg-hover: var(--color-primary);
+    --button-text-hover: var(--color-background-secondary);
+    --button-border-hover: var(--color-primary);
 
-    /* FULL-WIDTH BANDS: Only the background. Used by every full-width section, the page hero and the page itself. */
-    --band-bg: var(--color-background);                /* the darker band (and the page background) */
-    --band-bg-alt: var(--color-background-secondary);  /* the lighter band, the one that alternates with it */
+    --button-outline-text: var(--color-surface);
+    --button-outline-border: var(--color-surface);
+
+    /*
+
+        CARDS: Used by .card and the page cards (fresh finds, trivia, recipes, regions, top foods, all foods).
+
+    */
+
+    --card-bg: var(--color-surface);
+    --card-bg-alt: var(--color-surface);
+    --card-border: var(--color-border);
+
+    --card-title: var(--color-background-secondary);
+    --card-text: var(--color-background);
+    --card-label: var(--color-secondary);
+    --card-link: var(--color-secondary);
+
+    /*
+
+        FULL-WIDTH BANDS: Only the background. Used by every full-width section, the page hero and the page itself.
+
+    */
+
+    --band-bg: var(--color-background);
+    --band-bg-alt: var(--color-background-secondary);
 
     --shadow-card: 0 8px 24px rgba(14, 4, 5, 0.5);
 
@@ -228,7 +243,7 @@ h3 {
 }
 
 :focus-visible {
-    outline: 3px solid var(--color-primary);
+    outline: 3px solid var(--focus-ring);
     outline-offset: 3px;
 }
 
@@ -984,7 +999,9 @@ main:focus {
 
 
 .near-me-section {
-    padding: 5rem 4%;
+    padding-block: 5rem;
+
+    background-color: var(--band-bg);
 }
 
 .near-me-header {
@@ -1041,6 +1058,7 @@ main:focus {
 
 .restaurant-preview-notice {
     --color-heading: var(--card-title);
+    --focus-ring: var(--card-link);
 
     max-width: 46rem;
     padding: 1.5rem;
@@ -1070,7 +1088,9 @@ main:focus {
 
 
 .fresh-finds-section {
-    padding: 3.5rem 4%;
+    padding-block: 3.5rem;
+
+    background-color: var(--band-bg-alt);
 }
 
 .fresh-finds-header {
@@ -1103,6 +1123,7 @@ main:focus {
 
 .card {
     --color-heading: var(--card-title);
+    --focus-ring: var(--card-link);
 
     overflow: hidden;
 
@@ -1211,7 +1232,9 @@ main:focus {
 
 
 .trivia-section {
-    padding: 3.5rem 4%;
+    padding-block: 3.5rem;
+
+    background-color: var(--band-bg);
 }
 
 .trivia-header {
@@ -1230,6 +1253,7 @@ main:focus {
 
 .trivia-card {
     --color-heading: var(--card-title);
+    --focus-ring: var(--card-link);
 
     display: grid;
     grid-template-columns: 40% 60%;
@@ -1295,8 +1319,8 @@ main:focus {
     padding: 0.5rem 1rem;
     border-radius: var(--radius-pill);
 
-    color: var(--color-primary);
-    background-color: color-mix(in srgb, var(--color-primary) 20%, transparent);
+    color: var(--card-label);
+    background-color: color-mix(in srgb, var(--card-label) 20%, transparent);
 
     font-size: 0.8rem;
     font-weight: 600;
@@ -1313,7 +1337,9 @@ main:focus {
 
 
 .regional-discoveries-section {
-    padding: 3.5rem 4%;
+    padding-block: 3.5rem;
+
+    background-color: var(--band-bg-alt);
 }
 
 .regional-header {
@@ -1397,7 +1423,9 @@ main:focus {
 
 
 .popular-foods-section {
-    padding: 3.5rem 4%;
+    padding-block: 3.5rem;
+
+    background-color: var(--band-bg);
 }
 
 .popular-foods-header {
@@ -1489,10 +1517,14 @@ main:focus {
 
 
 .random-food-section {
-    padding: 3.5rem 4%;
+    padding-block: 3.5rem;
+
+    background-color: var(--band-bg-alt);
 }
 
 .random-food-container {
+    --focus-ring: var(--color-background-secondary);
+
     padding: 4.5rem 2rem;
     border-radius: var(--radius-lg);
 
@@ -1582,10 +1614,12 @@ main:focus {
 
 
 .footer {
+    --focus-ring: var(--color-secondary);
+
     padding-block: 4rem 1.5rem;
 
     color: var(--color-background);
-    background-color: var(--color-primary);
+    background-color: var(--color-surface);
 }
 
 .footer-main {
@@ -2053,7 +2087,7 @@ main:focus {
     /* Section spacing */
 
     .near-me-section {
-        padding: 3.5rem 4%;
+        padding-block: 3.5rem;
     }
 
     .fresh-finds-section,
@@ -2061,7 +2095,7 @@ main:focus {
     .regional-discoveries-section,
     .popular-foods-section,
     .random-food-section {
-        padding: 2.5rem 4%;
+        padding-block: 2.5rem;
     }
 
     .footer {
@@ -2149,8 +2183,7 @@ main:focus {
     .regional-discoveries-section,
     .popular-foods-section,
     .random-food-section {
-        padding-left: 1.25rem;
-        padding-right: 1.25rem;
+        --gutter-x: 1.25rem;
     }
 
     .site-nav, .footer {
@@ -2337,4 +2370,4 @@ main:focus {
         display: inline-flex;
         align-items: center;
     }
-}
+}

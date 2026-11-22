@@ -31,7 +31,7 @@ Pasting the link into Messenger, Discord or a group chat currently gives a plain
 <meta property="og:image" content="https://silangan-ph.vercel.app/assets/images/readme/silangan-hero.png">
 <meta property="og:url" content="https://silangan-ph.vercel.app/">
 <meta property="og:type" content="website">
-<meta name="theme-color" content="#2C0E11">
+<meta name="theme-color" content="#DDC5A3">
 ```
 
 Also:
@@ -68,21 +68,21 @@ This is the largest speed gain left. The photos are 1000 to 2500 pixels wide but
 
 A `@media print` block in `recipes.css` that hides the nav, footer and buttons and switches to black text on white. People print recipes.
 
-### 1.4 A light theme
+### 1.4 A dark theme
 **Effort:** medium. **Needs:** CSS only.
 
-Every color is a variable, so a light version is one block:
+The site is light now: a tan page with dark chocolate cards. Every color is a variable, so a dark version for visitors who prefer it is one block:
 
 ```css
-@media (prefers-color-scheme: light) {
+@media (prefers-color-scheme: dark) {
     :root {
-        --color-background: #F5EADB;
+        --color-background: #2C0E11;
         /* ... the other colors ... */
     }
 }
 ```
 
-Contrast must be re-checked for every color pair with a contrast checker. Photos that carry text (`.auth-image-overlay`, `.page-hero-split-image-caption`) need their own dark overlay. This is worth doing only as a learning exercise.
+Contrast must be re-checked for every color pair with a contrast checker, including the quick controls in [colors.md](colors.md). Photos that carry text (`.auth-image-overlay`, `.page-hero-split-image-caption`) already sit on a dark overlay. This is worth doing only as a learning exercise.
 
 ### 1.5 Page transitions
 **Effort:** small. **Needs:** CSS only.

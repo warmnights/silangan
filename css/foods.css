@@ -123,7 +123,7 @@
 
     background: linear-gradient(
         transparent 20%,
-        color-mix(in srgb, var(--color-background) 85%, transparent)
+        color-mix(in srgb, var(--color-surface) 85%, transparent)
     );
 }
 
@@ -168,7 +168,7 @@
 .food-category-info p {
     margin: 0;
 
-    color: var(--color-text);
+    color: var(--color-background-secondary);
 
     font-size: 0.875rem;
 }
@@ -263,6 +263,7 @@
 
 .food-directory-card {
     --color-heading: var(--card-title);
+    --focus-ring: var(--card-link);
 
     overflow: hidden;
 
