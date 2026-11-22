@@ -796,6 +796,8 @@ main:focus {
     height: 100%;
 
     opacity: 0.3;
+
+    mask-image: linear-gradient(to bottom, var(--color-black) calc(50% - var(--mountain-height) * 0.2), transparent calc(50% - var(--mountain-height) * 0.08));
 }
 
 .hero-sun::before,
@@ -805,6 +807,8 @@ main:focus {
     position: absolute;
 
     border-radius: 50%;
+
+    mask-image: linear-gradient(to bottom, var(--color-black) calc(50% - var(--mountain-height) * 0.2), transparent calc(50% - var(--mountain-height) * 0.08));
 }
 
 .hero-sun::before {
@@ -979,6 +983,38 @@ main:focus {
 
     object-fit: cover;
     object-position: center bottom;
+    mask-image: linear-gradient(
+        to bottom,
+        var(--color-black) 36%,
+        color-mix(in srgb, var(--color-black) 72%, transparent) 50%,
+        color-mix(in srgb, var(--color-black) 38%, transparent) 66%,
+        color-mix(in srgb, var(--color-black) 12%, transparent) 82%,
+        transparent 100%
+    );
+
+    pointer-events: none;
+}
+
+.hero::after {
+    content: "";
+
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 4;
+
+    height: calc(var(--mountain-height) * 0.55);
+
+    background-image:
+        radial-gradient(ellipse 15% 34% at 5% 86%, color-mix(in srgb, var(--color-background-secondary) 80%, transparent), transparent),
+        radial-gradient(ellipse 19% 46% at 20% 98%, color-mix(in srgb, var(--color-background-secondary) 85%, transparent), transparent),
+        radial-gradient(ellipse 13% 30% at 35% 82%, color-mix(in srgb, var(--color-background-secondary) 70%, transparent), transparent),
+        radial-gradient(ellipse 21% 50% at 52% 100%, color-mix(in srgb, var(--color-background-secondary) 85%, transparent), transparent),
+        radial-gradient(ellipse 14% 32% at 67% 84%, color-mix(in srgb, var(--color-background-secondary) 75%, transparent), transparent),
+        radial-gradient(ellipse 19% 46% at 83% 98%, color-mix(in srgb, var(--color-background-secondary) 85%, transparent), transparent),
+        radial-gradient(ellipse 13% 30% at 97% 84%, color-mix(in srgb, var(--color-background-secondary) 75%, transparent), transparent);
+    mask-image: linear-gradient(to bottom, var(--color-black) 30%, transparent 100%);
 
     pointer-events: none;
 }
@@ -990,6 +1026,7 @@ main:focus {
     height: calc(var(--mountain-height) * 0.5);
 
     opacity: 0.3;
+    mask-image: linear-gradient(to bottom, var(--color-black) 45%, transparent 100%);
 
     transform: scaleX(-1);
 }
