@@ -104,6 +104,40 @@
 
     --color-border: rgba(178, 133, 88, 0.28);
 
+    /*
+
+        QUICK COLOR CONTROLS
+
+        Change one of these to restyle one kind of element at a time.
+        Each starts as one of the base colors above, so changing a base
+        color still changes everything that has not been overridden here.
+        The full list is in md/colors.md.
+
+    */
+
+    /* BUTTONS: Used by .button, .button-outline and the page buttons (log in, all foods, map, near me, recipes). */
+    --button-bg: var(--color-primary);              /* filled button: background */
+    --button-text: var(--color-background);         /* filled button: text */
+    --button-border: var(--color-primary);          /* filled button: border (only .button has one) */
+    --button-bg-hover: var(--color-accent);         /* every button: background on hover */
+    --button-text-hover: var(--color-background);   /* every button: text on hover */
+    --button-border-hover: var(--color-accent);     /* every button: border on hover */
+    --button-outline-text: var(--color-primary);    /* outline button: text */
+    --button-outline-border: var(--color-primary);  /* outline button: border */
+
+    /* CARDS: Used by .card and the page cards (fresh finds, trivia, recipes, regions, top foods, all foods). */
+    --card-bg: var(--color-background-secondary);  /* card on a dark band: background */
+    --card-bg-alt: var(--color-background);        /* card on a lighter band (.card-on-secondary): background */
+    --card-border: var(--color-border);            /* card: border */
+    --card-title: var(--color-heading);            /* card: title (level 1) */
+    --card-text: var(--color-text);                /* card: description text (level 2) */
+    --card-label: var(--color-primary);            /* card: category, location and small captions (level 3) */
+    --card-link: var(--color-primary);             /* card: links such as Discover Kinunot */
+
+    /* FULL-WIDTH BANDS: Only the background. Used by every full-width section, the page hero and the page itself. */
+    --band-bg: var(--color-background);                /* the darker band (and the page background) */
+    --band-bg-alt: var(--color-background-secondary);  /* the lighter band, the one that alternates with it */
+
     --shadow-card: 0 8px 24px rgba(14, 4, 5, 0.5);
 
     --radius-sm: 8px;
@@ -145,7 +179,7 @@ body {
     margin: 0;
 
     color: var(--color-text);
-    background-color: var(--color-background);
+    background-color: var(--band-bg);
 
     font-family: var(--font-body);
     font-size: 1rem;
@@ -558,7 +592,7 @@ main:focus {
 */
 
 .page-hero {
-    background-color: var(--color-background-secondary);
+    background-color: var(--band-bg-alt);
 }
 
 .page-hero-centered {
@@ -648,11 +682,11 @@ main:focus {
 
     min-height: 44px;
     padding: 0.9rem 1.5rem;
-    border: 1px solid var(--color-primary);
+    border: 1px solid var(--button-border);
     border-radius: var(--radius-sm);
 
-    color: var(--color-background);
-    background-color: var(--color-primary);
+    color: var(--button-text);
+    background-color: var(--button-bg);
 
     font-size: 0.9rem;
     font-weight: 600;
@@ -662,9 +696,10 @@ main:focus {
 }
 
 .button:hover {
-    border-color: var(--color-accent);
+    border-color: var(--button-border-hover);
 
-    background-color: var(--color-accent);
+    color: var(--button-text-hover);
+    background-color: var(--button-bg-hover);
 }
 
 .button:active {
@@ -672,12 +707,14 @@ main:focus {
 }
 
 .button-outline {
-    color: var(--color-primary);
+    border-color: var(--button-outline-border);
+
+    color: var(--button-outline-text);
     background-color: transparent;
 }
 
 .button-outline:hover {
-    color: var(--color-background);
+    color: var(--button-text-hover);
 }
 
 
@@ -1003,12 +1040,15 @@ main:focus {
 }
 
 .restaurant-preview-notice {
+    --color-heading: var(--card-title);
+
     max-width: 46rem;
     padding: 1.5rem;
-    border: 1px solid var(--color-border);
+    border: 1px solid var(--card-border);
     border-radius: var(--radius-md);
 
-    background-color: var(--color-background-secondary);
+    color: var(--card-text);
+    background-color: var(--card-bg);
 }
 
 .restaurant-preview-notice p {
@@ -1062,12 +1102,15 @@ main:focus {
    cards. Each card keeps its own class for its image height and text. */
 
 .card {
+    --color-heading: var(--card-title);
+
     overflow: hidden;
 
-    border: 1px solid var(--color-border);
+    border: 1px solid var(--card-border);
     border-radius: var(--radius-md);
 
-    background-color: var(--color-background-secondary);
+    color: var(--card-text);
+    background-color: var(--card-bg);
 
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
@@ -1082,7 +1125,7 @@ main:focus {
    so the card stays darker than the section behind it. */
 
 .card-on-secondary {
-    background-color: var(--color-background);
+    background-color: var(--card-bg-alt);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -1116,7 +1159,7 @@ main:focus {
 
     margin-bottom: 0.75rem;
 
-    color: var(--color-primary);
+    color: var(--card-label);
 
     font-size: 0.75rem;
     font-weight: 600;
@@ -1130,7 +1173,7 @@ main:focus {
 .fresh-find-location {
     margin: 0 0 1rem;
 
-    color: var(--color-primary);
+    color: var(--card-label);
 
     font-size: 0.85rem;
 }
@@ -1146,7 +1189,7 @@ main:focus {
 .fresh-find-info a {
     display: inline-block;
 
-    color: var(--color-primary);
+    color: var(--card-link);
 
     font-size: 0.9rem;
     font-weight: 600;
@@ -1186,14 +1229,17 @@ main:focus {
 }
 
 .trivia-card {
+    --color-heading: var(--card-title);
+
     display: grid;
     grid-template-columns: 40% 60%;
     overflow: hidden;
 
-    border: 1px solid var(--color-border);
+    border: 1px solid var(--card-border);
     border-radius: var(--radius-lg);
 
-    background-color: var(--color-background-secondary);
+    color: var(--card-text);
+    background-color: var(--card-bg);
 }
 
 .trivia-image {
@@ -1220,7 +1266,7 @@ main:focus {
 
     margin-bottom: 1rem;
 
-    color: var(--color-primary);
+    color: var(--card-label);
 
     font-size: 0.75rem;
     font-weight: 600;
@@ -1306,7 +1352,7 @@ main:focus {
 
     margin-bottom: 0.75rem;
 
-    color: var(--color-primary);
+    color: var(--card-label);
 
     font-size: 0.7rem;
     font-weight: 600;
@@ -1329,7 +1375,7 @@ main:focus {
 .regional-info a {
     display: inline-block;
 
-    color: var(--color-primary);
+    color: var(--card-link);
 
     font-size: 0.9rem;
     font-weight: 600;
@@ -1390,7 +1436,7 @@ main:focus {
 
     margin-bottom: 0.75rem;
 
-    color: var(--color-primary);
+    color: var(--card-label);
 
     font-size: 0.75rem;
     font-weight: 600;
@@ -1414,7 +1460,7 @@ main:focus {
 .popular-food-info a {
     display: inline-block;
 
-    color: var(--color-primary);
+    color: var(--card-link);
 
     font-size: 0.9rem;
     font-weight: 600;
@@ -2291,4 +2337,4 @@ main:focus {
         display: inline-flex;
         align-items: center;
     }
-}
+}

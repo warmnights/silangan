@@ -12,7 +12,7 @@
 .near-spots-section {
     padding-block: 5rem;
 
-    background-color: var(--color-background);
+    background-color: var(--band-bg);
 }
 
 .near-spots-container {
@@ -105,7 +105,7 @@
 .near-explore-section {
     padding-block: 3.5rem;
 
-    background-color: var(--color-background-secondary);
+    background-color: var(--band-bg-alt);
 
     text-align: center;
 }
@@ -135,8 +135,8 @@
     padding: 0.875rem 1.5rem;
     border-radius: var(--radius-sm);
 
-    color: var(--color-background);
-    background-color: var(--color-primary);
+    color: var(--button-text);
+    background-color: var(--button-bg);
 
     font-size: 0.8rem;
     font-weight: 600;
@@ -145,8 +145,8 @@
 }
 
 .near-explore-button:hover {
-    color: var(--color-background);
-    background-color: var(--color-accent);
+    color: var(--button-text-hover);
+    background-color: var(--button-bg-hover);
 }
 
 
@@ -224,4 +224,4 @@
     .near-spots-location {
         white-space: normal;
     }
-}
+}

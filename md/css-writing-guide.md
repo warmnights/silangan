@@ -2,7 +2,7 @@
 
 > **Purpose:** Describes how stylesheets are organized and written on Silangan: file structure, formatting, comments, variables, selectors, units, motion and breakpoints. The order of properties inside a rule is covered separately.
 > **Read when:** Creating a stylesheet, adding a section, or editing CSS.
-> **Related:** [overview.md](overview.md) · [css-property-guide.md](css-property-guide.md) · [html-writing-guide.md](html-writing-guide.md) · [global.md](global.md)
+> **Related:** [overview.md](overview.md) · [colors.md](colors.md) · [css-property-guide.md](css-property-guide.md) · [html-writing-guide.md](html-writing-guide.md) · [global.md](global.md)
 
 ---
 
@@ -128,11 +128,13 @@ Reusable values live in `:root`, grouped with a blank line between groups.
 | --- | --- | --- |
 | Fonts | `--font-*` | `--font-heading`, `--font-body` |
 | Colors | `--color-*` | `--color-primary`, `--color-text-muted` |
+| Quick color controls | `--button-*`, `--card-*`, `--band-*` | `--button-bg`, `--card-title`, `--band-bg-alt` |
 | Shadows | `--shadow-*` | `--shadow-card` |
 | Radius | `--radius-*` | `--radius-sm`, `--radius-md`, `--radius-lg`, `--radius-pill` |
 | Sizes | named for the thing | `--container-width`, `--site-nav-height` |
 
-- Colors in rules always use `var(--color-...)`. There are no hex or rgb values outside `:root`.
+- Colors in rules always come from a variable. Buttons, cards and full-width sections use the quick controls (`--button-*`, `--card-*`, `--band-*`). Everything else uses `var(--color-...)`. There are no hex or rgb values outside `:root`.
+- The quick controls start as base colors (`--button-bg: var(--color-primary);`) and carry a short trailing comment saying what they change. This is the only place trailing comments are used. What each one changes is in [colors.md](colors.md).
 - A see-through color is made with `color-mix(in srgb, var(--color-primary) 20%, transparent)`, not a new hex code.
 - Border radius uses the `--radius-*` variables. `50%` is allowed for circles.
 - A variable set inside a rule (`--gutter-x`, `--sun-size`) is for a value that changes per element or per breakpoint. It is the first line of the rule.
@@ -262,7 +264,7 @@ Rules:
 | Image in a fixed box | `width: 100%; height: ...; object-fit: cover;` |
 | Text for screen readers only | `.visually-hidden` |
 | List without bullets | `.list-reset`. It does not reset margin, so add `margin: 0` where needed. |
-| Buttons | `.button`, with `.button-outline` for the outlined version. Hover is the accent color on every button. |
+| Buttons | `.button`, with `.button-outline` for the outlined version. Colors and hover come from the `--button-*` variables. |
 
 ---
 
@@ -280,7 +282,7 @@ Rules:
 ## 11. Stylesheet checklist
 
 - [ ] Sections follow the page order, each with a banner
-- [ ] Colors come from `var(--color-*)` only
+- [ ] Colors come from variables only: `--button-*`, `--card-*` and `--band-*` for buttons, cards and bands, otherwise `--color-*`
 - [ ] Radius uses `var(--radius-*)`
 - [ ] Property order follows the property guide
 - [ ] States sit directly under their base rule

@@ -46,7 +46,7 @@
 .philippines-map-section {
     padding-block: 5rem;
 
-    background-color: var(--color-background);
+    background-color: var(--band-bg);
 }
 
 .philippines-map-container {
@@ -168,8 +168,8 @@
     padding: 0.9rem 1.5rem;
     border-radius: var(--radius-sm);
 
-    color: var(--color-background);
-    background-color: var(--color-primary);
+    color: var(--button-text);
+    background-color: var(--button-bg);
 
     font-size: 0.9rem;
     font-weight: 600;
@@ -178,11 +178,13 @@
 }
 
 .map-explore-button:hover {
-    background-color: var(--color-accent);
+    color: var(--button-text-hover);
+    background-color: var(--button-bg-hover);
 }
 
 .map-explore-button:active {
-    background-color: var(--color-accent);
+    color: var(--button-text-hover);
+    background-color: var(--button-bg-hover);
 }
 
 
@@ -198,7 +200,7 @@
 .map-cta-section {
     padding-block: 3.5rem;
 
-    background-color: var(--color-background);
+    background-color: var(--band-bg);
 
     text-align: center;
 }
@@ -373,4 +375,4 @@
     .map-intro h1 {
         font-size: 2rem;
     }
-}
+}

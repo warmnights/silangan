@@ -2,7 +2,7 @@
 
 > **Purpose:** Lists what `css/style.css` already provides on every page: variables, global rules, utilities and shared components. It is the source of truth for what page stylesheets do **not** need to repeat.
 > **Read when:** Before writing CSS in a page stylesheet, or when cleaning one up.
-> **Related:** [overview.md](overview.md) · [css-writing-guide.md](css-writing-guide.md) · [css-property-guide.md](css-property-guide.md) · [html-writing-guide.md](html-writing-guide.md)
+> **Related:** [overview.md](overview.md) · [colors.md](colors.md) · [css-writing-guide.md](css-writing-guide.md) · [css-property-guide.md](css-property-guide.md) · [html-writing-guide.md](html-writing-guide.md)
 
 `style.css` is the final authority. This document summarizes it.
 
@@ -13,6 +13,7 @@
 - A declaration in a page stylesheet is a **duplicate** when it sets the same property to the same value that is already set here, directly or by inheritance. Duplicates are removed.
 - A page stylesheet may **override** a global value with a different one. That is not a duplicate.
 - A hard-coded value that matches a variable in `:root` (a hex or rgb color, a repeated shadow, a border radius equal to a `--radius-*` value) should use the variable.
+- Buttons, cards and full-width sections take their colors from the `--button-*`, `--card-*` and `--band-*` variables. See [colors.md](colors.md).
 - There is no `!important` anywhere in the project, and no hex or rgb colors outside `:root`.
 
 ---
@@ -85,11 +86,11 @@ Page stylesheets do not restyle these.
 
     min-height: 44px;
     padding: 0.9rem 1.5rem;
-    border: 1px solid var(--color-primary);
+    border: 1px solid var(--button-border);
     border-radius: var(--radius-sm);
 
-    color: var(--color-background);
-    background-color: var(--color-primary);
+    color: var(--button-text);
+    background-color: var(--button-bg);
 
     font-size: 0.9rem;
     font-weight: 600;
@@ -99,31 +100,36 @@ Page stylesheets do not restyle these.
 }
 
 .button:hover {
-    border-color: var(--color-accent);
+    border-color: var(--button-border-hover);
 
-    background-color: var(--color-accent);
+    color: var(--button-text-hover);
+    background-color: var(--button-bg-hover);
 }
 
 .button-outline {
-    color: var(--color-primary);
+    border-color: var(--button-outline-border);
+
+    color: var(--button-outline-text);
     background-color: transparent;
 }
 ```
 
-- Hover is the accent color on every button. There is no per-page button class or per-page hover color.
+- Hover is the same on every button: `--button-bg-hover`, `--button-text-hover` and `--button-border-hover`, which start as the accent color. There is no per-page hover color.
+- The page buttons (Log In, All Foods, Map, Near Me and Recipes) take the same `--button-*` variables. The full list is in [colors.md](colors.md#2-buttons).
 - Text on the accent color uses `var(--color-background)`, not white. White on the accent reaches only 3.35:1 contrast, and dark text reaches 5.54:1.
 
 ### Cards
 
-`.card` is the shared base for home page cards: border, radius, background and hover lift. Each card keeps its own class for its image height and text. `.card-on-secondary` is used when the card sits on a section that already uses `--color-background-secondary`, so the card stays darker than the section. `.trivia-card` stays separate from `.card` on purpose.
+`.card` is the shared base for home page cards: border, radius, background and hover lift. Each card keeps its own class for its image height and text. `.card-on-secondary` is used when the card sits on a lighter band (`--band-bg-alt`), so the card stays darker than the band. Card colors come from the `--card-*` variables. See [colors.md](colors.md#3-cards). `.trivia-card` stays separate from `.card` on purpose.
 
 ```css
 .card {
     overflow: hidden;
-    border: 1px solid var(--color-border);
+    border: 1px solid var(--card-border);
     border-radius: var(--radius-md);
 
-    background-color: var(--color-background-secondary);
+    color: var(--card-text);
+    background-color: var(--card-bg);
 
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
@@ -139,7 +145,7 @@ Page stylesheets do not restyle these.
 
 | Class | Purpose |
 | --- | --- |
-| `.page-hero` | Background `var(--color-background-secondary)`. Always used with `full-bleed`. |
+| `.page-hero` | Background `var(--band-bg-alt)`. Always used with `full-bleed`. |
 | `.page-hero-centered` | `padding-block: 3.5rem`, centered text |
 | `.page-hero-content` | `max-width: 850px`, centered. Holds the breadcrumb, eyebrow, `<h1>` and paragraph. |
 | `.page-hero-split` | Two columns (`1fr 1fr`), `gap: 4rem`, `min-height: 580px`, `padding-block: 5rem`, `--gutter-x: 8%`. Used by Regions and Top Foods. |
@@ -189,6 +195,26 @@ All media queries for `style.css` are collected at the bottom. Breakpoints are l
 
     --color-border: rgba(178, 133, 88, 0.28);
 
+    --button-bg: var(--color-primary);
+    --button-text: var(--color-background);
+    --button-border: var(--color-primary);
+    --button-bg-hover: var(--color-accent);
+    --button-text-hover: var(--color-background);
+    --button-border-hover: var(--color-accent);
+    --button-outline-text: var(--color-primary);
+    --button-outline-border: var(--color-primary);
+
+    --card-bg: var(--color-background-secondary);
+    --card-bg-alt: var(--color-background);
+    --card-border: var(--color-border);
+    --card-title: var(--color-heading);
+    --card-text: var(--color-text);
+    --card-label: var(--color-primary);
+    --card-link: var(--color-primary);
+
+    --band-bg: var(--color-background);
+    --band-bg-alt: var(--color-background-secondary);
+
     --shadow-card: 0 8px 24px rgba(14, 4, 5, 0.5);
 
     --radius-sm: 8px;
@@ -207,6 +233,8 @@ All media queries for `style.css` are collected at the bottom. Breakpoints are l
 | `--radius-md` (12px) | Cards |
 | `--radius-lg` (16px) | Large cards and images |
 | `--radius-pill` (999px) | Tags and pills |
+
+The three groups after `--color-border` are the quick color controls. Each starts as a base color, so a base color change still reaches everything that has not been overridden. What each one changes is in [colors.md](colors.md).
 
 Notes:
 

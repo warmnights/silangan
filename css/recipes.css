@@ -34,7 +34,7 @@
 .recipe-spotlight-section {
     padding-block: 2rem 3rem;
 
-    background-color: var(--color-background);
+    background-color: var(--band-bg);
 }
 
 .recipe-spotlight-container {
@@ -61,13 +61,16 @@
 }
 
 .featured-recipe {
+    --color-heading: var(--card-title);
+
     display: grid;
     grid-template-columns: 1.1fr 0.9fr;
     overflow: hidden;
 
     border-radius: var(--radius-lg);
 
-    background-color: var(--color-background-secondary);
+    color: var(--card-text);
+    background-color: var(--card-bg);
 }
 
 .featured-recipe-image {
@@ -142,7 +145,7 @@
 }
 
 .recipe-detail-label {
-    color: var(--color-primary);
+    color: var(--card-label);
 
     font-size: 0.75rem;
     font-weight: 700;
@@ -162,7 +165,7 @@
     min-height: 44px;
     padding: 0.65rem 0;
 
-    color: var(--color-primary);
+    color: var(--card-link);
 
     font-size: 0.9rem;
     font-weight: 600;
@@ -193,7 +196,7 @@
 .recipe-collection-section {
     padding-block: 3rem;
 
-    background-color: var(--color-background-secondary);
+    background-color: var(--band-bg-alt);
 }
 
 .recipe-collection-header {
@@ -323,7 +326,7 @@
 
     min-height: 44px;
     padding: 0.65rem 0.75rem;
-    border: 1px solid var(--color-primary);
+    border: 1px solid var(--button-outline-border);
     border-radius: var(--radius-sm);
 
     font-size: 0.875rem;
@@ -337,7 +340,7 @@
 }
 
 .recipe-card-method-link {
-    color: var(--color-primary);
+    color: var(--button-outline-text);
     background-color: var(--color-background);
 }
 
@@ -346,8 +349,8 @@
 }
 
 .recipe-card-source-link {
-    color: var(--color-background);
-    background-color: var(--color-primary);
+    color: var(--button-text);
+    background-color: var(--button-bg);
 }
 
 .recipe-card-source-link:hover {
@@ -367,7 +370,7 @@
 .recipe-methods-section {
     padding-block: 3.5rem;
 
-    background-color: var(--color-background);
+    background-color: var(--band-bg);
 }
 
 .recipe-methods-container {
@@ -397,15 +400,18 @@
 }
 
 .recipe-method {
+    --color-heading: var(--card-title);
+
     display: grid;
     gap: 1.5rem 2rem;
     grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
 
     padding: 2rem;
-    border: 1px solid var(--color-border);
+    border: 1px solid var(--card-border);
     border-radius: var(--radius-lg);
 
-    background-color: var(--color-background-secondary);
+    color: var(--card-text);
+    background-color: var(--card-bg);
 }
 
 .recipe-method-heading {
@@ -432,7 +438,7 @@
 }
 
 .recipe-method-source a {
-    color: var(--color-primary);
+    color: var(--card-link);
 
     font-weight: 600;
     text-decoration: underline;
@@ -468,7 +474,7 @@
 .recipe-cta-section {
     padding-block: 3.5rem;
 
-    background-color: var(--color-background);
+    background-color: var(--band-bg);
 
     text-align: center;
 }
@@ -725,4 +731,4 @@
     .recipe-card:hover .recipe-card-image img {
         transform: none;
     }
-}
+}

@@ -26,7 +26,7 @@
 .featured-food-section {
     padding-block: 5rem;
 
-    background-color: var(--color-background);
+    background-color: var(--band-bg);
 }
 
 .featured-food-container {
@@ -53,13 +53,16 @@
 }
 
 .featured-food-card {
+    --color-heading: var(--card-title);
+
     display: grid;
     grid-template-columns: 1.1fr 0.9fr;
     overflow: hidden;
 
     border-radius: var(--radius-lg);
 
-    background-color: var(--color-background-secondary);
+    color: var(--card-text);
+    background-color: var(--card-bg);
 }
 
 .featured-food-image {
@@ -115,7 +118,7 @@
 .featured-food-link {
     align-self: flex-start;
 
-    color: var(--color-primary);
+    color: var(--card-link);
 
     font-size: 0.9rem;
     font-weight: 600;
@@ -139,7 +142,7 @@
 .filipino-favorites-section {
     padding-block: 3.5rem;
 
-    background-color: var(--color-background-secondary);
+    background-color: var(--band-bg-alt);
 }
 
 .filipino-favorites-header {
@@ -188,12 +191,15 @@
 }
 
 .filipino-food-card {
+    --color-heading: var(--card-title);
+
     overflow: hidden;
 
-    border: 1px solid var(--color-border);
+    border: 1px solid var(--card-border);
     border-radius: var(--radius-md);
 
-    background-color: var(--color-background);
+    color: var(--card-text);
+    background-color: var(--card-bg-alt);
 }
 
 .filipino-food-image {
@@ -215,7 +221,7 @@
 }
 
 .filipino-food-category {
-    color: var(--color-primary);
+    color: var(--card-label);
 
     font-size: 0.8rem;
     font-weight: 700;
@@ -241,14 +247,14 @@
 }
 
 .food-source-link {
-    color: var(--color-primary);
+    color: var(--card-link);
 
     text-decoration: underline;
     text-underline-offset: 0.2em;
 }
 
 .filipino-food-info > a {
-    color: var(--color-primary);
+    color: var(--card-link);
 
     font-size: 0.85rem;
     font-weight: 600;
@@ -272,7 +278,7 @@
 .top-foods-cta-section {
     padding-block: 3.5rem;
 
-    background-color: var(--color-background);
+    background-color: var(--band-bg);
 
     text-align: center;
 }
@@ -520,4 +526,4 @@
     .filipino-food-info {
         padding: 1.25rem;
     }
-}
+}

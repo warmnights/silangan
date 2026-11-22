@@ -14,7 +14,7 @@
 
     padding-block: 5rem;
 
-    background-color: var(--color-background-secondary);
+    background-color: var(--band-bg-alt);
 }
 
 .auth-container {
@@ -69,8 +69,8 @@
     padding: 1rem;
     border-radius: var(--radius-sm);
 
-    color: var(--color-background);
-    background-color: var(--color-primary);
+    color: var(--button-text);
+    background-color: var(--button-bg);
 
     font-size: 0.95rem;
     font-weight: 600;
@@ -80,8 +80,8 @@
 }
 
 .auth-browse-link:hover {
-    color: var(--color-background);
-    background-color: var(--color-accent);
+    color: var(--button-text-hover);
+    background-color: var(--button-bg-hover);
 }
 
 .auth-browse-link:focus-visible {
@@ -158,8 +158,8 @@
     border: none;
     border-radius: var(--radius-sm);
 
-    color: var(--color-background);
-    background-color: var(--color-primary);
+    color: var(--button-text);
+    background-color: var(--button-bg);
 
     font-size: 0.95rem;
     font-weight: 600;
@@ -169,7 +169,8 @@
 }
 
 .auth-button:hover:not(:disabled) {
-    background-color: var(--color-accent);
+    color: var(--button-text-hover);
+    background-color: var(--button-bg-hover);
 }
 
 .auth-button:disabled,
@@ -485,4 +486,4 @@
     .social-login {
         grid-template-columns: 1fr;
     }
-}
+}

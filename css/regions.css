@@ -81,7 +81,7 @@
 .island-groups-section {
     padding: 5rem 4%;
 
-    background-color: var(--color-background);
+    background-color: var(--band-bg);
 }
 
 .island-groups-header {
@@ -123,11 +123,14 @@
 }
 
 .island-card {
+    --color-heading: var(--card-title);
+
     overflow: hidden;
 
     border-radius: var(--radius-md);
 
-    background-color: var(--color-background-secondary);
+    color: var(--card-text);
+    background-color: var(--card-bg);
 }
 
 .island-card:hover .island-card-image img {
@@ -176,7 +179,7 @@
 }
 
 .island-label {
-    color: var(--color-primary);
+    color: var(--card-label);
 
     font-size: 0.8rem;
     font-weight: 600;
@@ -202,7 +205,7 @@
     align-items: center;
     gap: 0.5rem;
 
-    color: var(--color-primary);
+    color: var(--card-link);
 
     font-size: 0.85rem;
     font-weight: 600;
@@ -229,7 +232,7 @@
 .featured-region-section {
     padding-block: 3.5rem;
 
-    background-color: var(--color-background-secondary);
+    background-color: var(--band-bg-alt);
 }
 
 .featured-region-container {
@@ -362,7 +365,7 @@
 .regional-favorites-section {
     padding: 3.5rem 4%;
 
-    background-color: var(--color-background);
+    background-color: var(--band-bg);
 }
 
 .regional-favorites-header {
@@ -420,12 +423,15 @@
 }
 
 .regional-food-card {
+    --color-heading: var(--card-title);
+
     overflow: hidden;
 
     border: 1px solid color-mix(in srgb, var(--color-background-secondary) 7%, transparent);
     border-radius: var(--radius-md);
 
-    background-color: var(--color-background-secondary);
+    color: var(--card-text);
+    background-color: var(--card-bg);
 }
 
 .regional-food-image {
@@ -478,7 +484,7 @@
 }
 
 .regional-food-info > a {
-    color: var(--color-primary);
+    color: var(--card-link);
 
     font-size: 0.85rem;
     font-weight: 600;
@@ -519,7 +525,7 @@
 .regions-cta-section {
     padding-block: 3.5rem;
 
-    background-color: var(--color-background-secondary);
+    background-color: var(--band-bg-alt);
 
     text-align: center;
 }
@@ -819,4 +825,4 @@
     .island-card-info > a:hover span {
         transform: none;
     }
-}
+}

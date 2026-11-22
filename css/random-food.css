@@ -36,7 +36,7 @@
 .featured-dish-section {
     padding-block: 5rem;
 
-    background-color: var(--color-background);
+    background-color: var(--band-bg);
 }
 
 .featured-dish-container {
@@ -176,7 +176,7 @@
 .random-discoveries-section {
     padding-block: 3.5rem;
 
-    background-color: var(--color-background-secondary);
+    background-color: var(--band-bg-alt);
 }
 
 .random-discoveries-header {
@@ -259,7 +259,7 @@
 }
 
 .food-card-category {
-    color: var(--color-primary);
+    color: var(--card-label);
 
     font-size: 0.7rem;
     font-weight: 700;
@@ -285,7 +285,7 @@
 
     min-height: 44px;
 
-    color: var(--color-primary);
+    color: var(--card-link);
 
     font-size: 0.8rem;
     font-weight: 600;
@@ -311,7 +311,7 @@
 .random-cta-section {
     padding-block: 3.5rem;
 
-    background-color: var(--color-background);
+    background-color: var(--band-bg);
 
     text-align: center;
 }
@@ -536,4 +536,4 @@
     .random-food-card:hover .random-food-card-image img {
         transform: none;
     }
-}
+}

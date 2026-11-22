@@ -46,7 +46,7 @@
 .food-categories-section {
     padding: 4rem 4% 5rem;
 
-    background-color: var(--color-background);
+    background-color: var(--band-bg);
 }
 
 .food-categories-header {
@@ -186,7 +186,7 @@
 .food-directory-section {
     padding-block: 3.5rem;
 
-    background-color: var(--color-background-secondary);
+    background-color: var(--band-bg-alt);
 }
 
 .food-directory-header {
@@ -262,12 +262,15 @@
 }
 
 .food-directory-card {
+    --color-heading: var(--card-title);
+
     overflow: hidden;
 
     border: 1px solid color-mix(in srgb, var(--color-background-secondary) 8%, transparent);
     border-radius: var(--radius-md);
 
-    background-color: var(--color-background);
+    color: var(--card-text);
+    background-color: var(--card-bg-alt);
 
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -324,7 +327,7 @@
 }
 
 .food-directory-info a {
-    color: var(--color-primary);
+    color: var(--card-link);
 
     font-size: 0.8rem;
     font-weight: 600;
@@ -350,7 +353,7 @@
 .regional-discovery-section {
     padding: 3.5rem 4%;
 
-    background-color: var(--color-background);
+    background-color: var(--band-bg);
 }
 
 .regional-discovery-container {
@@ -402,8 +405,8 @@
     padding: 0.9rem 1.5rem;
     border-radius: var(--radius-sm);
 
-    color: var(--color-background);
-    background-color: var(--color-primary);
+    color: var(--button-text);
+    background-color: var(--button-bg);
 
     font-size: 0.85rem;
     font-weight: 600;
@@ -412,7 +415,8 @@
 }
 
 .regional-discovery-button:hover {
-    background-color: var(--color-accent);
+    color: var(--button-text-hover);
+    background-color: var(--button-bg-hover);
 }
 
 
@@ -636,4 +640,4 @@
     .food-directory-card:hover .food-directory-image img {
         transform: none;
     }
-}
+}

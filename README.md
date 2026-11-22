@@ -87,6 +87,7 @@ The `md` folder describes how the site is built, so new pages and styles stay co
 | [css-writing-guide.md](md/css-writing-guide.md) | How stylesheets are written |
 | [css-property-guide.md](md/css-property-guide.md) | Order of properties inside a CSS rule |
 | [global.md](md/global.md) | What the shared stylesheet already sets |
+| [colors.md](md/colors.md) | Which variable changes the color of buttons, cards and full-width sections |
 | [bugs.md](md/bugs.md) | Known issues and fixes |
 | [improvement-plan.md](md/improvement-plan.md) | Planned improvements |
 

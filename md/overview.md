@@ -30,7 +30,7 @@ These are deliberate and apply to all new work:
 - **JavaScript is kept to a minimum.** The author is still learning it. The only script is `js/nav.js`. Anything CSS or HTML can do (the More dropdown, hover states, focus styles) is done there.
 - **No frameworks, no build tools.** The submitted project is plain files that open in a browser.
 - **No `!important`, no id selectors, no inline `style` attributes.**
-- **No hex or rgb colors outside `:root`.** Use the `--color-*` variables.
+- **No hex or rgb colors outside `:root`.** Use the `--color-*` variables, or the `--button-*`, `--card-*` and `--band-*` controls for buttons, cards and full-width sections (see [colors.md](colors.md)).
 - **The header and footer are copied into every page.** There are no includes, so a change to them is made in all 15 files.
 
 ---
@@ -96,10 +96,11 @@ See [bugs.md](bugs.md) and [improvement-plan.md](improvement-plan.md) for how th
 | [css-writing-guide.md](css-writing-guide.md) | How is a stylesheet organized, commented and written? |
 | [css-property-guide.md](css-property-guide.md) | In what order are properties written inside a rule? |
 | [global.md](global.md) | What does `style.css` already provide, so page files do not repeat it? |
+| [colors.md](colors.md) | Which variable changes the color of buttons, cards and full-width sections? |
 | [bugs.md](bugs.md) | What is wrong right now, and how is it fixed? |
 | [improvement-plan.md](improvement-plan.md) | What is planned next, in what order? |
 
-The first five describe **how the site is built** and change rarely. The last two describe **the state of the site** and change often.
+The first six describe **how the site is built** and change rarely. The last two describe **the state of the site** and change often.
 
 When two documents seem to disagree, the order of authority is: the code in `css/` and the HTML pages, then `global.md`, then the two guides. Then fix whichever is wrong.
 
