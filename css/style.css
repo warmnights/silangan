@@ -969,24 +969,6 @@ main:focus {
     gap: 0.75rem;
 }
 
-.near-me-link {
-    padding: 0.8rem 1.4rem;
-    border: 1px solid var(--color-primary);
-    border-radius: var(--radius-sm);
-
-    color: var(--color-primary);
-
-    font-size: 0.9rem;
-    font-weight: 600;
-
-    transition: color 0.2s ease, background-color 0.2s ease;
-}
-
-.near-me-link:hover {
-    color: var(--color-background);
-    background-color: var(--color-primary);
-}
-
 .restaurant-status {
     display: flex;
     align-items: center;
@@ -1067,24 +1049,6 @@ main:focus {
     margin: 0;
 
     line-height: 1.6;
-}
-
-.fresh-finds-link {
-    padding: 0.8rem 1.4rem;
-    border: 1px solid var(--color-primary);
-    border-radius: var(--radius-sm);
-
-    color: var(--color-primary);
-
-    font-size: 0.9rem;
-    font-weight: 600;
-
-    transition: color 0.2s ease, background-color 0.2s ease;
-}
-
-.fresh-finds-link:hover {
-    color: var(--color-background);
-    background-color: var(--color-primary);
 }
 
 .fresh-finds-grid {
@@ -1468,24 +1432,6 @@ main:focus {
     margin-top: 2rem;
 }
 
-.popular-foods-footer a {
-    padding: 0.8rem 1.4rem;
-    border: 1px solid var(--color-primary);
-    border-radius: var(--radius-sm);
-
-    color: var(--color-primary);
-
-    font-size: 0.9rem;
-    font-weight: 600;
-
-    transition: color 0.2s ease, background-color 0.2s ease;
-}
-
-.popular-foods-footer a:hover {
-    color: var(--color-background);
-    background-color: var(--color-primary);
-}
-
 
 /*
 
@@ -1521,30 +1467,6 @@ main:focus {
     margin: 0 0 2rem;
 
     color: var(--color-background-secondary);
-}
-
-.random-food-button {
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-
-    padding: 0.9rem 1.8rem;
-    border-radius: var(--radius-sm);
-
-    color: var(--color-background);
-    background-color: var(--color-secondary);
-
-    font-size: 0.95rem;
-    font-weight: 600;
-
-    transition: color 0.2s ease, background-color 0.2s ease, transform 0.2s ease;
-}
-
-.random-food-button:hover {
-    color: var(--color-primary);
-    background-color: var(--color-background);
-
-    transform: translateY(-2px);
 }
 
 
@@ -2340,13 +2262,9 @@ main:focus {
     .breadcrumb a,
     .search-suggestions a,
     .hero-search button,
-    .near-me-link,
-    .fresh-finds-link,
     .fresh-find-info a,
     .regional-info a,
-    .popular-foods-footer a,
     .popular-food-info a,
-    .random-food-button,
     .footer-logo,
     .footer-links a,
     .footer-explore-link,
@@ -2356,8 +2274,6 @@ main:focus {
 
     .breadcrumb a,
     .search-suggestions a,
-    .near-me-link,
-    .fresh-finds-link,
     .footer-links a,
     .footer-explore-link,
     .footer-legal a {
