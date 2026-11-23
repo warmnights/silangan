@@ -156,7 +156,11 @@
 
     /*
 
-        HEADER: The navigation bar is dark glass. --header-bg is the see-through tint, --header-blur is how much the page behind it is blurred, and --header-menu-bg is the almost solid tint behind the dropdown and the open phone menu. Keep --header-bg at 75% or more so the links stay readable.
+        HEADER: The navigation bar is dark glass.
+            --header-bg is the see-through tint
+            --header-blur is how much the page behind it is blurred
+            --header-menu-bg is the almost solid tint behind the dropdown and the open phone menu
+            Keep --header-bg at 75% or more so the links stay readable.
 
     */
 
@@ -428,13 +432,19 @@ main:focus {
 
 /*
 
-    The open phone menu covers the page, so its glass is almost solid */
+    The open phone menu covers the page, so its glass is almost solid
+
+*/
 
 .site-header:has(.site-nav.is-open)::before {
     background-color: var(--header-menu-bg);
 }
 
-/* No backdrop-filter, or the visitor asked for less transparency: solid bar */
+/*
+
+    No backdrop-filter, or the visitor asked for less transparency: solid bar
+
+*/
 
 @supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
 
