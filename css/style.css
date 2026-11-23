@@ -227,8 +227,9 @@ html {
 /*
 
     Scrollbar: a dark red bar on a darker track, with no arrow buttons.
-    Chrome, Edge and Safari use the -webkit- rules, and only with a mouse,
-    so phones keep their own thin scrollbar. Firefox does not know the
+    Chrome, Edge and Safari use the -webkit- rules, and only with a mouse.
+    A phone keeps its own thin scrollbar, which shows only while scrolling
+    and fades out, so it only gets the color. Firefox does not know the
     -webkit- rules, so it gets scrollbar-color and scrollbar-width instead.
     Chrome ignores the -webkit- rules once scrollbar-color is set, which is
     why the Firefox rule is behind @supports.
@@ -258,6 +259,13 @@ html {
 
     html::-webkit-scrollbar-thumb:hover {
         background-color: var(--scrollbar-thumb-hover);
+    }
+}
+
+@media (pointer: coarse) {
+
+    html {
+        scrollbar-color: var(--scrollbar-thumb) transparent;
     }
 }
 
