@@ -64,9 +64,10 @@ All page content sits inside one `<div class="container">`.
 - The skip link is the first element, and `<main id="main" tabindex="-1">` is its target. `id="main"` is on every page.
 - The header is `<header class="site-header">` holding `<nav class="site-nav full-bleed">`. It is copied from an existing page, and only `aria-current="page"` and the path prefix change.
 - A section that needs a full-width background carries `full-bleed`. Its content goes in an inner wrapper (`near-spots-container`, `near-explore-content`) that sets the reading width.
-- The first section is a hero (`page-hero`, or `hero` on the home page). It holds the breadcrumb and the page's only `<h1>`.
-- Sections below the hero have class names ending in `-section`.
-- Headings do not skip levels. If a page has no `<h2>` but the footer uses `<h3>`, add `<h2 class="visually-hidden">`.
+- The first section is a hero (`page-hero`, or `hero` on the home page). It holds the breadcrumb and the page's only `<h1>`. Log In, Sign Up, Forgot Password, 404 and Dish details have no hero: their first section is the main content, and it holds the `<h1>`.
+- Page-level sections below the hero have class names ending in `-section`. A section nested inside one is named for its part: the blocks inside the Terms and Privacy pages are `legal-block`.
+- Headings do not skip levels. If a page has no `<h2>` but the footer uses `<h3>`, add `<h2 class="visually-hidden">More from Silangan</h2>` as the first child of the footer (the 404 and Dish details pages do this).
+- `<body>` has no class, except on `recipes.html`, which uses `<body class="recipes-page">` for one page-wide focus ring rule.
 
 ### Paths
 
@@ -116,6 +117,8 @@ Links styled as buttons or calls to action also put their text on its own line.
 | 1 or 2 | One line |
 | 3 | One line when short, otherwise split |
 | 4 or more | Always split |
+
+"Short" means the whole tag, with its indentation, fits in about 105 characters. A tag with 1 or 2 attributes that would be longer than that is split too.
 
 A split tag keeps its name on the first line. Each attribute goes on its own line, one level deeper, and the closing `>` ends the last attribute:
 
@@ -183,7 +186,7 @@ Names describe what a thing is, not how it looks. `restaurant-preview-notice` is
 
 - Every `<img>` has `width` and `height` set to the file's real pixel size (the `viewBox` size for an SVG). These only reserve space so the page does not jump. CSS controls the displayed size.
 - If CSS gives an image a fixed height, it also sets `width: 100%` or `width: auto`.
-- Images below the first screen use `loading="lazy"`. The logo, the home hero art and the first image on a page are not lazy.
+- Images below the first screen use `loading="lazy"`. The logo, the search icon and the first image on a page are not lazy.
 - Meaningful images have a descriptive `alt`.
 - Decorative images use `alt=""`, plus `aria-hidden="true"` when they sit inside a link or are an icon.
 - When a card has both an image link and a text link to the same place, the image link gets `tabindex="-1"` and `aria-hidden="true"`. The text link names the dish.
@@ -214,7 +217,7 @@ Names describe what a thing is, not how it looks. `restaurant-preview-notice` is
 
 - Inline `style="..."` attributes
 - HTML comments in page files
-- Ids for styling (ids exist only for skip links, anchors such as `#near-spots`, and form labels)
+- Ids for styling (ids exist only for skip links, anchors such as `#near-spots`, form labels, and the targets of `aria-controls` and `aria-labelledby`)
 - Inline JavaScript such as `onclick`
 - Tables for layout
 - Self-closing slashes on void tags

@@ -1,6 +1,6 @@
 # CSS Property Order Guide
 
-> **Purpose:** Defines the order in which properties are written inside a CSS rule. Checked against all 14 stylesheets in `css/` (about 880 rules).
+> **Purpose:** Defines the order in which properties are written inside a CSS rule. Checked against all 14 stylesheets in `css/` (about 860 rules).
 > **Read when:** Writing or editing any CSS rule.
 > **Related:** [overview.md](overview.md) · [css-writing-guide.md](css-writing-guide.md) · [html-writing-guide.md](html-writing-guide.md) · [global.md](global.md)
 
@@ -14,9 +14,10 @@ The blank-line rule applies to every rule, including short `:hover` and `:focus`
 
 ```css
 .button:hover {
-    border-color: var(--color-accent);
+    border-color: var(--button-border-hover);
 
-    background-color: var(--color-accent);
+    color: var(--button-text-hover);
+    background-color: var(--button-bg-hover);
 }
 ```
 
@@ -49,17 +50,17 @@ Each goes with the group it is closest to.
 | Property | Group | Example |
 | --- | --- | --- |
 | `grid-auto-flow`, `grid-auto-columns`, `grid-area`, `grid-template-areas`, `columns`, `list-style`, `isolation` | 2 (layout) | `list-style: none;` on `.list-reset` |
-| `overflow-x`, `overflow-y`, `overscroll-behavior-x`, `scroll-snap-type`, `scroll-snap-align`, `scrollbar-width`, `scrollbar-color`, `scroll-behavior`, `scroll-padding-top` | 2 (layout) | the swipeable card rows |
+| `overflow-x`, `overflow-y`, `-webkit-overflow-scrolling`, `overscroll-behavior-x`, `scroll-snap-type`, `scroll-snap-align`, `scrollbar-width`, `scrollbar-color`, `scroll-behavior`, `scroll-padding-top` | 2 (layout) | the swipeable card rows |
 | `margin-top`, `padding-inline`, `padding-block`, `border-right`, `border-color` and other long forms | 3 (box model) | `padding-block: 3rem 5rem;` |
 | `outline`, `outline-offset` | 3, straight after `border` and `border-radius` | `.form-group input` |
-| `text-shadow`, `accent-color`, `fill`, `stroke`, `stroke-width`, `stroke-linecap`, `stroke-linejoin`, `clip-path` | 4 (visuals) | `fill: none;` on the menu icon |
+| `text-shadow`, `accent-color`, `backdrop-filter`, `-webkit-backdrop-filter`, `object-position`, `fill`, `stroke`, `stroke-width`, `stroke-linecap`, `stroke-linejoin`, `clip-path` | 4 (visuals) | `fill: none;` on the menu icon |
 | `text-decoration-thickness`, `text-underline-offset`, `overflow-wrap`, `text-wrap`, `-webkit-font-smoothing`, `-webkit-text-size-adjust` | 5 (typography) | |
 | `will-change`, `break-inside` | 6 (effects) | |
 
 Rules for long forms and prefixes:
 
 - Use the short form (`margin`, `padding`, `border`) when setting all sides. Use a long form only for a single side or axis.
-- A property is never set twice in one rule. When `padding` and `padding-block` are both needed, the broad one comes first.
+- A property is never set twice in one rule, with one exception: a fallback pair for older browsers (`max-height: 100vh;` followed by `max-height: 100dvh;` on the open phone menu). When `padding` and `padding-block` are both needed, the broad one comes first.
 - A vendor-prefixed property sits right after its standard version, or at the end of its group.
 - `border` and `border-color` both belong to the box model group.
 
@@ -87,11 +88,15 @@ A normal rule:
 
 ```css
 .card {
+    --color-heading: var(--card-title);
+    --focus-ring: var(--card-link);
+
     overflow: hidden;
-    border: 1px solid var(--color-border);
+    border: 1px solid var(--card-border);
     border-radius: var(--radius-md);
 
-    background-color: var(--color-background-secondary);
+    color: var(--card-text);
+    background-color: var(--card-bg);
 
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
@@ -100,8 +105,8 @@ A normal rule:
 A rule that uses every group (an illustration of the order, not copied from the project):
 
 ```css
-.hero-sun {
-    --sun-size: clamp(320px, 40vw, 660px);
+.badge {
+    --badge-size: clamp(320px, 40vw, 660px);
 
     position: absolute;
     bottom: 0;
@@ -110,7 +115,7 @@ A rule that uses every group (an illustration of the order, not copied from the 
     display: flex;
     justify-content: center;
 
-    width: var(--sun-size);
+    width: var(--badge-size);
     aspect-ratio: 1;
     padding: 1rem;
     border-radius: 50%;

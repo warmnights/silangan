@@ -112,6 +112,15 @@ When a class has a particular way of being used, the comment shows it.
 */
 ```
 
+### Compact note
+
+A one- or two-sentence note may be written compactly. It stays on one line, or it wraps with the continuation lines indented 3 spaces so they line up under the text. A blank line follows it.
+
+```css
+/* Use on cards that sit inside a section with its own background,
+   so the card stays darker than the section behind it. */
+```
+
 ### Media query label
 
 ```css
@@ -135,10 +144,10 @@ Reusable values live in `:root`, grouped with a blank line between groups.
 | Sizes | named for the thing | `--container-width`, `--site-nav-height` |
 
 - Colors in rules always come from a variable. Buttons, cards, the header and full-width sections use the quick controls (`--button-*`, `--card-*`, `--header-*`, `--band-*`). Everything else uses `var(--color-...)`. There are no hex or rgb values outside `:root`.
-- The quick controls start as base colors (`--button-bg: var(--color-primary);`) and carry a short trailing comment saying what they change. This is the only place trailing comments are used. What each one changes is in [colors.md](colors.md).
+- The quick controls start as base colors (`--button-bg: var(--color-card);`). Each group (buttons, cards, header, bands) sits under a block comment that says what it changes. What each one changes is in [colors.md](colors.md).
 - A see-through color is made with `color-mix(in srgb, var(--color-primary) 20%, transparent)`, not a new hex code.
 - Border radius uses the `--radius-*` variables. `50%` is allowed for circles.
-- A variable set inside a rule (`--gutter-x`, `--sun-size`) is for a value that changes per element or per breakpoint. It is the first line of the rule.
+- A variable set inside a rule (`--gutter-x`, or `--color-heading` inside a card) is for a value that changes per element or per breakpoint. It is the first line of the rule.
 - Names describe purpose, not appearance.
 
 The full list is in [global.md](global.md).
@@ -191,7 +200,7 @@ transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
 ```
 
 - `transition: all` is avoided.
-- Card hover lifts by `translateY(-5px)`. Buttons move less (`-2px` on hover, `1px` on `:active`).
+- Card hover lifts by `translateY(-5px)`. Buttons do not lift on hover, and `.button:active` moves down `1px`.
 - Anything that **moves** (`transform`, `scroll-behavior`) is switched off under `prefers-reduced-motion: reduce`. `style.css` has one block for the shared pieces (smooth scrolling and the `.card` lift). A page stylesheet whose own rules move something carries its own block. Color-only fades do not need one.
 
 ```css
@@ -234,7 +243,7 @@ It also has a few queries on orientation, height and pointer type for the nav an
 
 Rules:
 
-- Media queries go at the end of the file under a `MEDIA QUERIES` banner.
+- Media queries go at the end of the file under a `MEDIA QUERIES` banner. In `style.css`, three blocks sit beside the rules they change instead: the `@supports` fallback and the `prefers-reduced-transparency` query for the glass header (under the header rules), and the `prefers-reduced-motion` block (under `.card`). They have no label comment.
 - They run from the largest breakpoint to the smallest.
 - Each has a label comment, and a blank line follows the opening brace.
 - Inside a query, related rules are grouped under short comments (`/* Section spacing */`).
