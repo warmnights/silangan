@@ -106,7 +106,6 @@
     --color-ink-muted: #2C0E11B3;
 
     --color-primary: #60241E;
-    --mountain-base: color-mix(in srgb, var(--color-primary) 85%, var(--color-black));
     --color-secondary: #D8B98B;
     --color-accent: #8E2F3C;
 
@@ -770,78 +769,16 @@ main:focus {
 
 
 .hero {
-    --mountain-height: clamp(400px, 28vw, 420px);
-    --sun-size: clamp(380px, 48vw, 780px);
     --gutter-x: 1.5rem;
-
-    position: relative;
 
     display: flex;
     align-items: center;
-    isolation: isolate;
     overflow: hidden;
 
     min-height: calc(100svh - var(--site-nav-height));
-    padding-block: 3rem calc(3rem + var(--mountain-height) * 0.25);
+    padding-block: 3rem;
 
     text-align: center;
-}
-
-.hero-sky {
-    position: absolute;
-    inset: 0;
-    z-index: -1;
-
-    width: 100%;
-    height: 100%;
-
-    object-fit: cover;
-
-    pointer-events: none;
-}
-
-.hero-sun {
-    position: absolute;
-    bottom: calc(var(--mountain-height) * 0.2 - var(--sun-size) / 2);
-    left: calc(50% - var(--sun-size) / 2);
-    z-index: 2;
-
-    width: var(--sun-size);
-    aspect-ratio: 1;
-
-    pointer-events: none;
-}
-
-.hero-sun img {
-    width: 100%;
-    height: 100%;
-
-    opacity: 0.3;
-
-    mask-image: linear-gradient(to bottom, var(--color-black) calc(50% - var(--mountain-height) * 0.2), transparent calc(50% - var(--mountain-height) * 0.08));
-}
-
-.hero-sun::before,
-.hero-sun::after {
-    content: "";
-
-    position: absolute;
-
-    border-radius: 50%;
-
-    mask-image: linear-gradient(to bottom, var(--color-black) calc(50% - var(--mountain-height) * 0.2), transparent calc(50% - var(--mountain-height) * 0.08));
-}
-
-.hero-sun::before {
-    inset: -7%;
-
-    border: 1px dashed color-mix(in srgb, var(--color-primary) 35%, transparent);
-}
-
-.hero-sun::after {
-    inset: -16%;
-
-    border: 1px solid color-mix(in srgb, var(--color-primary) 15%, transparent);
 }
 
 .hero-content {
@@ -993,55 +930,6 @@ main:focus {
     background-color: color-mix(in srgb, var(--color-secondary) 18%, transparent);
 }
 
-.hero-mountains {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    z-index: 3;
-
-    width: 100%;
-    height: calc(var(--mountain-height) * 0.7);
-
-    object-fit: cover;
-    object-position: center bottom;
-
-    pointer-events: none;
-}
-
-/*
-
-    Keeps the very bottom of the hero a solid, known red so the fade below it has an exact color to start from
-
-*/
-
-.hero::after {
-    content: "";
-
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: 4;
-
-    height: calc(var(--mountain-height) * 0.3);
-
-    background-image: linear-gradient(to bottom, transparent, var(--mountain-base));
-
-    pointer-events: none;
-}
-
-.hero-mountains-back {
-    bottom: calc(var(--mountain-height) * 0.2);
-    z-index: 1;
-
-    height: calc(var(--mountain-height) * 0.5);
-
-    opacity: 0.3;
-    mask-image: linear-gradient(to bottom, var(--color-black) 45%, transparent 100%);
-
-    transform: scaleX(-1);
-}
-
 
 /*
 
@@ -1053,36 +941,9 @@ main:focus {
 
 
 .near-me-section {
-    position: relative;
-    isolation: isolate;
-
     padding-block: 5rem;
 
     background-color: var(--band-bg);
-}
-
-/* The fade from the hero's red into this section. It only appears once you scroll past the hero. */
-.near-me-section::before {
-    content: "";
-
-    position: absolute;
-    top: 0;
-    right: 0;
-    left: 0;
-    z-index: -1;
-
-    height: clamp(140px, 18vw, 260px);
-
-    background-image: linear-gradient(
-        to bottom,
-        var(--mountain-base) 0%,
-        color-mix(in srgb, var(--mountain-base) 70%, transparent) 25%,
-        color-mix(in srgb, var(--mountain-base) 30%, transparent) 55%,
-        color-mix(in srgb, var(--mountain-base) 8%, transparent) 82%,
-        transparent 100%
-    );
-
-    pointer-events: none;
 }
 
 .near-me-header {
@@ -2126,19 +1987,7 @@ main:focus {
 @media (max-width: 800px) {
 
     .hero {
-        --mountain-height: 150px;
-        --sun-size: 72vw;
         --gutter-x: 1.25rem;
-
-        padding-block: 3rem calc(var(--mountain-height) + 2rem);
-    }
-
-    .hero-sun::before {
-        inset: -10%;
-    }
-
-    .hero-sun::after {
-        display: none;
     }
 
     .hero h1 {
@@ -2184,11 +2033,6 @@ main:focus {
     }
 
     /* Hero */
-
-    .hero {
-        min-height: 520px;
-        padding-block: 5rem 5.5rem;
-    }
 
     /* Section headers that sit beside a button: stack them */
 
@@ -2279,8 +2123,6 @@ main:focus {
 
     .hero {
         --gutter-x: 1rem;
-
-        padding-block: 4rem 4.5rem;
     }
 
     .hero-search {
@@ -2391,7 +2233,6 @@ main:focus {
     .hero {
         --gutter-x: 1.25rem;
 
-        min-height: 0;
         padding-block: 1rem;
     }
 
