@@ -5,7 +5,7 @@ A responsive website for exploring Filipino food: top dishes, regional discoveri
 *Live site:* [silangan-ph.vercel.app](https://silangan-ph.vercel.app/)
 
 <p align="center">
-  <img src="assets/images/readme/silangan-hero.png"
+  <img src="assets/images/readme/silangan-hero.jpg"
        alt="Silangan homepage"
        width="100%">
 </p>
