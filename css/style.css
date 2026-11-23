@@ -108,6 +108,7 @@
     --color-primary: #60241E;
     --color-secondary: #D8B98B;
     --color-accent: #8E2F3C;
+    --color-sun: #E3A64B;
 
     --color-white: #FFFFFF;
     --color-black: #000000;
@@ -941,34 +942,45 @@ main:focus {
     margin-inline: auto;
 }
 
-.hero h1 {
-    max-width: 14em;
-    margin: 0 auto 1.25rem;
+/*
 
-    color: var(--color-text);
-    text-shadow: 0 2px 16px color-mix(in srgb, var(--color-black) 50%, transparent);
+    The Silangan wordmark is the page's <h1>. The glow is drawn behind it
+    and centered on the sun above the I:
+        --glow-x and --glow-y move it onto the sun
+        --glow-size sets how far it spreads
 
-    font-size: clamp(2.5rem, 4.6vw, 3.5rem);
-    line-height: 1.05;
-    text-wrap: balance;
+*/
+
+.hero .hero-logo {
+    --glow-x: 16.5%;
+    --glow-y: 6%;
+    --glow-size: 50%;
+
+    position: relative;
+
+    max-width: min(1100px, 100%);
+    margin: 0 auto 2.5rem;
 }
 
-.hero h1 em {
-    display: block;
+.hero-logo::before {
+    content: "";
 
-    color: var(--color-secondary);
+    position: absolute;
+    top: var(--glow-y);
+    left: var(--glow-x);
+    z-index: -1;
 
-    font-style: normal;
-}
+    width: var(--glow-size);
+    aspect-ratio: 1;
 
-.hero-tagline {
-    margin: 0 auto 2rem;
+    background: radial-gradient(
+        circle,
+        color-mix(in srgb, var(--color-sun) 75%, transparent) 0%,
+        color-mix(in srgb, var(--color-sun) 30%, transparent) 22%,
+        transparent 62%
+    );
 
-    color: var(--color-text-muted);
-
-    font-size: clamp(1.05rem, 1.7vw, 1.25rem);
-    font-style: italic;
-    line-height: 1.6;
+    transform: translate(-50%, -50%);
 }
 
 /*
@@ -2140,14 +2152,6 @@ main:focus {
         --gutter-x: 1.25rem;
     }
 
-    .hero h1 {
-        font-size: clamp(2.25rem, 9vw, 2.5rem);
-    }
-
-    .hero-tagline {
-        margin-bottom: 1.5rem;
-    }
-
     .hero-search {
         gap: 0.7rem;
 
@@ -2387,14 +2391,8 @@ main:focus {
         padding-block: 1rem;
     }
 
-    .hero h1 {
-        margin-bottom: 0.75rem;
-
-        font-size: clamp(2rem, 4vw, 2.75rem);
-    }
-
-    .hero-tagline {
-        margin-bottom: 1rem;
+    .hero .hero-logo {
+        margin-bottom: 1.25rem;
     }
 
     .search-suggestions {
