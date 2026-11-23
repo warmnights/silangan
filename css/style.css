@@ -550,7 +550,10 @@ main:focus {
 }
 
 .site-nav {
+    --site-nav-gap: clamp(1.1rem, 1.5vw, 1.5rem);
+
     display: flex;
+    justify-content: center;
     align-items: center;
 
     min-height: var(--site-nav-height);
@@ -560,23 +563,12 @@ main:focus {
     color: var(--color-text);
 }
 
-.site-nav-logo {
-    display: inline-flex;
-    align-items: center;
-    flex-shrink: 0;
-}
-
-.site-nav-logo img {
-    width: auto;
-    height: 22px;
-}
-
 .site-nav-links {
     display: flex;
     align-items: center;
-    gap: clamp(1.1rem, 1.5vw, 1.5rem);
+    gap: var(--site-nav-gap);
 
-    margin: 0 auto 0 3rem;
+    margin: 0;
 }
 
 .site-nav-links a {
@@ -682,7 +674,9 @@ main:focus {
     gap: 1.25rem;
     flex-shrink: 0;
 
-    margin-left: auto;
+    margin-left: var(--site-nav-gap);
+    padding-left: var(--site-nav-gap);
+    border-left: 1px solid var(--color-border);
 }
 
 .site-nav-cta {
@@ -1869,10 +1863,8 @@ main:focus {
 
     /* Site nav: tighten spacing so the links, More menu and Log In still fit on one row */
 
-    .site-nav-links {
-        gap: 1rem;
-
-        margin-left: 2rem;
+    .site-nav {
+        --site-nav-gap: 1rem;
     }
 }
 
@@ -1906,17 +1898,12 @@ main:focus {
         max-height: 100dvh;
     }
 
-    .site-nav-logo {
-        order: 1;
-    }
-
     /* The hamburger button */
 
     .site-nav-toggle {
         display: inline-flex;
         justify-content: center;
         align-items: center;
-        order: 2;
 
         width: 44px;
         height: 44px;
@@ -1973,7 +1960,6 @@ main:focus {
         align-items: stretch;
         gap: 0;
         flex: 0 0 100%;
-        order: 3;
 
         margin: 0.75rem 0 0;
         padding-top: 0.25rem;
@@ -1990,6 +1976,7 @@ main:focus {
         padding: 0.8rem 0;
 
         font-size: 1rem;
+        text-align: center;
     }
 
     /* Log In: hidden until the menu is opened */
@@ -2000,10 +1987,10 @@ main:focus {
         align-items: stretch;
         gap: 0.75rem;
         flex: 0 0 100%;
-        order: 4;
 
         margin: 0;
         padding: 1rem 0 0.5rem;
+        border-left: 0;
     }
 
     .site-nav-cta {
@@ -2015,7 +2002,7 @@ main:focus {
 
     .site-nav-dropdown > summary {
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
 
         padding: 0.8rem 0;
 
@@ -2027,7 +2014,7 @@ main:focus {
 
         min-width: 0;
         margin: 0;
-        padding: 0 0 0.4rem 1rem;
+        padding: 0 0 0.4rem;
         border: 0;
         border-radius: 0;
 
@@ -2405,7 +2392,6 @@ main:focus {
 
 @media (max-width: 900px), (any-pointer: coarse) {
 
-    .site-nav-logo,
     .site-nav-links a,
     .site-nav-actions a,
     .breadcrumb a,
