@@ -65,7 +65,7 @@ Utility and shared classes: `.container`, `.full-bleed`, `.list-reset`, `.visual
 
 Page stylesheets do not restyle these.
 
-- **Site header and navigation:** `.site-header`, `.site-nav`, `.site-nav-logo`, `.site-nav-toggle`, `.site-nav-links`, `.site-nav-dropdown`, `.site-nav-dropdown-menu`, `.site-nav-actions`, `.site-nav-cta`. This includes the hamburger menu below 1080px, where `nav.js` toggles `.is-open`. The header is sticky at `z-index: 10`, and the More menu is `z-index: 11`. The bar is 68px tall, or 61px at 1080px and below. That height is `--site-nav-height`, so anything that has to sit below the header (the Terms and Privacy contents box, the hero height, anchor offsets) uses the variable instead of a pixel value.
+- **Site header and navigation:** `.site-header`, `.site-nav`, `.site-nav-logo`, `.site-nav-toggle`, `.site-nav-links`, `.site-nav-dropdown`, `.site-nav-dropdown-menu`, `.site-nav-actions`, `.site-nav-cta`. This includes the hamburger menu below 1080px, where `nav.js` toggles `.is-open`. The header is sticky at `z-index: 10`, and the More menu is `z-index: 11`. The bar is dark glass: a `::before` layer on `.site-header`, as wide as the screen the way `.full-bleed` is, holds the see-through tint and the blur (`--header-bg` and `--header-blur`). The More menu and the open phone menu use the almost solid `--header-menu-bg`. A solid `--page-bg` bar replaces the glass in browsers without `backdrop-filter` and for visitors who ask for less transparency. The bar is 68px tall, or 61px at 1080px and below. That height is `--site-nav-height`, so anything that has to sit below the header (the Terms and Privacy contents box, the hero height, anchor offsets) uses the variable instead of a pixel value.
 - **Footer:** `.footer`, `.footer-main`, `.footer-logo`, `.footer-brand`, `.footer-brand-tagline`, `.footer-links`, `.footer-about`, `.footer-explore-link`, `.footer-bottom`, `.footer-legal`. Footer text is `var(--color-background)` and `var(--color-background-secondary)` on a `var(--color-surface)` background.
 - **Restaurant notice:** `.restaurant-preview-notice` and its `p` (used on the home page and Near Me).
 - **Home page sections:** `.hero`, `.near-me-section`, `.fresh-finds-section`, `.trivia-section`, `.regional-discoveries-section`, `.popular-foods-section`, `.random-food-section` and their parts. These live in `style.css`, not in a page file. Each one is a full-width band (`full-bleed`) with a transparent background, so the page texture shows through, like the other pages. The bottom of the hero dissolves into the page: `.hero::after` fades the bottom of the hero into a solid mahogany base (`--mountain-base`), and `.near-me-section::before` fades that red into the page. The sun is masked just above the faded part so it does not show through. `--mountain-height` sizes the fade and the sun.
@@ -243,11 +243,13 @@ All media queries for `style.css` are collected at the bottom. Breakpoints are l
 
     /*
 
-        HEADER: Only the background of the navigation bar and its dropdown.
+        HEADER: The navigation bar is dark glass over the page. Keep --header-bg at 75% or more so the links stay readable.
 
     */
 
-    --header-bg: var(--color-card);
+    --header-bg: color-mix(in srgb, var(--page-bg) 80%, transparent); /* the glass tint of the bar */
+    --header-menu-bg: color-mix(in srgb, var(--page-bg) 96%, transparent); /* the dropdown and the open phone menu */
+    --header-blur: 14px; /* how blurred the page is behind the bar */
 
     /*
 

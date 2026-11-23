@@ -14,7 +14,7 @@ Silangan is a Filipino food and culture website made as a school project. It let
 | Languages | HTML and CSS |
 | JavaScript | One small script, `js/nav.js`, for the mobile menu button |
 | Fonts | Fraunces (headings) and Poppins (body), self-hosted as `.woff2` |
-| Look | Dark red marbled page background (texture-red.webp), golden caramel header, cards and buttons with dark sangria text, smoked moss footer, mahogany primary color, wine accent |
+| Look | Dark red marbled page background (texture-red.webp), dark glass header, cards and buttons with dark sangria text, smoked moss footer, mahogany primary color, wine accent |
 | Hosting | Vercel (static) |
 | Submission | The files inside the root folder are uploaded to a Google Drive folder, and the folder link is sent to the instructor |
 | Pages | 15 HTML files: `index.html`, `404.html`, and 13 in `pages/` |

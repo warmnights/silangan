@@ -128,13 +128,13 @@ Reusable values live in `:root`, grouped with a blank line between groups.
 | --- | --- | --- |
 | Fonts | `--font-*` | `--font-heading`, `--font-body` |
 | Colors | `--color-*` | `--color-primary`, `--color-text-muted` |
-| Quick color controls | `--button-*`, `--card-*`, `--band-*` | `--button-bg`, `--card-title`, `--band-bg-alt` |
+| Quick color controls | `--button-*`, `--card-*`, `--header-*`, `--band-*` | `--button-bg`, `--card-title`, `--header-bg`, `--band-bg-alt` |
 | Shadows | `--shadow-*` | `--shadow-card` |
 | Focus ring | `--focus-ring` | `--focus-ring` |
 | Radius | `--radius-*` | `--radius-sm`, `--radius-md`, `--radius-lg`, `--radius-pill` |
 | Sizes | named for the thing | `--container-width`, `--site-nav-height` |
 
-- Colors in rules always come from a variable. Buttons, cards and full-width sections use the quick controls (`--button-*`, `--card-*`, `--band-*`). Everything else uses `var(--color-...)`. There are no hex or rgb values outside `:root`.
+- Colors in rules always come from a variable. Buttons, cards, the header and full-width sections use the quick controls (`--button-*`, `--card-*`, `--header-*`, `--band-*`). Everything else uses `var(--color-...)`. There are no hex or rgb values outside `:root`.
 - The quick controls start as base colors (`--button-bg: var(--color-primary);`) and carry a short trailing comment saying what they change. This is the only place trailing comments are used. What each one changes is in [colors.md](colors.md).
 - A see-through color is made with `color-mix(in srgb, var(--color-primary) 20%, transparent)`, not a new hex code.
 - Border radius uses the `--radius-*` variables. `50%` is allowed for circles.
@@ -230,7 +230,7 @@ The site is written **desktop first**, with `max-width` queries.
 | 1080px | The nav becomes a hamburger menu. `nav.js` and the CSS use 1081px as the desktop check. |
 | 800px | The home hero switches to its mobile layout |
 
-It also has a few queries on orientation, height and pointer type for the nav and touch devices. Other breakpoints are not added without a reason.
+It also has a few queries on orientation, height and pointer type for the nav and touch devices, and two for the glass header: one for visitors who ask for reduced transparency and one for browsers without backdrop blur. Other breakpoints are not added without a reason.
 
 Rules:
 
@@ -283,7 +283,7 @@ Rules:
 ## 11. Stylesheet checklist
 
 - [ ] Sections follow the page order, each with a banner
-- [ ] Colors come from variables only: `--button-*`, `--card-*` and `--band-*` for buttons, cards and bands, otherwise `--color-*`
+- [ ] Colors come from variables only: `--button-*`, `--card-*`, `--header-*` and `--band-*` for buttons, cards, the header and bands, otherwise `--color-*`
 - [ ] Radius uses `var(--radius-*)`
 - [ ] Property order follows the property guide
 - [ ] States sit directly under their base rule

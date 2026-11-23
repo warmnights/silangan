@@ -15,7 +15,7 @@ There are two layers, and both live in `:root`.
 | Layer | Variables | What a change does |
 | --- | --- | --- |
 | Base palette | `--color-background`, `--color-primary`, `--color-accent` and the others | Changes everything that uses that color, including parts with no quick control (nav, footer, forms) |
-| Quick controls | `--button-*`, `--card-*`, `--band-*` | Changes one kind of element only |
+| Quick controls | `--button-*`, `--card-*`, `--header-*`, `--band-*` | Changes one kind of element only |
 
 Each quick control starts as a base color, for example `--button-bg: var(--color-primary);`. To change only the buttons, replace the right-hand side with a color:
 
@@ -95,11 +95,11 @@ Only the background. A band is a full-width section, such as a hero or a section
 
 Both band variables are transparent, so no section covers the page. The texture shows through behind every section. It is a dark red marbled pattern (`#280E10` to `#4E1A1E`) on a `--page-bg` base (`#361214`). The image repeats top to bottom with no visible seam, and it is at least 1200px wide, so on a phone the middle of it shows.
 
-Keep the texture dark. Cream text is 10.2:1 on its lightest patch and light caramel text is 7.5:1, so a lighter patch would start to lose contrast. Text on the page uses `--color-text`, `--color-heading` and `--color-secondary` (light caramel). Dark sangria (`--color-ink`) is only for text on cards, buttons, the header, chips and form fields.
+Keep the texture dark. Cream text is 10.2:1 on its lightest patch and light caramel text is 7.5:1, so a lighter patch would start to lose contrast. Text on the page uses `--color-text`, `--color-heading` and `--color-secondary` (light caramel). Dark sangria (`--color-ink`) is only for text on cards, buttons, chips and form fields.
 
 To bring the alternating bands back, set `--band-bg` and `--band-bg-alt` to `var(--color-background)` and `var(--color-background-secondary)`, and set the body `background-image` to `none`. The page text is cream now, so also set `--color-text` and `--color-heading` back to `var(--color-ink)`. To make one section solid, set the background in that section's own rule.
 
-The navigation bar and the footer are full width too, but they are not bands. The navigation bar uses `--header-bg` (golden caramel, the same as the cards) and stays solid, and the footer uses `--color-surface` (smoked moss) with light text.
+The navigation bar and the footer are full width too, but they are not bands. The navigation bar is dark glass and the footer uses `--color-surface` (smoked moss) with light text. The glass runs the full screen width and has three controls: `--header-bg` is the see-through tint over the page (the page color at 80%), `--header-blur` is how much the page behind it is blurred (14px), and `--header-menu-bg` is the almost solid tint (96%) behind the dropdown and the open phone menu. The tint is tested at 80%: cream links stay at 7:1 or better and the light caramel hover at 4.9:1 or better, even over a light card or a bright photo. A tint below 75% can drop under 4.5:1 over light content, so check the links before lowering it. Browsers without `backdrop-filter`, and visitors who ask for less transparency, get a solid bar in `--page-bg`.
 
 ---
 
@@ -107,7 +107,7 @@ The navigation bar and the footer are full width too, but they are not bands. Th
 
 These still use the base palette directly, so change them through `--color-*` or ask for a control:
 
-- Navigation bar text, links and menu button. Only the bar's and dropdown's background has a control, `--header-bg`.
+- Navigation bar text, links and menu button. Only the bar's and dropdown's background has controls, `--header-bg`, `--header-menu-bg` and `--header-blur`.
 - Footer
 - Form fields and labels
 - Hero search box and its suggestion chips

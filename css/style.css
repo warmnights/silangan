@@ -95,7 +95,7 @@
     --color-card: #B28558;
 
     /*
-        Text on the red page is cream. Dark sangria (--color-ink) is for text on the light parts: cards, buttons, the header, chips and form fields.
+        Text on the red page is cream. Dark sangria (--color-ink) is for text on the light parts: cards, buttons, chips and form fields.
     */
 
     --color-text: #F2D8B5;
@@ -156,11 +156,13 @@
 
     /*
 
-        HEADER: Only the background of the navigation bar and its dropdown. It is the same dark red as the page.
+        HEADER: The navigation bar is dark glass. --header-bg is the see-through tint, --header-blur is how much the page behind it is blurred, and --header-menu-bg is the almost solid tint behind the dropdown and the open phone menu. Keep --header-bg at 75% or more so the links stay readable.
 
     */
 
-    --header-bg: var(--page-bg);
+    --header-bg: color-mix(in srgb, var(--page-bg) 80%, transparent);
+    --header-menu-bg: color-mix(in srgb, var(--page-bg) 96%, transparent);
+    --header-blur: 14px;
 
     /*
 
@@ -401,6 +403,67 @@ main:focus {
     z-index: 10;
 }
 
+/*
+
+    The glass is a layer behind the nav, so the nav is not a backdrop root and
+    the dropdown can blur the page on its own.
+
+    The header is only as wide as .container, so the layer is stretched to the
+    full width of the screen the same way .full-bleed does it. Without this the
+    blur and tint stop at the edge of the container.
+
+*/
+
+.site-header::before {
+    content: "";
+
+    position: absolute;
+    inset: 0 calc(50% - 50vw);
+    z-index: -1;
+
+    background-color: var(--header-bg);
+    backdrop-filter: blur(var(--header-blur)) saturate(1.4);
+    -webkit-backdrop-filter: blur(var(--header-blur)) saturate(1.4);
+}
+
+/*
+
+    The open phone menu covers the page, so its glass is almost solid */
+
+.site-header:has(.site-nav.is-open)::before {
+    background-color: var(--header-menu-bg);
+}
+
+/* No backdrop-filter, or the visitor asked for less transparency: solid bar */
+
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+
+    .site-header::before,
+    .site-header:has(.site-nav.is-open)::before {
+        background-color: var(--page-bg);
+    }
+
+    .site-header .site-nav-dropdown-menu {
+        background-color: var(--page-bg);
+    }
+}
+
+@media (prefers-reduced-transparency: reduce) {
+
+    .site-header::before,
+    .site-header:has(.site-nav.is-open)::before {
+        background-color: var(--page-bg);
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+    }
+
+    .site-header .site-nav-dropdown-menu {
+        background-color: var(--page-bg);
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+    }
+}
+
 .site-nav {
     display: flex;
     align-items: center;
@@ -410,7 +473,6 @@ main:focus {
     border-bottom: 1px solid var(--color-border);
 
     color: var(--color-text);
-    background-color: var(--header-bg);
 }
 
 .site-nav-logo {
@@ -513,8 +575,10 @@ main:focus {
     border: 1px solid var(--color-border);
     border-radius: var(--radius-sm);
 
-    background-color: var(--header-bg);
+    background-color: var(--header-menu-bg);
     box-shadow: var(--shadow-card);
+    backdrop-filter: blur(var(--header-blur));
+    -webkit-backdrop-filter: blur(var(--header-blur));
 }
 
 .site-nav-dropdown-menu a {
@@ -1873,6 +1937,8 @@ main:focus {
 
         background-color: transparent;
         box-shadow: none;
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
     }
 
     .site-nav-dropdown-menu a {
