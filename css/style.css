@@ -160,7 +160,7 @@
             --header-bg is the see-through tint
             --header-blur is how much the page behind it is blurred
             --header-menu-bg is the almost solid tint behind the dropdown and the open phone menu
-            Keep --header-bg at 75% or more so the links stay readable.
+            Keep --header-bg at 80% or more so the links stay readable.
 
     */
 
@@ -333,8 +333,9 @@ main:focus {
     padding: 0;
     border: 0;
 
-    white-space: nowrap;
     clip-path: inset(50%);
+
+    white-space: nowrap;
 }
 
 
@@ -2187,7 +2188,8 @@ main:focus {
         --gutter-x: 1.25rem;
     }
 
-    .site-nav, .footer {
+    .site-nav,
+    .footer {
         --gutter-x: 1.25rem;
     }
 

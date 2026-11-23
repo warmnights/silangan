@@ -52,7 +52,10 @@
 */
 
 
+/* ---------- Phones (up to 640px) ---------- */
+
 @media (max-width: 640px) {
+
     .food-detail-section {
         padding-block: 2.5rem 3.5rem;
     }
