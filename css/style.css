@@ -214,7 +214,17 @@ html {
     -webkit-text-size-adjust: 100%;
 }
 
+/*
+
+    The flower texture tile is 754px wide on a 1920px screen. On smaller
+    screens it shrinks with the screen (39.27vw), so the same three
+    flowers still fit across instead of one zoomed-in flower.
+
+*/
+
 body {
+    --texture-width: clamp(150px, 39.27vw, 754px);
+
     overflow-x: clip;
 
     min-height: 100vh;
@@ -223,7 +233,7 @@ body {
     color: var(--color-text);
     background-color: var(--page-bg);
     background-image: linear-gradient(var(--page-overlay), var(--page-overlay)), var(--page-texture);
-    background-size: auto, 754px 955px;
+    background-size: auto, var(--texture-width) calc(var(--texture-width) * 955 / 754);
     background-position: center top;
     background-repeat: repeat;
 
