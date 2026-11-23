@@ -180,6 +180,16 @@
     --page-texture: url('../assets/images/backgrounds/texture-burgundy.webp');
     --page-overlay: rgba(0, 0, 0, 0.3);
 
+    /*
+
+        SCROLLBAR: The page scrollbar. The track is darker than the page and the thumb is a dark red, so the bar stands out from the background.
+
+    */
+
+    --scrollbar-track: color-mix(in srgb, var(--color-black) 45%, var(--page-bg));
+    --scrollbar-thumb: color-mix(in srgb, var(--color-accent) 75%, var(--page-bg));
+    --scrollbar-thumb-hover: var(--color-accent);
+
     --shadow-card: 0 8px 24px rgba(14, 4, 5, 0.5);
 
     --radius-sm: 8px;
@@ -212,6 +222,51 @@ html {
     scroll-padding-top: var(--site-nav-height);
 
     -webkit-text-size-adjust: 100%;
+}
+
+/*
+
+    Scrollbar: a dark red bar on a darker track, with no arrow buttons.
+    Chrome, Edge and Safari use the -webkit- rules, and only with a mouse,
+    so phones keep their own thin scrollbar. Firefox does not know the
+    -webkit- rules, so it gets scrollbar-color and scrollbar-width instead.
+    Chrome ignores the -webkit- rules once scrollbar-color is set, which is
+    why the Firefox rule is behind @supports.
+
+*/
+
+@media (pointer: fine) {
+
+    html::-webkit-scrollbar {
+        width: 14px;
+    }
+
+    html::-webkit-scrollbar-button {
+        display: none;
+    }
+
+    html::-webkit-scrollbar-track {
+        background-color: var(--scrollbar-track);
+    }
+
+    html::-webkit-scrollbar-thumb {
+        border: 3px solid var(--scrollbar-track);
+        border-radius: var(--radius-pill);
+
+        background-color: var(--scrollbar-thumb);
+    }
+
+    html::-webkit-scrollbar-thumb:hover {
+        background-color: var(--scrollbar-thumb-hover);
+    }
+}
+
+@supports not selector(::-webkit-scrollbar) {
+
+    html {
+        scrollbar-width: thin;
+        scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
+    }
 }
 
 /*
