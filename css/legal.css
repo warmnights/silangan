@@ -1,41 +1,7 @@
-
-
 /*
 
 
-    LEGAL INTRO
-
-
-*/
-
-
-.legal-intro h1 {
-    font-size: clamp(2.5rem, 7vw, 4.5rem);
-}
-
-.legal-intro .page-hero-content > p {
-    margin-bottom: 1.75rem;
-}
-
-.legal-updated {
-    display: inline-block;
-
-    padding: 0.55rem 1rem;
-    border: 1px solid var(--color-secondary);
-    border-radius: var(--radius-pill);
-
-    color: var(--color-secondary);
-
-    font-size: 0.7rem;
-    font-weight: 600;
-    letter-spacing: 1px;
-}
-
-
-/*
-
-
-    LEGAL CONTENT
+    LEGAL PAGES (TERMS OF SERVICE, PRIVACY POLICY)
 
 
 */
@@ -43,143 +9,143 @@
 
 /*
 
-    First section after the intro: extra breathing room
+    The page header, the "last updated" label and the links are shared
+    components in style.css. This file only holds the reading layout: a
+    list of the sections on the left and one narrow column of text on the
+    right. Nothing here is a card, only thin lines.
 
 */
 
 .legal-section {
-    padding-block: 5rem;
-
-    background-color: var(--band-bg);
+    padding-block: var(--section-space);
 }
 
 .legal-container {
     display: grid;
     align-items: start;
-    gap: 4rem;
-    grid-template-columns: 260px 1fr;
+    gap: clamp(2.5rem, 6vw, 5rem);
+    grid-template-columns: 15rem minmax(0, 1fr);
 
-    max-width: 1100px;
+    max-width: 62rem;
     margin: 0 auto;
-}
-
-.legal-toc {
-    --color-heading: var(--card-title);
-    --focus-ring: var(--card-link);
-
-    position: sticky;
-    top: calc(var(--site-nav-height) + 1rem);
-
-    padding: 1.5rem;
-    border-radius: var(--radius-md);
-
-    background-color: var(--card-bg);
-}
-
-.legal-toc h2 {
-    margin: 0 0 1rem;
-
-    font-size: 1.25rem;
-}
-
-.legal-toc ol {
-    list-style: decimal;
-
-    margin: 0;
-    padding-left: 1.25rem;
-}
-
-.legal-toc li {
-    margin-bottom: 0.6rem;
-
-    color: var(--card-label);
-
-    font-size: 0.85rem;
-    line-height: 1.5;
-}
-
-.legal-toc a {
-    color: var(--card-text);
-}
-
-.legal-toc a:hover {
-    color: var(--card-link);
-
-    text-decoration: underline;
-    text-underline-offset: 0.18em;
-}
-
-.legal-body {
-    max-width: 760px;
 }
 
 /*
 
-    Long words, like email addresses, wrap (overflow-wrap) instead of
-    overflowing on very small screens
+    The list of sections stays in view while the text scrolls past it.
+    It stops being sticky when the layout stacks (900px).
 
 */
 
+.legal-toc {
+    position: sticky;
+    top: calc(var(--site-nav-height) + 1.5rem);
+
+    padding-inline-start: 1.5rem;
+    border-inline-start: var(--border-line);
+}
+
+.legal-toc-title {
+    margin-block-end: 1rem;
+
+    font-family: var(--font-body);
+    font-size: var(--label-size);
+    line-height: 1.75;
+}
+
+.legal-toc ol {
+    margin: 0;
+    padding-inline-start: 1.25rem;
+
+    color: var(--color-primary);
+
+    font-size: var(--text-small);
+    line-height: 1.5;
+}
+
+.legal-toc a {
+    display: inline-block;
+
+    padding-block: 0.4rem;
+
+    color: var(--color-text-muted);
+
+    transition: color var(--transition);
+}
+
+.legal-toc a:hover {
+    color: var(--color-primary);
+}
+
+/*
+
+    The text column is narrow on purpose: about 70 characters a line is
+    comfortable to read. Long words, like the email address, wrap
+    (overflow-wrap) instead of running off a small screen.
+
+*/
+
+.legal-body {
+    max-width: 46rem;
+}
+
 .legal-block {
-    margin-bottom: 2.5rem;
-    padding-bottom: 2.5rem;
-    border-bottom: 1px solid var(--color-border);
+    margin-block-end: 2.5rem;
+    padding-block-end: 2.5rem;
+    border-block-end: var(--border-line);
 
     overflow-wrap: break-word;
 }
 
 .legal-block:last-child {
-    margin-bottom: 0;
-    padding-bottom: 0;
-    border-bottom: none;
+    margin-block-end: 0;
+    padding-block-end: 0;
+    border-block-end: 0;
 }
 
 .legal-block h2 {
-    margin: 0 0 1rem;
+    margin-block-end: 1rem;
 
-    font-size: 1.8rem;
-    line-height: 1.25;
+    font-size: var(--text-h3);
 }
 
-.legal-block p {
-    margin: 0 0 1rem;
+.legal-block p:last-child,
+.legal-block ul:last-child {
+    margin-block-end: 0;
+}
 
-    font-size: 0.95rem;
+.legal-block p,
+.legal-block li {
+    color: var(--color-text-muted);
+
     line-height: 1.9;
 }
 
-.legal-block p:last-child {
-    margin-bottom: 0;
-}
-
 .legal-block ul {
-    list-style: disc;
-
     margin: 0 0 1rem;
-    padding-left: 1.25rem;
+    padding-inline-start: 1.25rem;
 }
 
 .legal-block li {
-    margin-bottom: 0.5rem;
-
-    font-size: 0.95rem;
-    line-height: 1.8;
+    margin-block-end: 0.5rem;
 }
 
 .legal-block li::marker {
-    color: var(--color-secondary);
+    color: var(--color-primary);
 }
 
-.legal-block p a {
-    color: var(--color-secondary);
+/*
 
-    font-weight: 600;
-    text-decoration: underline;
-    text-underline-offset: 3px;
-}
+    The touch-size rule in style.css makes .text-link a 44px inline-flex
+    box, which would break a sentence apart. Inside the text it is put
+    back to plain inline text.
 
-.legal-block p a:hover {
-    text-decoration-thickness: 2px;
+*/
+
+.legal-block .text-link {
+    display: inline;
+
+    min-height: 0;
 }
 
 
@@ -192,30 +158,23 @@
 */
 
 
-/* ---------- Tablets (up to 1024px) ---------- */
-
-@media (max-width: 1024px) {
-
-    .legal-container {
-        gap: 2.5rem;
-        grid-template-columns: 220px 1fr;
-    }
-}
-
-
 /* ---------- Small tablets (up to 900px) ---------- */
 
 @media (max-width: 900px) {
 
-    /* Table of contents on top (no longer sticky), text below */
+    /* The list of sections goes on top in two columns, with a thin line
+       under it instead of beside it */
 
     .legal-container {
-        gap: 2.5rem;
-        grid-template-columns: 1fr;
+        grid-template-columns: minmax(0, 1fr);
     }
 
     .legal-toc {
         position: static;
+
+        padding: 0 0 2rem;
+        border-inline-start: 0;
+        border-block-end: var(--border-line);
     }
 
     .legal-toc ol {
@@ -225,32 +184,6 @@
 
     .legal-toc li {
         break-inside: avoid;
-    }
-
-    .legal-body {
-        max-width: none;
-    }
-}
-
-
-/* ---------- Mobile landscape / large phones (up to 768px) ---------- */
-
-@media (max-width: 768px) {
-
-    /* Section spacing: the first section after the intro keeps a little
-       extra room */
-
-    .legal-section {
-        padding-block: 3.5rem;
-    }
-
-    .legal-block {
-        margin-bottom: 2rem;
-        padding-bottom: 2rem;
-    }
-
-    .legal-block h2 {
-        font-size: clamp(1.4rem, 4.5vw, 1.8rem);
     }
 }
 
@@ -262,30 +195,9 @@
     .legal-toc ol {
         columns: 1;
     }
-}
 
-
-/* ---------- Small phones (up to 480px) ---------- */
-
-@media (max-width: 480px) {
-
-    /* Slightly larger side gutters than 4% so text doesn't hug the edge */
-
-    .legal-section {
-        --gutter-x: 1.25rem;
-    }
-
-    .legal-toc {
-        padding: 1.25rem;
+    .legal-block {
+        margin-block-end: 2rem;
+        padding-block-end: 2rem;
     }
 }
-
-
-/* ---------- Very small phones (up to 360px) ---------- */
-
-@media (max-width: 360px) {
-
-    .legal-intro h1 {
-        font-size: 2.25rem;
-    }
-}
