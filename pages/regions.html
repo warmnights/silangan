@@ -8,19 +8,20 @@
     <meta name="description" content="Explore Filipino food by region across Luzon, Visayas, and Mindanao, and learn what makes each area's cuisine unique.">
 
     <link rel="icon" href="../assets/images/logo/favicon.svg" type="image/svg+xml">
+    <link rel="preload" href="../assets/fonts/Cardo-Regular.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="../assets/fonts/Poppins-Regular.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="../assets/fonts/Fraunces_72pt-Bold.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/regions.css">
     <script src="../js/nav.js" defer></script>
 </head>
-
 <body>
     <div class="container">
         <a href="#main" class="skip-link">Skip to main content</a>
 
         <header class="site-header">
             <nav class="site-nav full-bleed" aria-label="Main navigation">
+                <a href="../index.html" class="site-nav-logo">SILANGAN</a>
+
                 <button
                     class="site-nav-toggle"
                     type="button"
@@ -43,7 +44,12 @@
                     <li><a href="near-me.html">Near Me</a></li>
                     <li>
                         <details class="site-nav-dropdown">
-                            <summary>More</summary>
+                            <summary>
+                                More
+                                <svg class="site-nav-chevron" viewBox="0 0 24 24" aria-hidden="true">
+                                    <path d="M6 9l6 6 6-6"></path>
+                                </svg>
+                            </summary>
                             <ul class="site-nav-dropdown-menu list-reset">
                                 <li><a href="recipes.html">Recipes</a></li>
                                 <li><a href="map.html">Map</a></li>
@@ -54,6 +60,8 @@
                 </ul>
 
                 <div class="site-nav-actions">
+                    <span class="site-nav-divider" aria-hidden="true"></span>
+
                     <a href="login.html" class="site-nav-cta">
                         Log In
                     </a>
@@ -62,8 +70,8 @@
         </header>
 
         <main id="main" tabindex="-1">
-            <section class="page-hero page-hero-split full-bleed">
-                <div class="page-hero-split-content">
+            <section class="page-header-section full-bleed">
+                <div class="page-header-content">
                     <nav class="breadcrumb" aria-label="Breadcrumb">
                         <ol class="breadcrumb-list list-reset">
                             <li><a href="../index.html">Home</a></li>
@@ -71,489 +79,389 @@
                         </ol>
                     </nav>
 
-                    <span class="section-eyebrow">
-                        A COUNTRY FULL OF FLAVOR
-                    </span>
-
                     <h1>
                         Every Region Has a
-                        <span>Story to Taste.</span>
+                        <em>Story to Taste.</em>
                     </h1>
 
-                    <p>
-                        From the hearty flavors of Luzon to the vibrant
-                        dishes of Visayas and Mindanao, discover the food
-                        traditions that make every corner of the Philippines unique.
+                    <p class="page-header-intro">
+                        From the hearty flavors of Luzon to the vibrant dishes
+                        of Visayas and Mindanao, discover the food traditions
+                        of every corner of the Philippines.
                     </p>
-
-                    <a href="#island-groups" class="button">
-                        Explore the Regions
-                    </a>
-                </div>
-
-                <div class="page-hero-split-image">
-                    <img
-                        src="../assets/images/regions/filipino-food-spread.jpg"
-                        width="1320"
-                        height="743"
-                        alt="A spread of traditional Filipino dishes">
-
-                    <div class="page-hero-split-image-caption">
-                        <span>THE PHILIPPINES</span>
-                        <p>One country. Countless flavors.</p>
-                    </div>
                 </div>
             </section>
 
-            <section class="island-groups-section" id="island-groups">
-                <div class="island-groups-header">
-                    <span class="section-eyebrow">
-                        THREE ISLAND GROUPS, COUNTLESS FLAVORS
-                    </span>
-
-                    <h2>Where Will Your Food Journey Begin?</h2>
-
+            <section class="region-index-section full-bleed" aria-labelledby="region-index-title">
+                <header class="section-header">
+                    <h2 id="region-index-title">Where Will Your Food Journey Begin?</h2>
                     <p>
                         Discover the culinary identity of the Philippines
                         through its three major island groups.
                     </p>
+                </header>
 
-                    <p class="scroll-hint">Swipe to explore</p>
-                </div>
-
-
-                <div class="island-groups-grid">
-                    <article class="island-card">
-                        <div class="island-card-image">
-                            <img
-                                loading="lazy"
-                                src="../assets/images/regions/luzon-food-spread.jpg"
-                                width="1000"
-                                height="667"
-                                alt="Traditional food from Luzon">
-
-                            <span class="island-number">01</span>
-                        </div>
-
-                        <div class="island-card-info">
-                            <span class="island-label">NORTHERN PHILIPPINES</span>
-
+                <ul class="regions-list list-reset">
+                    <li class="region">
+                        <div class="region-name">
                             <h3>Luzon</h3>
-
-                            <p>
-                                Discover rich regional specialties,
-                                comforting home-cooked dishes, and
-                                bold flavors from the country's largest island.
-                            </p>
-
-                            <a href="#luzon-favorites">
-                                Discover Luzon
-                                <span aria-hidden="true">→</span>
-                            </a>
-                        </div>
-                    </article>
-
-                    <article class="island-card">
-                        <div class="island-card-image">
-                            <img
-                                loading="lazy"
-                                src="../assets/images/regions/visayas-food-spread.jpg"
-                                width="900"
-                                height="900"
-                                alt="Traditional food from Visayas">
-
-                            <span class="island-number">02</span>
+                            <p class="label">NORTHERN PHILIPPINES</p>
                         </div>
 
-                        <div class="island-card-info">
-                            <span class="island-label">CENTRAL PHILIPPINES</span>
+                        <p class="region-description">
+                            Discover rich regional specialties, comforting home-cooked
+                            dishes, and bold flavors from the country's largest island.
+                        </p>
 
+                        <a href="#luzon-title" class="text-link">
+                            Explore Luzon
+                        </a>
+                    </li>
+
+                    <li class="region">
+                        <div class="region-name">
                             <h3>Visayas</h3>
-
-                            <p>
-                                Experience island-inspired cuisine,
-                                fresh seafood, and beloved dishes
-                                deeply rooted in local traditions.
-                            </p>
-
-                            <a href="#visayas-favorites">
-                                Discover Visayas
-                                <span aria-hidden="true">→</span>
-                            </a>
-                        </div>
-                    </article>
-
-                    <article class="island-card">
-                        <div class="island-card-image">
-                            <img
-                                loading="lazy"
-                                src="../assets/images/regions/mindanao-food-spread.jpg"
-                                width="1120"
-                                height="630"
-                                alt="Traditional food from Mindanao">
-
-                            <span class="island-number">03</span>
+                            <p class="label">CENTRAL PHILIPPINES</p>
                         </div>
 
-                        <div class="island-card-info">
-                            <span class="island-label">SOUTHERN PHILIPPINES</span>
+                        <p class="region-description">
+                            Experience island-inspired cuisine, fresh seafood, and
+                            beloved dishes deeply rooted in local traditions.
+                        </p>
 
+                        <a href="#visayas-title" class="text-link">
+                            Explore Visayas
+                        </a>
+                    </li>
+
+                    <li class="region">
+                        <div class="region-name">
                             <h3>Mindanao</h3>
-
-                            <p>
-                                Explore diverse culinary traditions,
-                                aromatic spices, and distinctive
-                                dishes shaped by many cultures.
-                            </p>
-
-                            <a href="#mindanao-favorites">
-                                Discover Mindanao
-                                <span aria-hidden="true">→</span>
-                            </a>
+                            <p class="label">SOUTHERN PHILIPPINES</p>
                         </div>
-                    </article>
-                </div>
+
+                        <p class="region-description">
+                            Explore diverse culinary traditions, aromatic spices, and
+                            distinctive dishes shaped by many cultures.
+                        </p>
+
+                        <a href="#mindanao-title" class="text-link">
+                            Explore Mindanao
+                        </a>
+                    </li>
+                </ul>
             </section>
 
-            <section class="featured-region-section full-bleed">
-                <div class="featured-region-container">
-                    <div class="featured-region-image">
-                        <img
-                            loading="lazy"
-                            src="../assets/images/regions/spotlight.jpg"
-                            width="554"
-                            height="554"
-                            alt="Bicolano food and local specialties">
+            <section
+                class="regional-favorites-section full-bleed"
+                aria-labelledby="regional-favorites-title">
+                <header class="section-header">
+                    <h2 id="regional-favorites-title">Regional Favorites</h2>
+                    <p>
+                        Get to know some of the dishes that represent
+                        the diverse food traditions of the Philippines.
+                    </p>
+                </header>
 
-                        <span class="featured-region-tag">
-                            REGION V · BICOL
-                        </span>
+                <section class="chapter" aria-labelledby="luzon-title">
+                    <div class="chapter-intro">
+                        <span class="numeral" aria-hidden="true">01</span>
+                        <p class="label">NORTHERN PHILIPPINES</p>
+                        <h3 id="luzon-title">Luzon</h3>
                     </div>
 
+                    <ul class="plates-rows list-reset">
+                        <li class="plate">
+                            <figure class="plate-image">
+                                <img
+                                    loading="lazy"
+                                    src="../assets/images/plates/bicol-express.png"
+                                    width="800"
+                                    height="800"
+                                    alt="Bicol Express, seen from above">
+                            </figure>
 
-                    <div class="featured-region-content">
-                        <span class="section-eyebrow">
-                            REGION SPOTLIGHT
-                        </span>
+                            <div>
+                                <p class="label">BICOL</p>
 
-                        <h2>
+                                <h4>Bicol Express</h4>
+
+                                <p class="plate-description">
+                                    A Bicol regional specialty described as a spicy
+                                    pork stew with coconut milk and chili peppers.
+                                </p>
+
+                                <p class="plate-source">
+                                    Source:
+                                    <a href="https://visitbicol.ph/explore-bicol/" class="text-link">
+                                        Visit Bicol food guide
+                                    </a>
+                                </p>
+
+                                <a href="food-details.html" class="text-link">
+                                    Read about Bicol Express
+                                </a>
+                            </div>
+                        </li>
+
+                        <li class="plate">
+                            <figure class="plate-image">
+                                <img
+                                    loading="lazy"
+                                    src="../assets/images/plates/ilocos-empanada.png"
+                                    width="800"
+                                    height="800"
+                                    alt="Ilocos empanada, seen from above">
+                            </figure>
+
+                            <div>
+                                <p class="label">ILOCOS</p>
+
+                                <h4>Ilocos Empanada</h4>
+
+                                <p class="plate-description">
+                                    A crisp rice-wrapper pastry with varied fillings.
+                                    A Vigan account records shredded papaya, cabbage,
+                                    and bean sprouts, with later versions adding
+                                    Vigan longganisa.
+                                </p>
+
+                                <p class="plate-source">
+                                    Source:
+                                    <a
+                                        href="https://lifestyle.inquirer.net/7498/the-hidden-complexities-of-the-vigan-empanada/"
+                                        class="text-link">
+                                        Inquirer: Vigan empanada report
+                                    </a>
+                                </p>
+
+                                <a href="food-details.html" class="text-link">
+                                    Read about Ilocos Empanada
+                                </a>
+                            </div>
+                        </li>
+
+                        <li class="plate">
+                            <figure class="plate-image">
+                                <img
+                                    loading="lazy"
+                                    src="../assets/images/plates/sisig.png"
+                                    width="800"
+                                    height="800"
+                                    alt="Sisig, seen from above">
+                            </figure>
+
+                            <div>
+                                <p class="label">PAMPANGA</p>
+
+                                <h4>Sisig</h4>
+
+                                <p class="plate-description">
+                                    A Kapampangan pork dish, commonly made with finely
+                                    chopped meat, onions, and chili in a tangy dressing.
+                                    Recipes vary and may use other proteins.
+                                </p>
+
+                                <p class="plate-source">
+                                    Source:
+                                    <a href="https://www.kawalingpinoy.com/sisig/" class="text-link">
+                                        Kawaling Pinoy: Sizzling Sisig
+                                    </a>
+                                </p>
+
+                                <a href="food-details.html" class="text-link">
+                                    Read about Sisig
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+                </section>
+
+                <section class="chapter" aria-labelledby="visayas-title">
+                    <div class="chapter-intro">
+                        <span class="numeral" aria-hidden="true">02</span>
+                        <p class="label">CENTRAL PHILIPPINES</p>
+                        <h3 id="visayas-title">Visayas</h3>
+                    </div>
+
+                    <ul class="plates-rows list-reset">
+                        <li class="plate">
+                            <figure class="plate-image">
+                                <img
+                                    loading="lazy"
+                                    src="../assets/images/plates/lechon.png"
+                                    width="800"
+                                    height="800"
+                                    alt="Cebu lechon, seen from above">
+                            </figure>
+
+                            <div>
+                                <p class="label">CEBU</p>
+
+                                <h4>Cebu Lechon</h4>
+
+                                <p class="plate-description">
+                                    Roasted pig celebrated through Cebu's Lechon
+                                    Festival and as part of Cebuano food heritage.
+                                </p>
+
+                                <p class="plate-source">
+                                    Source:
+                                    <a
+                                        href="https://cebudailynews.inquirer.net/756825/the-mactan-newtown-celebrates-a-decade-of-cebu-lechon-festival"
+                                        class="text-link">
+                                        Cebu Daily News: Lechon Festival
+                                    </a>
+                                </p>
+
+                                <a href="food-details.html" class="text-link">
+                                    Read about Cebu Lechon
+                                </a>
+                            </div>
+                        </li>
+
+                        <li class="plate">
+                            <figure class="plate-image">
+                                <img
+                                    loading="lazy"
+                                    src="../assets/images/plates/la-paz-batchoy.png"
+                                    width="800"
+                                    height="800"
+                                    alt="La Paz batchoy, seen from above">
+                            </figure>
+
+                            <div>
+                                <p class="label">LA PAZ, ILOILO</p>
+
+                                <h4>La Paz Batchoy</h4>
+
+                                <p class="plate-description">
+                                    A noodle soup associated with La Paz, Iloilo.
+                                    An Inquirer report covers a University of the
+                                    Philippines study focused on a batchoy association.
+                                </p>
+
+                                <p class="plate-source">
+                                    Source:
+                                    <a
+                                        href="https://newsinfo.inquirer.net/2256779/up-study-why-the-need-for-a-batchoy-association"
+                                        class="text-link">
+                                        Inquirer: UP study on batchoy
+                                    </a>
+                                </p>
+
+                                <a href="food-details.html" class="text-link">
+                                    Read about La Paz Batchoy
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+                </section>
+
+                <section class="chapter" aria-labelledby="mindanao-title">
+                    <div class="chapter-intro">
+                        <span class="numeral" aria-hidden="true">03</span>
+                        <p class="label">SOUTHERN PHILIPPINES</p>
+                        <h3 id="mindanao-title">Mindanao</h3>
+                    </div>
+
+                    <ul class="plates-rows list-reset">
+                        <li class="plate">
+                            <figure class="plate-image">
+                                <img
+                                    loading="lazy"
+                                    src="../assets/images/plates/chicken-pastil.png"
+                                    width="800"
+                                    height="800"
+                                    alt="Chicken pastil, seen from above">
+                            </figure>
+
+                            <div>
+                                <p class="label">MAGUINDANAO</p>
+
+                                <h4>Chicken Pastil</h4>
+
+                                <p class="plate-description">
+                                    Rice topped with sautéed shredded chicken and
+                                    wrapped in a banana leaf; BARMM lists pastil among
+                                    Maguindanao's Eid'l Fitr favorites.
+                                </p>
+
+                                <p class="plate-source">
+                                    Source:
+                                    <a
+                                        href="https://bangsamoro.gov.ph/news/latest-news/bangsamoro-delicacies-to-celebrate-eidl-fitr/"
+                                        class="text-link">
+                                        BARMM: Bangsamoro delicacies
+                                    </a>
+                                </p>
+
+                                <a href="food-details.html" class="text-link">
+                                    Read about Chicken Pastil
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+                </section>
+            </section>
+
+            <section class="bicol-spotlight-section full-bleed" aria-labelledby="bicol-spotlight-title">
+                <div class="split-content">
+                    <figure class="plate-image">
+                        <img
+                            loading="lazy"
+                            src="../assets/images/plates/pinangat.png"
+                            width="800"
+                            height="800"
+                            alt="Pinangat, seen from above">
+                    </figure>
+
+                    <div>
+                        <h2 id="bicol-spotlight-title">
                             A Taste of
-                            <span>Bicol.</span>
+                            <em>Bicol</em>
                         </h2>
 
-                        <p>
+                        <p class="split-description">
                             A local Bicol food guide describes Bicol Express as a
                             spicy pork stew with coconut milk and chili peppers,
                             and pinangat as a dish made with taro leaves and
                             coconut milk.
-                            <span class="regional-source-note">
-                                Source:
-                                <a href="https://visitbicol.ph/explore-bicol/">
-                                    Visit Bicol food guide
-                                </a>
-                            </span>
                         </p>
 
-                        <div class="featured-region-highlights">
-                            <div>
-                                <span class="highlight-number">01</span>
-                                <p>Bicol Express</p>
-                            </div>
+                        <p class="plate-source">
+                            Source:
+                            <a href="https://visitbicol.ph/explore-bicol/" class="text-link">
+                                Visit Bicol food guide
+                            </a>
+                        </p>
 
-                            <div>
-                                <span class="highlight-number">02</span>
-                                <p>Laing</p>
-                            </div>
+                        <ol class="numbered-list list-reset" aria-label="Dishes from Bicol">
+                            <li>Bicol Express</li>
+                            <li>Laing</li>
+                            <li>Pinangat</li>
+                        </ol>
 
-                            <div>
-                                <span class="highlight-number">03</span>
-                                <p>Pinangat</p>
-                            </div>
-                        </div>
-
-                        <a href="#bicol-express" class="featured-region-link">
-                            View Bicol Express →
+                        <a href="food-details.html" class="text-link">
+                            Read about Bicol Express
                         </a>
                     </div>
                 </div>
             </section>
 
-            <section class="regional-favorites-section" id="regional-favorites">
-                <div class="regional-favorites-header">
-                    <div>
-                        <span class="section-eyebrow">
-                            A JOURNEY THROUGH FILIPINO CUISINE
-                        </span>
+            <section class="regions-cta-section full-bleed" aria-labelledby="regions-cta-title">
+                <div class="closing-content">
+                    <span class="diamond-mark" aria-hidden="true"></span>
 
-                        <h2>Regional Favorites</h2>
+                    <h2 id="regions-cta-title">There's More to the Philippines Than Meets the Plate</h2>
 
-                        <p>
-                            Get to know some of the dishes that represent
-                            the diverse food traditions of the Philippines.
-                        </p>
-                    </div>
-
-                    <a href="foods.html" class="regional-view-all">
-                        Explore All Foods →
-                    </a>
-                </div>
-
-
-                <div class="regional-food-groups">
-                    <section
-                        class="regional-food-group regional-food-group-scrollable"
-                        id="luzon-favorites"
-                        aria-labelledby="luzon-favorites-heading">
-                        <h3 id="luzon-favorites-heading">Luzon</h3>
-
-                        <p class="scroll-hint">Swipe to explore</p>
-
-                        <div class="regional-food-grid">
-                            <article class="regional-food-card" id="bicol-express">
-                                <div class="regional-food-image">
-                                    <img
-                                        loading="lazy"
-                                        src="../assets/images/foods/bicol-express.jpg"
-                                        width="1024"
-                                        height="596"
-                                        alt="Bicol Express">
-
-                                    <span>BICOL</span>
-                                </div>
-
-                                <div class="regional-food-info">
-                                    <h4>Bicol Express</h4>
-
-                                    <p>
-                                        A Bicol regional specialty described as
-                                        a spicy pork stew with coconut milk and
-                                        chili peppers.
-                                        <span class="regional-source-note">
-                                            Source:
-                                            <a href="https://visitbicol.ph/explore-bicol/">
-                                                Visit Bicol food guide
-                                            </a>
-                                        </span>
-                                    </p>
-
-                                    <a href="food-details.html">
-                                        Discover Bicol Express →
-                                    </a>
-                                </div>
-                            </article>
-
-                            <article class="regional-food-card">
-                                <div class="regional-food-image">
-                                    <img
-                                        loading="lazy"
-                                        src="../assets/images/foods/ilocos-empanada.jpg"
-                                        width="1080"
-                                        height="720"
-                                        alt="Ilocos empanada">
-
-                                    <span>ILOCOS</span>
-                                </div>
-
-                                <div class="regional-food-info">
-                                    <h4>Ilocos Empanada</h4>
-
-                                    <p>
-                                        A crisp rice-wrapper pastry with varied
-                                        fillings. A Vigan account records
-                                        shredded papaya, cabbage, and bean
-                                        sprouts, with later versions adding
-                                        Vigan longganisa.
-                                        <span class="regional-source-note">
-                                            Source:
-                                            <a href="https://lifestyle.inquirer.net/7498/the-hidden-complexities-of-the-vigan-empanada/">
-                                                Inquirer: Vigan empanada report
-                                            </a>
-                                        </span>
-                                    </p>
-
-                                    <a href="food-details.html">
-                                        Discover Ilocos Empanada →
-                                    </a>
-                                </div>
-                            </article>
-
-                            <article class="regional-food-card">
-                                <div class="regional-food-image">
-                                    <img
-                                        loading="lazy"
-                                        src="../assets/images/foods/sisig.jpg"
-                                        width="1300"
-                                        height="867"
-                                        alt="Pampanga sisig">
-
-                                    <span>PAMPANGA</span>
-                                </div>
-
-                                <div class="regional-food-info">
-                                    <h4>Sisig</h4>
-
-                                    <p>
-                                        A Kapampangan pork dish, commonly made
-                                        with finely chopped meat, onions, and
-                                        chili in a tangy dressing. Recipes vary
-                                        and may use other proteins.
-                                        <span class="regional-source-note">
-                                            Source:
-                                            <a href="https://www.kawalingpinoy.com/sisig/">
-                                                Kawaling Pinoy: Sizzling Sisig
-                                            </a>
-                                        </span>
-                                    </p>
-
-                                    <a href="food-details.html">
-                                        Discover Sisig →
-                                    </a>
-                                </div>
-                            </article>
-                        </div>
-                    </section>
-
-                    <section
-                        class="regional-food-group regional-food-group-phone-scroll"
-                        id="visayas-favorites"
-                        aria-labelledby="visayas-favorites-heading">
-                        <h3 id="visayas-favorites-heading">Visayas</h3>
-
-                        <p class="scroll-hint">Swipe to explore</p>
-
-                        <div class="regional-food-grid">
-                            <article class="regional-food-card">
-                                <div class="regional-food-image">
-                                    <img
-                                        loading="lazy"
-                                        src="../assets/images/foods/cebu-lechon.jpg"
-                                        width="620"
-                                        height="620"
-                                        alt="Cebu lechon">
-
-                                    <span>CEBU</span>
-                                </div>
-
-                                <div class="regional-food-info">
-                                    <h4>Cebu Lechon</h4>
-
-                                    <p>
-                                        Roasted pig celebrated through Cebu's
-                                        Lechon Festival and as part of Cebuano
-                                        food heritage.
-                                        <span class="regional-source-note">
-                                            Source:
-                                            <a href="https://cebudailynews.inquirer.net/756825/the-mactan-newtown-celebrates-a-decade-of-cebu-lechon-festival">
-                                                Cebu Daily News: Lechon Festival
-                                            </a>
-                                        </span>
-                                    </p>
-
-                                    <a href="food-details.html">
-                                        Discover Cebu Lechon →
-                                    </a>
-                                </div>
-                            </article>
-
-                            <article class="regional-food-card">
-                                <div class="regional-food-image">
-                                    <img
-                                        loading="lazy"
-                                        src="../assets/images/foods/la-paz-batchoy.jpg"
-                                        width="1300"
-                                        height="566"
-                                        alt="La Paz batchoy">
-
-                                    <span>ILOILO</span>
-                                </div>
-
-                                <div class="regional-food-info">
-                                    <h4>La Paz Batchoy</h4>
-
-                                    <p>
-                                        A noodle soup associated with La Paz,
-                                        Iloilo. An Inquirer report covers a
-                                        University of the Philippines study
-                                        focused on a batchoy association.
-                                        <span class="regional-source-note">
-                                            Source:
-                                            <a href="https://newsinfo.inquirer.net/2256779/up-study-why-the-need-for-a-batchoy-association">
-                                                Inquirer: UP study on batchoy
-                                            </a>
-                                        </span>
-                                    </p>
-
-                                    <a href="food-details.html">
-                                        Discover La Paz Batchoy →
-                                    </a>
-                                </div>
-                            </article>
-                        </div>
-                    </section>
-
-                    <section
-                        class="regional-food-group"
-                        id="mindanao-favorites"
-                        aria-labelledby="mindanao-favorites-heading">
-                        <h3 id="mindanao-favorites-heading">Mindanao</h3>
-
-                        <div class="regional-food-grid">
-                            <article class="regional-food-card">
-                                <div class="regional-food-image">
-                                    <img
-                                        loading="lazy"
-                                        src="../assets/images/foods/chicken-pastil.jpg"
-                                        width="1536"
-                                        height="1024"
-                                        alt="Mindanao chicken pastil">
-
-                                    <span>MAGUINDANAO</span>
-                                </div>
-
-                                <div class="regional-food-info">
-                                    <h4>Chicken Pastil</h4>
-
-                                    <p>
-                                        Rice topped with sautéed shredded
-                                        chicken and wrapped in a banana leaf;
-                                        BARMM lists pastil among Maguindanao's
-                                        Eid'l Fitr favorites.
-                                        <span class="regional-source-note">
-                                            Source:
-                                            <a href="https://bangsamoro.gov.ph/news/latest-news/bangsamoro-delicacies-to-celebrate-eidl-fitr/">
-                                                BARMM: Bangsamoro delicacies
-                                            </a>
-                                        </span>
-                                    </p>
-
-                                    <a href="food-details.html">
-                                        Discover Chicken Pastil →
-                                    </a>
-                                </div>
-                            </article>
-                        </div>
-                    </section>
-                </div>
-            </section>
-
-            <section class="regions-cta-section full-bleed">
-                <div class="regions-cta-content">
-                    <span class="section-eyebrow">
-                        YOUR NEXT FOOD ADVENTURE AWAITS
-                    </span>
-
-                    <h2>
-                        There's More to the Philippines
-                        Than Meets the Plate.
-                    </h2>
-
-                    <p>
-                        Every province has something special to share.
-                        Keep exploring and find your next favorite Filipino dish.
+                    <p class="closing-description">
+                        Every province has something special to share. Keep
+                        exploring and find your next favorite Filipino dish.
                     </p>
 
                     <a href="foods.html" class="button">
-                        Discover Filipino Foods →
+                        Discover Filipino Foods
                     </a>
                 </div>
             </section>
@@ -563,15 +471,13 @@
             <div class="footer-main">
                 <div class="footer-brand">
                     <a href="../index.html" class="footer-logo">
-                        Silangan
+                        SILANGAN
                     </a>
-
                     <p>
                         Discover the Philippines, one bite at a time.
                         Explore Filipino dishes, regional specialties,
                         and the stories behind every flavor.
                     </p>
-
                     <span class="footer-brand-tagline">
                         Sarap ng Pilipinas, tikman at tuklasin!
                     </span>
@@ -579,7 +485,6 @@
 
                 <div class="footer-links">
                     <h3>Explore</h3>
-
                     <ul class="list-reset">
                         <li><a href="top-foods.html">Top Foods</a></li>
                         <li><a href="foods.html">All Foods</a></li>
@@ -590,7 +495,6 @@
 
                 <div class="footer-links">
                     <h3>Discover</h3>
-
                     <ul class="list-reset">
                         <li><a href="near-me.html">Near Me</a></li>
                         <li><a href="regions.html">Regions</a></li>
@@ -600,15 +504,13 @@
 
                 <div class="footer-about">
                     <h3>About Silangan</h3>
-
                     <p>
                         More than just food, every Filipino dish
                         tells a story of culture, tradition,
                         and togetherness.
                     </p>
-
-                    <a href="foods.html" class="footer-explore-link">
-                        Start Exploring →
+                    <a href="foods.html" class="text-link">
+                        Start Exploring
                     </a>
                 </div>
             </div>
