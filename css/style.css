@@ -1293,6 +1293,69 @@ main:focus {
     color: var(--color-text-muted);
 }
 
+/*
+
+    .panel is the one contained area. It is a thin gold frame for the few
+    things that need to feel like one box: a notice, a form, a map. Keep
+    these rare, the rest of the site is open on the green.
+
+    .panel-columns puts two blocks side by side inside a panel. Add
+    .panel-aside to the second block to give it a thin line on its left:
+    class="panel panel-columns"
+
+*/
+
+.panel {
+    padding: clamp(1.5rem, 4vw, 3rem);
+    border: var(--border-line);
+    border-radius: var(--radius-md);
+}
+
+.panel-columns {
+    display: grid;
+    gap: 3rem;
+    grid-template-columns: 1.4fr 1fr;
+}
+
+.panel-aside {
+    padding-inline-start: 3rem;
+    border-inline-start: var(--border-line);
+}
+
+/*
+
+    .link-list is a short stacked list of text links (browse links,
+    related pages). Put <a class="text-link"> inside each <li>:
+    <ul class="link-list list-reset">
+
+*/
+
+.link-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+
+    margin: 0 0 1rem;
+}
+
+/*
+
+    .note is a small muted line for fine print, such as a sample-data or
+    "not formally cited" message. The last one in a block has no space
+    below, so it doesn't add extra space at the bottom of a panel.
+
+*/
+
+.note {
+    color: var(--color-text-muted);
+
+    font-size: var(--text-small);
+}
+
+.note:last-child {
+    margin-block-end: 0;
+}
+
 
 /*
 
@@ -1736,6 +1799,21 @@ main:focus {
         grid-template-columns: minmax(0, 1fr);
 
         padding-block: 2.5rem;
+    }
+
+    /* Panel columns stack, and the thin line moves from the left of the
+       second block to its top */
+
+    .panel-columns {
+        gap: 2rem;
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .panel-aside {
+        padding-inline-start: 0;
+        padding-block-start: 2rem;
+        border-inline-start: 0;
+        border-block-start: var(--border-line);
     }
 }
 

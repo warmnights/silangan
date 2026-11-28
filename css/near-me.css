@@ -1,227 +1,36 @@
-
-
 /*
 
 
-    ALBAY SAMPLE AREA
+    NEAR ME PAGE
+
+    Loaded after style.css. The page is built from shared parts in
+    style.css (page header, panel, link list, note, closing content), so
+    this file only holds what is special to the Near Me page.
 
 
 */
 
 
-.near-spots-section {
-    padding-block: 5rem;
-
-    background-color: var(--band-bg);
-}
-
-.near-spots-container {
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.near-spots-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 2rem;
-
-    margin-bottom: 2.2rem;
-}
-
-.near-spots-header h2 {
-    margin: 0;
-
-    font-size: clamp(1.75rem, 4vw, 2.25rem);
-}
-
-.near-spots-location {
-    color: var(--color-secondary);
-
-    font-size: 0.9rem;
-    font-weight: 600;
-    white-space: nowrap;
-}
-
-.near-preview-layout {
-    display: grid;
-    align-items: start;
-    gap: clamp(2rem, 5vw, 4rem);
-    grid-template-columns: minmax(0, 1.4fr) minmax(16rem, 0.8fr);
-}
-
-.near-general-browse {
-    padding: 0.25rem 0 0 2rem;
-    border-left: 1px solid var(--color-border);
-}
-
-.near-general-browse p {
-    margin: 0.75rem 0 0;
-
-    font-size: 0.9rem;
-}
-
-.near-general-browse ul {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: flex-start;
-    gap: 0 0.75rem;
-
-    margin: 0;
-}
-
-.near-general-browse a {
-    display: inline-flex;
-    align-items: center;
-
-    min-height: 44px;
-
-    color: var(--color-secondary);
-
-    font-size: 0.9rem;
-    font-weight: 600;
-    text-underline-offset: 0.2em;
-}
-
-.near-general-browse a:hover {
-    text-decoration: underline;
-    text-decoration-thickness: 2px;
-}
-
-.near-general-browse a:focus-visible {
-    outline: 2px solid var(--color-secondary);
-}
-
-
 /*
 
-
-    EVERY PLACE HAS A FLAVOR TO SHARE
-
+    Same top and bottom space as the home sections. Change
+    --section-space in :root to move all of them at once.
 
 */
 
-
-.near-explore-section {
-    padding-block: 3.5rem;
-
-    background-color: var(--band-bg-alt);
-
-    text-align: center;
+.near-me-sample-section,
+.near-me-explore-section {
+    padding-block: var(--section-space);
 }
-
-.near-explore-content {
-    max-width: 700px;
-    margin: 0 auto;
-}
-
-.near-explore-section h2 {
-    margin: 1.1rem 0;
-
-    font-size: clamp(1.75rem, 4vw, 2.25rem);
-    line-height: 1.3;
-}
-
-.near-explore-section p {
-    margin-bottom: 1.75rem;
-
-    font-size: 0.875rem;
-    line-height: 1.8;
-}
-
-.near-explore-button {
-    display: inline-block;
-
-    padding: 0.875rem 1.5rem;
-    border-radius: var(--radius-sm);
-
-    color: var(--button-text);
-    background-color: var(--button-bg);
-
-    font-size: 0.8rem;
-    font-weight: 600;
-
-    transition: color 0.2s ease, background-color 0.2s ease;
-}
-
-.near-explore-button:hover {
-    color: var(--button-text-hover);
-    background-color: var(--button-bg-hover);
-}
-
 
 /*
 
-
-    MEDIA QUERIES
-
+    The search box is switched off (disabled) because location search
+    doesn't exist yet. It only needs some space below it, before the
+    "No Restaurant Listings" heading.
 
 */
 
-
-/* ---------- Tablets (up to 1024px) ---------- */
-
-@media (max-width: 1024px) {
-
-    .near-spots-header {
-        gap: 1.5rem;
-    }
+.near-me-search {
+    margin-block-end: 2rem;
 }
-
-
-/* ---------- Mobile landscape / large phones (up to 768px) ---------- */
-
-@media (max-width: 768px) {
-
-    /* Section spacing */
-
-    .near-spots-section {
-        padding-block: 3.5rem;
-    }
-
-    .near-explore-section {
-        padding-block: 2.5rem;
-    }
-
-    /* Section header: title block on top, location tag below */
-
-    .near-spots-header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 1.25rem;
-    }
-
-    .near-preview-layout {
-        gap: 0.75rem;
-        grid-template-columns: 1fr;
-    }
-
-    .near-general-browse {
-        padding: 0.5rem 0 0;
-        border-top: 1px solid var(--color-border);
-        border-left: 0;
-    }
-}
-
-
-/* ---------- Small phones (up to 480px) ---------- */
-
-@media (max-width: 480px) {
-
-    /* Slightly larger side gutters than the default 4% so text doesn't hug the edge */
-
-    .near-spots-section,
-    .near-explore-section {
-        --gutter-x: 1.25rem;
-    }
-
-    /* Section header */
-
-    .near-spots-header {
-        margin-bottom: 1.75rem;
-    }
-
-    .near-spots-location {
-        white-space: normal;
-    }
-}
