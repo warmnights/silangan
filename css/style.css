@@ -952,6 +952,133 @@ main:focus {
     color: var(--color-text-muted);
 }
 
+/*
+
+    The small "Source:" line under a dish that has a cited source.
+
+*/
+
+.plate-source {
+    color: var(--color-text-muted);
+
+    font-size: var(--text-small);
+}
+
+
+/*
+
+
+    PAGE HEADER: THE SHORT OPENING OF EVERY PAGE EXCEPT THE HOMEPAGE
+
+
+*/
+
+
+/*
+
+    Inner pages don't get a big hero. They open with a breadcrumb, a
+    small gold label, the h1 and one intro line. The thin line under
+    the header ends in a small gold diamond (the ::after), a nod to the
+    diamond corner marks in the reference posters. The diamond only sits
+    in place, it doesn't move, so it needs no reduced-motion rule.
+
+*/
+
+.page-header-section {
+    position: relative;
+
+    padding-block: clamp(2.5rem, 6vw, 4.5rem) clamp(3.5rem, 8vw, 6rem);
+    border-block-end: var(--border-line);
+}
+
+.page-header-section::after {
+    content: "";
+
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+
+    width: 0.5rem;
+    height: 0.5rem;
+
+    background-color: var(--color-primary);
+
+    transform: translate(-50%, 50%) rotate(45deg);
+}
+
+.page-header-content {
+    max-width: 48rem;
+    margin: 0 auto;
+
+    text-align: center;
+}
+
+.page-header-content h1 {
+    margin-block-end: 1.5rem;
+
+    font-size: var(--text-h1);
+}
+
+.page-header-content h1 em {
+    display: block;
+
+    color: var(--color-primary);
+}
+
+.page-header-intro {
+    max-width: 36rem;
+    margin: 0 auto 2rem;
+
+    color: var(--color-text-muted);
+}
+
+/*
+
+    The breadcrumb links get vertical padding so they are at least 44px
+    tall to tap. .list-reset doesn't reset margin, so it is set here.
+
+*/
+
+.breadcrumb {
+    margin-block-end: 1rem;
+}
+
+.breadcrumb-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 0 0.75rem;
+
+    margin: 0;
+
+    color: var(--color-text-muted);
+
+    font-size: var(--text-small);
+}
+
+.breadcrumb-list li + li::before {
+    content: "/";
+
+    margin-inline-end: 0.75rem;
+}
+
+.breadcrumb-list [aria-current="page"] {
+    color: var(--color-primary);
+}
+
+.breadcrumb a {
+    display: inline-block;
+
+    padding-block: 0.7rem;
+
+    transition: color var(--transition);
+}
+
+.breadcrumb a:hover {
+    color: var(--color-primary);
+}
+
 
 /*
 

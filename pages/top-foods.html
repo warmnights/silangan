@@ -8,19 +8,20 @@
     <meta name="description" content="Discover the most loved Filipino dishes, from classics like adobo and sinigang to must-try regional favorites.">
 
     <link rel="icon" href="../assets/images/logo/favicon.svg" type="image/svg+xml">
+    <link rel="preload" href="../assets/fonts/Cardo-Regular.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="../assets/fonts/Poppins-Regular.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="../assets/fonts/Fraunces_72pt-Bold.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/top-foods.css">
     <script src="../js/nav.js" defer></script>
 </head>
-
 <body>
     <div class="container">
         <a href="#main" class="skip-link">Skip to main content</a>
 
         <header class="site-header">
             <nav class="site-nav full-bleed" aria-label="Main navigation">
+                <a href="../index.html" class="site-nav-logo">SILANGAN</a>
+
                 <button
                     class="site-nav-toggle"
                     type="button"
@@ -43,7 +44,12 @@
                     <li><a href="near-me.html">Near Me</a></li>
                     <li>
                         <details class="site-nav-dropdown">
-                            <summary>More</summary>
+                            <summary>
+                                More
+                                <svg class="site-nav-chevron" viewBox="0 0 24 24" aria-hidden="true">
+                                    <path d="M6 9l6 6 6-6"></path>
+                                </svg>
+                            </summary>
                             <ul class="site-nav-dropdown-menu list-reset">
                                 <li><a href="recipes.html">Recipes</a></li>
                                 <li><a href="map.html">Map</a></li>
@@ -54,6 +60,8 @@
                 </ul>
 
                 <div class="site-nav-actions">
+                    <span class="site-nav-divider" aria-hidden="true"></span>
+
                     <a href="login.html" class="site-nav-cta">
                         Log In
                     </a>
@@ -62,9 +70,8 @@
         </header>
 
         <main id="main" tabindex="-1">
-            <section class="page-hero page-hero-split top-foods-intro full-bleed">
-                <div class="page-hero-split-content">
-
+            <section class="page-header-section full-bleed" aria-labelledby="page-header-title">
+                <div class="page-header-content">
                     <nav class="breadcrumb" aria-label="Breadcrumb">
                         <ol class="breadcrumb-list list-reset">
                             <li><a href="../index.html">Home</a></li>
@@ -72,352 +79,266 @@
                         </ol>
                     </nav>
 
-                    <h1>
-                        The Flavors <br>
-                        We Call <span>Home.</span>
+                    <h1 id="page-header-title">
+                        The Flavors We Call
+                        <em>Home.</em>
                     </h1>
 
-                    <p>
+                    <p class="page-header-intro">
                         From comforting classics to unforgettable delicacies,
                         discover the Filipino dishes that tell stories of
                         our culture, traditions, and love for food.
                     </p>
 
-                    <a href="#filipino-favorites" class="button">
-                        Explore the Collection ↓
+                    <a href="#filipino-favorites-title" class="button button-outline">
+                        Explore the Collection
                     </a>
-
                 </div>
-
-                <div class="page-hero-split-image">
-                    <img
-                        src="../assets/images/foods/filipino-feast.jpg"
-                        width="1600"
-                        height="1067"
-                        alt="A spread of Filipino dishes, fruit, and desserts arranged on a table">
-                </div>
-
             </section>
 
-            <section class="featured-food-section full-bleed">
-                <div class="featured-food-container">
-                    <div class="featured-food-heading">
-                        <h2>One Dish, Endless Memories.</h2>
+            <section class="featured-food-section full-bleed" aria-labelledby="featured-food-title">
+                <div class="featured-food-content">
+                    <figure class="plate-image">
+                        <img
+                            src="../assets/images/plates/chicken-adobo.png"
+                            width="800"
+                            height="800"
+                            alt="Chicken adobo, seen from above">
+                    </figure>
 
-                        <p>
+                    <div>
+                        <h2 id="featured-food-title">One Dish, Endless Memories.</h2>
+
+                        <p class="featured-food-intro">
                             Some flavors never go out of style.
                             Here's one that deserves the spotlight.
                         </p>
-                    </div>
 
-
-                    <article class="featured-food-card">
-                        <div class="featured-food-image">
-                            <img
-                                loading="lazy"
-                                src="../assets/images/foods/chicken-adobo.jpg"
-                                width="450"
-                                height="578"
-                                alt="Filipino Chicken Adobo served with rice">
-                        </div>
-
-                        <div class="featured-food-info">
+                        <div class="featured-food-dish">
                             <h3>Chicken Adobo</h3>
+                            <p class="label">FILIPINO CLASSIC, MAIN DISH</p>
 
-                            <p>
+                            <p class="plate-description">
                                 Chicken simmered with soy sauce, vinegar, and
                                 garlic develops a savory, tangy sauce.
                             </p>
 
-                            <div class="featured-food-tags">
-                                <span>Filipino Classic</span>
-                                <span>Main Dish</span>
-                            </div>
-
-                            <a href="food-details.html" class="featured-food-link">
-
-                                Discover Adobo →
-
+                            <a href="food-details.html" class="text-link">
+                                Read about Chicken Adobo
                             </a>
-
                         </div>
-                    </article>
+                    </div>
                 </div>
             </section>
 
-            <section class="filipino-favorites-section full-bleed" id="filipino-favorites">
-                <div class="filipino-favorites-header">
-                    <div>
-                        <h2>Filipino Favorites</h2>
+            <section class="filipino-favorites-section full-bleed" aria-labelledby="filipino-favorites-title">
+                <header class="section-header">
+                    <h2 id="filipino-favorites-title">Filipino Favorites</h2>
+                    <p>
+                        Get to know the dishes that bring people
+                        together, one delicious serving at a time.
+                    </p>
+                </header>
 
-                        <p>
-                            Get to know the dishes that bring people
-                            together, one delicious serving at a time.
-                        </p>
-
-                        <p class="filipino-favorites-scroll-hint">
-                            Swipe to explore
-                        </p>
-                    </div>
-
-                    <span class="collection-note">
-                        EDITORIAL SELECTION
-                    </span>
-                </div>
-
-
-                <div class="filipino-food-grid">
-                    <article class="filipino-food-card">
-                        <a
-                            href="food-details.html"
-                            class="filipino-food-image"
-                            tabindex="-1"
-                            aria-hidden="true">
-
+                <ul class="plates-grid list-reset">
+                    <li class="plate">
+                        <figure class="plate-image">
                             <img
                                 loading="lazy"
-                                src="../assets/images/foods/sinigang.jpg"
-                                width="1300"
-                                height="566"
-                                alt="Traditional Filipino Sinigang">
+                                src="../assets/images/plates/sinigang.png"
+                                width="800"
+                                height="800"
+                                alt="Sinigang, seen from above">
+                        </figure>
 
-                        </a>
-
-                        <div class="filipino-food-info">
-                            <span class="filipino-food-category">
-                                COMFORT FOOD
-                            </span>
+                        <div>
+                            <p class="label">COMFORT FOOD</p>
 
                             <h3>Sinigang</h3>
 
-                            <p>
+                            <p class="plate-description">
                                 A comforting sour soup with tender meat,
                                 fresh vegetables, and a flavorful broth.
                             </p>
 
-                            <a href="food-details.html">
-                                Discover Sinigang →
+                            <a href="food-details.html" class="text-link">
+                                Read about Sinigang
                             </a>
                         </div>
-                    </article>
+                    </li>
 
-                    <article class="filipino-food-card">
-                        <a
-                            href="food-details.html"
-                            class="filipino-food-image"
-                            tabindex="-1"
-                            aria-hidden="true">
-
+                    <li class="plate">
+                        <figure class="plate-image">
                             <img
                                 loading="lazy"
-                                src="../assets/images/foods/lechon.jpg"
-                                width="1300"
-                                height="566"
-                                alt="Filipino roasted Lechon">
+                                src="../assets/images/plates/lechon.png"
+                                width="800"
+                                height="800"
+                                alt="Lechon, seen from above">
+                        </figure>
 
-                        </a>
-
-                        <div class="filipino-food-info">
-                            <span class="filipino-food-category">
-                                FESTIVE FAVORITE
-                            </span>
+                        <div>
+                            <p class="label">FESTIVE FAVORITE</p>
 
                             <h3>Lechon</h3>
 
-                            <p>
+                            <p class="plate-description">
                                 A whole roasted pig known for its
                                 crispy golden skin and flavorful meat.
                             </p>
 
-                            <a href="food-details.html">
-                                Discover Lechon →
+                            <a href="food-details.html" class="text-link">
+                                Read about Lechon
                             </a>
                         </div>
-                    </article>
+                    </li>
 
-                    <article class="filipino-food-card">
-                        <a
-                            href="food-details.html"
-                            class="filipino-food-image"
-                            tabindex="-1"
-                            aria-hidden="true">
-
+                    <li class="plate">
+                        <figure class="plate-image">
                             <img
                                 loading="lazy"
-                                src="../assets/images/foods/halo-halo.jpg"
-                                width="1300"
-                                height="640"
-                                alt="A glass of colorful Filipino Halo-Halo">
+                                src="../assets/images/plates/halo-halo.png"
+                                width="800"
+                                height="800"
+                                alt="A glass of halo-halo">
+                        </figure>
 
-                        </a>
-
-                        <div class="filipino-food-info">
-                            <span class="filipino-food-category">
-                                FILIPINO DESSERT
-                            </span>
+                        <div>
+                            <p class="label">FILIPINO DESSERT</p>
 
                             <h3>Halo-Halo</h3>
 
-                            <p>
+                            <p class="plate-description">
                                 A refreshing dessert combining shaved ice,
                                 milk, sweetened ingredients, and toppings.
                             </p>
 
-                            <a href="food-details.html">
-                                Discover Halo-Halo →
+                            <a href="food-details.html" class="text-link">
+                                Read about Halo-Halo
                             </a>
                         </div>
-                    </article>
+                    </li>
 
-                    <article class="filipino-food-card">
-                        <a
-                            href="food-details.html"
-                            class="filipino-food-image"
-                            tabindex="-1"
-                            aria-hidden="true">
-
+                    <li class="plate">
+                        <figure class="plate-image">
                             <img
                                 loading="lazy"
-                                src="../assets/images/foods/kinunot.jpg"
-                                width="1300"
-                                height="731"
-                                alt="Traditional Bicolano Kinunot">
+                                src="../assets/images/plates/kinunot.png"
+                                width="800"
+                                height="800"
+                                alt="Kinunot, seen from above">
+                        </figure>
 
-                        </a>
-
-                        <div class="filipino-food-info">
-                            <span class="filipino-food-category">
-                                REGIONAL SPECIALTY
-                            </span>
+                        <div>
+                            <p class="label">BICOL, REGIONAL SPECIALTY</p>
 
                             <h3>Kinunot</h3>
 
-                            <p>
+                            <p class="plate-description">
                                 A Bicolano dish of shredded fish simmered
                                 in coconut milk with moringa leaves.
-                                <span class="food-source">
-                                    Source:
-                                    <a
-                                        href="https://tourism.naga.gov.ph/iconic-bicolano-lenten-recipes/"
-                                        class="food-source-link"
-                                        aria-label="Naga City Tourism article: Iconic Bicolano Lenten Recipes">
-                                        Naga City Tourism
-                                    </a>
-                                </span>
                             </p>
 
-                            <a href="food-details.html">
-                                Discover Kinunot →
+                            <p class="plate-source">
+                                Source:
+                                <a
+                                    href="https://tourism.naga.gov.ph/iconic-bicolano-lenten-recipes/"
+                                    class="text-link"
+                                    aria-label="Naga City Tourism article: Iconic Bicolano Lenten Recipes">
+                                    Naga City Tourism
+                                </a>
+                            </p>
+
+                            <a href="food-details.html" class="text-link">
+                                Read about Kinunot
                             </a>
                         </div>
-                    </article>
+                    </li>
 
-                    <article class="filipino-food-card">
-                        <a
-                            href="food-details.html"
-                            class="filipino-food-image"
-                            tabindex="-1"
-                            aria-hidden="true">
-
+                    <li class="plate">
+                        <figure class="plate-image">
                             <img
                                 loading="lazy"
-                                src="../assets/images/foods/pinangat.jpg"
-                                width="1300"
-                                height="975"
-                                alt="Traditional Bicolano Pinangat">
+                                src="../assets/images/plates/pinangat.png"
+                                width="800"
+                                height="800"
+                                alt="Pinangat, seen from above">
+                        </figure>
 
-                        </a>
-
-                        <div class="filipino-food-info">
-                            <span class="filipino-food-category">
-                                REGIONAL DISH
-                            </span>
+                        <div>
+                            <p class="label">BICOL, REGIONAL DISH</p>
 
                             <h3>Pinangat</h3>
 
-                            <p>
+                            <p class="plate-description">
                                 A Bicolano dish of taro leaves cooked with
                                 coconut milk.
-                                <span class="food-source">
-                                    Source:
-                                    <a
-                                        href="https://tourism.naga.gov.ph/iconic-bicolano-lenten-recipes/"
-                                        class="food-source-link"
-                                        aria-label="Naga City Tourism article: Iconic Bicolano Lenten Recipes">
-                                        Naga City Tourism
-                                    </a>
-                                </span>
                             </p>
 
-                            <a href="food-details.html">
-                                Discover Pinangat →
+                            <p class="plate-source">
+                                Source:
+                                <a
+                                    href="https://tourism.naga.gov.ph/iconic-bicolano-lenten-recipes/"
+                                    class="text-link"
+                                    aria-label="Naga City Tourism article: Iconic Bicolano Lenten Recipes">
+                                    Naga City Tourism
+                                </a>
+                            </p>
+
+                            <a href="food-details.html" class="text-link">
+                                Read about Pinangat
                             </a>
                         </div>
-                    </article>
+                    </li>
 
-                    <article class="filipino-food-card">
-                        <a
-                            href="food-details.html"
-                            class="filipino-food-image"
-                            tabindex="-1"
-                            aria-hidden="true">
-
+                    <li class="plate">
+                        <figure class="plate-image">
                             <img
                                 loading="lazy"
-                                src="../assets/images/foods/kinalas.jpg"
-                                width="1300"
-                                height="566"
-                                alt="A serving of Naga City's Kinalas">
+                                src="../assets/images/plates/kinalas.png"
+                                width="800"
+                                height="800"
+                                alt="Kinalas noodle soup, seen from above">
+                        </figure>
 
-                        </a>
-
-                        <div class="filipino-food-info">
-                            <span class="filipino-food-category">
-                                REGIONAL SPECIALTY
-                            </span>
+                        <div>
+                            <p class="label">NAGA CITY, REGIONAL SPECIALTY</p>
 
                             <h3>Kinalas</h3>
 
-                            <p>
+                            <p class="plate-description">
                                 A Naga City dish served with a rich broth
                                 and brown gravy.
-                                <span class="food-source">
-                                    Source:
-                                    <a
-                                        href="https://tourism.naga.gov.ph/kinalas-a-hearty-dish-from-the-heart-of-bicol/"
-                                        class="food-source-link"
-                                        aria-label="Naga City Tourism article: Kinalas, a Hearty Dish From the Heart of Bicol">
-                                        Naga City Tourism
-                                    </a>
-                                </span>
                             </p>
 
-                            <a href="food-details.html">
-                                Discover Kinalas →
+                            <p class="plate-source">
+                                Source:
+                                <a
+                                    href="https://tourism.naga.gov.ph/kinalas-a-hearty-dish-from-the-heart-of-bicol/"
+                                    class="text-link"
+                                    aria-label="Naga City Tourism article: Kinalas, a Hearty Dish From the Heart of Bicol">
+                                    Naga City Tourism
+                                </a>
+                            </p>
+
+                            <a href="food-details.html" class="text-link">
+                                Read about Kinalas
                             </a>
                         </div>
-                    </article>
-
-                </div>
-
+                    </li>
+                </ul>
             </section>
 
-            <section class="top-foods-cta-section full-bleed">
-                <div class="top-foods-cta-container">
-                    <h2>
-                        Your Next Favorite <br>
-                        Dish Is Waiting.
-                    </h2>
-
+            <section class="top-foods-cta-section full-bleed" aria-labelledby="top-foods-cta-title">
+                <div class="top-foods-cta-content">
+                    <h2 id="top-foods-cta-title">Your Next Favorite Dish Is Waiting.</h2>
                     <p>
                         There's so much more to Filipino cuisine.
                         Continue exploring and discover flavors
                         from every corner of the Philippines.
                     </p>
-
                     <a href="foods.html" class="button">
-                        Explore All Foods →
-
+                        Explore All Foods
                     </a>
                 </div>
             </section>
@@ -427,15 +348,13 @@
             <div class="footer-main">
                 <div class="footer-brand">
                     <a href="../index.html" class="footer-logo">
-                        Silangan
+                        SILANGAN
                     </a>
-
                     <p>
                         Discover the Philippines, one bite at a time.
                         Explore Filipino dishes, regional specialties,
                         and the stories behind every flavor.
                     </p>
-
                     <span class="footer-brand-tagline">
                         Sarap ng Pilipinas, tikman at tuklasin!
                     </span>
@@ -443,7 +362,6 @@
 
                 <div class="footer-links">
                     <h3>Explore</h3>
-
                     <ul class="list-reset">
                         <li><a href="top-foods.html">Top Foods</a></li>
                         <li><a href="foods.html">All Foods</a></li>
@@ -454,7 +372,6 @@
 
                 <div class="footer-links">
                     <h3>Discover</h3>
-
                     <ul class="list-reset">
                         <li><a href="near-me.html">Near Me</a></li>
                         <li><a href="regions.html">Regions</a></li>
@@ -464,15 +381,13 @@
 
                 <div class="footer-about">
                     <h3>About Silangan</h3>
-
                     <p>
                         More than just food, every Filipino dish
                         tells a story of culture, tradition,
                         and togetherness.
                     </p>
-
-                    <a href="foods.html" class="footer-explore-link">
-                        Start Exploring →
+                    <a href="foods.html" class="text-link">
+                        Start Exploring
                     </a>
                 </div>
             </div>
