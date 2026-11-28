@@ -1,20 +1,44 @@
-
-
 /*
 
 
-    CAN'T DECIDE? LET'S EAT!
+    RANDOM FOOD PAGE
+
+    Loaded after style.css. Almost everything on this page comes from
+    shared parts in style.css (page header, split content, plates, facts
+    list, buttons, closing content), so this file only holds what is
+    special to the random food page.
 
 
 */
 
 
-.random-intro h1 span {
-    display: block;
+/*
+
+
+    SECTION SPACING
+
+
+*/
+
+
+/*
+
+    Same top and bottom space as the home sections. Change
+    --section-space in :root to move all of them at once. The thin line
+    above the sections after the featured dish separates the parts of
+    the page.
+
+*/
+
+.featured-dish-section,
+.random-discoveries-section,
+.random-cta-section {
+    padding-block: var(--section-space);
 }
 
-.random-intro .page-hero-content > p {
-    margin-bottom: 2rem;
+.random-discoveries-section,
+.random-cta-section {
+    border-block-start: var(--border-line);
 }
 
 
@@ -29,511 +53,18 @@
 
 /*
 
-    First section after the intro: extra breathing room
+    The dish buttons sit in one row that wraps on small screens. The
+    "Show Another Dish" button is disabled until the random picker is
+    built (see the note on the page and the disabled .button in
+    style.css).
 
 */
-
-.featured-dish-section {
-    padding-block: 5rem;
-
-    background-color: var(--band-bg);
-}
-
-.featured-dish-container {
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.featured-dish {
-    display: grid;
-    align-items: center;
-    gap: 4rem;
-    grid-template-columns: 1fr 1fr;
-}
-
-.featured-dish-image {
-    position: relative;
-
-    overflow: hidden;
-
-    height: 430px;
-    border-radius: var(--radius-md);
-}
-
-.featured-dish-image img {
-    width: 100%;
-    height: 100%;
-
-    object-fit: cover;
-}
-
-.featured-dish-image-label {
-    position: absolute;
-    bottom: 1.25rem;
-    left: 1.25rem;
-
-    padding: 0.7rem 1rem;
-    border-radius: var(--radius-sm);
-
-    color: var(--color-background);
-    background-color: var(--color-primary);
-
-    font-size: 0.75rem;
-    font-weight: 600;
-    letter-spacing: 0.08em;
-}
-
-.featured-dish-content {
-    min-width: 0;
-    max-width: 520px;
-}
-
-.featured-dish-content h2 {
-    margin: 0;
-
-    font-size: 3.5rem;
-    line-height: 1.15;
-}
-
-.featured-dish-content h2 span {
-    color: var(--color-secondary);
-}
-
-.featured-dish-content > p {
-    margin: 1.25rem 0;
-
-    font-size: 0.95rem;
-    line-height: 1.9;
-}
-
-.featured-dish-details {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem 2rem;
-
-    margin: 2rem 0;
-    padding: 1.25rem 0;
-    border-top: 1px solid var(--color-border);
-    border-bottom: 1px solid var(--color-border);
-}
 
 .featured-dish-actions {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    gap: 0.75rem 1rem;
+    gap: 0.75rem 1.25rem;
+
+    margin-block-end: 1.5rem;
 }
-
-.featured-dish-detail {
-    display: flex;
-    flex-direction: column;
-    gap: 0.45rem;
-}
-
-.featured-dish-detail-label {
-    color: var(--color-secondary);
-
-    font-size: 0.7rem;
-    font-weight: 600;
-    letter-spacing: 0.08em;
-}
-
-.featured-dish-detail strong {
-    color: var(--color-heading);
-
-    font-size: 0.85rem;
-}
-
-.featured-dish-recipe-link {
-    display: inline-flex;
-    align-items: center;
-
-    min-height: 44px;
-
-    color: var(--color-secondary);
-
-    font-size: 0.9rem;
-    font-weight: 600;
-    text-decoration: underline;
-    text-underline-offset: 0.18em;
-}
-
-.featured-dish-recipe-link:hover {
-    text-decoration-thickness: 2px;
-    text-underline-offset: 0.25em;
-}
-
-
-/*
-
-
-    A FEW MORE CRAVINGS.
-
-
-*/
-
-
-.random-discoveries-section {
-    padding-block: 3.5rem;
-
-    background-color: var(--band-bg-alt);
-}
-
-.random-discoveries-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    gap: 2rem;
-
-    max-width: 1200px;
-    margin: 0 auto 2rem;
-}
-
-.random-discoveries-header h2 {
-    margin: 0;
-
-    font-size: 2.7rem;
-}
-
-.random-discoveries-header h2 span {
-    color: var(--color-secondary);
-}
-
-.random-discoveries-header p {
-    max-width: 600px;
-    margin: 0.75rem 0 0;
-
-    font-size: 0.9rem;
-    line-height: 1.8;
-}
-
-.discoveries-link {
-    display: inline-flex;
-    align-items: center;
-    flex-shrink: 0;
-
-    min-height: 44px;
-    margin-bottom: 0.4rem;
-
-    color: var(--color-secondary);
-
-    font-size: 0.9rem;
-    font-weight: 600;
-}
-
-.discoveries-link:hover {
-    text-decoration: underline;
-    text-underline-offset: 0.18em;
-}
-
-.random-discoveries-grid {
-    display: grid;
-    gap: 1.5rem;
-    grid-template-columns: repeat(3, 1fr);
-
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.random-food-card-image {
-    overflow: hidden;
-
-    height: 220px;
-}
-
-.random-food-card-image img {
-    width: 100%;
-    height: 100%;
-
-    object-fit: cover;
-
-    transition: transform 0.3s ease;
-}
-
-.random-food-card:hover .random-food-card-image img {
-    transform: scale(1.05);
-}
-
-.random-food-card-content {
-    padding: 1.4rem;
-}
-
-.food-card-category {
-    color: var(--card-label);
-
-    font-size: 0.7rem;
-    font-weight: 700;
-    letter-spacing: 1px;
-}
-
-.random-food-card-content h3 {
-    margin: 0.5rem 0;
-
-    font-size: 1.5rem;
-}
-
-.random-food-card-content p {
-    min-height: 55px;
-    margin: 0 0 1rem;
-
-    font-size: 0.85rem;
-}
-
-.random-food-card-content a {
-    display: inline-flex;
-    align-items: center;
-
-    min-height: 44px;
-
-    color: var(--card-link);
-
-    font-size: 0.8rem;
-    font-weight: 600;
-    text-decoration: underline;
-    text-underline-offset: 0.18em;
-}
-
-.random-food-card-content a:hover {
-    text-decoration-thickness: 2px;
-    text-underline-offset: 0.25em;
-}
-
-
-/*
-
-
-    THERE'S ALWAYS SOMETHING DELICIOUS TO DISCOVER.
-
-
-*/
-
-
-.random-cta-section {
-    padding-block: 3.5rem;
-
-    background-color: var(--band-bg);
-
-    text-align: center;
-}
-
-.random-cta-content {
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.random-cta-content h2 {
-    margin: 0;
-
-    font-size: 3rem;
-    line-height: 1.2;
-}
-
-.random-cta-content h2 span {
-    display: block;
-
-    color: var(--color-secondary);
-}
-
-.random-cta-content p {
-    max-width: 600px;
-    margin: 1.25rem auto 2rem;
-
-    font-size: 0.95rem;
-    line-height: 1.9;
-}
-
-
-/*
-
-
-    LINK FOCUS STYLES
-
-
-*/
-
-
-.featured-dish-recipe-link:focus-visible,
-.discoveries-link:focus-visible,
-.random-food-card-content a:focus-visible {
-    outline: 2px solid var(--color-secondary);
-}
-
-
-/*
-
-
-    MEDIA QUERIES
-
-
-*/
-
-
-/* ---------- Tablets (up to 1024px) ---------- */
-
-@media (max-width: 1024px) {
-
-    .featured-dish {
-        gap: 2.5rem;
-    }
-
-    .random-discoveries-grid {
-        gap: 1.25rem;
-    }
-}
-
-
-/* ---------- Small tablets (up to 900px) ---------- */
-
-@media (max-width: 900px) {
-
-    .featured-dish {
-        gap: 2rem;
-        grid-template-columns: 1fr;
-    }
-
-    .featured-dish-image {
-        height: 340px;
-    }
-
-    .featured-dish-content {
-        max-width: none;
-    }
-
-    .featured-dish-content h2 {
-        font-size: clamp(2.25rem, 7vw, 3.5rem);
-    }
-
-    /* Food cards: one row you swipe sideways. The next card peeks in
-       from the edge so people can see there is more. The padding leaves
-       room so card hover effects are not clipped. */
-
-    .random-discoveries-grid {
-        grid-template-columns: none;
-        grid-auto-flow: column;
-        grid-auto-columns: 44%;
-        overflow-x: auto;
-        overscroll-behavior-x: contain;
-        scroll-snap-type: x mandatory;
-        scrollbar-width: thin;
-        scrollbar-color: var(--color-secondary) transparent;
-        -webkit-overflow-scrolling: touch;
-
-        padding: 0.5rem 0 1.25rem;
-    }
-
-    .random-discoveries-grid > * {
-        scroll-snap-align: start;
-    }
-}
-
-
-/* ---------- Mobile landscape / large phones (up to 768px) ---------- */
-
-@media (max-width: 768px) {
-
-    /* Section spacing: the featured dish section keeps a little extra
-       room, the rest are tighter */
-
-    .featured-dish-section {
-        padding-block: 3.5rem;
-    }
-
-    .random-discoveries-section,
-    .random-cta-section {
-        padding-block: 2.5rem;
-    }
-
-    /* Fluid heading sizes on smaller screens */
-
-    .random-discoveries-header h2 {
-        font-size: clamp(1.9rem, 5.5vw, 2.7rem);
-    }
-
-    .random-cta-content h2 {
-        font-size: clamp(2rem, 7vw, 3rem);
-    }
-
-    /* Discoveries header: title block on top, "View All Foods" link below */
-
-    .random-discoveries-header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 1.25rem;
-    }
-
-    .discoveries-link {
-        margin-bottom: 0;
-    }
-}
-
-
-/* ---------- Phones (up to 640px) ---------- */
-
-@media (max-width: 640px) {
-
-    /* Swipe row: wider cards so about one shows at a time, with a peek
-       of the next */
-
-    .random-discoveries-grid {
-        grid-auto-columns: 80%;
-    }
-
-    .featured-dish-image {
-        height: 280px;
-    }
-}
-
-
-/* ---------- Small phones (up to 480px) ---------- */
-
-@media (max-width: 480px) {
-
-    /* Slightly larger side gutters than 4% so text doesn't hug the edge */
-
-    .featured-dish-section,
-    .random-discoveries-section,
-    .random-cta-section {
-        --gutter-x: 1.25rem;
-    }
-
-    /* Intro */
-
-    /* Featured dish */
-
-    .featured-dish-image {
-        height: 240px;
-    }
-
-    .featured-dish-image-label {
-        bottom: 1rem;
-        left: 1rem;
-    }
-
-    /* Food cards */
-
-    .random-discoveries-header {
-        margin-bottom: 1.5rem;
-    }
-
-    .random-food-card-image {
-        height: 200px;
-    }
-
-    .random-food-card-content {
-        padding: 1.25rem;
-    }
-}
-
-
-/* ---------- Respect "reduce motion" settings ---------- */
-
-@media (prefers-reduced-motion: reduce) {
-
-    .random-food-card-image img {
-        transition: none;
-    }
-
-    .random-food-card:hover .random-food-card-image img {
-        transform: none;
-    }
-}

@@ -702,6 +702,41 @@ main:focus {
 
 /*
 
+    A disabled button stands for a feature that is not built yet, like
+    the "Show Another Dish" button on the random food page. It looks
+    faded, shows the "not allowed" cursor and doesn't react to hover or
+    press. It works for .button and for .button-outline:
+
+        <button class="button button-outline" type="button" disabled>
+
+*/
+
+.button:disabled {
+    opacity: 0.7;
+
+    cursor: not-allowed;
+}
+
+.button:disabled:hover {
+    border-color: var(--button-border);
+
+    color: var(--button-text);
+    background-color: var(--button-bg);
+}
+
+.button-outline:disabled:hover {
+    border-color: var(--button-outline-border);
+
+    color: var(--button-outline-text);
+    background-color: transparent;
+}
+
+.button:disabled:active {
+    transform: none;
+}
+
+/*
+
     Smooth scrolling (html), the button press (.button:active) and the
     flipping menu arrow all move, so they are switched off for visitors
     who ask for less motion.
@@ -1373,7 +1408,7 @@ main:focus {
             <div><dt>MAKES</dt><dd>4 servings</dd></div>
         </dl>
 
-*/
+*/.button-outline:hover
 
 .facts-list {
     display: flex;
