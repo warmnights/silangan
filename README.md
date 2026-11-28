@@ -5,7 +5,7 @@ A responsive website for exploring Filipino food: top dishes, regional discoveri
 *Live site:* [silangan-ph.vercel.app](https://silangan-ph.vercel.app/)
 
 <p align="center">
-  <img src="assets/images/readme/silangan-hero.jpg"
+  <img src="assets/images/readme/silangan-hero.png"
        alt="Silangan homepage"
        width="100%">
 </p>
@@ -18,12 +18,14 @@ Silangan is a multi-page website made for BSIT Web Systems and Technologies (IT 
 
 - Browse Filipino dishes, regional specialties and recipes
 - Top foods, a random food finder and a map of the Philippines
-- Multi-page site with a shared header and footer
+- 15 pages that share one header and footer, with Home, Top Foods, All Foods, Regions and Near Me in the main nav and the rest under More
+- Sticky glass header that blurs the page behind it
+- Dark emerald and gold theme with top-down dish plates, set by CSS variables so colors can be changed in one place
 - Fully responsive layout for desktop, tablet and mobile
 - Hamburger menu on small screens
-- Swipeable card rows on tablets and phones
-- Accessible by design: skip link, keyboard navigation, visible focus, and reduced motion support
+- Accessible by design: skip link, keyboard navigation, visible focus, and support for reduced motion and reduced transparency
 - Custom 404 page
+- Plain HTML and CSS with no framework and no build step
 
 ## Pages
 
@@ -54,7 +56,7 @@ This is a static site, so some features are placeholders. The pages say so where
 - HTML
 - CSS
 - JavaScript (one small script for the mobile menu)
-- Self-hosted fonts (Fraunces and Poppins)
+- Self-hosted fonts (Cardo for headings and Poppins for body text)
 - Deployed on Vercel
 
 ## Run it locally
@@ -88,6 +90,7 @@ The `md` folder describes how the site is built, so new pages and styles stay co
 | [css-property-guide.md](md/css-property-guide.md) | Order of properties inside a CSS rule |
 | [global.md](md/global.md) | What the shared stylesheet already sets |
 | [colors.md](md/colors.md) | Which variable changes the color of buttons, cards and full-width sections |
+| [silangan-style-guide-compact.md](md/silangan-style-guide-compact.md) | The HTML, CSS and property-order guides merged into one short reference |
 | [bugs.md](md/bugs.md) | Known issues and fixes |
 | [improvement-plan.md](md/improvement-plan.md) | Planned improvements |
 
