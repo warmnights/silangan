@@ -1293,6 +1293,12 @@ main:focus {
     color: var(--color-text-muted);
 }
 
+.closing-content h2 em {
+    display: block;
+
+    color: var(--color-primary);
+}
+
 /*
 
     .panel is the one contained area. It is a thin gold frame for the few
@@ -1354,6 +1360,104 @@ main:focus {
 
 .note:last-child {
     margin-block-end: 0;
+}
+
+/*
+
+    .facts-list is a short row of facts (time, servings, and so on)
+    between two thin lines. Each fact is a small gold label with its value
+    below it. The labels are typed in capitals in the HTML, so there is no
+    text-transform here:
+
+        <dl class="facts-list">
+            <div><dt>MAKES</dt><dd>4 servings</dd></div>
+        </dl>
+
+*/
+
+.facts-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem 2.5rem;
+
+    margin: 0 0 1.5rem;
+    padding-block: 1.25rem;
+    border-block: var(--border-line);
+}
+
+.facts-list dt {
+    margin-block-end: 0.25rem;
+
+    color: var(--label-text);
+
+    font-size: var(--label-size);
+    letter-spacing: var(--label-spacing);
+}
+
+.facts-list dd {
+    margin: 0;
+
+    font-family: var(--font-heading);
+    font-size: var(--text-h3);
+    line-height: 1.3;
+}
+
+/*
+
+    .divided-list is a plain list with a thin line between the items, for
+    short lines of text such as ingredients, or rows that hold a link.
+    .list-reset does not reset margin, so it is set here:
+    <ul class="divided-list list-reset">
+
+*/
+
+.divided-list {
+    margin: 0;
+    border-block-start: var(--border-line);
+}
+
+.divided-list li {
+    padding-block: 0.75rem;
+    border-block-end: var(--border-line);
+}
+
+/*
+
+    .steps-list is an ordered list of steps with a large gold serif
+    numeral in front of each one, and thin lines between the steps. The
+    numeral is drawn by CSS (a counter), so the HTML is only a plain <ol>
+    with <li>s. Use it for any real sequence, like recipe steps. For a
+    list that is not a sequence, use .divided-list instead:
+    <ol class="steps-list list-reset">
+
+*/
+
+.steps-list {
+    counter-reset: step;
+
+    margin: 0;
+    border-block-start: var(--border-line);
+}
+
+.steps-list li {
+    display: grid;
+    align-items: baseline;
+    gap: 1.25rem;
+    grid-template-columns: 3.5rem minmax(0, 1fr);
+    counter-increment: step;
+
+    padding-block: 1.25rem;
+    border-block-end: var(--border-line);
+}
+
+.steps-list li::before {
+    content: counter(step);
+
+    color: var(--color-primary);
+
+    font-family: var(--font-heading);
+    font-size: var(--text-h2);
+    line-height: 1;
 }
 
 

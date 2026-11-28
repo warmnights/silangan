@@ -8,18 +8,20 @@
     <meta name="description" content="Cook authentic Filipino dishes at home with easy step-by-step recipes and ingredient lists.">
 
     <link rel="icon" href="../assets/images/logo/favicon.svg" type="image/svg+xml">
+    <link rel="preload" href="../assets/fonts/Cardo-Regular.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="../assets/fonts/Poppins-Regular.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="../assets/fonts/Fraunces_72pt-Bold.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/recipes.css">
     <script src="../js/nav.js" defer></script>
 </head>
-<body class="recipes-page">
+<body>
     <div class="container">
         <a href="#main" class="skip-link">Skip to main content</a>
 
         <header class="site-header">
             <nav class="site-nav full-bleed" aria-label="Main navigation">
+                <a href="../index.html" class="site-nav-logo">SILANGAN</a>
+
                 <button
                     class="site-nav-toggle"
                     type="button"
@@ -42,7 +44,12 @@
                     <li><a href="near-me.html">Near Me</a></li>
                     <li>
                         <details class="site-nav-dropdown">
-                            <summary>More</summary>
+                            <summary>
+                                More
+                                <svg class="site-nav-chevron" viewBox="0 0 24 24" aria-hidden="true">
+                                    <path d="M6 9l6 6 6-6"></path>
+                                </svg>
+                            </summary>
                             <ul class="site-nav-dropdown-menu list-reset">
                                 <li><a href="recipes.html" aria-current="page">Recipes</a></li>
                                 <li><a href="map.html">Map</a></li>
@@ -53,6 +60,8 @@
                 </ul>
 
                 <div class="site-nav-actions">
+                    <span class="site-nav-divider" aria-hidden="true"></span>
+
                     <a href="login.html" class="site-nav-cta">
                         Log In
                     </a>
@@ -61,9 +70,9 @@
         </header>
 
         <main id="main" tabindex="-1">
-            <section class="page-hero page-hero-centered recipes-intro full-bleed">
-                <div class="page-hero-content">
-                    <nav class="breadcrumb breadcrumb-centered" aria-label="Breadcrumb">
+            <section class="page-header-section full-bleed">
+                <div class="page-header-content">
+                    <nav class="breadcrumb" aria-label="Breadcrumb">
                         <ol class="breadcrumb-list list-reset">
                             <li><a href="../index.html">Home</a></li>
                             <li aria-current="page">Recipes</li>
@@ -72,416 +81,166 @@
 
                     <h1>
                         Cook Something
-                        <span>Filipino.</span>
+                        <em>Filipino.</em>
                     </h1>
 
-                    <p>
+                    <p class="page-header-intro">
                         Explore six Filipino recipe guides with source links and
                         paraphrased steps, plus a featured Chicken Adobo recipe.
                     </p>
 
-                    <a href="#recipe-collection" class="button">
-                        Browse the recipe collection
+                    <a href="#recipe-index-title" class="button">
+                        Browse the Recipe Collection
                     </a>
                 </div>
             </section>
 
-            <section class="recipe-spotlight-section full-bleed">
-                <div class="recipe-spotlight-container">
-                    <div class="recipe-spotlight-header">
-                        <h2>Featured recipe</h2>
-                    </div>
+            <section class="featured-recipe-section full-bleed" aria-labelledby="featured-recipe-title">
+                <div class="split-content">
+                    <figure class="plate-image">
+                        <img
+                            loading="lazy"
+                            src="../assets/images/plates/chicken-adobo.png"
+                            width="800"
+                            height="800"
+                            alt="Chicken adobo, seen from above">
+                    </figure>
 
-                    <article class="featured-recipe">
-                        <div class="featured-recipe-image">
-                            <a
-                                href="https://www.kawalingpinoy.com/chicken-adobo/"
-                                class="featured-recipe-image-link"
-                                aria-label="Open the Chicken Adobo recipe at Kawaling Pinoy">
-                                <img
-                                    loading="eager"
-                                    src="../assets/images/foods/chicken-adobo.jpg"
-                                    width="450"
-                                    height="578"
-                                    alt="Chicken Adobo with potatoes, served with rice">
-                            </a>
-                        </div>
+                    <div>
+                        <p class="label">FEATURED RECIPE</p>
 
-                        <div class="featured-recipe-info">
-                            <h3>Chicken Adobo</h3>
+                        <h2 id="featured-recipe-title">Chicken <em>Adobo</em></h2>
 
-                            <p>
-                                In the linked version, chicken is braised with soy
-                                sauce, vinegar, garlic, onion, and bay leaves, then
-                                served with pan-fried potatoes.
-                            </p>
+                        <p class="split-description">
+                            In the linked version, chicken is braised with soy
+                            sauce, vinegar, garlic, onion, and bay leaves, then
+                            served with pan-fried potatoes.
+                        </p>
 
-                            <div class="recipe-details">
-                                <div>
-                                    <span class="recipe-detail-label">
-                                        Prep time
-                                    </span>
-
-                                    <strong>15 min</strong>
-                                </div>
-
-                                <div>
-                                    <span class="recipe-detail-label">
-                                        Cook time
-                                    </span>
-
-                                    <strong>45 min</strong>
-                                </div>
-
-                                <div>
-                                    <span class="recipe-detail-label">
-                                        Makes
-                                    </span>
-
-                                    <strong>4 servings</strong>
-                                </div>
+                        <dl class="facts-list">
+                            <div>
+                                <dt>PREP TIME</dt>
+                                <dd>15 min</dd>
                             </div>
+                            <div>
+                                <dt>COOK TIME</dt>
+                                <dd>45 min</dd>
+                            </div>
+                            <div>
+                                <dt>MAKES</dt>
+                                <dd>4 servings</dd>
+                            </div>
+                        </dl>
 
-                            <a
-                                href="https://www.kawalingpinoy.com/chicken-adobo/"
-                                class="featured-recipe-link">
-                                View Chicken Adobo recipe at Kawaling Pinoy
-                            </a>
-                            <p class="featured-recipe-source">
-                                Times and servings are listed in the linked recipe.
-                            </p>
-                        </div>
-                    </article>
+                        <p class="note">
+                            Times and servings are listed in the linked recipe.
+                        </p>
+
+                        <a href="https://www.kawalingpinoy.com/chicken-adobo/" class="text-link">
+                            View Chicken Adobo at Kawaling Pinoy
+                        </a>
+                    </div>
                 </div>
             </section>
 
-            <section class="recipe-collection-section full-bleed" id="recipe-collection">
-                <div class="recipe-collection-header">
-                    <div>
-                        <h2>Explore the Recipe Collection</h2>
+            <section class="recipe-index-section full-bleed" aria-labelledby="recipe-index-title">
+                <header class="section-header">
+                    <h2 id="recipe-index-title">Explore the Recipe Collection</h2>
+                    <p>
+                        Choose a recipe to jump to its ingredients and method,
+                        with a link to the source recipe.
+                    </p>
+                </header>
 
-                        <p>
-                            Each card links to its source recipe and to the
-                            ingredients and method for that dish below.
-                        </p>
-                    </div>
-                </div>
+                <ul class="recipe-index divided-list list-reset">
+                    <li>
+                        <a href="#recipe-sinigang">Sinigang na Baboy</a>
+                        <span class="label">SOUP</span>
+                    </li>
+                    <li>
+                        <a href="#recipe-bicol-express">Bicol Express</a>
+                        <span class="label">MAIN DISH</span>
+                    </li>
+                    <li>
+                        <a href="#recipe-pancit-canton">Pancit Canton</a>
+                        <span class="label">NOODLES</span>
+                    </li>
+                    <li>
+                        <a href="#recipe-lechon-kawali">Lechon Kawali</a>
+                        <span class="label">MAIN DISH</span>
+                    </li>
+                    <li>
+                        <a href="#recipe-turon">Turon</a>
+                        <span class="label">DESSERT</span>
+                    </li>
+                    <li>
+                        <a href="#recipe-halo-halo">Halo-Halo</a>
+                        <span class="label">DESSERT</span>
+                    </li>
+                </ul>
+            </section>
 
-                <p class="recipe-swipe-hint">
-                    Swipe to explore the recipe cards
-                </p>
+            <section class="recipe-methods-section full-bleed" aria-labelledby="recipe-methods-title">
+                <header class="section-header">
+                    <h2 id="recipe-methods-title">Ingredients and Methods</h2>
+                    <p>
+                        The ingredient lists and methods below are paraphrased
+                        from the linked recipes. Their times and serving counts
+                        match those sources. Silangan has not independently
+                        tested these recipes.
+                    </p>
+                </header>
 
-                <div class="recipe-grid">
-                    <article class="card card-on-secondary recipe-card">
-                        <a
-                            href="https://www.kawalingpinoy.com/sinigang-na-baboy/"
-                            class="recipe-card-image"
-                            aria-label="Open the Sinigang na Baboy recipe at Kawaling Pinoy">
-                            <img
-                                loading="lazy"
-                                src="../assets/images/foods/sinigang.jpg"
-                                width="1300"
-                                height="566"
-                                alt="Sinigang na Baboy with pork ribs and vegetables">
+                <ul class="recipe-list list-reset">
+                    <li class="recipe">
+                        <div class="recipe-summary">
+                            <figure class="plate-image">
+                                <img
+                                    loading="lazy"
+                                    src="../assets/images/plates/sinigang.png"
+                                    width="800"
+                                    height="800"
+                                    alt="Sinigang, seen from above">
+                            </figure>
 
-                            <span class="recipe-card-category">
-                                SOUP
-                            </span>
-                        </a>
+                            <div>
+                                <p class="label">SOUP</p>
 
-                        <div class="recipe-card-info">
-                            <h3>Sinigang na Baboy</h3>
+                                <h3 id="recipe-sinigang">Sinigang na Baboy</h3>
 
-                            <p>
-                                Pork ribs simmer with tamarind and vegetables
-                                in this sour soup.
-                            </p>
+                                <p class="plate-description">
+                                    Pork ribs simmer with tamarind and vegetables in
+                                    this sour soup.
+                                </p>
 
-                            <p class="recipe-card-meta">
-                                2 hr · 4 servings
-                            </p>
+                                <dl class="facts-list">
+                                    <div>
+                                        <dt>TOTAL TIME</dt>
+                                        <dd>2 hours</dd>
+                                    </div>
+                                    <div>
+                                        <dt>MAKES</dt>
+                                        <dd>4 servings</dd>
+                                    </div>
+                                </dl>
 
-                            <div class="recipe-card-actions">
-                                <a
-                                    href="#method-sinigang"
-                                    class="recipe-card-method-link"
-                                    aria-label="Ingredients &amp; method for Sinigang na Baboy">
-                                    Ingredients &amp; method
-                                </a>
+                                <p class="note">
+                                    Recipe by Lalaine Manalo at Kawaling Pinoy.
+                                </p>
+
                                 <a
                                     href="https://www.kawalingpinoy.com/sinigang-na-baboy/"
-                                    class="recipe-card-source-link"
-                                    aria-label="View Sinigang na Baboy recipe at Kawaling Pinoy">
-                                    View Recipe at Kawaling Pinoy
+                                    class="text-link">
+                                    View Sinigang na Baboy at Kawaling Pinoy
                                 </a>
                             </div>
                         </div>
-                    </article>
 
-                    <article class="card card-on-secondary recipe-card">
-                        <a
-                            href="https://www.kawalingpinoy.com/bicol-express/"
-                            class="recipe-card-image"
-                            aria-label="Open the Bicol Express recipe at Kawaling Pinoy">
-                            <img
-                                loading="lazy"
-                                src="../assets/images/foods/bicol-express.jpg"
-                                width="1024"
-                                height="596"
-                                alt="Bicol Express with pork, coconut milk, and chili">
-
-                            <span class="recipe-card-category">
-                                MAIN DISH
-                            </span>
-                        </a>
-
-                        <div class="recipe-card-info">
-                            <h3>Bicol Express</h3>
-
-                            <p>
-                                Pork simmers with coconut milk, shrimp paste,
-                                and chilies.
-                            </p>
-
-                            <p class="recipe-card-meta">
-                                1 hr 10 min · 6 servings
-                            </p>
-
-                            <div class="recipe-card-actions">
-                                <a
-                                    href="#method-bicol-express"
-                                    class="recipe-card-method-link"
-                                    aria-label="Ingredients &amp; method for Bicol Express">
-                                    Ingredients &amp; method
-                                </a>
-                                <a
-                                    href="https://www.kawalingpinoy.com/bicol-express/"
-                                    class="recipe-card-source-link"
-                                    aria-label="View Bicol Express recipe at Kawaling Pinoy">
-                                    View Recipe at Kawaling Pinoy
-                                </a>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="card card-on-secondary recipe-card">
-                        <a
-                            href="https://www.kawalingpinoy.com/pancit-canton/"
-                            class="recipe-card-image"
-                            aria-label="Open the Pancit Canton recipe at Kawaling Pinoy">
-                            <img
-                                loading="lazy"
-                                src="../assets/images/foods/pancit-canton.jpg"
-                                width="1300"
-                                height="566"
-                                alt="Pancit Canton noodles with meat and vegetables">
-
-                            <span class="recipe-card-category">
-                                NOODLES
-                            </span>
-                        </a>
-
-                        <div class="recipe-card-info">
-                            <h3>Pancit Canton</h3>
-
-                            <p>
-                                Wheat noodles are tossed with pork, chicken,
-                                shrimp, and vegetables.
-                            </p>
-
-                            <p class="recipe-card-meta">
-                                50 min · 6 servings
-                            </p>
-
-                            <div class="recipe-card-actions">
-                                <a
-                                    href="#method-pancit-canton"
-                                    class="recipe-card-method-link"
-                                    aria-label="Ingredients &amp; method for Pancit Canton">
-                                    Ingredients &amp; method
-                                </a>
-                                <a
-                                    href="https://www.kawalingpinoy.com/pancit-canton/"
-                                    class="recipe-card-source-link"
-                                    aria-label="View Pancit Canton recipe at Kawaling Pinoy">
-                                    View Recipe at Kawaling Pinoy
-                                </a>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="card card-on-secondary recipe-card">
-                        <a
-                            href="https://www.kawalingpinoy.com/lechon-kawali/"
-                            class="recipe-card-image"
-                            aria-label="Open the Lechon Kawali recipe at Kawaling Pinoy">
-                            <img
-                                loading="lazy"
-                                src="../assets/images/foods/lechon-kawali.jpg"
-                                width="2500"
-                                height="1500"
-                                alt="Crisp Lechon Kawali pork belly on a serving board">
-
-                            <span class="recipe-card-category">
-                                MAIN DISH
-                            </span>
-                        </a>
-
-                        <div class="recipe-card-info">
-                            <h3>Lechon Kawali</h3>
-
-                            <p>
-                                After simmering with garlic and spices, the pork
-                                is chilled uncovered overnight, then deep-fried.
-                            </p>
-
-                            <p class="recipe-card-meta">
-                                10 hr 10 min total · 8 servings
-                            </p>
-
-                            <div class="recipe-card-actions">
-                                <a
-                                    href="#method-lechon-kawali"
-                                    class="recipe-card-method-link"
-                                    aria-label="Ingredients &amp; method for Lechon Kawali">
-                                    Ingredients &amp; method
-                                </a>
-                                <a
-                                    href="https://www.kawalingpinoy.com/lechon-kawali/"
-                                    class="recipe-card-source-link"
-                                    aria-label="View Lechon Kawali recipe at Kawaling Pinoy">
-                                    View Recipe at Kawaling Pinoy
-                                </a>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="card card-on-secondary recipe-card">
-                        <a
-                            href="https://www.kawalingpinoy.com/banana-turon/"
-                            class="recipe-card-image"
-                            aria-label="Open the Banana Turon recipe at Kawaling Pinoy">
-                            <img
-                                loading="lazy"
-                                src="../assets/images/foods/turon.jpg"
-                                width="1300"
-                                height="566"
-                                alt="Banana Turon rolls with caramelized wrappers">
-
-                            <span class="recipe-card-category">
-                                DESSERT
-                            </span>
-                        </a>
-
-                        <div class="recipe-card-info">
-                            <h3>Turon</h3>
-
-                            <p>
-                                Saba banana and sweetened jackfruit are wrapped
-                                in spring-roll wrappers, coated with sugar, and fried.
-                            </p>
-
-                            <p class="recipe-card-meta">
-                                30 min · 24 pieces
-                            </p>
-
-                            <div class="recipe-card-actions">
-                                <a
-                                    href="#method-turon"
-                                    class="recipe-card-method-link"
-                                    aria-label="Ingredients &amp; method for Turon">
-                                    Ingredients &amp; method
-                                </a>
-                                <a
-                                    href="https://www.kawalingpinoy.com/banana-turon/"
-                                    class="recipe-card-source-link"
-                                    aria-label="View Turon recipe at Kawaling Pinoy">
-                                    View Recipe at Kawaling Pinoy
-                                </a>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="card card-on-secondary recipe-card">
-                        <a
-                            href="https://www.kawalingpinoy.com/halo-halo/"
-                            class="recipe-card-image"
-                            aria-label="Open the Halo-Halo recipe at Kawaling Pinoy">
-                            <img
-                                loading="lazy"
-                                src="../assets/images/foods/halo-halo.jpg"
-                                width="1300"
-                                height="640"
-                                alt="Halo-Halo topped with leche flan and ice cream">
-
-                            <span class="recipe-card-category">
-                                DESSERT
-                            </span>
-                        </a>
-
-                        <div class="recipe-card-info">
-                            <h3>Halo-Halo</h3>
-
-                            <p>
-                                Shaved ice is layered with sweetened mix-ins,
-                                milk, leche flan, and ice cream.
-                            </p>
-
-                            <p class="recipe-card-meta">
-                                10 min · 4 servings
-                            </p>
-
-                            <div class="recipe-card-actions">
-                                <a
-                                    href="#method-halo-halo"
-                                    class="recipe-card-method-link"
-                                    aria-label="Ingredients &amp; method for Halo-Halo">
-                                    Ingredients &amp; method
-                                </a>
-                                <a
-                                    href="https://www.kawalingpinoy.com/halo-halo/"
-                                    class="recipe-card-source-link"
-                                    aria-label="View Halo-Halo recipe at Kawaling Pinoy">
-                                    View Recipe at Kawaling Pinoy
-                                </a>
-                            </div>
-                        </div>
-                    </article>
-                </div>
-            </section>
-
-            <section class="recipe-methods-section full-bleed" id="recipe-methods">
-                <div class="recipe-methods-container">
-                    <header class="recipe-methods-header">
-                        <h2>Ingredients and methods</h2>
-                        <p>
-                            The ingredient lists and methods below are paraphrased
-                            from the linked recipes. Their times and serving counts
-                            match those sources.
-                            Silangan has not independently tested these recipes.
-                        </p>
-                    </header>
-
-                    <div class="recipe-method-list">
-                        <article class="recipe-method">
-                            <header class="recipe-method-heading">
-                                <h3 class="recipe-method-title" id="method-sinigang" tabindex="-1">
-                                    Sinigang na Baboy
-                                </h3>
-                                <p class="recipe-method-meta">
-                                    Total time: 2 hours · Makes 4 servings
-                                </p>
-                                <p class="recipe-method-source">
-                                    Recipe by Lalaine Manalo at
-                                    <a href="https://www.kawalingpinoy.com/sinigang-na-baboy/">
-                                        Kawaling Pinoy
-                                    </a>.
-                                </p>
-                            </header>
-
-                            <div class="recipe-method-column">
+                        <div class="recipe-body">
+                            <div>
                                 <h4>Ingredients</h4>
-                                <ul>
+
+                                <ul class="divided-list list-reset">
                                     <li>2 pounds pork spare ribs, cut into pieces</li>
                                     <li>8 cups water</li>
                                     <li>2 large tomatoes, quartered</li>
@@ -493,61 +252,94 @@
                                     <li>1/2 bunch long beans, trimmed and cut</li>
                                     <li>1 large eggplant, sliced</li>
                                     <li>6 okra, trimmed</li>
-                                    <li>15 large tamarind pods or 1 1/2 (1.41-ounce) packages tamarind base</li>
+                                    <li>
+                                        15 large tamarind pods or 1 1/2 (1.41-ounce) packages
+                                        tamarind base
+                                    </li>
                                     <li>Salt and pepper, to taste</li>
                                     <li>1 bunch bok choy or pechay</li>
                                 </ul>
                             </div>
 
-                            <div class="recipe-method-column">
+                            <div>
                                 <h4>Method</h4>
-                                <ol>
+
+                                <ol class="steps-list list-reset">
                                     <li>
-                                        Put the ribs in a pot, cover with water, and bring
-                                        to a boil. Skim the surface, then add tomatoes,
-                                        onion, and fish sauce.
+                                        Put the ribs in a pot, cover with water, and bring to a
+                                        boil. Skim the surface, then add tomatoes, onion, and
+                                        fish sauce.
                                     </li>
                                     <li>
-                                        Lower the heat and simmer until the pork is tender.
-                                        Add water as needed to keep about 8 cups of broth.
+                                        Lower the heat and simmer until the pork is tender. Add
+                                        water as needed to keep about 8 cups of broth.
                                     </li>
                                     <li>
-                                        Add gabi first, then the chilies and radish, followed
-                                        by long beans, eggplant, and okra. Cook each until
-                                        just tender.
+                                        Add gabi first, then the chilies and radish, followed by
+                                        long beans, eggplant, and okra. Cook each until just
+                                        tender.
                                     </li>
                                     <li>
-                                        If using tamarind base, stir it into the pot.
-                                        For fresh pods, boil them in water until soft,
-                                        mash, strain, and add the pulp to the soup.
+                                        If using tamarind base, stir it into the pot. For fresh
+                                        pods, boil them in water until soft, mash, strain, and
+                                        add the pulp to the soup.
                                     </li>
                                     <li>
-                                        Season with salt and pepper. Add bok choy or pechay
-                                        and cook briefly before serving.
+                                        Season with salt and pepper. Add bok choy or pechay and
+                                        cook briefly before serving.
                                     </li>
                                 </ol>
                             </div>
-                        </article>
+                        </div>
+                    </li>
 
-                        <article class="recipe-method">
-                            <header class="recipe-method-heading">
-                                <h3 class="recipe-method-title" id="method-bicol-express" tabindex="-1">
-                                    Bicol Express
-                                </h3>
-                                <p class="recipe-method-meta">
-                                    Total time: 1 hour 10 minutes · Makes 6 servings
-                                </p>
-                                <p class="recipe-method-source">
-                                    Recipe by Lalaine Manalo at
-                                    <a href="https://www.kawalingpinoy.com/bicol-express/">
-                                        Kawaling Pinoy
-                                    </a>.
-                                </p>
-                            </header>
+                    <li class="recipe">
+                        <div class="recipe-summary">
+                            <figure class="plate-image">
+                                <img
+                                    loading="lazy"
+                                    src="../assets/images/plates/bicol-express.png"
+                                    width="800"
+                                    height="800"
+                                    alt="Bicol Express, seen from above">
+                            </figure>
 
-                            <div class="recipe-method-column">
+                            <div>
+                                <p class="label">MAIN DISH</p>
+
+                                <h3 id="recipe-bicol-express">Bicol Express</h3>
+
+                                <p class="plate-description">
+                                    Pork simmers with coconut milk, shrimp paste, and
+                                    chilies.
+                                </p>
+
+                                <dl class="facts-list">
+                                    <div>
+                                        <dt>TOTAL TIME</dt>
+                                        <dd>1 hour 10 minutes</dd>
+                                    </div>
+                                    <div>
+                                        <dt>MAKES</dt>
+                                        <dd>6 servings</dd>
+                                    </div>
+                                </dl>
+
+                                <p class="note">
+                                    Recipe by Lalaine Manalo at Kawaling Pinoy.
+                                </p>
+
+                                <a href="https://www.kawalingpinoy.com/bicol-express/" class="text-link">
+                                    View Bicol Express at Kawaling Pinoy
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="recipe-body">
+                            <div>
                                 <h4>Ingredients</h4>
-                                <ul>
+
+                                <ul class="divided-list list-reset">
                                     <li>1 tablespoon oil</li>
                                     <li>1 onion, thinly sliced</li>
                                     <li>4 cloves garlic, minced</li>
@@ -562,51 +354,79 @@
                                 </ul>
                             </div>
 
-                            <div class="recipe-method-column">
+                            <div>
                                 <h4>Method</h4>
-                                <ol>
+
+                                <ol class="steps-list list-reset">
                                     <li>
-                                        Warm the oil in a wide pot over medium heat.
-                                        Soften the onion and garlic, then add the pork
-                                        and brown it lightly.
+                                        Warm the oil in a wide pot over medium heat. Soften the
+                                        onion and garlic, then add the pork and brown it
+                                        lightly.
                                     </li>
                                     <li>
-                                        Stir in the shrimp paste and cook briefly.
-                                        Pour in the coconut milk and water, then add
-                                        the Thai chilies.
+                                        Stir in the shrimp paste and cook briefly. Pour in the
+                                        coconut milk and water, then add the Thai chilies.
                                     </li>
                                     <li>
-                                        Keep the mixture at a gentle simmer until the
-                                        pork is tender and the liquid has reduced.
+                                        Keep the mixture at a gentle simmer until the pork is
+                                        tender and the liquid has reduced.
                                     </li>
                                     <li>
-                                        Add the finger chilies and coconut cream.
-                                        Simmer until the sauce thickens, then season
-                                        with salt and pepper.
+                                        Add the finger chilies and coconut cream. Simmer until
+                                        the sauce thickens, then season with salt and pepper.
                                     </li>
                                 </ol>
                             </div>
-                        </article>
+                        </div>
+                    </li>
 
-                        <article class="recipe-method">
-                            <header class="recipe-method-heading">
-                                <h3 class="recipe-method-title" id="method-pancit-canton" tabindex="-1">
-                                    Pancit Canton
-                                </h3>
-                                <p class="recipe-method-meta">
-                                    Total time: 50 minutes · Makes 6 servings
-                                </p>
-                                <p class="recipe-method-source">
-                                    Recipe by Lalaine Manalo at
-                                    <a href="https://www.kawalingpinoy.com/pancit-canton/">
-                                        Kawaling Pinoy
-                                    </a>.
-                                </p>
-                            </header>
+                    <li class="recipe">
+                        <div class="recipe-summary">
+                            <figure class="plate-image">
+                                <img
+                                    loading="lazy"
+                                    src="../assets/images/plates/pancit-canton.png"
+                                    width="800"
+                                    height="800"
+                                    alt="Pancit Canton, seen from above">
+                            </figure>
 
-                            <div class="recipe-method-column">
+                            <div>
+                                <p class="label">NOODLES</p>
+
+                                <h3 id="recipe-pancit-canton">Pancit Canton</h3>
+
+                                <p class="plate-description">
+                                    Wheat noodles are tossed with pork, chicken,
+                                    shrimp, and vegetables.
+                                </p>
+
+                                <dl class="facts-list">
+                                    <div>
+                                        <dt>TOTAL TIME</dt>
+                                        <dd>50 minutes</dd>
+                                    </div>
+                                    <div>
+                                        <dt>MAKES</dt>
+                                        <dd>6 servings</dd>
+                                    </div>
+                                </dl>
+
+                                <p class="note">
+                                    Recipe by Lalaine Manalo at Kawaling Pinoy.
+                                </p>
+
+                                <a href="https://www.kawalingpinoy.com/pancit-canton/" class="text-link">
+                                    View Pancit Canton at Kawaling Pinoy
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="recipe-body">
+                            <div>
                                 <h4>Ingredients</h4>
-                                <ul>
+
+                                <ul class="divided-list list-reset">
                                     <li>Canola oil, for cooking</li>
                                     <li>8 snow peas, trimmed</li>
                                     <li>8 large shrimp, peeled and deveined</li>
@@ -627,59 +447,86 @@
                                 </ul>
                             </div>
 
-                            <div class="recipe-method-column">
+                            <div>
                                 <h4>Method</h4>
-                                <ol>
+
+                                <ol class="steps-list list-reset">
                                     <li>
                                         Heat oil in a wok or wide pan. Cook the snow peas
-                                        briefly and set aside. Cook the shrimp until pink,
-                                        then set aside; brown the fish balls and sausage
-                                        and remove them as well.
+                                        briefly and set aside. Cook the shrimp until pink, then
+                                        set aside; brown the fish balls and sausage and remove
+                                        them as well.
                                     </li>
                                     <li>
-                                        Soften the onion and garlic in the pan. Add pork
-                                        and chicken and cook until browned.
+                                        Soften the onion and garlic in the pan. Add pork and
+                                        chicken and cook until browned.
                                     </li>
                                     <li>
-                                        Pour in the broth and bring it to a boil. Simmer
-                                        until both meats are cooked through, then stir in
-                                        the soy and oyster sauces. Season with salt and
-                                        pepper.
+                                        Pour in the broth and bring it to a boil. Simmer until
+                                        both meats are cooked through, then stir in the soy and
+                                        oyster sauces. Season with salt and pepper.
                                     </li>
                                     <li>
-                                        Add the carrot, kinchay, and cabbage and cook
-                                        until tender-crisp. Add the noodles and toss gently
-                                        until most of the broth is absorbed.
+                                        Add the carrot, kinchay, and cabbage and cook until
+                                        tender-crisp. Add the noodles and toss gently until most
+                                        of the broth is absorbed.
                                     </li>
                                     <li>
-                                        Return the shrimp, fish balls, sausage, and snow
-                                        peas to the pan. Toss until hot and the noodles
-                                        are just tender.
+                                        Return the shrimp, fish balls, sausage, and snow peas to
+                                        the pan. Toss until hot and the noodles are just tender.
                                     </li>
                                 </ol>
                             </div>
-                        </article>
+                        </div>
+                    </li>
 
-                        <article class="recipe-method">
-                            <header class="recipe-method-heading">
-                                <h3 class="recipe-method-title" id="method-lechon-kawali" tabindex="-1">
-                                    Lechon Kawali
-                                </h3>
-                                <p class="recipe-method-meta">
-                                    Total time: 10 hours 10 minutes, including cooling ·
-                                    Makes 8 servings
-                                </p>
-                                <p class="recipe-method-source">
-                                    Recipe by Lalaine Manalo at
-                                    <a href="https://www.kawalingpinoy.com/lechon-kawali/">
-                                        Kawaling Pinoy
-                                    </a>.
-                                </p>
-                            </header>
+                    <li class="recipe">
+                        <div class="recipe-summary">
+                            <figure class="plate-image">
+                                <img
+                                    loading="lazy"
+                                    src="../assets/images/plates/lechon-kawali.png"
+                                    width="800"
+                                    height="800"
+                                    alt="Lechon Kawali, seen from above">
+                            </figure>
 
-                            <div class="recipe-method-column">
+                            <div>
+                                <p class="label">MAIN DISH</p>
+
+                                <h3 id="recipe-lechon-kawali">Lechon Kawali</h3>
+
+                                <p class="plate-description">
+                                    After simmering with garlic and spices, the pork
+                                    is chilled uncovered overnight, then deep-fried.
+                                </p>
+
+                                <dl class="facts-list">
+                                    <div>
+                                        <dt>TOTAL TIME</dt>
+                                        <dd>10 hours 10 minutes, including cooling</dd>
+                                    </div>
+                                    <div>
+                                        <dt>MAKES</dt>
+                                        <dd>8 servings</dd>
+                                    </div>
+                                </dl>
+
+                                <p class="note">
+                                    Recipe by Lalaine Manalo at Kawaling Pinoy.
+                                </p>
+
+                                <a href="https://www.kawalingpinoy.com/lechon-kawali/" class="text-link">
+                                    View Lechon Kawali at Kawaling Pinoy
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="recipe-body">
+                            <div>
                                 <h4>Ingredients</h4>
-                                <ul>
+
+                                <ul class="divided-list list-reset">
                                     <li>4 pounds whole pork belly</li>
                                     <li>1 head garlic, crushed</li>
                                     <li>2 tablespoons salt</li>
@@ -691,54 +538,83 @@
                                 </ul>
                             </div>
 
-                            <div class="recipe-method-column">
+                            <div>
                                 <h4>Method</h4>
-                                <ol>
+
+                                <ol class="steps-list list-reset">
                                     <li>
-                                        Put the pork, garlic, salt, peppercorns, and bay
-                                        leaves in a deep pot. Add water to cover, bring to
-                                        a boil, then lower the heat and simmer until the
-                                        meat is fork-tender.
+                                        Put the pork, garlic, salt, peppercorns, and bay leaves
+                                        in a deep pot. Add water to cover, bring to a boil, then
+                                        lower the heat and simmer until the meat is fork-tender.
                                     </li>
                                     <li>
-                                        Drain the pork and let it cool. Pat it dry, score
-                                        the skin without cutting into the meat, then brush
-                                        the skin with vinegar and season the pork with salt.
+                                        Drain the pork and let it cool. Pat it dry, score the
+                                        skin without cutting into the meat, then brush the skin
+                                        with vinegar and season the pork with salt.
                                     </li>
                                     <li>
                                         Set the pork skin-side up on a rack and refrigerate
-                                        uncovered overnight. Scrape off the salt before
-                                        frying.
+                                        uncovered overnight. Scrape off the salt before frying.
                                     </li>
                                     <li>
                                         Heat enough oil to cover the pork to 350–375°F.
-                                        Carefully lower in the dried pork and fry until
-                                        golden and crisp. Drain on a rack, rest about
-                                        5 minutes, then cut into portions.
+                                        Carefully lower in the dried pork and fry until golden
+                                        and crisp. Drain on a rack, rest about 5 minutes, then
+                                        cut into portions.
                                     </li>
                                 </ol>
                             </div>
-                        </article>
+                        </div>
+                    </li>
 
-                        <article class="recipe-method">
-                            <header class="recipe-method-heading">
-                                <h3 class="recipe-method-title" id="method-turon" tabindex="-1">
-                                    Turon
-                                </h3>
-                                <p class="recipe-method-meta">
-                                    Total time: 30 minutes · Makes 24 pieces
-                                </p>
-                                <p class="recipe-method-source">
-                                    Recipe by Lalaine Manalo at
-                                    <a href="https://www.kawalingpinoy.com/banana-turon/">
-                                        Kawaling Pinoy
-                                    </a>.
-                                </p>
-                            </header>
+                    <li class="recipe">
+                        <div class="recipe-summary">
+                            <figure class="plate-image">
+                                <img
+                                    loading="lazy"
+                                    src="../assets/images/plates/turon.png"
+                                    width="800"
+                                    height="800"
+                                    alt="Turon, seen from above">
+                            </figure>
 
-                            <div class="recipe-method-column">
+                            <div>
+                                <p class="label">DESSERT</p>
+
+                                <h3 id="recipe-turon">Turon</h3>
+
+                                <p class="plate-description">
+                                    Saba banana and sweetened jackfruit are wrapped in
+                                    spring-roll wrappers, coated with sugar, and
+                                    fried.
+                                </p>
+
+                                <dl class="facts-list">
+                                    <div>
+                                        <dt>TOTAL TIME</dt>
+                                        <dd>30 minutes</dd>
+                                    </div>
+                                    <div>
+                                        <dt>MAKES</dt>
+                                        <dd>24 pieces</dd>
+                                    </div>
+                                </dl>
+
+                                <p class="note">
+                                    Recipe by Lalaine Manalo at Kawaling Pinoy.
+                                </p>
+
+                                <a href="https://www.kawalingpinoy.com/banana-turon/" class="text-link">
+                                    View Turon at Kawaling Pinoy
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="recipe-body">
+                            <div>
                                 <h4>Ingredients</h4>
-                                <ul>
+
+                                <ul class="divided-list list-reset">
                                     <li>12 saba bananas</li>
                                     <li>1 cup sugar</li>
                                     <li>24 spring roll wrappers</li>
@@ -747,53 +623,86 @@
                                 </ul>
                             </div>
 
-                            <div class="recipe-method-column">
+                            <div>
                                 <h4>Method</h4>
-                                <ol>
+
+                                <ol class="steps-list list-reset">
                                     <li>
                                         Peel the bananas and cut each lengthwise into two
                                         halves. Heat about 1 inch of oil in a skillet.
                                     </li>
                                     <li>
-                                        Place a wrapper on the work surface like a diamond.
-                                        Roll a banana half in sugar and set it in the
-                                        middle; add 2 or 3 jackfruit strips.
+                                        Place a wrapper on the work surface like a diamond. Roll
+                                        a banana half in sugar and set it in the middle; add 2
+                                        or 3 jackfruit strips.
                                     </li>
                                     <li>
                                         Fold the bottom and sides over the filling, roll
-                                        tightly, and seal the edge with a little water.
-                                        Repeat with the remaining wrappers and filling.
+                                        tightly, and seal the edge with a little water. Repeat
+                                        with the remaining wrappers and filling.
                                     </li>
                                     <li>
                                         Coat the sealed rolls in sugar. Fry seam-side down,
-                                        turning as needed, until golden and caramelized.
-                                        Drain on a rack and serve.
+                                        turning as needed, until golden and caramelized. Drain
+                                        on a rack and serve.
                                     </li>
                                 </ol>
                             </div>
-                        </article>
+                        </div>
+                    </li>
 
-                        <article class="recipe-method">
-                            <header class="recipe-method-heading">
-                                <h3 class="recipe-method-title" id="method-halo-halo" tabindex="-1">
-                                    Halo-Halo
-                                </h3>
-                                <p class="recipe-method-meta">
-                                    Total time: 10 minutes · Makes 4 servings
-                                </p>
-                                <p class="recipe-method-source">
-                                    Recipe by Lalaine Manalo at
-                                    <a href="https://www.kawalingpinoy.com/halo-halo/">
-                                        Kawaling Pinoy
-                                    </a>.
-                                </p>
-                            </header>
+                    <li class="recipe">
+                        <div class="recipe-summary">
+                            <figure class="plate-image">
+                                <img
+                                    loading="lazy"
+                                    src="../assets/images/plates/halo-halo.png"
+                                    width="800"
+                                    height="800"
+                                    alt="A glass of halo-halo">
+                            </figure>
 
-                            <div class="recipe-method-column">
+                            <div>
+                                <p class="label">DESSERT</p>
+
+                                <h3 id="recipe-halo-halo">Halo-Halo</h3>
+
+                                <p class="plate-description">
+                                    Shaved ice is layered with sweetened mix-ins,
+                                    milk, leche flan, and ice cream.
+                                </p>
+
+                                <dl class="facts-list">
+                                    <div>
+                                        <dt>TOTAL TIME</dt>
+                                        <dd>10 minutes</dd>
+                                    </div>
+                                    <div>
+                                        <dt>MAKES</dt>
+                                        <dd>4 servings</dd>
+                                    </div>
+                                </dl>
+
+                                <p class="note">
+                                    Recipe by Lalaine Manalo at Kawaling Pinoy.
+                                </p>
+
+                                <a href="https://www.kawalingpinoy.com/halo-halo/" class="text-link">
+                                    View Halo-Halo at Kawaling Pinoy
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="recipe-body">
+                            <div>
                                 <h4>Ingredients</h4>
-                                <ul>
+
+                                <ul class="divided-list list-reset">
                                     <li>1/2 cup gulaman cubes or sago</li>
-                                    <li>1/2 cup sweetened beans, such as garbanzo, red mung, or white beans</li>
+                                    <li>
+                                        1/2 cup sweetened beans, such as garbanzo, red mung, or
+                                        white beans
+                                    </li>
                                     <li>1/2 cup nata de coco, drained</li>
                                     <li>1/2 cup kaong, drained</li>
                                     <li>1/2 cup sweetened saba bananas</li>
@@ -808,47 +717,46 @@
                                 </ul>
                             </div>
 
-                            <div class="recipe-method-column">
+                            <div>
                                 <h4>Method</h4>
-                                <ol>
+
+                                <ol class="steps-list list-reset">
                                     <li>
-                                        Prepare the gulaman according to its package
-                                        directions, using less water for firmer cubes.
+                                        Prepare the gulaman according to its package directions,
+                                        using less water for firmer cubes.
                                     </li>
                                     <li>
-                                        Spoon about a teaspoon of each chosen mix-in into
-                                        tall glasses until each is about one-third full.
+                                        Spoon about a teaspoon of each chosen mix-in into tall
+                                        glasses until each is about one-third full.
                                     </li>
                                     <li>
-                                        Pack in shaved ice and drizzle with evaporated milk.
-                                        Top with leche flan and a scoop of ice cream.
+                                        Pack in shaved ice and drizzle with evaporated milk. Top
+                                        with leche flan and a scoop of ice cream.
                                     </li>
                                     <li>
-                                        Finish with macapuno and pinipig if desired.
-                                        Serve immediately.
+                                        Finish with macapuno and pinipig if desired. Serve
+                                        immediately.
                                     </li>
                                 </ol>
                             </div>
-                        </article>
-                    </div>
-                </div>
+                        </div>
+                    </li>
+                </ul>
             </section>
 
-            <section class="recipe-cta-section full-bleed">
-                <div class="recipe-cta-container">
-                    <h2>
+            <section class="recipes-cta-section full-bleed" aria-labelledby="recipes-cta-title">
+                <div class="closing-content">
+                    <h2 id="recipes-cta-title">
                         More Than a Recipe.
-                        <span>A Taste of Home.</span>
+                        <em>A Taste of Home.</em>
                     </h2>
-
-                    <p>
+                    <p class="closing-description">
                         Filipino cooking is about sharing, tradition,
                         and bringing people together. Keep exploring
                         and discover the flavors worth passing on.
                     </p>
-
                     <a href="foods.html" class="button">
-                        Discover Filipino Foods →
+                        Discover Filipino Foods
                     </a>
                 </div>
             </section>
@@ -858,15 +766,13 @@
             <div class="footer-main">
                 <div class="footer-brand">
                     <a href="../index.html" class="footer-logo">
-                        Silangan
+                        SILANGAN
                     </a>
-
                     <p>
                         Discover the Philippines, one bite at a time.
                         Explore Filipino dishes, regional specialties,
                         and the stories behind every flavor.
                     </p>
-
                     <span class="footer-brand-tagline">
                         Sarap ng Pilipinas, tikman at tuklasin!
                     </span>
@@ -874,7 +780,6 @@
 
                 <div class="footer-links">
                     <h3>Explore</h3>
-
                     <ul class="list-reset">
                         <li><a href="top-foods.html">Top Foods</a></li>
                         <li><a href="foods.html">All Foods</a></li>
@@ -885,7 +790,6 @@
 
                 <div class="footer-links">
                     <h3>Discover</h3>
-
                     <ul class="list-reset">
                         <li><a href="near-me.html">Near Me</a></li>
                         <li><a href="regions.html">Regions</a></li>
@@ -895,15 +799,13 @@
 
                 <div class="footer-about">
                     <h3>About Silangan</h3>
-
                     <p>
                         More than just food, every Filipino dish
                         tells a story of culture, tradition,
                         and togetherness.
                     </p>
-
-                    <a href="foods.html" class="footer-explore-link">
-                        Start Exploring →
+                    <a href="foods.html" class="text-link">
+                        Start Exploring
                     </a>
                 </div>
             </div>

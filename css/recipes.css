@@ -1,522 +1,161 @@
-
-
 /*
 
 
-    COOK SOMETHING FILIPINO.
+    RECIPES PAGE
+
+    Loaded after style.css. Almost everything on this page comes from
+    shared parts in style.css (page header, split content, plates, facts
+    list, divided list, steps list, closing content), so this file only
+    holds what is special to the recipes page.
 
 
 */
 
 
-.recipes-intro {
-    padding-block: 2.5rem 2.25rem;
+/*
+
+
+    SECTION SPACING
+
+
+*/
+
+
+/*
+
+    Same top and bottom space as the home sections. Change
+    --section-space in :root to move all of them at once. The thin line
+    above each section after the first one separates the parts of the
+    page, like the sections of the foods page.
+
+*/
+
+.featured-recipe-section,
+.recipe-index-section,
+.recipe-methods-section,
+.recipes-cta-section {
+    padding-block: var(--section-space);
 }
 
-.recipes-intro h1 {
-    font-size: clamp(2.5rem, 7vw, 4.5rem);
-}
-
-.recipes-intro .page-hero-content > p {
-    margin-bottom: 1.5rem;
+.recipe-index-section,
+.recipe-methods-section,
+.recipes-cta-section {
+    border-block-start: var(--border-line);
 }
 
 
 /*
 
 
-    FEATURED RECIPE
+    EXPLORE THE RECIPE COLLECTION (RECIPE INDEX)
 
 
 */
 
 
-.recipe-spotlight-section {
-    padding-block: 2rem 3rem;
+/*
 
-    background-color: var(--band-bg);
-}
+    An open list of links, one row per recipe, divided by thin lines
+    (the shared .divided-list). Each link jumps to that recipe further
+    down the page. The name is the link, the category sits on the right.
 
-.recipe-spotlight-container {
-    max-width: 1200px;
+*/
+
+.recipe-index {
+    max-width: 56rem;
     margin: 0 auto;
 }
 
-.recipe-spotlight-header {
-    margin-bottom: 1.5rem;
-
-    text-align: center;
-}
-
-.recipe-spotlight-header h2 {
-    margin: 0;
-
-    font-size: clamp(2rem, 4vw, 2.7rem);
-}
-
-.recipe-spotlight-header p {
-    margin: 0.75rem 0 0;
-
-    line-height: 1.8;
-}
-
-.featured-recipe {
-    --color-heading: var(--card-title);
-    --focus-ring: var(--card-link);
-
-    display: grid;
-    grid-template-columns: 1.1fr 0.9fr;
-    overflow: hidden;
-
-    border-radius: var(--radius-lg);
-
-    color: var(--card-text);
-    background-color: var(--card-bg);
-}
-
-.featured-recipe-image {
-    position: relative;
-
-    overflow: hidden;
-
-    min-height: 430px;
-}
-
-.featured-recipe-image-link {
-    display: block;
-
-    width: 100%;
-    height: 100%;
-}
-
-.featured-recipe-image-link:focus-visible {
-    outline-offset: -4px;
-}
-
-.featured-recipe-image img {
-    width: 100%;
-    height: 100%;
-
-    object-fit: cover;
-}
-
-.featured-recipe-info {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-
-    padding: 3rem;
-}
-
-.featured-recipe-info h3 {
-    margin: 0;
-
-    font-size: 2.8rem;
-}
-
-/*
-
-    This rule also matches .featured-recipe-source and outranks it, so
-    the note keeps this margin, font-size and line-height instead of
-    the ones set on .featured-recipe-source below
-
-*/
-
-.featured-recipe-info > p {
-    margin: 1rem 0 1.5rem;
-
-    font-size: 1rem;
-    line-height: 1.7;
-}
-
-.recipe-details {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem 1.5rem;
-
-    margin-bottom: 2rem;
-    padding-bottom: 1.5rem;
-    border-bottom: 1px solid var(--color-border);
-}
-
-.recipe-details > div {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-}
-
-.recipe-detail-label {
-    color: var(--card-label);
-
-    font-size: 0.75rem;
-    font-weight: 700;
-}
-
-.recipe-details strong {
-    color: var(--color-heading);
-
-    font-weight: 600;
-}
-
-.featured-recipe-link {
-    display: inline-flex;
-    align-items: center;
-    align-self: flex-start;
-
-    min-height: 44px;
-    padding: 0.65rem 0;
-
-    color: var(--card-link);
-
-    font-size: 0.9rem;
-    font-weight: 600;
-}
-
-.featured-recipe-link:hover {
-    text-decoration: underline;
-    text-underline-offset: 0.2em;
-}
-
-.featured-recipe-source {
-    margin: 0.5rem 0 0;
-
-    font-size: 0.875rem;
-    line-height: 1.5;
-}
-
-
-/*
-
-
-    EXPLORE THE RECIPE COLLECTION
-
-
-*/
-
-
-.recipe-collection-section {
-    padding-block: 3rem;
-
-    background-color: var(--band-bg-alt);
-}
-
-.recipe-collection-header {
+.recipe-index li {
     display: flex;
     justify-content: space-between;
-    align-items: flex-end;
-    gap: 2rem;
-
-    margin-bottom: 2.5rem;
-}
-
-.recipe-collection-header h2 {
-    margin: 0;
-
-    font-size: clamp(2rem, 4vw, 2.7rem);
-}
-
-.recipe-collection-header p {
-    margin: 0.75rem 0 0;
-
-    line-height: 1.8;
-}
-
-.recipe-swipe-hint {
-    display: none;
-
-    margin: 0 0 0.75rem;
-
-    color: var(--color-secondary);
-
-    font-size: 0.875rem;
-    font-weight: 600;
-}
-
-.recipe-grid {
-    display: grid;
-    gap: 2rem;
-    grid-template-columns: repeat(3, 1fr);
-}
-
-.recipe-card {
-    display: flex;
-    flex-direction: column;
-}
-
-.recipe-card-image {
-    position: relative;
-
-    display: block;
-    overflow: hidden;
-
-    height: 240px;
-}
-
-.recipe-card-image:focus-visible {
-    outline-offset: -4px;
-}
-
-.recipe-card-image img {
-    width: 100%;
-    height: 100%;
-
-    object-fit: cover;
-
-    transition: transform 0.3s ease;
-}
-
-.recipe-card:hover .recipe-card-image img {
-    transform: scale(1.05);
-}
-
-.recipe-card-category {
-    position: absolute;
-    top: 1rem;
-    left: 1rem;
-
-    padding: 0.5rem 0.8rem;
-    border-radius: var(--radius-sm);
-
-    color: var(--color-ink);
-    background-color: var(--color-background);
-
-    font-size: 0.75rem;
-    font-weight: 700;
-    letter-spacing: 0.8px;
-}
-
-.recipe-card-info {
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-
-    padding: 1.5rem;
-}
-
-.recipe-card-info h3 {
-    margin: 0.6rem 0;
-
-    font-size: 1.7rem;
-}
-
-.recipe-card-info > p {
-    min-height: 4.5rem;
-    margin: 0 0 1rem;
-
-    line-height: 1.8;
-}
-
-.recipe-card-info .recipe-card-meta {
-    min-height: 0;
-
-    font-weight: 600;
-    line-height: 1.5;
-}
-
-.recipe-card-actions {
-    display: grid;
-    gap: 0.5rem;
-
-    margin-top: auto;
-}
-
-.recipe-card-actions a {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    min-height: 44px;
-    padding: 0.65rem 0.75rem;
-    border: 1px solid var(--color-ink);
-    border-radius: var(--radius-sm);
-
-    font-size: 0.875rem;
-    font-weight: 600;
-    line-height: 1.4;
-    text-align: center;
-}
-
-.recipe-card-actions a:focus-visible {
-    outline-offset: -3px;
-}
-
-.recipe-card-method-link {
-    color: var(--color-ink);
-    background-color: var(--color-background);
-}
-
-.recipe-card-method-link:hover {
-    background-color: var(--color-background-secondary);
-}
-
-.recipe-card-source-link {
-    color: var(--color-background-secondary);
-    background-color: var(--color-ink);
-}
-
-.recipe-card-source-link:hover {
-    color: var(--color-ink);
-    background-color: var(--color-background);
-}
-
-
-/*
-
-
-    INGREDIENTS AND METHODS
-
-
-*/
-
-
-.recipe-methods-section {
-    padding-block: 3.5rem;
-
-    background-color: var(--band-bg);
-}
-
-.recipe-methods-container {
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.recipe-methods-header {
-    max-width: 760px;
-    margin-bottom: 2rem;
-}
-
-.recipe-methods-header h2 {
-    margin: 0;
-
-    font-size: clamp(2rem, 4vw, 2.7rem);
-    line-height: 1.15;
-}
-
-.recipe-methods-header p {
-    margin: 0.75rem 0 0;
-}
-
-.recipe-method-list {
-    display: grid;
+    align-items: baseline;
     gap: 1.5rem;
 }
 
-.recipe-method {
-    --color-heading: var(--card-title);
-    --focus-ring: var(--card-link);
+.recipe-index a {
+    display: inline-flex;
+    align-items: center;
+
+    min-height: 44px;
+
+    font-family: var(--font-heading);
+    font-size: var(--text-h3);
+
+    transition: color var(--transition);
+}
+
+.recipe-index a:hover {
+    color: var(--color-primary);
+}
+
+.recipe-index .label {
+    margin: 0;
+}
+
+
+/*
+
+
+    INGREDIENTS AND METHODS (THE RECIPES)
+
+
+*/
+
+
+/*
+
+    Each recipe has two parts. The summary is the plate beside the name,
+    a short description, the facts and the source link. The body is the
+    ingredients beside the method. Thin lines separate the recipes, like
+    the rows of the regions list.
+
+*/
+
+.recipe-list {
+    margin: 0;
+    border-block-start: var(--border-line);
+}
+
+.recipe {
+    padding-block: clamp(2.5rem, 5vw, 4rem);
+    border-block-end: var(--border-line);
+}
+
+.recipe-summary {
+    --recipe-plate-size: 16rem;
 
     display: grid;
-    gap: 1.5rem 2rem;
-    grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+    align-items: center;
+    gap: 2rem 3.5rem;
+    grid-template-columns: var(--recipe-plate-size) minmax(0, 1fr);
 
-    padding: 2rem;
-    border: 1px solid var(--card-border);
-    border-radius: var(--radius-lg);
-
-    color: var(--card-text);
-    background-color: var(--card-bg);
+    margin-block-end: 3rem;
 }
 
-.recipe-method-heading {
-    grid-column: 1 / -1;
-}
-
-.recipe-method-title {
+.recipe-summary .plate-image {
+    max-width: var(--recipe-plate-size);
     margin: 0;
-
-    font-size: clamp(1.6rem, 3vw, 2rem);
-    line-height: 1.2;
 }
 
-.recipe-method-title:focus {
-    outline: 2px solid var(--focus-ring);
-    outline-offset: 4px;
+.recipe-summary h3 {
+    font-size: var(--text-h2);
 }
 
-.recipe-method-meta,
-.recipe-method-source {
-    margin: 0.5rem 0 0;
-
-    line-height: 1.6;
+.recipe-summary .plate-description {
+    max-width: 36rem;
 }
 
-.recipe-method-source a {
-    color: var(--card-link);
-
-    font-weight: 600;
-    text-decoration: underline;
-    text-underline-offset: 0.15em;
+.recipe-body {
+    display: grid;
+    gap: 2.5rem 4rem;
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
 }
 
-.recipe-method-column h4 {
-    margin: 0 0 0.75rem;
+.recipe-body h4 {
+    margin-block-end: 1rem;
 
-    font-size: 1.25rem;
-}
-
-.recipe-method-column ul,
-.recipe-method-column ol {
-    margin: 0;
-    padding-left: 1.25rem;
-}
-
-.recipe-method-column li + li {
-    margin-top: 0.5rem;
-}
-
-
-/*
-
-
-    MORE THAN A RECIPE. A TASTE OF HOME.
-
-
-*/
-
-
-.recipe-cta-section {
-    padding-block: 3.5rem;
-
-    background-color: var(--band-bg);
-
-    text-align: center;
-}
-
-.recipe-cta-container {
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.recipe-cta-container h2 {
-    margin: 0;
-
-    font-size: 3rem;
-    line-height: 1.2;
-}
-
-.recipe-cta-container h2 span {
-    color: var(--color-secondary);
-}
-
-.recipe-cta-container p {
-    max-width: 650px;
-    margin: 1.25rem auto 2rem;
-
-    line-height: 1.9;
-}
-
-
-/*
-
-
-    LINK FOCUS STYLES
-
-
-*/
-
-
-.recipes-page a:focus-visible {
-    outline: 2px solid var(--focus-ring);
+    font-size: var(--text-h3);
 }
 
 
@@ -529,118 +168,27 @@
 */
 
 
-/* ---------- Tablets (up to 1024px) ---------- */
-
-@media (max-width: 1024px) {
-
-    .recipe-grid {
-        gap: 1.5rem;
-    }
-
-    .featured-recipe-info {
-        padding: 2.25rem;
-    }
-
-    .featured-recipe-link,
-    .featured-recipe-source,
-    .recipe-swipe-hint {
-        font-size: 1rem;
-    }
-}
-
-
 /* ---------- Small tablets (up to 900px) ---------- */
 
 @media (max-width: 900px) {
 
-    .recipe-swipe-hint {
-        display: block;
+    /* Each recipe stacks: the plate goes above its text, and the
+       ingredients go above the method. */
+
+    .recipe-summary {
+        --recipe-plate-size: 14rem;
+
+        grid-template-columns: minmax(0, 1fr);
+
+        margin-block-end: 2.5rem;
     }
 
-    .featured-recipe {
-        grid-template-columns: 1fr;
+    .recipe-summary .plate-image {
+        margin: 0 auto;
     }
 
-    .featured-recipe-image {
-        height: 320px;
-        min-height: 0;
-    }
-
-    .featured-recipe-info h3 {
-        font-size: clamp(2rem, 6vw, 2.8rem);
-    }
-
-    /* Recipe cards: one row you swipe sideways. The next card peeks in
-       from the edge so people can see there is more. The padding leaves
-       room so card hover effects are not clipped. */
-
-    .recipe-grid {
-        grid-template-columns: none;
-        grid-auto-flow: column;
-        grid-auto-columns: 44%;
-        overflow-x: auto;
-        overscroll-behavior-x: contain;
-        scroll-snap-type: x mandatory;
-        scrollbar-width: thin;
-        scrollbar-color: var(--color-secondary) transparent;
-        -webkit-overflow-scrolling: touch;
-
-        padding: 0.5rem 0 1.25rem;
-    }
-
-    .recipe-grid > * {
-        scroll-snap-align: start;
-    }
-}
-
-
-/* ---------- Mobile landscape / large phones (up to 768px) ---------- */
-
-@media (max-width: 768px) {
-
-    .recipes-intro {
-        padding-block: 2.25rem 2rem;
-    }
-
-    .recipe-spotlight-section {
-        padding-block: 1.75rem 2.5rem;
-    }
-
-    .recipe-collection-section,
-    .recipe-methods-section,
-    .recipe-cta-section {
-        padding-block: 2.5rem;
-    }
-
-    .recipe-spotlight-header h2,
-    .recipe-collection-header h2 {
-        font-size: clamp(1.9rem, 5.5vw, 2.7rem);
-    }
-
-    .recipe-cta-container h2 {
-        font-size: clamp(2rem, 7vw, 3rem);
-    }
-
-    .recipe-spotlight-header {
-        margin-bottom: 1.25rem;
-    }
-
-    .recipe-collection-header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 1.25rem;
-    }
-
-    .recipe-method {
-        gap: 1.25rem;
-        grid-template-columns: 1fr;
-
-        padding: 1.5rem;
-    }
-
-    .recipe-method-column ul,
-    .recipe-method-column ol {
-        padding-left: 1.1rem;
+    .recipe-body {
+        grid-template-columns: minmax(0, 1fr);
     }
 }
 
@@ -649,89 +197,10 @@
 
 @media (max-width: 640px) {
 
-    /* Swipe row: wider cards so about one shows at a time, with a peek
-       of the next */
+    /* The category is repeated inside each recipe, so on a phone the
+       index keeps only the names and the rows stay on one line. */
 
-    .recipe-grid {
-        grid-auto-columns: 80%;
-    }
-
-    .featured-recipe-image {
-        height: 260px;
+    .recipe-index .label {
+        display: none;
     }
 }
-
-
-/* ---------- Small phones (up to 480px) ---------- */
-
-@media (max-width: 480px) {
-
-    /* Slightly larger side gutters than 4% so text doesn't hug the edge */
-
-    .recipe-spotlight-section,
-    .recipe-collection-section,
-    .recipe-methods-section,
-    .recipe-cta-section {
-        --gutter-x: 1.25rem;
-    }
-
-    .recipes-intro {
-        padding-block: 1.75rem;
-    }
-
-    .recipe-spotlight-header {
-        margin-bottom: 1rem;
-    }
-
-    .featured-recipe-image {
-        height: 220px;
-    }
-
-    .featured-recipe-info {
-        padding: 1.5rem 1.25rem;
-    }
-
-    .recipe-collection-header {
-        margin-bottom: 1.75rem;
-    }
-
-    .recipe-card-image {
-        height: 200px;
-    }
-
-    .recipe-card-info {
-        padding: 1.25rem;
-    }
-
-    .recipe-method {
-        padding: 1.25rem;
-    }
-
-    .recipe-methods-header {
-        margin-bottom: 1.5rem;
-    }
-}
-
-
-/* ---------- Very small phones (up to 360px) ---------- */
-
-@media (max-width: 360px) {
-
-    .recipes-intro h1 {
-        font-size: 2.25rem;
-    }
-}
-
-
-/* ---------- Respect "reduce motion" settings ---------- */
-
-@media (prefers-reduced-motion: reduce) {
-
-    .recipe-card-image img {
-        transition: none;
-    }
-
-    .recipe-card:hover .recipe-card-image img {
-        transform: none;
-    }
-}
