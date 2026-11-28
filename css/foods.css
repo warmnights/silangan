@@ -1,30 +1,28 @@
-
-
 /*
 
 
-    A WORLD OF FILIPINO FLAVORS.
+    SECTION SPACING
 
 
 */
 
 
-.foods-intro .section-eyebrow,
-.regional-discovery-content .section-eyebrow {
-    margin-bottom: 1rem;
+/*
+
+    Same top and bottom space as the home sections (--section-space in
+    :root in style.css), so the page has the same rhythm as the homepage.
+    The dish groups use less, because there are five of them in a row.
+
+*/
+
+.food-categories-section,
+.regional-discovery-section {
+    padding-block: var(--section-space);
 }
 
-/*
-
-    Eyebrows on this page use the heading color; the global default is the accent color
-
-*/
-
-.foods-intro .section-eyebrow,
-.food-categories-header .section-eyebrow,
-.food-directory-header .section-eyebrow,
-.regional-discovery-content .section-eyebrow {
-    color: var(--color-heading);
+.food-group-section {
+    padding-block: clamp(3rem, 6vw, 5rem);
+    border-block-start: var(--border-line);
 }
 
 
@@ -39,385 +37,105 @@
 
 /*
 
-    First section after the intro: extra breathing room
+    An open list: each row is one link to a group of dishes, divided by
+    thin lines like the regions list on the homepage. There are no tiles.
 
 */
 
-.food-categories-section {
-    padding: 4rem 4% 5rem;
-
-    background-color: var(--band-bg);
+.food-categories-list {
+    max-width: 56rem;
+    margin: 0 auto;
+    border-block-start: var(--border-line);
 }
 
-.food-categories-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    gap: 2rem;
-
-    margin-bottom: 2rem;
-}
-
-.food-categories-header h2 {
-    margin: 0;
-}
-
-.food-categories-header p {
-    max-width: 430px;
-    margin: 0;
-
-    font-size: 0.9rem;
-    line-height: 1.8;
-}
-
-.food-category-grid {
+.food-category-link {
     display: grid;
-    gap: 1.25rem;
-    grid-template-columns: repeat(5, 1fr);
+    align-items: baseline;
+    gap: 0.5rem 2rem;
+    grid-template-columns: 1fr 2fr;
+
+    padding-block: 1.5rem;
+    border-block-end: var(--border-line);
 }
 
-.food-category-card {
-    position: relative;
-
-    display: block;
-    overflow: hidden;
-
-    height: 260px;
-    border-radius: var(--radius-md);
-
-    background-color: var(--color-primary);
-}
-
-.food-category-card:hover img {
-    transform: scale(1.06);
-}
-
-/*
-
-    Visible keyboard focus (drawn inside the card so it is never clipped)
-
-*/
-
-.food-category-card:focus-visible {
-    outline: 3px solid var(--color-secondary);
-    outline-offset: -3px;
-}
-
-.food-category-card img {
-    width: 100%;
-    height: 100%;
-
-    object-fit: cover;
-
-    transition: transform 0.3s ease;
-}
-
-.food-category-card::after {
-    content: "";
-
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-
-    background: linear-gradient(
-        transparent 20%,
-        color-mix(in srgb, var(--color-surface) 85%, transparent)
-    );
-}
-
-.food-category-info {
-    position: absolute;
-    right: 1rem;
-    bottom: 1.25rem;
-    left: 1rem;
-    z-index: 1;
-
-    color: var(--color-white);
-}
-
-.food-category-info span {
-    display: inline-block;
-
-    padding: 0.1rem 0.4rem;
-    border-radius: var(--radius-pill);
-
-    color: var(--color-background-secondary);
-    background-color: var(--color-primary);
-
-    font-size: 0.8rem;
-    font-weight: 600;
-    letter-spacing: 1px;
-}
-
-.food-category-info h3 {
-    margin: 0.35rem 0;
-
-    color: var(--color-white);
-
-    font-size: 1.3rem;
-}
-
-/*
-
-    Light text: the dark maroon was unreadable on the dark photo overlay
-
-*/
-
-.food-category-info p {
+.food-category-link h3,
+.food-category-link p {
     margin: 0;
+}
 
-    color: var(--color-background-secondary);
+.food-category-link h3 {
+    transition: color var(--transition);
+}
 
-    font-size: 0.875rem;
+.food-category-link:hover h3 {
+    color: var(--color-primary);
+}
+
+.food-category-link p {
+    color: var(--color-text-muted);
 }
 
 
 /*
 
 
-    DISCOVER THE DISHES
+    THE DISH GROUPS (MAIN DISHES, SOUPS, REGIONAL, DESSERTS, SNACKS)
 
 
 */
 
 
-.food-directory-section {
-    padding-block: 3.5rem;
+/*
 
-    background-color: var(--band-bg-alt);
-}
+    The groups hold anywhere from 1 to 4 plates. The home page grid would
+    leave a lone plate stuck at the left, so here the plates sit in a
+    centered row that wraps (flex-wrap). Each plate is as wide as one
+    plate ring (--plate-size) and the row fits as many as it can: 3 on
+    desktop, 2 on tablets, 1 on phones. That is why this page needs no
+    plate rules in the media queries. The lower middle plate of the home
+    grid is turned off, because it would look random here.
 
-.food-directory-header {
+*/
+
+.food-group-section .plates-grid {
     display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    gap: 2rem;
-
-    margin-bottom: 3rem;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
-.food-directory-header h2 {
-    margin: 0;
+.food-group-section .plate {
+    flex: 0 1 var(--plate-size);
 }
 
-.food-directory-header p {
-    max-width: 600px;
-    margin: 0.75rem 0 0;
-
-    font-size: 0.9rem;
-    line-height: 1.8;
-}
-
-.food-count {
-    padding: 0.65rem 1rem;
-    border: 1px solid var(--color-secondary);
-    border-radius: var(--radius-pill);
-
-    color: var(--color-heading);
-
-    font-size: 0.8rem;
-    font-weight: 600;
-    letter-spacing: 1px;
-    white-space: nowrap;
-}
-
-.food-directory-group {
-    margin-bottom: 3.5rem;
-}
-
-.food-directory-title {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 1rem;
-
-    margin-bottom: 1.5rem;
-    padding-bottom: 0.75rem;
-    border-bottom: 1px solid color-mix(in srgb, var(--color-background-secondary) 15%, transparent);
-}
-
-.food-directory-title h3 {
-    margin: 0;
-
-    font-size: 1.8rem;
-}
-
-.food-directory-title span {
-    flex-shrink: 0;
-
-    color: var(--color-heading);
-
-    font-size: 0.8rem;
-    font-weight: 600;
-    letter-spacing: 1px;
-    white-space: nowrap;
-}
-
-.food-directory-grid {
-    display: grid;
-    gap: 1.5rem;
-    grid-template-columns: repeat(3, 1fr);
-}
-
-.food-directory-card {
-    --color-heading: var(--card-title);
-    --focus-ring: var(--card-link);
-
-    overflow: hidden;
-
-    border: 1px solid color-mix(in srgb, var(--color-background-secondary) 8%, transparent);
-    border-radius: var(--radius-md);
-
-    color: var(--card-text);
-    background-color: var(--card-bg-alt);
-
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.food-directory-card:hover {
-    box-shadow: 0 8px 24px color-mix(in srgb, var(--color-black) 12%, transparent);
-
-    transform: translateY(-4px);
-}
-
-.food-directory-card:hover .food-directory-image img {
-    transform: scale(1.05);
-}
-
-.food-directory-image {
-    display: block;
-    overflow: hidden;
-
-    height: 220px;
-}
-
-.food-directory-image img {
-    width: 100%;
-    height: 100%;
-
-    object-fit: cover;
-
-    transition: transform 0.3s ease;
-}
-
-.food-directory-info {
-    padding: 1.4rem;
-}
-
-.food-directory-info > span {
-    color: var(--color-heading);
-
-    font-size: 0.8rem;
-    font-weight: 700;
-    letter-spacing: 1px;
-}
-
-.food-directory-info h4 {
-    margin: 0.5rem 0;
-
-    font-size: 1.5rem;
-}
-
-.food-directory-info p {
-    min-height: 55px;
-    margin: 0 0 1rem;
-
-    font-size: 0.85rem;
-}
-
-.food-directory-info a {
-    color: var(--card-link);
-
-    font-size: 0.8rem;
-    font-weight: 600;
-}
-
-.food-directory-info a:hover {
-    color: var(--color-heading);
-
-    text-decoration: underline;
-    text-underline-offset: 0.15em;
+.food-group-section .plate:nth-child(2) {
+    margin-block-start: 0;
 }
 
 
 /*
 
 
-    ONE COUNTRY. COUNTLESS FLAVORS.
+    ONE COUNTRY. COUNTLESS FLAVORS. (REGIONAL DISCOVERY)
 
 
 */
 
 
 .regional-discovery-section {
-    padding: 3.5rem 4%;
-
-    background-color: var(--band-bg);
+    border-block-start: var(--border-line);
 }
 
-.regional-discovery-container {
-    display: grid;
-    align-items: center;
-    gap: 4rem;
-    grid-template-columns: 1fr 1fr;
-
-    max-width: 1200px;
+.regional-discovery-content {
+    max-width: 44rem;
     margin: 0 auto;
-}
 
-.regional-discovery-image {
-    overflow: hidden;
-
-    height: 380px;
-    border-radius: var(--radius-md);
-}
-
-.regional-discovery-image img {
-    width: 100%;
-    height: 100%;
-
-    object-fit: cover;
-}
-
-.regional-discovery-content h2 {
-    margin: 0;
-
-    line-height: 1.2;
+    text-align: center;
 }
 
 .regional-discovery-content p {
-    margin: 1.25rem 0 1.75rem;
+    margin-block-end: 2rem;
 
-    font-size: 0.9rem;
-    line-height: 1.9;
-}
-
-/*
-
-    Dark text: white on the caramel primary color is only about 3.3:1 contrast
-
-*/
-
-.regional-discovery-button {
-    display: inline-block;
-
-    padding: 0.9rem 1.5rem;
-    border-radius: var(--radius-sm);
-
-    color: var(--button-text);
-    background-color: var(--button-bg);
-
-    font-size: 0.85rem;
-    font-weight: 600;
-
-    transition: background-color 0.2s ease;
-}
-
-.regional-discovery-button:hover {
-    color: var(--button-text-hover);
-    background-color: var(--button-bg-hover);
+    color: var(--color-text-muted);
 }
 
 
@@ -430,215 +148,13 @@
 */
 
 
-/* ---------- Tablets (up to 1024px) ---------- */
-
-@media (max-width: 1024px) {
-
-    .food-category-grid {
-        gap: 1rem;
-    }
-
-    .food-category-info {
-        right: 0.85rem;
-        bottom: 1rem;
-        left: 0.85rem;
-    }
-
-    .regional-discovery-container {
-        gap: 2.5rem;
-    }
-}
-
-
 /* ---------- Small tablets (up to 900px) ---------- */
 
 @media (max-width: 900px) {
 
-    /* Category tiles: one row you swipe sideways. The tiles are small, so
-       about three show at once. */
+    /* Category rows: name on top, short line below */
 
-    .food-category-grid {
-        grid-template-columns: none;
-        grid-auto-flow: column;
-        grid-auto-columns: 32%;
-        overflow-x: auto;
-        overscroll-behavior-x: contain;
-        scroll-snap-type: x mandatory;
-        scrollbar-width: thin;
-        scrollbar-color: var(--color-secondary) transparent;
-        -webkit-overflow-scrolling: touch;
-
-        padding: 0 0 1rem;
-    }
-
-    .food-category-grid > * {
-        scroll-snap-align: start;
-    }
-
-    /* Dish directory: stays a normal grid (2 across) instead of a swipe
-       row. Several sections hold only 1 or 2 dishes, which would look
-       empty in a swipe row, and the category tiles jump to each section. */
-
-    .food-directory-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    /* "One Country. Countless Flavors.": photo on top, text below */
-
-    .regional-discovery-container {
-        gap: 2rem;
-        grid-template-columns: 1fr;
-    }
-
-    .regional-discovery-image {
-        height: 300px;
+    .food-category-link {
+        grid-template-columns: minmax(0, 1fr);
     }
 }
-
-
-/* ---------- Mobile landscape / large phones (up to 768px) ---------- */
-
-@media (max-width: 768px) {
-
-    /* Section spacing: the first section after the intro keeps a little
-       extra room, the rest are tighter (same as the other pages) */
-
-    .food-categories-section {
-        padding-block: 3.5rem;
-    }
-
-    .food-directory-section,
-    .regional-discovery-section {
-        padding-block: 2.5rem;
-    }
-
-    .food-directory-title h3 {
-        font-size: clamp(1.4rem, 4.5vw, 1.8rem);
-    }
-
-    /* Section headers: title block on top, the extra text or tag below */
-
-    .food-categories-header,
-    .food-directory-header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 1rem;
-    }
-
-    .food-categories-header p {
-        max-width: none;
-    }
-
-    .food-directory-header {
-        margin-bottom: 2rem;
-    }
-
-    .food-directory-group {
-        margin-bottom: 2.5rem;
-    }
-}
-
-
-/* ---------- Phones (up to 640px) ---------- */
-
-@media (max-width: 640px) {
-
-    /* Category tiles: one full tile shows, with most of the next one
-       peeking in */
-
-    .food-category-grid {
-        grid-auto-columns: 56%;
-    }
-
-    .food-category-card {
-        height: 240px;
-    }
-
-    /* Dish directory: one dish per row */
-
-    .food-directory-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .regional-discovery-image {
-        height: 260px;
-    }
-}
-
-
-/* ---------- Small phones (up to 480px) ---------- */
-
-@media (max-width: 480px) {
-
-    /* Slightly larger side gutters than 4% so text doesn't hug the edge */
-
-    .food-directory-section {
-        --gutter-x: 1.25rem;
-    }
-
-    .food-categories-section,
-    .regional-discovery-section {
-        padding-left: 1.25rem;
-        padding-right: 1.25rem;
-    }
-
-    /* Category tiles */
-
-    .food-category-grid {
-        grid-auto-columns: 70%;
-    }
-
-    .food-category-card {
-        height: 220px;
-    }
-
-    /* Dish directory */
-
-    .food-directory-header {
-        margin-bottom: 1.75rem;
-    }
-
-    .food-directory-group {
-        margin-bottom: 2rem;
-    }
-
-    .food-directory-image {
-        height: 200px;
-    }
-
-    .food-directory-info {
-        padding: 1.25rem;
-    }
-
-    .food-directory-info p {
-        min-height: 0;
-    }
-
-    /* Search */
-
-    /* Dish detail */
-
-    /* Regional discovery */
-
-    .regional-discovery-image {
-        height: 220px;
-    }
-}
-
-
-/* ---------- Respect "reduce motion" settings ---------- */
-
-@media (prefers-reduced-motion: reduce) {
-
-    .food-category-card img,
-    .food-directory-card,
-    .food-directory-image img {
-        transition: none;
-    }
-
-    .food-category-card:hover img,
-    .food-directory-card:hover,
-    .food-directory-card:hover .food-directory-image img {
-        transform: none;
-    }
-}

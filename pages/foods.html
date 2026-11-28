@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Explore Filipino Foods | Silangan</title>
-    <meta name="description" content="Browse all Filipino dishes, from everyday comfort food to festive favorites. Search by name, ingredient, or region.">
+    <meta name="description" content="Browse all Filipino dishes, from everyday comfort food to festive favorites.">
 
     <link rel="icon" href="../assets/images/logo/favicon.svg" type="image/svg+xml">
+    <link rel="preload" href="../assets/fonts/Cardo-Regular.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="../assets/fonts/Poppins-Regular.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="../assets/fonts/Fraunces_72pt-Bold.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/foods.css">
     <script src="../js/nav.js" defer></script>
@@ -20,6 +20,8 @@
 
         <header class="site-header">
             <nav class="site-nav full-bleed" aria-label="Main navigation">
+                <a href="../index.html" class="site-nav-logo">SILANGAN</a>
+
                 <button
                     class="site-nav-toggle"
                     type="button"
@@ -42,7 +44,12 @@
                     <li><a href="near-me.html">Near Me</a></li>
                     <li>
                         <details class="site-nav-dropdown">
-                            <summary>More</summary>
+                            <summary>
+                                More
+                                <svg class="site-nav-chevron" viewBox="0 0 24 24" aria-hidden="true">
+                                    <path d="M6 9l6 6 6-6"></path>
+                                </svg>
+                            </summary>
                             <ul class="site-nav-dropdown-menu list-reset">
                                 <li><a href="recipes.html">Recipes</a></li>
                                 <li><a href="map.html">Map</a></li>
@@ -53,6 +60,8 @@
                 </ul>
 
                 <div class="site-nav-actions">
+                    <span class="site-nav-divider" aria-hidden="true"></span>
+
                     <a href="login.html" class="site-nav-cta">
                         Log In
                     </a>
@@ -61,24 +70,21 @@
         </header>
 
         <main id="main" tabindex="-1">
-            <section class="page-hero page-hero-centered foods-intro full-bleed">
-                <div class="page-hero-content">
-                    <nav class="breadcrumb breadcrumb-centered" aria-label="Breadcrumb">
+            <section class="page-header-section full-bleed" aria-labelledby="page-header-title">
+                <div class="page-header-content">
+                    <nav class="breadcrumb" aria-label="Breadcrumb">
                         <ol class="breadcrumb-list list-reset">
                             <li><a href="../index.html">Home</a></li>
                             <li aria-current="page">All Foods</li>
                         </ol>
                     </nav>
 
-                    <span class="section-eyebrow">
-                        EXPLORE FILIPINO CUISINE
-                    </span>
-
-                    <h1>
-                        A World of <span>Filipino</span> Flavors.
+                    <h1 id="page-header-title">
+                        A World of Filipino
+                        <em>Flavors.</em>
                     </h1>
 
-                    <p>
+                    <p class="page-header-intro">
                         From savory meals and comforting soups to sweet
                         desserts and local merienda, discover the dishes
                         that make Filipino cuisine special.
@@ -86,534 +92,382 @@
                 </div>
             </section>
 
-            <section class="food-categories-section">
-                <div class="food-categories-header">
-                    <div>
-                        <span class="section-eyebrow">
-                            FIND WHAT YOU'RE CRAVING
-                        </span>
+            <section class="food-categories-section full-bleed" aria-labelledby="food-categories-title">
+                <header class="section-header">
+                    <h2 id="food-categories-title">Browse by Category</h2>
+                    <p>Choose a category to jump to its dishes.</p>
+                </header>
 
-                        <h2>Browse by Category</h2>
-                    </div>
-
-                    <p>
-                        Choose a category to jump to its dishes.
-                    </p>
-                </div>
-
-
-                <div class="food-category-grid">
-                    <a href="#main-dishes" class="food-category-card">
-                        <img
-                            loading="lazy"
-                            src="../assets/images/foods/chicken-adobo.jpg"
-                            width="450"
-                            height="578"
-                            alt="Filipino Chicken Adobo">
-
-                        <div class="food-category-info">
-                            <span aria-hidden="true">01</span>
+                <ul class="food-categories-list list-reset">
+                    <li>
+                        <a href="#main-dishes-title" class="food-category-link">
                             <h3>Main Dishes</h3>
                             <p>Hearty Filipino favorites</p>
-                        </div>
-                    </a>
-
-
-                    <a href="#soups" class="food-category-card">
-                        <img
-                            loading="lazy"
-                            src="../assets/images/foods/sinigang.jpg"
-                            width="1300"
-                            height="566"
-                            alt="Filipino Sinigang">
-
-                        <div class="food-category-info">
-                            <span aria-hidden="true">02</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#soups-title" class="food-category-link">
                             <h3>Soups</h3>
                             <p>Warm and comforting bowls</p>
-                        </div>
-                    </a>
-
-
-                    <a href="#regional" class="food-category-card">
-                        <img
-                            loading="lazy"
-                            src="../assets/images/foods/pinangat.jpg"
-                            width="1300"
-                            height="975"
-                            alt="Bicolano Pinangat">
-
-                        <div class="food-category-info">
-                            <span aria-hidden="true">03</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#regional-title" class="food-category-link">
                             <h3>Regional Foods</h3>
                             <p>Flavors from every region</p>
-                        </div>
-                    </a>
-
-
-                    <a href="#desserts" class="food-category-card">
-                        <img
-                            loading="lazy"
-                            src="../assets/images/foods/halo-halo.jpg"
-                            width="1300"
-                            height="640"
-                            alt="Filipino Halo-Halo">
-
-                        <div class="food-category-info">
-                            <span aria-hidden="true">04</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#desserts-title" class="food-category-link">
                             <h3>Desserts</h3>
                             <p>Sweet Filipino treats</p>
-                        </div>
-                    </a>
-
-
-                    <a href="#snacks" class="food-category-card">
-                        <img
-                            loading="lazy"
-                            src="../assets/images/foods/turon.jpg"
-                            width="1300"
-                            height="566"
-                            alt="Filipino Turon">
-
-                        <div class="food-category-info">
-                            <span aria-hidden="true">05</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#snacks-title" class="food-category-link">
                             <h3>Snacks</h3>
                             <p>Perfect for merienda</p>
-                        </div>
-                    </a>
-                </div>
-            </section>
-
-            <section class="food-directory-section full-bleed" id="food-directory">
-                <div class="food-directory-header">
-                    <div>
-                        <span class="section-eyebrow">
-                            THE FOOD COLLECTION
-                        </span>
-
-                        <h2>Discover the Dishes</h2>
-
-                        <p>
-                            Browse the dishes below and read a short
-                            description of each.
-                        </p>
-                    </div>
-
-                    <span class="food-count">
-                        11 DISHES TO EXPLORE
-                    </span>
-                </div>
-
-                <div class="food-directory-group" id="main-dishes">
-                    <div class="food-directory-title">
-                        <h3>Main Dishes</h3>
-                        <span>01 — 03</span>
-                    </div>
-
-
-                    <div class="food-directory-grid">
-                        <article class="food-directory-card">
-                            <a
-                                href="food-details.html"
-                                class="food-directory-image"
-                                tabindex="-1"
-                                aria-hidden="true">
-                                <img
-                                    loading="lazy"
-                                    src="../assets/images/foods/chicken-adobo.jpg"
-                                    width="450"
-                                    height="578"
-                                    alt="Chicken Adobo">
-                            </a>
-
-                            <div class="food-directory-info">
-                                <span>FILIPINO CLASSIC</span>
-
-                                <h4>Chicken Adobo</h4>
-
-                                <p>
-                                    Chicken simmered in soy sauce,
-                                    vinegar, garlic, and spices.
-                                </p>
-
-                                <a href="food-details.html">
-                                    View Chicken Adobo →
-                                </a>
-                            </div>
-                        </article>
-
-                        <article class="food-directory-card">
-                            <a
-                                href="food-details.html"
-                                class="food-directory-image"
-                                tabindex="-1"
-                                aria-hidden="true">
-                                <img
-                                    loading="lazy"
-                                    src="../assets/images/foods/sisig.jpg"
-                                    width="1300"
-                                    height="867"
-                                    alt="Pork Sisig">
-                            </a>
-
-                            <div class="food-directory-info">
-                                <span>PAMPANGA</span>
-
-                                <h4>Sisig</h4>
-
-                                <p>
-                                    Chopped pork mixed with onions,
-                                    calamansi, and seasonings.
-                                </p>
-
-                                <a href="food-details.html">
-                                    View Sisig →
-                                </a>
-                            </div>
-                        </article>
-
-                        <article class="food-directory-card">
-                            <a
-                                href="food-details.html"
-                                class="food-directory-image"
-                                tabindex="-1"
-                                aria-hidden="true">
-                                <img
-                                    loading="lazy"
-                                    src="../assets/images/foods/lechon.jpg"
-                                    width="1300"
-                                    height="566"
-                                    alt="Filipino Lechon">
-                            </a>
-
-                            <div class="food-directory-info">
-                                <span>VISAYAS</span>
-
-                                <h4>Lechon</h4>
-
-                                <p>
-                                    Whole roasted pig with crispy skin
-                                    and flavorful meat.
-                                </p>
-
-                                <a href="food-details.html">
-                                    View Lechon →
-                                </a>
-                            </div>
-                        </article>
-                    </div>
-                </div>
-
-                <div class="food-directory-group" id="soups">
-                    <div class="food-directory-title">
-                        <h3>Soups and Comfort Food</h3>
-                        <span>04 — 05</span>
-                    </div>
-
-                    <div class="food-directory-grid">
-                        <article class="food-directory-card">
-                            <a
-                                href="food-details.html"
-                                class="food-directory-image"
-                                tabindex="-1"
-                                aria-hidden="true">
-                                <img
-                                    loading="lazy"
-                                    src="../assets/images/foods/sinigang.jpg"
-                                    width="1300"
-                                    height="566"
-                                    alt="Sinigang">
-                            </a>
-
-                            <div class="food-directory-info">
-                                <span>FILIPINO COMFORT FOOD</span>
-
-                                <h4>Sinigang</h4>
-
-                                <p>
-                                    A sour soup made with tamarind,
-                                    vegetables, and meat or seafood.
-                                </p>
-
-                                <a href="food-details.html">
-                                    View Sinigang →
-                                </a>
-                            </div>
-                        </article>
-
-                        <article class="food-directory-card">
-                            <a
-                                href="food-details.html"
-                                class="food-directory-image"
-                                tabindex="-1"
-                                aria-hidden="true">
-                                <img
-                                    loading="lazy"
-                                    src="../assets/images/foods/kinalas.jpg"
-                                    width="1300"
-                                    height="566"
-                                    alt="Kinalas">
-                            </a>
-
-                            <div class="food-directory-info">
-                                <span>NAGA CITY</span>
-
-                                <h4>Kinalas</h4>
-
-                                <p>
-                                    A local noodle soup with rich broth
-                                    and savory meat sauce.
-                                </p>
-
-                                <a href="food-details.html">
-                                    View Kinalas →
-                                </a>
-                            </div>
-                        </article>
-                    </div>
-                </div>
-
-                <div class="food-directory-group" id="regional">
-                    <div class="food-directory-title">
-                        <h3>Regional Specialties</h3>
-                        <span>06 — 09</span>
-                    </div>
-
-                    <div class="food-directory-grid">
-                        <article class="food-directory-card">
-                            <a
-                                href="food-details.html"
-                                class="food-directory-image"
-                                tabindex="-1"
-                                aria-hidden="true">
-                                <img
-                                    loading="lazy"
-                                    src="../assets/images/foods/pinangat.jpg"
-                                    width="1300"
-                                    height="975"
-                                    alt="Bicolano Pinangat">
-                            </a>
-
-                            <div class="food-directory-info">
-                                <span>BICOL</span>
-
-                                <h4>Pinangat</h4>
-
-                                <p>
-                                    Taro leaves filled with a coconut
-                                    mixture and slowly cooked.
-                                </p>
-
-                                <a href="food-details.html">
-                                    View Pinangat →
-                                </a>
-                            </div>
-                        </article>
-
-                        <article class="food-directory-card">
-                            <a
-                                href="food-details.html"
-                                class="food-directory-image"
-                                tabindex="-1"
-                                aria-hidden="true">
-                                <img
-                                    loading="lazy"
-                                    src="../assets/images/foods/chicken-inasal.jpg"
-                                    width="1300"
-                                    height="566"
-                                    alt="Chicken Inasal">
-                            </a>
-
-                            <div class="food-directory-info">
-                                <span>BACOLOD</span>
-
-                                <h4>Chicken Inasal</h4>
-
-                                <p>
-                                    Grilled chicken marinated with
-                                    vinegar, calamansi, and spices.
-                                </p>
-
-                                <a href="food-details.html">
-                                    View Chicken Inasal →
-                                </a>
-                            </div>
-
-                        </article>
-
-                        <article class="food-directory-card">
-                            <a
-                                href="food-details.html"
-                                class="food-directory-image"
-                                tabindex="-1"
-                                aria-hidden="true">
-
-                                <img
-                                    loading="lazy"
-                                    src="../assets/images/foods/kinunot.jpg"
-                                    width="1300"
-                                    height="731"
-                                    alt="Bicolano Kinunot">
-                            </a>
-
-                            <div class="food-directory-info">
-                                <span>BICOL</span>
-
-                                <h4>Kinunot</h4>
-
-                                <p>
-                                    A traditional seafood dish cooked
-                                    with coconut milk and spices.
-                                </p>
-
-                                <a href="food-details.html">
-                                    View Kinunot →
-                                </a>
-                            </div>
-                        </article>
-
-                        <article class="food-directory-card">
-                            <a
-                                href="food-details.html"
-                                class="food-directory-image"
-                                tabindex="-1"
-                                aria-hidden="true">
-                                <img
-                                    loading="lazy"
-                                    src="../assets/images/foods/pancit-canton.jpg"
-                                    width="1300"
-                                    height="566"
-                                    alt="Pancit Canton">
-                            </a>
-
-                            <div class="food-directory-info">
-                                <span>FILIPINO FAVORITE</span>
-
-                                <h4>Pancit Canton</h4>
-
-                                <p>
-                                    Stir-fried noodles with vegetables,
-                                    meat, and savory seasonings.
-                                </p>
-
-                                <a href="food-details.html">
-                                    View Pancit Canton →
-                                </a>
-                            </div>
-                        </article>
-                    </div>
-                </div>
-
-                <div class="food-directory-group" id="desserts">
-                    <div class="food-directory-title">
-                        <h3>Desserts</h3>
-                        <span>10</span>
-                    </div>
-
-                    <div class="food-directory-grid">
-                        <article class="food-directory-card">
-                            <a
-                                href="food-details.html"
-                                class="food-directory-image"
-                                tabindex="-1"
-                                aria-hidden="true">
-                                <img
-                                    loading="lazy"
-                                    src="../assets/images/foods/halo-halo.jpg"
-                                    width="1300"
-                                    height="640"
-                                    alt="Halo-Halo">
-                            </a>
-
-                            <div class="food-directory-info">
-                                <span>FILIPINO DESSERT</span>
-
-                                <h4>Halo-Halo</h4>
-
-                                <p>
-                                    Shaved ice mixed with milk, sweetened
-                                    ingredients, and various toppings.
-                                </p>
-
-                                <a href="food-details.html">
-                                    View Halo-Halo →
-                                </a>
-                            </div>
-                        </article>
-                    </div>
-                </div>
-
-                <div class="food-directory-group" id="snacks">
-                    <div class="food-directory-title">
-                        <h3>Snacks and Merienda</h3>
-                        <span>11</span>
-                    </div>
-
-                    <div class="food-directory-grid">
-                        <article class="food-directory-card">
-                            <a
-                                href="food-details.html"
-                                class="food-directory-image"
-                                tabindex="-1"
-                                aria-hidden="true">
-                                <img
-                                    loading="lazy"
-                                    src="../assets/images/foods/turon.jpg"
-                                    width="1300"
-                                    height="566"
-                                    alt="Filipino Turon">
-                            </a>
-
-                            <div class="food-directory-info">
-                                <span>FILIPINO MERIENDA</span>
-
-                                <h4>Turon</h4>
-
-                                <p>
-                                    Sweet banana and jackfruit wrapped
-                                    in a crispy, caramelized wrapper.
-                                </p>
-
-                                <a href="food-details.html">
-                                    View Turon →
-                                </a>
-                            </div>
-                        </article>
-                    </div>
-                </div>
-            </section>
-
-            <section class="regional-discovery-section">
-                <div class="regional-discovery-container">
-                    <div class="regional-discovery-image">
-                        <img
-                            loading="lazy"
-                            src="../assets/images/regions/filipino-food-spread.jpg"
-                            width="1320"
-                            height="743"
-                            alt="A variety of Filipino regional dishes">
-                    </div>
-
-                    <div class="regional-discovery-content">
-                        <span class="section-eyebrow">
-                            MORE FLAVORS TO DISCOVER
-                        </span>
-
-                        <h2>
-                            One Country. <br>
-                            Countless Flavors.
-                        </h2>
-
-                        <p>
-                            Filipino cuisine is as diverse as its people.
-                            Each region has its own ingredients, cooking
-                            traditions, and dishes worth discovering.
-                        </p>
-
-                        <a href="regions.html" class="regional-discovery-button">
-                            Explore the Regions →
                         </a>
-                    </div>
+                    </li>
+                </ul>
+            </section>
+
+            <section class="food-group-section full-bleed" aria-labelledby="main-dishes-title">
+                <header class="section-header">
+                    <h2 id="main-dishes-title">Main Dishes</h2>
+                </header>
+
+                <ul class="plates-grid list-reset">
+                    <li class="plate">
+                        <figure class="plate-image">
+                            <img
+                                src="../assets/images/plates/chicken-adobo.png"
+                                width="800"
+                                height="800"
+                                alt="Chicken adobo, seen from above">
+                        </figure>
+
+                        <div>
+                            <p class="label">FILIPINO CLASSIC</p>
+
+                            <h3>Chicken Adobo</h3>
+
+                            <p class="plate-description">
+                                Chicken simmered in soy sauce,
+                                vinegar, garlic, and spices.
+                            </p>
+
+                            <a href="food-details.html" class="text-link">
+                                Read about Chicken Adobo
+                            </a>
+                        </div>
+                    </li>
+
+                    <li class="plate">
+                        <figure class="plate-image">
+                            <img
+                                loading="lazy"
+                                src="../assets/images/plates/sisig.png"
+                                width="800"
+                                height="800"
+                                alt="Sisig, seen from above">
+                        </figure>
+
+                        <div>
+                            <p class="label">PAMPANGA</p>
+
+                            <h3>Sisig</h3>
+
+                            <p class="plate-description">
+                                Chopped pork mixed with onions,
+                                calamansi, and seasonings.
+                            </p>
+
+                            <a href="food-details.html" class="text-link">
+                                Read about Sisig
+                            </a>
+                        </div>
+                    </li>
+
+                    <li class="plate">
+                        <figure class="plate-image">
+                            <img
+                                loading="lazy"
+                                src="../assets/images/plates/lechon.png"
+                                width="800"
+                                height="800"
+                                alt="Lechon, seen from above">
+                        </figure>
+
+                        <div>
+                            <p class="label">VISAYAS</p>
+
+                            <h3>Lechon</h3>
+
+                            <p class="plate-description">
+                                Whole roasted pig with crispy skin
+                                and flavorful meat.
+                            </p>
+
+                            <a href="food-details.html" class="text-link">
+                                Read about Lechon
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+            </section>
+
+            <section class="food-group-section full-bleed" aria-labelledby="soups-title">
+                <header class="section-header">
+                    <h2 id="soups-title">Soups and Comfort Food</h2>
+                </header>
+
+                <ul class="plates-grid list-reset">
+                    <li class="plate">
+                        <figure class="plate-image">
+                            <img
+                                loading="lazy"
+                                src="../assets/images/plates/sinigang.png"
+                                width="800"
+                                height="800"
+                                alt="Sinigang, seen from above">
+                        </figure>
+
+                        <div>
+                            <p class="label">FILIPINO COMFORT FOOD</p>
+
+                            <h3>Sinigang</h3>
+
+                            <p class="plate-description">
+                                A sour soup made with tamarind,
+                                vegetables, and meat or seafood.
+                            </p>
+
+                            <a href="food-details.html" class="text-link">
+                                Read about Sinigang
+                            </a>
+                        </div>
+                    </li>
+
+                    <li class="plate">
+                        <figure class="plate-image">
+                            <img
+                                loading="lazy"
+                                src="../assets/images/plates/kinalas.png"
+                                width="800"
+                                height="800"
+                                alt="Kinalas noodle soup, seen from above">
+                        </figure>
+
+                        <div>
+                            <p class="label">NAGA CITY</p>
+
+                            <h3>Kinalas</h3>
+
+                            <p class="plate-description">
+                                A local noodle soup with rich broth
+                                and savory meat sauce.
+                            </p>
+
+                            <a href="food-details.html" class="text-link">
+                                Read about Kinalas
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+            </section>
+
+            <section class="food-group-section full-bleed" aria-labelledby="regional-title">
+                <header class="section-header">
+                    <h2 id="regional-title">Regional Specialties</h2>
+                </header>
+
+                <ul class="plates-grid list-reset">
+                    <li class="plate">
+                        <figure class="plate-image">
+                            <img
+                                loading="lazy"
+                                src="../assets/images/plates/pinangat.png"
+                                width="800"
+                                height="800"
+                                alt="Pinangat, seen from above">
+                        </figure>
+
+                        <div>
+                            <p class="label">BICOL</p>
+
+                            <h3>Pinangat</h3>
+
+                            <p class="plate-description">
+                                Taro leaves filled with a coconut
+                                mixture and slowly cooked.
+                            </p>
+
+                            <a href="food-details.html" class="text-link">
+                                Read about Pinangat
+                            </a>
+                        </div>
+                    </li>
+
+                    <li class="plate">
+                        <figure class="plate-image">
+                            <img
+                                loading="lazy"
+                                src="../assets/images/plates/chicken-inasal.png"
+                                width="800"
+                                height="800"
+                                alt="Chicken inasal, seen from above">
+                        </figure>
+
+                        <div>
+                            <p class="label">BACOLOD</p>
+
+                            <h3>Chicken Inasal</h3>
+
+                            <p class="plate-description">
+                                Grilled chicken marinated with
+                                vinegar, calamansi, and spices.
+                            </p>
+
+                            <a href="food-details.html" class="text-link">
+                                Read about Chicken Inasal
+                            </a>
+                        </div>
+                    </li>
+
+                    <li class="plate">
+                        <figure class="plate-image">
+                            <img
+                                loading="lazy"
+                                src="../assets/images/plates/kinunot.png"
+                                width="800"
+                                height="800"
+                                alt="Kinunot, seen from above">
+                        </figure>
+
+                        <div>
+                            <p class="label">BICOL</p>
+
+                            <h3>Kinunot</h3>
+
+                            <p class="plate-description">
+                                A traditional seafood dish cooked
+                                with coconut milk and spices.
+                            </p>
+
+                            <a href="food-details.html" class="text-link">
+                                Read about Kinunot
+                            </a>
+                        </div>
+                    </li>
+
+                    <li class="plate">
+                        <figure class="plate-image">
+                            <img
+                                loading="lazy"
+                                src="../assets/images/plates/pancit-canton.png"
+                                width="800"
+                                height="800"
+                                alt="Pancit canton, seen from above">
+                        </figure>
+
+                        <div>
+                            <p class="label">FILIPINO FAVORITE</p>
+
+                            <h3>Pancit Canton</h3>
+
+                            <p class="plate-description">
+                                Stir-fried noodles with vegetables,
+                                meat, and savory seasonings.
+                            </p>
+
+                            <a href="food-details.html" class="text-link">
+                                Read about Pancit Canton
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+            </section>
+
+            <section class="food-group-section full-bleed" aria-labelledby="desserts-title">
+                <header class="section-header">
+                    <h2 id="desserts-title">Desserts</h2>
+                </header>
+
+                <ul class="plates-grid list-reset">
+                    <li class="plate">
+                        <figure class="plate-image">
+                            <img
+                                loading="lazy"
+                                src="../assets/images/plates/halo-halo.png"
+                                width="800"
+                                height="800"
+                                alt="A glass of halo-halo">
+                        </figure>
+
+                        <div>
+                            <p class="label">FILIPINO DESSERT</p>
+
+                            <h3>Halo-Halo</h3>
+
+                            <p class="plate-description">
+                                Shaved ice mixed with milk, sweetened
+                                ingredients, and various toppings.
+                            </p>
+
+                            <a href="food-details.html" class="text-link">
+                                Read about Halo-Halo
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+            </section>
+
+            <section class="food-group-section full-bleed" aria-labelledby="snacks-title">
+                <header class="section-header">
+                    <h2 id="snacks-title">Snacks and Merienda</h2>
+                </header>
+
+                <ul class="plates-grid list-reset">
+                    <li class="plate">
+                        <figure class="plate-image">
+                            <img
+                                loading="lazy"
+                                src="../assets/images/plates/turon.png"
+                                width="800"
+                                height="800"
+                                alt="Turon, seen from above">
+                        </figure>
+
+                        <div>
+                            <p class="label">FILIPINO MERIENDA</p>
+
+                            <h3>Turon</h3>
+
+                            <p class="plate-description">
+                                Sweet banana and jackfruit wrapped
+                                in a crispy, caramelized wrapper.
+                            </p>
+
+                            <a href="food-details.html" class="text-link">
+                                Read about Turon
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+            </section>
+
+            <section class="regional-discovery-section full-bleed" aria-labelledby="regional-discovery-title">
+                <div class="regional-discovery-content">
+                    <h2 id="regional-discovery-title">One Country. Countless Flavors.</h2>
+                    <p>
+                        Filipino cuisine is as diverse as its people.
+                        Each region has its own ingredients, cooking
+                        traditions, and dishes worth discovering.
+                    </p>
+                    <a href="regions.html" class="button">
+                        Explore the Regions
+                    </a>
                 </div>
             </section>
         </main>
@@ -622,15 +476,13 @@
             <div class="footer-main">
                 <div class="footer-brand">
                     <a href="../index.html" class="footer-logo">
-                        Silangan
+                        SILANGAN
                     </a>
-
                     <p>
                         Discover the Philippines, one bite at a time.
                         Explore Filipino dishes, regional specialties,
                         and the stories behind every flavor.
                     </p>
-
                     <span class="footer-brand-tagline">
                         Sarap ng Pilipinas, tikman at tuklasin!
                     </span>
@@ -638,7 +490,6 @@
 
                 <div class="footer-links">
                     <h3>Explore</h3>
-
                     <ul class="list-reset">
                         <li><a href="top-foods.html">Top Foods</a></li>
                         <li><a href="foods.html">All Foods</a></li>
@@ -649,7 +500,6 @@
 
                 <div class="footer-links">
                     <h3>Discover</h3>
-
                     <ul class="list-reset">
                         <li><a href="near-me.html">Near Me</a></li>
                         <li><a href="regions.html">Regions</a></li>
@@ -659,15 +509,13 @@
 
                 <div class="footer-about">
                     <h3>About Silangan</h3>
-
                     <p>
                         More than just food, every Filipino dish
                         tells a story of culture, tradition,
                         and togetherness.
                     </p>
-
-                    <a href="foods.html" class="footer-explore-link">
-                        Start Exploring →
+                    <a href="foods.html" class="text-link">
+                        Start Exploring
                     </a>
                 </div>
             </div>
