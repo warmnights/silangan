@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Explore the Philippines | Silangan</title>
-    <meta name="description" content="Explore a map of Filipino dishes and see where each regional specialty comes from.">
+    <meta name="description" content="Explore the Philippines by island group and jump to the regional food guide for Luzon, Visayas or Mindanao.">
 
     <link rel="icon" href="../assets/images/logo/favicon.svg" type="image/svg+xml">
+    <link rel="preload" href="../assets/fonts/Cardo-Regular.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="../assets/fonts/Poppins-Regular.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="../assets/fonts/Fraunces_72pt-Bold.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/map.css">
     <script src="../js/nav.js" defer></script>
@@ -20,6 +20,8 @@
 
         <header class="site-header">
             <nav class="site-nav full-bleed" aria-label="Main navigation">
+                <a href="../index.html" class="site-nav-logo">SILANGAN</a>
+
                 <button
                     class="site-nav-toggle"
                     type="button"
@@ -42,7 +44,12 @@
                     <li><a href="near-me.html">Near Me</a></li>
                     <li>
                         <details class="site-nav-dropdown">
-                            <summary>More</summary>
+                            <summary>
+                                More
+                                <svg class="site-nav-chevron" viewBox="0 0 24 24" aria-hidden="true">
+                                    <path d="M6 9l6 6 6-6"></path>
+                                </svg>
+                            </summary>
                             <ul class="site-nav-dropdown-menu list-reset">
                                 <li><a href="recipes.html">Recipes</a></li>
                                 <li><a href="map.html" aria-current="page">Map</a></li>
@@ -53,6 +60,8 @@
                 </ul>
 
                 <div class="site-nav-actions">
+                    <span class="site-nav-divider" aria-hidden="true"></span>
+
                     <a href="login.html" class="site-nav-cta">
                         Log In
                     </a>
@@ -61,9 +70,9 @@
         </header>
 
         <main id="main" tabindex="-1">
-            <section class="page-hero page-hero-centered map-intro full-bleed">
-                <div class="page-hero-content">
-                    <nav class="breadcrumb breadcrumb-centered" aria-label="Breadcrumb">
+            <section class="page-header-section full-bleed">
+                <div class="page-header-content">
+                    <nav class="breadcrumb" aria-label="Breadcrumb">
                         <ol class="breadcrumb-list list-reset">
                             <li><a href="../index.html">Home</a></li>
                             <li aria-current="page">Map</li>
@@ -72,95 +81,93 @@
 
                     <h1>
                         Explore the Philippines,
-                        <span>One Bite at a Time.</span>
+                        <em>One Bite at a Time.</em>
                     </h1>
 
-                    <p>
+                    <p class="page-header-intro">
                         Explore the three island groups and jump straight
                         to each regional guide.
                     </p>
                 </div>
             </section>
 
-            <section class="philippines-map-section full-bleed">
-                <div class="philippines-map-container">
-                    <div class="philippines-map-content">
-                        <h2>
-                            Three Island Groups,
-                            <span>One Rich Food Culture.</span>
-                        </h2>
+            <section class="map-explorer-section full-bleed" aria-labelledby="map-explorer-title">
+                <div class="panel panel-columns">
+                    <div class="map-explorer-info">
+                        <h2 id="map-explorer-title">Three Island Groups, One Rich Food Culture.</h2>
 
-                        <p>
+                        <p class="map-explorer-description">
                             Choose an island group to explore its regional
                             food guide.
                         </p>
 
-                        <h3 class="map-island-list-heading" id="map-island-list-heading">
-                            Choose a region
-                        </h3>
+                        <nav aria-label="Island groups">
+                            <ul class="regions-list list-reset">
+                                <li class="region">
+                                    <div class="region-name">
+                                        <h3>Luzon</h3>
+                                        <p class="label">NORTHERN PHILIPPINES</p>
+                                    </div>
 
-                        <nav aria-labelledby="map-island-list-heading">
-                            <ul class="map-island-list list-reset">
-                                <li>
-                                    <a href="regions.html#luzon-favorites" class="map-island-item">
-                                        <span class="map-island-item-name">Luzon</span>
-                                        <span class="map-island-item-region">Northern Philippines</span>
-                                        <svg viewBox="0 0 24 24" aria-hidden="true">
-                                            <path d="M5 12h14m-6-6 6 6-6 6"></path>
-                                        </svg>
+                                    <a href="regions.html#luzon-favorites" class="text-link">
+                                        Explore Luzon
                                     </a>
                                 </li>
-                                <li>
-                                    <a href="regions.html#visayas-favorites" class="map-island-item">
-                                        <span class="map-island-item-name">Visayas</span>
-                                        <span class="map-island-item-region">Central Philippines</span>
-                                        <svg viewBox="0 0 24 24" aria-hidden="true">
-                                            <path d="M5 12h14m-6-6 6 6-6 6"></path>
-                                        </svg>
+
+                                <li class="region">
+                                    <div class="region-name">
+                                        <h3>Visayas</h3>
+                                        <p class="label">CENTRAL PHILIPPINES</p>
+                                    </div>
+
+                                    <a href="regions.html#visayas-favorites" class="text-link">
+                                        Explore Visayas
                                     </a>
                                 </li>
-                                <li>
-                                    <a href="regions.html#mindanao-favorites" class="map-island-item">
-                                        <span class="map-island-item-name">Mindanao</span>
-                                        <span class="map-island-item-region">Southern Philippines</span>
-                                        <svg viewBox="0 0 24 24" aria-hidden="true">
-                                            <path d="M5 12h14m-6-6 6 6-6 6"></path>
-                                        </svg>
+
+                                <li class="region">
+                                    <div class="region-name">
+                                        <h3>Mindanao</h3>
+                                        <p class="label">SOUTHERN PHILIPPINES</p>
+                                    </div>
+
+                                    <a href="regions.html#mindanao-favorites" class="text-link">
+                                        Explore Mindanao
                                     </a>
                                 </li>
                             </ul>
                         </nav>
 
-                        <a href="regions.html" class="map-explore-button">
-                            Explore Philippine Regions →
+                        <a href="regions.html" class="button button-outline">
+                            Explore Philippine Regions
                         </a>
                     </div>
 
-                    <div class="philippines-map-image">
-                        <img
-                            loading="lazy"
-                            src="../assets/images/map/island-groups-philippines.png"
-                            width="2465"
-                            height="3615"
-                            alt="Silhouette map of the Philippine archipelago; group boundaries are not labeled">
+                    <div class="panel-aside">
+                        <figure class="map-image">
+                            <img
+                                loading="lazy"
+                                src="../assets/images/map/island-groups-philippines.png"
+                                width="2465"
+                                height="3615"
+                                alt="Silhouette map of the Philippine archipelago; group boundaries are not labeled">
+                        </figure>
                     </div>
                 </div>
             </section>
 
-            <section class="map-cta-section full-bleed">
-                <div class="map-cta-content">
-                    <h2>
+            <section class="map-cta-section full-bleed" aria-labelledby="map-cta-title">
+                <div class="closing-content">
+                    <h2 id="map-cta-title">
                         Every Place Has a
-                        <span>Flavor Worth Discovering.</span>
+                        <em>Flavor Worth Discovering.</em>
                     </h2>
-
-                    <p>
+                    <p class="closing-description">
                         Continue your food journey and discover the
                         many dishes that make the Philippines special.
                     </p>
-
                     <a href="foods.html" class="button">
-                        Discover Filipino Foods →
+                        Discover Filipino Foods
                     </a>
                 </div>
             </section>
@@ -170,15 +177,13 @@
             <div class="footer-main">
                 <div class="footer-brand">
                     <a href="../index.html" class="footer-logo">
-                        Silangan
+                        SILANGAN
                     </a>
-
                     <p>
                         Discover the Philippines, one bite at a time.
                         Explore Filipino dishes, regional specialties,
                         and the stories behind every flavor.
                     </p>
-
                     <span class="footer-brand-tagline">
                         Sarap ng Pilipinas, tikman at tuklasin!
                     </span>
@@ -186,7 +191,6 @@
 
                 <div class="footer-links">
                     <h3>Explore</h3>
-
                     <ul class="list-reset">
                         <li><a href="top-foods.html">Top Foods</a></li>
                         <li><a href="foods.html">All Foods</a></li>
@@ -197,7 +201,6 @@
 
                 <div class="footer-links">
                     <h3>Discover</h3>
-
                     <ul class="list-reset">
                         <li><a href="near-me.html">Near Me</a></li>
                         <li><a href="regions.html">Regions</a></li>
@@ -207,15 +210,13 @@
 
                 <div class="footer-about">
                     <h3>About Silangan</h3>
-
                     <p>
                         More than just food, every Filipino dish
                         tells a story of culture, tradition,
                         and togetherness.
                     </p>
-
-                    <a href="foods.html" class="footer-explore-link">
-                        Start Exploring →
+                    <a href="foods.html" class="text-link">
+                        Start Exploring
                     </a>
                 </div>
             </div>

@@ -1,37 +1,12 @@
-
-
 /*
 
 
-    EXPLORE THE PHILIPPINES, ONE BITE AT A TIME.
+    MAP PAGE
 
-
-*/
-
-
-.map-intro {
-    --gutter-x: 8%;
-
-    padding-block: 5rem;
-}
-
-.map-intro h1 {
-    font-size: clamp(2.25rem, 7vw, 3.5rem);
-}
-
-.map-intro h1 span {
-    display: block;
-}
-
-.map-intro .page-hero-content > p {
-    margin-top: 1.5rem;
-}
-
-
-/*
-
-
-    THREE ISLAND GROUPS, ONE RICH FOOD CULTURE.
+    Loaded after style.css. Almost everything on this page comes from
+    shared parts in style.css (page header, panel, regions list, text
+    link, buttons, closing content), so this file only holds what is
+    special to the map page.
 
 
 */
@@ -39,209 +14,85 @@
 
 /*
 
-    First section after the intro: extra breathing room
+
+    SECTION SPACING
+
 
 */
-
-.philippines-map-section {
-    padding-block: 5rem;
-
-    background-color: var(--band-bg);
-}
-
-.philippines-map-container {
-    display: grid;
-    align-items: center;
-    gap: 3rem;
-    grid-template-columns: 1fr 1fr;
-    grid-template-areas: "map-image map-content";
-
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.philippines-map-image {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    grid-area: map-image;
-
-    padding: 2rem;
-    border-radius: var(--radius-md);
-
-    background-color: var(--color-background-secondary);
-}
-
-.philippines-map-image img {
-    width: 100%;
-    max-width: 430px;
-    max-height: 600px;
-
-    object-fit: contain;
-}
-
-.philippines-map-content {
-    grid-area: map-content;
-
-    max-width: 500px;
-}
-
-.philippines-map-content h2 {
-    margin: 0.8rem 0 1.2rem;
-
-    font-size: 2.7rem;
-    line-height: 1.2;
-}
-
-.philippines-map-content h2 span {
-    color: var(--color-secondary);
-}
-
-.philippines-map-content > p {
-    margin-bottom: 2rem;
-
-    font-size: 0.95rem;
-    line-height: 1.9;
-}
-
-.map-island-list {
-    margin: 0 0 2rem;
-}
-
-.map-island-list-heading {
-    font-size: 1.15rem;
-}
-
-.map-island-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 1rem;
-
-    min-height: 56px;
-    padding: 0.65rem 0.75rem;
-    border-bottom: 1px solid var(--color-border);
-    border-radius: var(--radius-sm);
-
-    transition: background-color 0.2s ease;
-}
-
-.map-island-item:hover {
-    background-color: var(--color-background-secondary);
-}
-
-.map-island-item:active {
-    background-color: var(--color-background-secondary);
-}
-
-.map-island-item-name {
-    color: var(--color-heading);
-
-    font-family: var(--font-heading);
-    font-size: 1.15rem;
-    font-weight: 700;
-}
-
-.map-island-item-region {
-    margin-left: auto;
-
-    font-size: 0.85rem;
-}
-
-.map-island-item svg {
-    flex-shrink: 0;
-
-    width: 1.15rem;
-    height: 1.15rem;
-
-    fill: none;
-    stroke: var(--color-secondary);
-    stroke-width: 1.8;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-}
-
-.map-explore-button {
-    display: inline-block;
-
-    min-height: 44px;
-    padding: 0.9rem 1.5rem;
-    border-radius: var(--radius-sm);
-
-    color: var(--button-text);
-    background-color: var(--button-bg);
-
-    font-size: 0.9rem;
-    font-weight: 600;
-
-    transition: background-color 0.2s ease;
-}
-
-.map-explore-button:hover {
-    color: var(--button-text-hover);
-    background-color: var(--button-bg-hover);
-}
-
-.map-explore-button:active {
-    color: var(--button-text-hover);
-    background-color: var(--button-bg-hover);
-}
 
 
 /*
 
-
-    EVERY PLACE HAS A FLAVOR WORTH DISCOVERING.
-
+    Same top and bottom space as the home sections. Change
+    --section-space in :root to move all of them at once. The closing
+    section has a thin line above it, like the other inner pages.
 
 */
 
+.map-explorer-section,
+.map-cta-section {
+    padding-block: var(--section-space);
+}
 
 .map-cta-section {
-    padding-block: 3.5rem;
-
-    background-color: var(--band-bg);
-
-    text-align: center;
-}
-
-.map-cta-content {
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.map-cta-content h2 {
-    margin: 0;
-
-    font-size: 3rem;
-    line-height: 1.2;
-}
-
-.map-cta-content h2 span {
-    color: var(--color-secondary);
-}
-
-.map-cta-content p {
-    max-width: 600px;
-    margin: 1.25rem auto 2rem;
-
-    font-size: 0.95rem;
-    line-height: 1.9;
+    border-block-start: var(--border-line);
 }
 
 
 /*
 
 
-    LINK FOCUS STYLES
+    THREE ISLAND GROUPS, ONE RICH FOOD CULTURE (MAP EXPLORER)
 
 
 */
 
 
-.map-island-item:focus-visible,
-.map-explore-button:focus-visible {
-    outline: 2px solid var(--color-secondary);
+/*
+
+    The map is one of the few things that gets a framed area, so the
+    whole explorer sits in one shared .panel with two columns
+    (.panel-columns): the island groups on the left, the map on the
+    right behind a thin line (.panel-aside). The map is a picture for
+    now, so the three links beside it do the navigating.
+
+*/
+
+.map-explorer-description {
+    color: var(--color-text-muted);
+}
+
+.map-explorer-info nav {
+    margin-block-end: 2rem;
+}
+
+/*
+
+    The shared .region row has three columns (name, description, link).
+    Here there is no description, so the row is just name and link.
+
+*/
+
+.map-explorer-info .region {
+    grid-template-columns: minmax(0, 1fr) auto;
+}
+
+.map-image {
+    margin: 0;
+}
+
+/*
+
+    width: auto lets max-height shrink the map without squeezing it.
+    The thin ring of the plates is not used here, because the Philippines
+    is not round.
+
+*/
+
+.map-image img {
+    width: auto;
+    max-height: 36rem;
+    margin: 0 auto;
 }
 
 
@@ -254,77 +105,15 @@
 */
 
 
-/* ---------- Tablets (up to 1024px) ---------- */
-
-@media (max-width: 1024px) {
-
-    .map-intro {
-        --gutter-x: 6%;
-
-        padding-block: 4rem;
-    }
-
-    .philippines-map-container {
-        gap: 2.5rem;
-    }
-}
-
-
 /* ---------- Small tablets (up to 900px) ---------- */
 
 @media (max-width: 900px) {
 
-    /* Put the regional links before the illustration on smaller screens. */
+    /* The panel columns stack (style.css), so the map sits below the
+       island groups. A shorter map keeps it from filling the screen. */
 
-    .philippines-map-container {
-        gap: 2rem;
-        grid-template-columns: 1fr;
-        grid-template-areas:
-            "map-content"
-            "map-image";
-    }
-
-    .philippines-map-image img {
-        max-height: 460px;
-    }
-
-    .philippines-map-content {
-        max-width: none;
-    }
-
-    .philippines-map-content > p {
-        max-width: 640px;
-    }
-}
-
-
-/* ---------- Mobile landscape / large phones (up to 768px) ---------- */
-
-@media (max-width: 768px) {
-
-    /* Section spacing: the map section keeps a little extra room, the
-       call-to-action is tighter */
-
-    .map-intro {
-        --gutter-x: 5%;
-
-        padding-block: 3.5rem;
-    }
-
-    .philippines-map-section {
-        padding-block: 3.5rem;
-    }
-
-    .map-cta-section {
-        padding-block: 2.5rem;
-    }
-
-    .philippines-map-content h2 {
-        font-size: clamp(1.9rem, 5.5vw, 2.7rem);
-    }
-
-    .map-cta-content h2 {
-        font-size: clamp(2rem, 7vw, 3rem);
+    .map-image img {
+        max-height: 28rem;
     }
 }
 
@@ -333,47 +122,14 @@
 
 @media (max-width: 640px) {
 
-    .philippines-map-image img {
-        max-height: 400px;
+    /* Each island group: the name above its link, because the panel is
+       narrow on a phone. */
+
+    .map-explorer-info .region {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .map-image img {
+        max-height: 24rem;
     }
 }
-
-
-/* ---------- Small phones (up to 480px) ---------- */
-
-@media (max-width: 480px) {
-
-    /* Fixed 1.25rem side gutters so text doesn't hug the edge */
-
-    .map-intro,
-    .philippines-map-section,
-    .map-cta-section {
-        --gutter-x: 1.25rem;
-    }
-
-    /* Intro */
-
-    .map-intro {
-        padding-block: 2.5rem 3rem;
-    }
-
-    /* Map panel */
-
-    .philippines-map-image {
-        padding: 1.25rem;
-    }
-
-    .philippines-map-image img {
-        max-height: 340px;
-    }
-}
-
-
-/* ---------- Very small phones (up to 360px) ---------- */
-
-@media (max-width: 360px) {
-
-    .map-intro h1 {
-        font-size: 2rem;
-    }
-}
