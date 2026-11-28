@@ -9,10 +9,9 @@
     <meta name="robots" content="noindex">
 
     <link rel="icon" href="/assets/images/logo/favicon.svg" type="image/svg+xml">
+    <link rel="preload" href="/assets/fonts/Cardo-Regular.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="/assets/fonts/Poppins-Regular.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="/assets/fonts/Fraunces_72pt-Bold.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="/css/style.css">
-    <link rel="stylesheet" href="/css/not-found.css">
     <script src="/js/nav.js" defer></script>
 </head>
 <body>
@@ -21,6 +20,8 @@
 
         <header class="site-header">
             <nav class="site-nav full-bleed" aria-label="Main navigation">
+                <a href="/index.html" class="site-nav-logo">SILANGAN</a>
+
                 <button
                     class="site-nav-toggle"
                     type="button"
@@ -43,7 +44,12 @@
                     <li><a href="/pages/near-me.html">Near Me</a></li>
                     <li>
                         <details class="site-nav-dropdown">
-                            <summary>More</summary>
+                            <summary>
+                                More
+                                <svg class="site-nav-chevron" viewBox="0 0 24 24" aria-hidden="true">
+                                    <path d="M6 9l6 6 6-6"></path>
+                                </svg>
+                            </summary>
                             <ul class="site-nav-dropdown-menu list-reset">
                                 <li><a href="/pages/recipes.html">Recipes</a></li>
                                 <li><a href="/pages/map.html">Map</a></li>
@@ -54,6 +60,8 @@
                 </ul>
 
                 <div class="site-nav-actions">
+                    <span class="site-nav-divider" aria-hidden="true"></span>
+
                     <a href="/pages/login.html" class="site-nav-cta">
                         Log In
                     </a>
@@ -62,21 +70,29 @@
         </header>
 
         <main id="main" tabindex="-1">
-            <section class="not-found-section full-bleed">
-                <div class="not-found-content">
-                    <span class="not-found-code" aria-hidden="true">404</span>
+            <section
+                class="page-header-section page-header-only full-bleed"
+                aria-labelledby="page-header-title">
+                <div class="page-header-content">
+                    <nav class="breadcrumb" aria-label="Breadcrumb">
+                        <ol class="breadcrumb-list list-reset">
+                            <li><a href="/index.html">Home</a></li>
+                            <li aria-current="page">Page Not Found</li>
+                        </ol>
+                    </nav>
 
-                    <span class="section-eyebrow">PAGE NOT FOUND</span>
+                    <h1 id="page-header-title">
+                        This Dish Isn't
+                        <em>on the Menu.</em>
+                    </h1>
 
-                    <h1>This Dish Isn't <span>on the Menu.</span></h1>
-
-                    <p>
+                    <p class="page-header-intro">
                         The page you're looking for may have been moved,
                         renamed, or never existed. Let's get you back to
                         something delicious.
                     </p>
 
-                    <div class="not-found-actions">
+                    <div class="button-row">
                         <a href="/index.html" class="button">
                             Back to Home
                         </a>
@@ -86,13 +102,24 @@
                         </a>
                     </div>
 
-                    <nav class="not-found-links" aria-label="Popular pages">
-                        <span class="not-found-links-label">OR TRY</span>
+                    <nav class="link-row" aria-label="Popular pages">
+                        <span class="label">OR TRY</span>
 
-                        <a href="/pages/top-foods.html">Top Foods</a>
-                        <a href="/pages/recipes.html">Recipes</a>
-                        <a href="/pages/regions.html">Regions</a>
-                        <a href="/pages/near-me.html">Near Me</a>
+                        <a href="/pages/top-foods.html" class="text-link">
+                            Top Foods
+                        </a>
+
+                        <a href="/pages/recipes.html" class="text-link">
+                            Recipes
+                        </a>
+
+                        <a href="/pages/regions.html" class="text-link">
+                            Regions
+                        </a>
+
+                        <a href="/pages/near-me.html" class="text-link">
+                            Near Me
+                        </a>
                     </nav>
                 </div>
             </section>
@@ -104,15 +131,13 @@
             <div class="footer-main">
                 <div class="footer-brand">
                     <a href="/index.html" class="footer-logo">
-                        Silangan
+                        SILANGAN
                     </a>
-
                     <p>
                         Discover the Philippines, one bite at a time.
                         Explore Filipino dishes, regional specialties,
                         and the stories behind every flavor.
                     </p>
-
                     <span class="footer-brand-tagline">
                         Sarap ng Pilipinas, tikman at tuklasin!
                     </span>
@@ -120,7 +145,6 @@
 
                 <div class="footer-links">
                     <h3>Explore</h3>
-
                     <ul class="list-reset">
                         <li><a href="/pages/top-foods.html">Top Foods</a></li>
                         <li><a href="/pages/foods.html">All Foods</a></li>
@@ -131,7 +155,6 @@
 
                 <div class="footer-links">
                     <h3>Discover</h3>
-
                     <ul class="list-reset">
                         <li><a href="/pages/near-me.html">Near Me</a></li>
                         <li><a href="/pages/regions.html">Regions</a></li>
@@ -141,15 +164,13 @@
 
                 <div class="footer-about">
                     <h3>About Silangan</h3>
-
                     <p>
                         More than just food, every Filipino dish
                         tells a story of culture, tradition,
                         and togetherness.
                     </p>
-
-                    <a href="/pages/foods.html" class="footer-explore-link">
-                        Start Exploring →
+                    <a href="/pages/foods.html" class="text-link">
+                        Start Exploring
                     </a>
                 </div>
             </div>

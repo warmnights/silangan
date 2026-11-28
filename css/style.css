@@ -1665,6 +1665,33 @@ main:focus {
 
 /*
 
+    .link-row is a short centered row of text links with a small gold
+    label in front, like "OR TRY Top Foods Recipes". It wraps on narrow
+    screens. The label is typed in capitals in the HTML:
+
+        <nav class="link-row" aria-label="Popular pages">
+            <span class="label">OR TRY</span>
+            <a href="..." class="text-link">Top Foods</a>
+        </nav>
+
+*/
+
+.link-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 0.25rem 1.75rem;
+
+    margin-block-start: 2.5rem;
+}
+
+.link-row .label {
+    margin: 0;
+}
+
+/*
+
     .form-footer is the area under a form: a thin line, then a short line
     of text and a button, all centered. Use it for "New here?" or
     "Already have an account?" links.
