@@ -1,31 +1,23 @@
 @font-face {
-    font-family: 'Fraunces';
-    src: url('../assets/fonts/Fraunces_72pt-Regular.woff2') format('woff2');
+    font-family: 'Cardo';
+    src: url('../assets/fonts/Cardo-Regular.woff2') format('woff2');
     font-weight: 400;
     font-style: normal;
     font-display: swap;
 }
 
 @font-face {
-    font-family: 'Fraunces';
-    src: url('../assets/fonts/Fraunces_72pt-SemiBold.woff2') format('woff2');
-    font-weight: 600;
-    font-style: normal;
+    font-family: 'Cardo';
+    src: url('../assets/fonts/Cardo-Italic.woff2') format('woff2');
+    font-weight: 400;
+    font-style: italic;
     font-display: swap;
 }
 
 @font-face {
-    font-family: 'Fraunces';
-    src: url('../assets/fonts/Fraunces_72pt-Bold.woff2') format('woff2');
+    font-family: 'Cardo';
+    src: url('../assets/fonts/Cardo-Bold.woff2') format('woff2');
     font-weight: 700;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Anton';
-    src: url('../assets/fonts/Anton-Regular.woff2') format('woff2');
-    font-weight: 400;
     font-style: normal;
     font-display: swap;
 }
@@ -68,15 +60,13 @@
 
     BREAKPOINTS
 
-    Every page file uses the same set of max-width breakpoints:
+    This file uses three max-width breakpoints:
 
-    1024px, 900px, 768px, 640px, 480px, 360px
-
-    This file adds three more, on purpose:
-
-    1180px  tightens the nav spacing just before it collapses
     1080px  the nav becomes a hamburger menu (nav.js checks 1081px)
-    800px   the home hero switches to its mobile layout
+    900px   the hero, the plates, the regions and the footer stack
+    640px   small phones
+
+    It also has two queries on pointer type, for comfortable touch targets.
 
 
 */
@@ -92,76 +82,58 @@
 
 
 :root {
-    --font-heading: 'Fraunces', Georgia, serif;
+    --font-heading: 'Cardo', Georgia, serif;
     --font-body: 'Poppins', system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
 
-    --page-bg: #361214;
-
-    --color-background: #DDC5A3;
-    --color-background-secondary: #F2D8B5;
-    --color-surface: #501E19;
-    --color-card: #B28558;
+    --page-bg: #06170F;
+    --page-bg-top: #0B2A21;
+    --page-glow: #1B5240;
 
     /*
-        Text on the red page is cream. Dark sangria (--color-ink) is for text on the light parts: cards, buttons, chips and form fields.
+
+        Text on the green page is cream. Dark green (--color-ink) is for text on the gold parts: the buttons.
+
     */
 
-    --color-text: #F2D8B5;
-    --color-text-muted: #F2D8B5CC;
-    --color-heading: #F2D8B5;
+    --color-text: #F2E6CF;
+    --color-text-muted: color-mix(in srgb, var(--color-text) 78%, transparent);
+    --color-heading: var(--color-text);
 
-    --color-ink: #2C0E11;
-    --color-ink-muted: #2C0E11B3;
+    --color-ink: var(--page-bg);
 
-    --color-primary: #60241E;
-    --color-secondary: #D8B98B;
-    --color-accent: #8E2F3C;
-    --color-sun: #E3A64B;
+    --color-primary: #C9A45C;
 
-    --color-white: #FFFFFF;
-    --color-black: #000000;
+    --color-shade: #000000;
 
-    --color-border: rgba(182, 139, 80, 0.35);
+    --color-border: color-mix(in srgb, var(--color-primary) 35%, transparent);
 
-    --focus-ring: var(--color-secondary);
+    --focus-ring: var(--color-primary);
 
     /*
 
-        QUICK COLOR CONTROLS
+        QUICK CONTROLS
 
     */
 
     /*
 
-        BUTTONS: Used by .button, .button-outline and the page buttons (log in, all foods, map, near me, recipes).
+        BUTTONS: Used by .button, .button-outline and the search button.
 
     */
 
-    --button-bg: var(--color-card);
+    --button-bg: var(--color-primary);
     --button-text: var(--color-ink);
-    --button-border: var(--color-card);
+    --button-border: var(--color-primary);
 
-    --button-bg-hover: var(--color-secondary);
+    --button-bg-hover: var(--color-text);
     --button-text-hover: var(--color-ink);
-    --button-border-hover: var(--color-secondary);
+    --button-border-hover: var(--color-text);
 
-    --button-outline-text: var(--color-secondary);
-    --button-outline-border: var(--color-secondary);
+    --button-outline-text: var(--color-primary);
+    --button-outline-border: var(--color-primary);
 
-    /*
-
-        CARDS: Used by .card and the page cards (fresh finds, trivia, recipes, regions, top foods, all foods).
-
-    */
-
-    --card-bg: var(--color-card);
-    --card-bg-alt: var(--color-card);
-    --card-border: var(--color-border);
-
-    --card-title: var(--color-ink);
-    --card-text: var(--color-ink);
-    --card-label: var(--color-ink);
-    --card-link: var(--color-ink);
+    --button-outline-bg-hover: var(--color-primary);
+    --button-outline-text-hover: var(--color-ink);
 
     /*
 
@@ -169,45 +141,88 @@
             --header-bg is the see-through tint
             --header-blur is how much the page behind it is blurred
             --header-menu-bg is the almost solid tint behind the dropdown and the open phone menu
-            Keep --header-bg at 80% or more so the links stay readable.
+            Keep --header-bg at 70% or more so the links stay readable.
 
     */
 
-    --header-bg: color-mix(in srgb, var(--page-bg) 80%, transparent);
-    --header-menu-bg: color-mix(in srgb, var(--page-bg) 96%, transparent);
+    --header-bg: color-mix(in srgb, var(--page-bg) 40%, transparent);
+    --header-menu-bg: color-mix(in srgb, var(--page-bg-top) 96%, transparent);
     --header-blur: 14px;
 
     /*
 
-        FULL-WIDTH BANDS: Only the background. Used by every full-width section and the page hero. Both are transparent, so the page texture shows through. Set a color to make a band solid.
+        LINKS AND LABELS: Used by .text-link and the search suggestions (links), and by .label, the footer headings and the footer tagline (labels).
 
     */
 
-    --band-bg: transparent;
-    --band-bg-alt: transparent;
+    --link-text: var(--color-primary);
+    --link-text-hover: var(--color-text);
 
-    --page-texture: url('../assets/images/backgrounds/texture-burgundy.webp');
-    --page-overlay: rgba(0, 0, 0, 0.3);
+    --label-text: var(--color-primary);
+    --label-size: 0.75rem;
+    --label-spacing: 0.16em;
 
     /*
 
-        SCROLLBAR: The page scrollbar. The track is darker than the page and the thumb is a dark red, so the bar stands out from the background.
+        PAGE BACKGROUND: A soft green glow at the top that falls off to dark green at the bottom.
 
     */
 
-    --scrollbar-track: color-mix(in srgb, var(--color-black) 45%, var(--page-bg));
-    --scrollbar-thumb: color-mix(in srgb, var(--color-accent) 75%, var(--page-bg));
-    --scrollbar-thumb-hover: var(--color-accent);
+    --page-gradient: radial-gradient(ellipse 70% 720px at 50% -4%, var(--page-glow), transparent), linear-gradient(var(--page-bg-top), var(--page-bg));
 
-    --shadow-card: 0 8px 24px rgba(14, 4, 5, 0.5);
+    /*
 
-    --radius-sm: 8px;
-    --radius-md: 12px;
-    --radius-lg: 16px;
+        FORM FIELDS: Used by the search box.
+
+    */
+
+    --field-bg: color-mix(in srgb, var(--page-bg) 45%, transparent);
+    --field-border: var(--color-primary);
+    --field-text: var(--color-text);
+
+    /*
+
+        PLATES: The round top-down dish images.
+            --plate-size is a dish in a row
+            --plate-size-large is the dish beside the hero text
+            --plate-fill is how much of the ring the dish fills
+
+    */
+
+    --plate-size: 22rem;
+    --plate-size-large: 40rem;
+    --plate-fill: 88%;
+
+    /*
+
+        FOOTER: Only the background. It is a slightly darker band at the bottom of the page.
+
+    */
+
+    --footer-bg: color-mix(in srgb, var(--color-shade) 25%, transparent);
+
+    --text-base: 1rem;
+    --text-small: 0.875rem;
+    --text-h1: clamp(2.5rem, 6vw, 4.5rem);
+    --text-h2: clamp(1.9rem, 3.5vw, 2.75rem);
+    --text-h3: 1.5rem;
+
+    --page-gutter: clamp(1.25rem, 4vw, 3rem);
+    --section-space: clamp(4rem, 9vw, 7rem);
+    --section-gap: 3.5rem;
+
+    --border-line: 1px solid var(--color-border);
+    --transition: 0.2s ease;
+    --logo-spacing: 0.22em;
+
+    --radius-md: 0.5rem;
     --radius-pill: 999px;
 
-    --container-width: 1400px;
-    --site-nav-height: 68px;
+    --shadow-menu: 0 0.75rem 2rem color-mix(in srgb, var(--color-shade) 35%, transparent);
+
+    --container-width: 1300px;
+    --site-nav-height: 72px;
+    --hero-max-height: 64rem;
 }
 
 
@@ -233,70 +248,7 @@ html {
     -webkit-text-size-adjust: 100%;
 }
 
-/*
-
-    Scrollbar: a dark red bar on a darker track, with no arrow buttons.
-    Chrome, Edge and Safari use the -webkit- rules, and only with a mouse.
-    A phone keeps its own thin scrollbar, which shows only while scrolling
-    and fades out, so it only gets the color. Firefox does not know the
-    -webkit- rules, so it gets scrollbar-color and scrollbar-width instead.
-    Chrome ignores the -webkit- rules once scrollbar-color is set, which is
-    why the Firefox rule is behind @supports.
-
-*/
-
-@media (pointer: fine) {
-
-    html::-webkit-scrollbar {
-        width: 14px;
-    }
-
-    html::-webkit-scrollbar-button {
-        display: none;
-    }
-
-    html::-webkit-scrollbar-track {
-        background-color: var(--scrollbar-track);
-    }
-
-    html::-webkit-scrollbar-thumb {
-        border: 3px solid var(--scrollbar-track);
-        border-radius: var(--radius-pill);
-
-        background-color: var(--scrollbar-thumb);
-    }
-
-    html::-webkit-scrollbar-thumb:hover {
-        background-color: var(--scrollbar-thumb-hover);
-    }
-}
-
-@media (pointer: coarse) {
-
-    html {
-        scrollbar-color: var(--scrollbar-thumb) transparent;
-    }
-}
-
-@supports not selector(::-webkit-scrollbar) {
-
-    html {
-        scrollbar-width: thin;
-        scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
-    }
-}
-
-/*
-
-    The flower texture tile is 754px wide on a 1920px screen. On smaller
-    screens it shrinks with the screen (39.27vw), so the same three
-    flowers still fit across instead of one zoomed-in flower.
-
-*/
-
 body {
-    --texture-width: clamp(150px, 39.27vw, 754px);
-
     overflow-x: clip;
 
     min-height: 100vh;
@@ -304,14 +256,12 @@ body {
 
     color: var(--color-text);
     background-color: var(--page-bg);
-    background-image: linear-gradient(var(--page-overlay), var(--page-overlay)), var(--page-texture);
-    background-size: auto, var(--texture-width) calc(var(--texture-width) * 955 / 754);
-    background-position: center top;
-    background-repeat: repeat;
+    background-image: var(--page-gradient);
+    background-repeat: no-repeat;
 
     font-family: var(--font-body);
-    font-size: 1rem;
-    line-height: 1.7;
+    font-size: var(--text-base);
+    line-height: 1.75;
     -webkit-font-smoothing: antialiased;
 }
 
@@ -338,25 +288,30 @@ h1,
 h2,
 h3,
 h4 {
-    margin: 0 0 0.5rem;
+    margin: 0 0 0.75rem;
 
     color: var(--color-heading);
 
     font-family: var(--font-heading);
-    font-weight: 700;
-    line-height: 1.1;
+    font-weight: 400;
+    line-height: 1.2;
+    text-wrap: balance;
 }
 
 h2 {
-    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    font-size: var(--text-h2);
 }
 
 h3 {
-    font-size: 1.25rem;
+    font-size: var(--text-h3);
+}
+
+p {
+    margin: 0 0 1rem;
 }
 
 :focus-visible {
-    outline: 3px solid var(--focus-ring);
+    outline: 2px solid var(--focus-ring);
     outline-offset: 3px;
 }
 
@@ -380,14 +335,15 @@ main:focus {
 /*
 
     Set the side gutter with --gutter-x and use padding-block for top/bottom.
+    --page-gutter in :root moves the side gutter of every section at once.
 
 */
 
 .full-bleed {
-    --gutter-x: 4%;
+    --gutter-x: var(--page-gutter);
 
     width: 100vw;
-    margin-left: calc(50% - 50vw);
+    margin-inline-start: calc(50% - 50vw);
     padding-inline: calc((100vw - 100%) / 2 + var(--gutter-x));
 }
 
@@ -424,28 +380,6 @@ main:focus {
 /*
 
 
-    SECTION EYEBROW
-
-
-*/
-
-
-.section-eyebrow {
-    display: block;
-
-    margin-bottom: 0.75rem;
-
-    color: var(--color-secondary);
-
-    font-size: 0.8rem;
-    font-weight: 600;
-    letter-spacing: 2px;
-}
-
-
-/*
-
-
     SKIP LINK
 
 
@@ -459,12 +393,12 @@ main:focus {
     z-index: 9999;
 
     padding: 0.75rem 1.25rem;
-    border-radius: var(--radius-sm);
+    border-radius: var(--radius-pill);
 
-    color: var(--color-primary);
-    background-color: var(--color-background);
+    color: var(--button-text);
+    background-color: var(--button-bg);
 
-    font-size: 0.9rem;
+    font-size: var(--text-small);
     font-weight: 600;
 
     transform: translateY(-200%);
@@ -490,37 +424,184 @@ main:focus {
     z-index: 10;
 }
 
-/*
+.site-nav {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0 1.5rem;
 
-    The glass is a layer behind the nav, so the nav is not a backdrop root and
-    the dropdown can blur the page on its own.
-
-    The header is only as wide as .container, so the layer is stretched to the
-    full width of the screen the same way .full-bleed does it. Without this the
-    blur and tint stop at the edge of the container.
-
-*/
-
-.site-header::before {
-    content: "";
-
-    position: absolute;
-    inset: 0 calc(50% - 50vw);
-    z-index: -1;
+    min-height: var(--site-nav-height);
+    border-block-end: var(--border-line);
 
     background-color: var(--header-bg);
-    backdrop-filter: blur(var(--header-blur)) saturate(1.4);
-    -webkit-backdrop-filter: blur(var(--header-blur)) saturate(1.4);
+    backdrop-filter: blur(var(--header-blur));
+    -webkit-backdrop-filter: blur(var(--header-blur));
 }
 
 /*
 
-    The open phone menu covers the page, so its glass is almost solid
+    The logo is text for now. To use an image later, put an <img> inside
+    this link and set its height here.
 
 */
 
-.site-header:has(.site-nav.is-open)::before {
+.site-nav-logo {
+    margin-inline-end: auto;
+
+    color: var(--color-primary);
+
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    letter-spacing: var(--logo-spacing);
+}
+
+.site-nav-links {
+    display: flex;
+    align-items: center;
+    gap: 1.75rem;
+
+    margin: 0;
+
+    font-size: var(--text-small);
+}
+
+.site-nav-links a,
+.site-nav-dropdown > summary {
+    cursor: pointer;
+    transition: color var(--transition);
+}
+
+.site-nav-links a:hover,
+.site-nav-links a[aria-current="page"],
+.site-nav-dropdown > summary:hover {
+    color: var(--color-primary);
+}
+
+.site-nav-dropdown {
+    position: relative;
+}
+
+.site-nav-dropdown > summary {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    list-style: none;
+}
+
+.site-nav-dropdown > summary::-webkit-details-marker {
+    display: none;
+}
+
+.site-nav-chevron {
+    width: 0.9rem;
+    height: 0.9rem;
+
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+
+    transition: transform var(--transition);
+}
+
+.site-nav-dropdown[open] .site-nav-chevron {
+    transform: rotate(180deg);
+}
+
+.site-nav-dropdown-menu {
+    position: absolute;
+    top: calc(100% + 0.85rem);
+    left: 0;
+    z-index: 11;
+
+    min-width: 11rem;
+    margin: 0;
+    padding: 0.4rem 1.1rem;
+    border: var(--border-line);
+    border-radius: var(--radius-md);
+
     background-color: var(--header-menu-bg);
+    box-shadow: var(--shadow-menu);
+}
+
+.site-nav-dropdown-menu a {
+    display: block;
+
+    padding: 0.6rem 0;
+}
+
+/*
+
+    The divider is a separate element so its height can be shorter
+    than the bar. It is hidden in the phone menu.
+
+*/
+
+.site-nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.site-nav-divider {
+    width: 1px;
+    height: 1.5rem;
+
+    background-color: var(--color-border);
+}
+
+.site-nav-cta {
+    color: var(--color-text);
+
+    font-size: var(--text-small);
+    white-space: nowrap;
+
+    transition: color var(--transition);
+}
+
+.site-nav-cta:hover {
+    color: var(--color-primary);
+}
+
+/*
+
+    The hamburger button only shows on small screens. Its two icons
+    swap when nav.js sets aria-expanded.
+
+*/
+
+.site-nav-toggle {
+    display: none;
+
+    min-width: 44px;
+    min-height: 44px;
+    padding: 0.5rem;
+    border: 0;
+
+    color: var(--color-primary);
+    background: none;
+
+    cursor: pointer;
+}
+
+.site-nav-toggle svg {
+    width: 26px;
+    height: 26px;
+
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.5;
+    stroke-linecap: round;
+}
+
+.site-nav-toggle .icon-close,
+.site-nav-toggle[aria-expanded="true"] .icon-menu {
+    display: none;
+}
+
+.site-nav-toggle[aria-expanded="true"] .icon-close {
+    display: block;
 }
 
 /*
@@ -531,325 +612,26 @@ main:focus {
 
 @supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
 
-    .site-header::before,
-    .site-header:has(.site-nav.is-open)::before {
+    .site-nav {
         background-color: var(--page-bg);
     }
 
-    .site-header .site-nav-dropdown-menu {
-        background-color: var(--page-bg);
+    .site-nav-dropdown-menu {
+        background-color: var(--page-bg-top);
     }
 }
 
 @media (prefers-reduced-transparency: reduce) {
 
-    .site-header::before,
-    .site-header:has(.site-nav.is-open)::before {
+    .site-nav {
         background-color: var(--page-bg);
         backdrop-filter: none;
         -webkit-backdrop-filter: none;
     }
 
-    .site-header .site-nav-dropdown-menu {
-        background-color: var(--page-bg);
-        backdrop-filter: none;
-        -webkit-backdrop-filter: none;
+    .site-nav-dropdown-menu {
+        background-color: var(--page-bg-top);
     }
-}
-
-.site-nav {
-    --site-nav-gap: clamp(1.1rem, 1.5vw, 1.5rem);
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    min-height: var(--site-nav-height);
-    padding-block: 0.5rem;
-    border-bottom: 1px solid var(--color-border);
-
-    color: var(--color-text);
-}
-
-.site-nav-links {
-    display: flex;
-    align-items: center;
-    gap: var(--site-nav-gap);
-
-    margin: 0;
-}
-
-.site-nav-links a {
-    font-size: 0.875rem;
-    white-space: nowrap;
-}
-
-.site-nav-links a:hover {
-    color: var(--color-secondary);
-
-    text-decoration: underline;
-    text-underline-offset: 0.2em;
-}
-
-.site-nav-links a[aria-current="page"] {
-    color: var(--color-secondary);
-
-    font-weight: 600;
-}
-
-.site-nav-dropdown {
-    position: relative;
-}
-
-.site-nav-dropdown > summary {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.4rem;
-
-    font-size: 0.875rem;
-    white-space: nowrap;
-
-    cursor: pointer;
-}
-
-.site-nav-dropdown > summary:hover {
-    color: var(--color-secondary);
-
-    text-decoration: underline;
-    text-underline-offset: 0.2em;
-}
-
-.site-nav-dropdown:has([aria-current="page"]) > summary {
-    color: var(--color-secondary);
-
-    font-weight: 600;
-}
-
-.site-nav-dropdown > summary::-webkit-details-marker {
-    display: none;
-}
-
-.site-nav-dropdown > summary::after {
-    content: "";
-
-    width: 0.35rem;
-    height: 0.35rem;
-    margin-top: -0.2rem;
-    border-right: 1.5px solid currentColor;
-    border-bottom: 1.5px solid currentColor;
-
-    transition: transform 0.2s ease, margin 0.2s ease;
-    transform: rotate(45deg);
-}
-
-.site-nav-dropdown[open] > summary::after {
-    margin-top: 0.2rem;
-
-    transform: rotate(225deg);
-}
-
-.site-nav-dropdown-menu {
-    position: absolute;
-    top: calc(100% + 0.75rem);
-    left: 0;
-    z-index: 11;
-
-    min-width: 11rem;
-    margin: 0;
-    padding: 0.35rem;
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-sm);
-
-    background-color: var(--header-menu-bg);
-    box-shadow: var(--shadow-card);
-    backdrop-filter: blur(var(--header-blur));
-    -webkit-backdrop-filter: blur(var(--header-blur));
-}
-
-.site-nav-dropdown-menu a {
-    display: block;
-
-    padding: 0.6rem 0.75rem;
-}
-
-.site-nav-dropdown-menu a:hover {
-    background-color: color-mix(in srgb, var(--color-secondary) 15%, transparent);
-}
-
-.site-nav-actions {
-    display: flex;
-    align-items: center;
-    gap: 1.25rem;
-    flex-shrink: 0;
-
-    margin-left: var(--site-nav-gap);
-    padding-left: var(--site-nav-gap);
-    border-left: 1px solid var(--color-border);
-}
-
-.site-nav-cta {
-    font-size: 0.875rem;
-    white-space: nowrap;
-
-    transition: color 0.2s ease;
-}
-
-.site-nav-cta:hover {
-    color: var(--color-secondary);
-
-    text-decoration: underline;
-    text-underline-offset: 0.2em;
-}
-
-/*
-
-    Hamburger button: hidden on desktop, shown in the 1080px media query
-
-*/
-
-.site-nav-toggle {
-    display: none;
-}
-
-
-/*
-
-
-    BREADCRUMB
-
-
-*/
-
-
-.breadcrumb {
-    margin-bottom: 2rem;
-
-    font-size: 0.875rem;
-}
-
-.breadcrumb-list {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 0.25rem 0.5rem;
-
-    margin: 0;
-
-    color: var(--color-text-muted);
-}
-
-.breadcrumb-list li + li::before {
-    content: "/";
-
-    margin-right: 0.5rem;
-}
-
-.breadcrumb a {
-    color: var(--color-secondary);
-}
-
-.breadcrumb a:hover {
-    text-decoration: underline;
-}
-
-.breadcrumb [aria-current="page"] {
-    color: var(--color-text);
-}
-
-.breadcrumb-centered .breadcrumb-list {
-    justify-content: center;
-}
-
-
-/*
-
-
-    PAGE HERO: TEXT INTRO AT THE TOP OF A PAGE
-
-
-*/
-
-/*
-
-    .page-hero is the base: background, title and accent word.
-    Add one layout next to it:
-
-    .page-hero-centered  text only, centered (wrap the text in
-                         .page-hero-content)
-    .page-hero-split     text on one side, image on the other
-
-    A page's own CSS only adds what is different (a larger title,
-    extra spacing, and so on).
-
-*/
-
-.page-hero {
-    background-color: var(--band-bg-alt);
-}
-
-.page-hero-centered {
-    padding-block: 3.5rem;
-
-    text-align: center;
-}
-
-.page-hero-content {
-    max-width: 850px;
-    margin: 0 auto;
-}
-
-.page-hero h1 {
-    margin: 0;
-
-    font-size: clamp(2.5rem, 7vw, 5rem);
-    line-height: 1.15;
-}
-
-.page-hero h1 span {
-    color: var(--color-secondary);
-}
-
-.page-hero-content > p {
-    max-width: 650px;
-    margin: 1.25rem auto 0;
-
-    font-size: 0.95rem;
-    line-height: 1.9;
-}
-
-.page-hero-split {
-    --gutter-x: 8%;
-
-    display: grid;
-    align-items: center;
-    gap: 4rem;
-    grid-template-columns: 1fr 1fr;
-
-    min-height: 580px;
-    padding-block: 5rem;
-}
-
-.page-hero-split-content > p {
-    max-width: 520px;
-    margin: 1.5rem 0 2rem;
-
-    line-height: 1.9;
-}
-
-.page-hero-split-image {
-    position: relative;
-
-    overflow: hidden;
-
-    height: 430px;
-    border-radius: var(--radius-lg);
-}
-
-.page-hero-split-image img {
-    width: 100%;
-    height: 100%;
-
-    object-fit: cover;
 }
 
 
@@ -858,14 +640,16 @@ main:focus {
 
     BUTTONS
 
-    .button is the filled button. Add .button-outline next to it
-    for the outlined version: class="button button-outline"
-
-    Dark text: white on the caramel primary color is only about 3.3:1 contrast
-
 
 */
 
+
+/*
+
+    .button is the filled button. Add .button-outline next to it
+    for the outlined version: class="button button-outline"
+
+*/
 
 .button {
     display: inline-flex;
@@ -873,18 +657,19 @@ main:focus {
     align-items: center;
 
     min-height: 44px;
-    padding: 0.9rem 1.5rem;
+    padding: 0.8rem 1.75rem;
     border: 1px solid var(--button-border);
-    border-radius: var(--radius-sm);
+    border-radius: var(--radius-pill);
 
     color: var(--button-text);
     background-color: var(--button-bg);
 
-    font-size: 0.9rem;
+    font-size: var(--text-small);
     font-weight: 600;
     line-height: 1.5;
+    letter-spacing: 0.04em;
 
-    transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+    transition: background-color var(--transition), border-color var(--transition), color var(--transition);
 }
 
 .button:hover {
@@ -906,190 +691,376 @@ main:focus {
 }
 
 .button-outline:hover {
-    color: var(--button-text-hover);
+    border-color: var(--button-outline-bg-hover);
+
+    color: var(--button-outline-text-hover);
+    background-color: var(--button-outline-bg-hover);
+}
+
+/*
+
+    Smooth scrolling (html), the button press (.button:active) and the
+    flipping menu arrow all move, so they are switched off for visitors
+    who ask for less motion.
+
+*/
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    .button:active {
+        transform: none;
+    }
+
+    .site-nav-dropdown[open] .site-nav-chevron {
+        transform: none;
+    }
 }
 
 
 /*
 
 
-    HERO: DISCOVER FILIPINO DISHES, REGION BY REGION
+    LABELS AND LINKS
 
 
 */
 
 
+/*
+
+    .label is the small gold line above a name or a heading. It is typed
+    in capitals in the HTML, so there is no text-transform here.
+
+*/
+
+.label {
+    margin: 0 0 0.5rem;
+
+    color: var(--label-text);
+
+    font-size: var(--label-size);
+    letter-spacing: var(--label-spacing);
+}
+
+.text-link {
+    color: var(--link-text);
+
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.35em;
+
+    transition: color var(--transition);
+}
+
+.text-link:hover {
+    color: var(--link-text-hover);
+}
+
+
+/*
+
+
+    HERO: DISCOVER THE PHILIPPINES, ONE BITE AT A TIME
+
+
+*/
+
+
+/*
+
+    The hero fills the first screen (the screen height minus the nav bar)
+    and centers its content, so the next section doesn't show on arrival.
+    svh is the shortest the screen gets, with a phone's address bar showing.
+    The 100vh line is for older browsers. On a very short screen the
+    content is taller than the hero, so the hero grows instead of clipping.
+    On a very tall screen the hero stops growing at --hero-max-height
+    (in :root), so the content doesn't float in a sea of empty space. The
+    cap is on min-height, not max-height, so it can never cut content off.
+
+*/
+
 .hero {
-    --gutter-x: 1.5rem;
-
-    display: flex;
+    display: grid;
     align-items: center;
-    overflow: hidden;
 
-    min-height: calc(100svh - var(--site-nav-height));
-    padding-block: 3rem;
-
-    text-align: center;
+    min-height: min(calc(100vh - var(--site-nav-height)), var(--hero-max-height));
+    min-height: min(calc(100svh - var(--site-nav-height)), var(--hero-max-height));
+    padding-block: clamp(3rem, 8vw, 6rem);
 }
 
 .hero-content {
-    position: relative;
-    z-index: 4;
-
-    width: 100%;
+    display: grid;
+    align-items: center;
+    gap: 3rem;
+    grid-template-columns: 1.1fr 0.9fr;
 }
 
-.hero-content > * {
-    max-width: 680px;
-    margin-inline: auto;
+.hero-title {
+    margin-block-end: 1.5rem;
+
+    font-size: var(--text-h1);
 }
 
-/*
+.hero-title em {
+    display: block;
 
-    The Silangan wordmark is the page's <h1>. The glow is drawn behind it
-    and centered on the sun above the I:
-        --glow-x and --glow-y move it onto the sun
-        --glow-size sets how far it spreads
-
-*/
-
-.hero .hero-logo {
-    --glow-x: 16.5%;
-    --glow-y: 6%;
-    --glow-size: 50%;
-
-    position: relative;
-
-    max-width: min(1100px, 100%);
-    margin: 0 auto 2.5rem;
+    color: var(--color-primary);
 }
 
-.hero-logo::before {
-    content: "";
+.hero-intro {
+    max-width: 32rem;
+    margin-block-end: 2rem;
 
-    position: absolute;
-    top: var(--glow-y);
-    left: var(--glow-x);
-    z-index: -1;
-
-    width: var(--glow-size);
-    aspect-ratio: 1;
-
-    background: radial-gradient(
-        circle,
-        color-mix(in srgb, var(--color-sun) 75%, transparent) 0%,
-        color-mix(in srgb, var(--color-sun) 30%, transparent) 22%,
-        transparent 62%
-    );
-
-    transform: translate(-50%, -50%);
+    color: var(--color-text-muted);
 }
-
-/*
-
-    Search (quiet glass bar)
-
-*/
 
 .hero-search {
     display: flex;
-    align-items: center;
-    gap: 0.9rem;
+    gap: 0.5rem;
 
-    width: min(640px, 100%);
-    margin: 0 auto;
-    padding: 0.5rem 0.5rem 0.5rem 1.5rem;
-    border: 1px solid transparent;
+    max-width: 30rem;
+    padding: 0.4rem 0.4rem 0.4rem 1.4rem;
+    border: 1px solid var(--field-border);
     border-radius: var(--radius-pill);
 
-    background-color: color-mix(in srgb, var(--color-text) 7%, transparent);
-    backdrop-filter: blur(6px);
-}
-
-.hero-search:focus-within {
-    border-color: var(--color-secondary);
-
-    background-color: color-mix(in srgb, var(--color-text) 12%, transparent);
-    box-shadow: 0 0 0 3px var(--color-border);
-}
-
-.hero-search img {
-    flex-shrink: 0;
-
-    width: 26px;
-    height: 26px;
+    background-color: var(--field-bg);
 }
 
 .hero-search input {
     flex: 1;
 
     min-width: 0;
-    padding: 0.85rem 0;
-    border: none;
-    outline: none;
+    border: 0;
 
-    color: var(--color-white);
-    background: transparent;
+    color: var(--field-text);
+    background: none;
 
-    font-size: 1.15rem;
+    font-size: var(--text-base);
 }
 
 .hero-search input::placeholder {
     color: var(--color-text-muted);
-    opacity: 1;
 }
 
 .hero-search button {
-    padding: 0.7rem 1.4rem;
-    border: none;
+    padding: 0.6rem 1.4rem;
+    border: 0;
     border-radius: var(--radius-pill);
 
     color: var(--button-text);
     background-color: var(--button-bg);
 
-    font-size: 0.9rem;
-    font-weight: 700;
-
-    cursor: pointer;
+    font-weight: 600;
 }
 
-.hero-search button:hover {
-    color: var(--button-text-hover);
-    background-color: var(--button-bg-hover);
+.hero-search input:disabled,
+.hero-search button:disabled {
+    opacity: 0.7;
 }
 
 .search-suggestions {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    gap: 0.6rem;
+    gap: 0.25rem 1.25rem;
 
-    margin-top: 1.25rem;
+    margin-block-start: 1rem;
+
+    font-size: var(--text-small);
 }
 
 .search-suggestions-label {
-    margin-right: 0.25rem;
+    color: var(--color-text-muted);
+}
 
-    color: var(--color-secondary);
+
+/*
+
+
+    PLATES: TOP-DOWN DISHES FLOATING ON THE GREEN
+
+
+*/
+
+
+/*
+
+    The thin ring behind each dish keeps the layout in place if an
+    image is missing. --plate-size and --plate-fill in :root set how
+    big the ring is and how much of it the dish fills.
+
+*/
+
+.plate-image {
+    display: grid;
+    place-items: center;
+
+    width: 100%;
+    max-width: var(--plate-size);
+    aspect-ratio: 1;
+    margin: 0 auto 1.5rem;
+    border: var(--border-line);
+    border-radius: 50%;
+}
+
+.plate-image img {
+    width: var(--plate-fill);
+}
+
+.hero-plate .plate-image {
+    max-width: var(--plate-size-large);
+    margin-block-end: 0;
+}
+
+.section-header {
+    max-width: 40rem;
+    margin: 0 auto var(--section-gap);
+
+    text-align: center;
+}
+
+.section-header p {
+    color: var(--color-text-muted);
+}
+
+.plates-grid {
+    display: grid;
+    gap: 3rem 2.5rem;
+    grid-template-columns: repeat(3, 1fr);
+
+    margin: 0;
+}
+
+.plate {
+    text-align: center;
+}
+
+/*
+
+    The middle plate sits lower so the row feels like a menu, not a grid
+
+*/
+
+.plate:nth-child(2) {
+    margin-block-start: 4rem;
+}
+
+.plate-description {
+    color: var(--color-text-muted);
+}
+
+
+/*
+
+
+    HOME SECTIONS
+
+
+*/
+
+
+/*
+
+    Every home section below the hero has the same top and bottom space.
+    Change --section-space in :root to move all of them at once.
+
+*/
+
+.fresh-finds-section,
+.popular-foods-section,
+.regional-discoveries-section,
+.trivia-section,
+.random-food-section {
+    padding-block: var(--section-space);
+}
+
+
+/*
+
+
+    FILIPINO DISHES TO EXPLORE (POPULAR FOODS)
+
+
+*/
+
+
+.popular-foods-footer {
+    margin-block-start: var(--section-gap);
+
+    text-align: center;
+}
+
+
+/*
+
+
+    FROM AROUND THE PHILIPPINES (REGIONAL DISCOVERIES)
+
+
+*/
+
+
+.regions-list {
+    margin: 0;
+    border-block-start: var(--border-line);
+}
+
+.region {
+    display: grid;
+    align-items: baseline;
+    gap: 2rem;
+    grid-template-columns: 1fr 2fr auto;
+
+    padding-block: 1.75rem;
+    border-block-end: var(--border-line);
+}
+
+.region-name h3,
+.region-name .label,
+.region-description {
+    margin: 0;
+}
+
+.region-description {
+    color: var(--color-text-muted);
+}
+
+
+/*
+
+
+    DID YOU KNOW (HALO-HALO)
+
+
+*/
+
+
+.trivia-content {
+    display: grid;
+    align-items: center;
+    gap: 4rem;
+    grid-template-columns: 1fr 1.2fr;
+}
+
+.trivia-content .plate-image {
+    margin-block-end: 0;
+}
+
+.trivia-description {
+    color: var(--color-text-muted);
+}
+
+.trivia-highlight {
+    margin: 0;
+
+    color: var(--color-primary);
 
     font-family: var(--font-heading);
-    font-size: 1.15rem;
+    font-size: 1.4rem;
     font-style: italic;
-}
-
-.search-suggestions a {
-    padding: 0.45rem 1rem;
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-pill);
-
-    font-size: 0.95rem;
-}
-
-.search-suggestions a:hover {
-    border-color: var(--color-secondary);
-
-    background-color: color-mix(in srgb, var(--color-secondary) 18%, transparent);
 }
 
 
@@ -1103,608 +1074,47 @@ main:focus {
 
 
 .near-me-section {
-    padding-block: 5rem;
-
-    background-color: var(--band-bg);
+    padding-block: 2.5rem;
+    border-block: var(--border-line);
 }
 
-.near-me-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-
-    margin-bottom: 2rem;
-}
-
-.near-me-header h2 {
-    margin: 0;
-}
-
-.near-me-actions {
-    display: flex;
-    flex-wrap: wrap;
+.near-me-content {
+    display: grid;
     align-items: center;
-    gap: 0.75rem;
+    gap: 2rem;
+    grid-template-columns: 1fr auto;
 }
 
-.restaurant-status {
-    display: flex;
-    align-items: center;
-    gap: 0.6rem;
-
-    margin-bottom: 1.25rem;
-
-    color: var(--color-secondary);
-
-    font-size: 0.75rem;
-    font-weight: 600;
-    letter-spacing: 1.5px;
+.near-me-info h2 {
+    font-size: var(--text-h3);
 }
 
-.near-me-actions .restaurant-status {
-    margin-bottom: 0;
-}
+.near-me-description {
+    margin: 0 0 0.5rem;
 
-.restaurant-status-dot {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
+    color: var(--color-text-muted);
 
-    background-color: var(--color-secondary);
-}
-
-.restaurant-disclaimer {
-    max-width: 1000px;
-    margin: 0 0 1.5rem;
-
-    font-size: 0.85rem;
-}
-
-.restaurant-preview-notice {
-    --color-heading: var(--card-title);
-    --focus-ring: var(--card-link);
-
-    max-width: 46rem;
-    padding: 1.5rem;
-    border: 1px solid var(--card-border);
-    border-radius: var(--radius-md);
-
-    color: var(--card-text);
-    background-color: var(--card-bg);
-}
-
-.restaurant-preview-notice p {
-    max-width: 65ch;
-    margin: 0;
-
-    font-size: 0.9rem;
-    line-height: 1.6;
+    font-size: var(--text-small);
 }
 
 
 /*
 
 
-    BICOL SPECIALTIES (FRESH FINDS)
+    NEED AN IDEA FOR YOUR NEXT MEAL (RANDOM FOOD)
 
 
 */
 
 
-.fresh-finds-section {
-    padding-block: 3.5rem;
-
-    background-color: var(--band-bg-alt);
-}
-
-.fresh-finds-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-
-    margin-bottom: 2rem;
-}
-
-.fresh-finds-header h2 {
-    margin: 0 0 0.75rem;
-}
-
-.fresh-finds-header p {
-    margin: 0;
-
-    line-height: 1.6;
-}
-
-.fresh-finds-grid {
-    display: grid;
-    gap: 1.5rem;
-    grid-template-columns: repeat(3, 1fr);
-}
-
-/* ---------- Card (shared base) ----------
-   Border, radius, background and hover lift shared by the home page
-   cards. Each card keeps its own class for its image height and text. */
-
-.card {
-    --color-heading: var(--card-title);
-    --focus-ring: var(--card-link);
-
-    overflow: hidden;
-
-    border: 1px solid var(--card-border);
-    border-radius: var(--radius-md);
-
-    color: var(--card-text);
-    background-color: var(--card-bg);
-
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.card:hover {
-    box-shadow: var(--shadow-card);
-
-    transform: translateY(-5px);
-}
-
-/* Use on cards that sit inside a section with the secondary background,
-   so the card stays darker than the section behind it. */
-
-.card-on-secondary {
-    background-color: var(--card-bg-alt);
-}
-
-@media (prefers-reduced-motion: reduce) {
-
-    html {
-        scroll-behavior: auto;
-    }
-
-    .card {
-        transition: none;
-    }
-
-    .card:hover {
-        transform: none;
-    }
-}
-
-.fresh-find-card > img {
-    width: 100%;
-    height: 220px;
-
-    object-fit: cover;
-}
-
-.fresh-find-info {
-    padding: 1.5rem;
-}
-
-.fresh-find-category {
-    display: inline-block;
-
-    margin-bottom: 0.75rem;
-
-    color: var(--card-label);
-
-    font-size: 0.75rem;
-    font-weight: 600;
-    letter-spacing: 0.5px;
-}
-
-.fresh-find-info h3 {
-    font-size: 1.4rem;
-}
-
-.fresh-find-location {
-    margin: 0 0 1rem;
-
-    color: var(--card-label);
-
-    font-size: 0.85rem;
-}
-
-.fresh-find-description {
-    min-height: 4.5rem;
-    margin: 0 0 1.25rem;
-
-    font-size: 0.9rem;
-    line-height: 1.6;
-}
-
-.fresh-find-info a {
-    display: inline-block;
-
-    color: var(--card-link);
-
-    font-size: 0.9rem;
-    font-weight: 600;
-}
-
-.fresh-find-info a:hover {
-    text-decoration: underline;
-    text-underline-offset: 0.2em;
-}
-
-
-/*
-
-
-    DID YOU KNOW
-
-
-*/
-
-
-.trivia-section {
-    padding-block: 3.5rem;
-
-    background-color: var(--band-bg);
-}
-
-.trivia-header {
-    margin-bottom: 2rem;
-}
-
-.trivia-header h2 {
-    margin: 0 0 0.75rem;
-}
-
-.trivia-header p {
-    margin: 0;
-
-    line-height: 1.6;
-}
-
-.trivia-card {
-    --color-heading: var(--card-title);
-    --focus-ring: var(--card-link);
-
-    display: grid;
-    grid-template-columns: 40% 60%;
-    overflow: hidden;
-
-    border: 1px solid var(--card-border);
-    border-radius: var(--radius-lg);
-
-    color: var(--card-text);
-    background-color: var(--card-bg);
-}
-
-.trivia-image {
-    min-height: 350px;
-}
-
-.trivia-image img {
-    width: 100%;
-    height: 100%;
-
-    object-fit: cover;
-}
-
-.trivia-info {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-
-    padding: 3rem;
-}
-
-.trivia-category {
-    display: inline-block;
-
-    margin-bottom: 1rem;
-
-    color: var(--card-label);
-
-    font-size: 0.75rem;
-    font-weight: 600;
-    letter-spacing: 1.5px;
-}
-
-.trivia-info h3 {
-    margin: 0 0 1rem;
-
-    font-size: 2.25rem;
-    line-height: 1.2;
-}
-
-.trivia-info p {
-    max-width: 600px;
-    margin: 0 0 1.5rem;
-
-    font-size: 0.95rem;
-    line-height: 1.8;
-}
-
-.trivia-highlight {
-    display: inline-block;
-
-    width: fit-content;
-    padding: 0.5rem 1rem;
-    border-radius: var(--radius-pill);
-
-    color: var(--card-label);
-    background-color: color-mix(in srgb, var(--card-label) 20%, transparent);
-
-    font-size: 0.8rem;
-    font-weight: 600;
-}
-
-
-/*
-
-
-    FROM AROUND THE PHILIPPINES
-
-
-*/
-
-
-.regional-discoveries-section {
-    padding-block: 3.5rem;
-
-    background-color: var(--band-bg-alt);
-}
-
-.regional-header {
-    margin-bottom: 2rem;
-}
-
-.regional-header h2 {
-    margin: 0 0 0.75rem;
-}
-
-.regional-header p {
-    margin: 0;
-
-    line-height: 1.6;
-}
-
-.regional-grid {
-    display: grid;
-    gap: 1.5rem;
-    grid-template-columns: repeat(3, 1fr);
-}
-
-.regional-card > img {
-    width: 100%;
-    height: 240px;
-
-    object-fit: cover;
-}
-
-.regional-info {
-    padding: 1.5rem;
-}
-
-.regional-label {
-    display: inline-block;
-
-    margin-bottom: 0.75rem;
-
-    color: var(--card-label);
-
-    font-size: 0.7rem;
-    font-weight: 600;
-    letter-spacing: 1.2px;
-}
-
-.regional-info h3 {
-    margin: 0 0 0.75rem;
-
-    font-size: 1.6rem;
-}
-
-.regional-info p {
-    min-height: 4.5rem;
-    margin: 0 0 1.25rem;
-
-    font-size: 0.9rem;
-}
-
-.regional-info a {
-    display: inline-block;
-
-    color: var(--card-link);
-
-    font-size: 0.9rem;
-    font-weight: 600;
-}
-
-.regional-info a:hover {
-    text-decoration: underline;
-    text-underline-offset: 0.2em;
-}
-
-
-/*
-
-
-    FILIPINO DISHES TO EXPLORE (POPULAR FOODS)
-
-
-*/
-
-
-.popular-foods-section {
-    padding-block: 3.5rem;
-
-    background-color: var(--band-bg);
-}
-
-.popular-foods-header {
-    margin-bottom: 2rem;
-}
-
-.popular-foods-header h2 {
-    margin: 0 0 0.75rem;
-}
-
-.popular-foods-header p {
-    margin: 0;
-
-    line-height: 1.6;
-}
-
-.popular-foods-grid {
-    display: grid;
-    gap: 1.5rem;
-    grid-template-columns: repeat(3, 1fr);
-}
-
-.popular-food-card > img {
-    width: 100%;
-    height: 240px;
-
-    object-fit: cover;
-}
-
-.popular-food-info {
-    padding: 1.5rem;
-}
-
-.popular-food-category {
-    display: inline-block;
-
-    margin-bottom: 0.75rem;
-
-    color: var(--card-label);
-
-    font-size: 0.75rem;
-    font-weight: 600;
-    letter-spacing: 0.5px;
-}
-
-.popular-food-info h3 {
-    margin: 0 0 0.75rem;
-
-    font-size: 1.4rem;
-}
-
-.popular-food-info p {
-    min-height: 4.5rem;
-    margin: 0 0 1.25rem;
-
-    font-size: 0.9rem;
-    line-height: 1.6;
-}
-
-.popular-food-info a {
-    display: inline-block;
-
-    color: var(--card-link);
-
-    font-size: 0.9rem;
-    font-weight: 600;
-}
-
-.popular-food-info a:hover {
-    text-decoration: underline;
-    text-underline-offset: 0.2em;
-}
-
-.popular-foods-footer {
-    display: flex;
-    justify-content: center;
-
-    margin-top: 2rem;
-}
-
-
-/*
-
-
-    RANDOM FOOD: NEED AN IDEA FOR YOUR NEXT MEAL?
-
-
-*/
-
-
-.random-food-section {
-    padding-block: 3.5rem;
-
-    background-color: var(--band-bg-alt);
-}
-
-.random-food-container {
-    --focus-ring: var(--color-background-secondary);
-
-    padding: 4.5rem 2rem;
-    border-radius: var(--radius-lg);
-
-    background-color: var(--color-primary);
-
+.random-food-content {
     text-align: center;
 }
 
-.random-food-container h2 {
-    margin: 0 0 1rem;
+.random-food-content p {
+    margin-block-end: 2rem;
 
-    color: var(--color-background);
-
-    font-size: clamp(2rem, 4vw, 3rem);
-}
-
-.random-food-container p {
-    margin: 0 0 2rem;
-
-    color: var(--color-background-secondary);
-}
-
-
-/*
-
-
-    FORM FIELDS
-
-
-*/
-
-
-.form-group {
-    display: flex;
-    flex-direction: column;
-    gap: 0.6rem;
-
-    margin-bottom: 1.5rem;
-}
-
-.form-group label {
-    color: var(--color-heading);
-
-    font-size: 0.9rem;
-    font-weight: 600;
-}
-
-/*
-
-    1rem stops iPhones from zooming the page when a field is tapped
-
-*/
-
-.form-group input {
-    width: 100%;
-    padding: 1rem 1.1rem;
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-sm);
-    outline: none;
-
-    color: var(--color-ink);
-    background-color: var(--color-background);
-
-    font-size: 1rem;
-
-    transition: border-color 0.2s ease, box-shadow 0.2s ease;
-}
-
-.form-group input:focus {
-    border-color: var(--color-accent);
-
-    box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-accent) 20%, transparent);
-}
-
-.form-group input::placeholder {
-    color: var(--color-ink-muted);
+    color: var(--color-text-muted);
 }
 
 
@@ -1718,46 +1128,43 @@ main:focus {
 
 
 .footer {
-    --focus-ring: var(--color-secondary);
+    padding-block: 4rem 2rem;
+    border-block-start: var(--border-line);
 
-    padding-block: 4rem 1.5rem;
-
-    color: var(--color-background);
-    background-color: var(--color-surface);
+    background-color: var(--footer-bg);
 }
 
 .footer-main {
     display: grid;
-    gap: 3rem;
-    grid-template-columns: 1.6fr 1fr 1fr 1.3fr;
-
-    padding-bottom: 3rem;
+    gap: 2.5rem;
+    grid-template-columns: 2fr 1fr 1fr 1.5fr;
 }
 
 .footer-logo {
     display: inline-block;
 
-    margin-bottom: 1rem;
+    margin-block-end: 1rem;
+
+    color: var(--color-primary);
 
     font-family: var(--font-heading);
-    font-size: 2rem;
-    font-weight: 700;
+    font-size: 1.75rem;
+    letter-spacing: var(--logo-spacing);
 }
 
 .footer-brand > p {
-    max-width: 350px;
+    max-width: 22rem;
     margin: 0 0 1.25rem;
 
-    color: var(--color-background-secondary);
+    color: var(--color-text-muted);
 
-    font-size: 0.9rem;
-    line-height: 1.8;
+    font-size: var(--text-small);
 }
 
 .footer-brand-tagline {
     display: inline-block;
 
-    color: var(--color-background-secondary);
+    color: var(--label-text);
 
     font-family: var(--font-heading);
     font-size: 0.95rem;
@@ -1768,91 +1175,69 @@ main:focus {
 .footer-about h3 {
     margin: 0 0 1.25rem;
 
-    color: var(--color-background);
+    color: var(--label-text);
 
+    font-family: var(--font-body);
+    font-size: var(--label-size);
     font-weight: 600;
+    letter-spacing: var(--label-spacing);
 }
 
 .footer-links ul {
     display: flex;
     flex-direction: column;
     gap: 0.75rem;
+
+    margin: 0;
 }
 
-.footer-links a {
-    color: var(--color-background-secondary);
+.footer-links a,
+.footer-legal a {
+    color: var(--color-text-muted);
 
-    font-size: 0.9rem;
+    font-size: var(--text-small);
 
-    transition: color 0.2s ease;
+    transition: color var(--transition);
 }
 
-.footer-links a:hover {
-    color: var(--color-background);
-
-    text-decoration: underline;
-    text-underline-offset: 0.2em;
+.footer-links a:hover,
+.footer-legal a:hover {
+    color: var(--color-primary);
 }
 
 .footer-about p {
     margin: 0 0 1.25rem;
 
-    color: var(--color-background-secondary);
+    color: var(--color-text-muted);
 
-    font-size: 0.9rem;
-    line-height: 1.8;
-}
-
-.footer-explore-link {
-    display: inline-block;
-
-    font-size: 0.9rem;
-    font-weight: 600;
-}
-
-.footer-explore-link:hover {
-    text-decoration: underline;
-    text-underline-offset: 0.2em;
+    font-size: var(--text-small);
 }
 
 .footer-bottom {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
-    align-items: center;
-    gap: 1rem;
+    gap: 0.75rem 2rem;
 
-    padding-top: 1.5rem;
-    border-top: 1px solid color-mix(in srgb, var(--color-background) 20%, transparent);
+    margin-block-start: 3rem;
+    padding-block-start: 1.5rem;
+    border-block-start: var(--border-line);
 }
 
 .footer-bottom p,
 .footer-bottom span {
     margin: 0;
 
-    color: var(--color-background-secondary);
+    color: var(--color-text-muted);
 
-    font-size: 0.8rem;
+    font-size: var(--text-small);
 }
 
 .footer-legal {
     display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem 1.5rem;
-}
+    gap: 1.5rem;
 
-.footer-legal a {
-    color: var(--color-background-secondary);
-
-    font-size: 0.8rem;
-
-    transition: color 0.2s ease;
-}
-
-.footer-legal a:hover {
-    color: var(--color-background);
-
-    text-decoration: underline;
-    text-underline-offset: 0.2em;
+    margin: 0;
 }
 
 
@@ -1865,18 +1250,6 @@ main:focus {
 */
 
 
-/* ---------- Small desktops / large tablets (up to 1180px) ---------- */
-
-@media (max-width: 1180px) {
-
-    /* Site nav: tighten spacing so the links, More menu and Log In still fit on one row */
-
-    .site-nav {
-        --site-nav-gap: 1rem;
-    }
-}
-
-
 /* ---------- Tablets landscape and smaller (up to 1080px) ---------- */
 
 /* The site nav switches to a hamburger menu. The links and buttons are hidden
@@ -1884,17 +1257,26 @@ main:focus {
 
 @media (max-width: 1080px) {
 
-    /* The closed site nav is shorter here (hamburger row), so anchors and
-       the hero use its real height */
+    /* Menu button */
 
-    :root {
-        --site-nav-height: 61px;
+    .site-nav-toggle {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
     }
 
-    .site-nav {
-        flex-wrap: wrap;
+    /* Closed and open menu */
 
-        min-height: 0;
+    .site-nav-links,
+    .site-nav-actions {
+        display: none;
+
+        width: 100%;
+    }
+
+    .site-nav.is-open .site-nav-links,
+    .site-nav.is-open .site-nav-actions {
+        display: flex;
     }
 
     /* If the open menu is taller than the screen, let it scroll */
@@ -1904,172 +1286,48 @@ main:focus {
 
         max-height: 100vh;
         max-height: 100dvh;
+
+        background-color: var(--header-menu-bg);
     }
 
-    /* The hamburger button */
-
-    .site-nav-toggle {
-        display: inline-flex;
-        justify-content: center;
-        align-items: center;
-
-        width: 44px;
-        height: 44px;
-        margin-left: auto;
-        padding: 0;
-        border: 1px solid var(--color-border);
-        border-radius: var(--radius-sm);
-
-        color: var(--color-text);
-        background-color: transparent;
-
-        cursor: pointer;
-        transition: background-color 0.2s ease;
-    }
-
-    .site-nav-toggle:hover {
-        background-color: color-mix(in srgb, var(--color-secondary) 15%, transparent);
-    }
-
-    .site-nav-toggle:focus-visible {
-        outline: 2px solid var(--color-secondary);
-        outline-offset: 2px;
-    }
-
-    .site-nav-toggle svg {
-        width: 24px;
-        height: 24px;
-
-        fill: none;
-        stroke: currentColor;
-        stroke-width: 2;
-        stroke-linecap: round;
-    }
-
-    /* Show the three-line icon by default, the X icon when open */
-
-    .site-nav-toggle .icon-close {
-        display: none;
-    }
-
-    .site-nav.is-open .site-nav-toggle .icon-menu {
-        display: none;
-    }
-
-    .site-nav.is-open .site-nav-toggle .icon-close {
-        display: block;
-    }
-
-    /* Menu links: hidden until opened, then a vertical list */
+    /* Menu links and buttons */
 
     .site-nav-links {
-        display: none;
         flex-direction: column;
-        align-items: stretch;
-        gap: 0;
-        flex: 0 0 100%;
+        align-items: flex-start;
+        gap: 0.25rem;
 
-        margin: 0.75rem 0 0;
-        padding-top: 0.25rem;
-        border-top: 1px solid var(--color-border);
-    }
-
-    .site-nav-links > li {
-        border-bottom: 1px solid var(--color-border);
+        padding-block-start: 0.5rem;
     }
 
     .site-nav-links a {
         display: block;
 
-        padding: 0.8rem 0;
-
-        font-size: 1rem;
-        text-align: center;
-    }
-
-    /* Log In: hidden until the menu is opened */
-
-    .site-nav-actions {
-        display: none;
-        flex-direction: column;
-        align-items: stretch;
-        gap: 0.75rem;
-        flex: 0 0 100%;
-
-        margin: 0;
-        padding: 1rem 0 0.5rem;
-        border-left: 0;
-    }
-
-    .site-nav-cta {
         padding: 0.6rem 0;
-
-        font-size: 0.95rem;
-        text-align: center;
     }
 
     .site-nav-dropdown > summary {
-        display: flex;
-        justify-content: center;
-
-        padding: 0.8rem 0;
-
-        font-size: 1rem;
+        padding: 0.6rem 0;
     }
 
     .site-nav-dropdown-menu {
         position: static;
 
         min-width: 0;
-        margin: 0;
-        padding: 0 0 0.4rem;
+        padding: 0 0 0 1rem;
         border: 0;
-        border-radius: 0;
 
         background-color: transparent;
         box-shadow: none;
-        backdrop-filter: none;
-        -webkit-backdrop-filter: none;
     }
 
-    .site-nav-dropdown-menu a {
-        padding: 0.65rem 0;
+    .site-nav-actions {
+        padding-block: 0.75rem 1.25rem;
     }
 
-    .site-nav.is-open .site-nav-links,
-    .site-nav.is-open .site-nav-actions {
-        display: flex;
+    .site-nav-divider {
+        display: none;
     }
-}
-
-
-/* ---------- Tablets (up to 1024px) ---------- */
-
-@media (max-width: 1024px) {
-
-    .near-me-header,
-    .fresh-finds-header {
-        gap: 1.5rem;
-    }
-
-    .footer-main {
-        gap: 2rem;
-    }
-
-    .trivia-info {
-        padding: 2.25rem;
-    }
-
-    /* Page hero: split layout */
-
-    .page-hero-split {
-        --gutter-x: 6%;
-
-        gap: 2.5rem;
-
-        padding-block: 4rem;
-    }
-
 }
 
 
@@ -2077,321 +1335,49 @@ main:focus {
 
 @media (max-width: 900px) {
 
-    /* Card rows: instead of stacking, each group of cards becomes one
-       row you swipe sideways. The next card peeks in from the edge so
-       people can see there is more. */
+    /* Hero, plates and the halo-halo fact stack into one column.
+       minmax(0, 1fr) lets the search box shrink to the screen instead
+       of keeping its default input width. */
 
-    .fresh-finds-grid,
-    .regional-grid,
-    .popular-foods-grid {
-        grid-template-columns: none;
-        grid-auto-flow: column;
-        grid-auto-columns: 44%;
-        overflow-x: auto;
-        overscroll-behavior-x: contain;
-        scroll-snap-type: x mandatory;
-        scrollbar-width: thin;
-        scrollbar-color: var(--color-secondary) transparent;
-        -webkit-overflow-scrolling: touch;
-
-        /* A little room so card hover shadows are not clipped */
-
-        padding: 0.5rem 0 1.25rem;
+    .hero-content,
+    .trivia-content {
+        gap: 2.5rem;
+        grid-template-columns: minmax(0, 1fr);
     }
 
-    .fresh-finds-grid > *,
-    .regional-grid > *,
-    .popular-foods-grid > * {
-        scroll-snap-align: start;
+    .hero-plate {
+        --plate-size-large: 20rem;
+
+        order: -1;
     }
 
-    /* Footer: 4 columns -> 2 columns, brand and about get full rows */
+    .plates-grid {
+        gap: 3.5rem;
+        grid-template-columns: 1fr;
+    }
+
+    .plate:nth-child(2) {
+        margin-block-start: 0;
+    }
+
+    /* Regions, the near me notice and the footer */
+
+    .region {
+        gap: 0.5rem;
+        grid-template-columns: 1fr;
+    }
+
+    .near-me-content {
+        grid-template-columns: 1fr;
+    }
 
     .footer-main {
-        gap: 2.5rem 2rem;
         grid-template-columns: 1fr 1fr;
     }
 
     .footer-brand,
     .footer-about {
         grid-column: 1 / -1;
-    }
-
-    /* Footer bottom bar: stack the three items */
-
-    .footer-bottom {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 0.5rem;
-    }
-
-    /* Page hero: split layout stacks, text on top and image below */
-
-    .page-hero-split {
-        --gutter-x: 5%;
-
-        grid-template-columns: 1fr;
-
-        min-height: 0;
-        padding-block: 3.5rem;
-    }
-
-}
-
-
-/* ---------- Hero on mobile (up to 800px) ---------- */
-
-@media (max-width: 800px) {
-
-    .hero {
-        --gutter-x: 1.25rem;
-    }
-
-    .hero-search {
-        gap: 0.7rem;
-
-        padding-left: 1rem;
-    }
-
-    .hero-search button {
-        padding: 0.7rem 1.1rem;
-    }
-}
-
-
-/* ---------- Mobile landscape / large phones (up to 768px) ---------- */
-
-@media (max-width: 768px) {
-
-    /* Section spacing */
-
-    .near-me-section {
-        padding-block: 3.5rem;
-    }
-
-    .fresh-finds-section,
-    .trivia-section,
-    .regional-discoveries-section,
-    .popular-foods-section,
-    .random-food-section {
-        padding-block: 2.5rem;
-    }
-
-    .footer {
-        padding-block: 3rem 1.5rem;
-    }
-
-    /* Hero */
-
-    /* Section headers that sit beside a button: stack them */
-
-    .near-me-header,
-    .fresh-finds-header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 1.25rem;
-    }
-
-    .near-me-actions {
-        width: 100%;
-    }
-
-    /* Trivia card: image on top, text below */
-
-    .trivia-card {
-        grid-template-columns: 1fr;
-    }
-
-    .trivia-image {
-        height: 280px;
-        min-height: 0;
-    }
-
-    .trivia-info {
-        padding: 1.75rem;
-    }
-
-    .trivia-info h3 {
-        font-size: clamp(1.5rem, 5.5vw, 2.25rem);
-    }
-
-    /* Random-food banner */
-
-    .random-food-container {
-        padding: 3rem 1.5rem;
-    }
-
-    /* Page hero */
-
-    .page-hero-centered {
-        padding-block: 2.75rem 3rem;
-    }
-
-}
-
-
-/* ---------- Phones (up to 640px) ---------- */
-
-@media (max-width: 640px) {
-
-    /* Swipe rows: each card is wider so about one card shows at a time,
-       with a peek of the next */
-
-    .fresh-finds-grid,
-    .regional-grid,
-    .popular-foods-grid {
-        grid-auto-columns: 80%;
-    }
-}
-
-
-/* ---------- Small phones (up to 480px) ---------- */
-
-@media (max-width: 480px) {
-
-    /* Slightly larger side gutters than 4% so text doesn't hug the edge */
-
-    .near-me-section,
-    .fresh-finds-section,
-    .trivia-section,
-    .regional-discoveries-section,
-    .popular-foods-section,
-    .random-food-section {
-        --gutter-x: 1.25rem;
-    }
-
-    .site-nav,
-    .footer {
-        --gutter-x: 1.25rem;
-    }
-
-    .breadcrumb {
-        margin-bottom: 1.5rem;
-    }
-
-    /* Hero */
-
-    .hero {
-        --gutter-x: 1rem;
-    }
-
-    .hero-search {
-        gap: 0.5rem;
-
-        padding: 0.4rem 0.4rem 0.4rem 1rem;
-    }
-
-    .hero-search img {
-        width: 20px;
-        height: 20px;
-    }
-
-    .hero-search button {
-        font-size: 0.85rem;
-    }
-
-    .search-suggestions-label {
-        flex-basis: 100%;
-
-        margin-right: 0;
-
-        text-align: center;
-    }
-
-    /* Card padding and slightly shorter images in the swipe rows */
-
-    .fresh-find-info,
-    .regional-info,
-    .popular-food-info {
-        padding: 1.25rem;
-    }
-
-    .fresh-find-card > img {
-        height: 190px;
-    }
-
-    .regional-card > img,
-    .popular-food-card > img {
-        height: 200px;
-    }
-
-    .trivia-info {
-        padding: 1.5rem 1.25rem;
-    }
-
-    .trivia-image {
-        height: 220px;
-    }
-
-    /* Random-food banner */
-
-    .random-food-container {
-        padding: 2.5rem 1.25rem;
-    }
-
-    /* Footer */
-
-    .footer-logo {
-        font-size: 1.75rem;
-    }
-
-    /* Page hero: fixed side gutters and a little less space on top */
-
-    .page-hero {
-        --gutter-x: 1.25rem;
-    }
-
-    .page-hero-centered {
-        padding-top: 2.5rem;
-    }
-
-    .page-hero-split {
-        padding-block: 2.5rem 3rem;
-    }
-
-}
-
-
-/* ---------- Very small phones (up to 360px) ---------- */
-
-@media (max-width: 360px) {
-
-    .hero-search {
-        padding-left: 0.875rem;
-    }
-
-    .hero-search button {
-        padding-right: 0.75rem;
-        padding-left: 0.75rem;
-    }
-
-    .footer-main {
-        grid-template-columns: 1fr;
-    }
-
-    .page-hero h1 {
-        font-size: 2.25rem;
-    }
-
-}
-
-
-/* ---------- Keep the search in view on short landscape screens ---------- */
-
-@media (max-width: 1080px) and (orientation: landscape) and (max-height: 600px) {
-
-    .hero {
-        --gutter-x: 1.25rem;
-
-        padding-block: 1rem;
-    }
-
-    .hero .hero-logo {
-        margin-bottom: 1.25rem;
-    }
-
-    .search-suggestions {
-        margin-top: 0.75rem;
     }
 }
 
@@ -2401,27 +1387,38 @@ main:focus {
 @media (max-width: 900px), (any-pointer: coarse) {
 
     .site-nav-links a,
+    .site-nav-dropdown > summary,
     .site-nav-actions a,
-    .breadcrumb a,
     .search-suggestions a,
     .hero-search button,
-    .fresh-find-info a,
-    .regional-info a,
-    .popular-food-info a,
+    .text-link,
     .footer-logo,
     .footer-links a,
-    .footer-explore-link,
     .footer-legal a {
         min-height: 44px;
     }
 
-    .breadcrumb a,
     .search-suggestions a,
+    .text-link,
     .footer-links a,
-    .footer-explore-link,
     .footer-legal a {
         display: inline-flex;
         align-items: center;
+    }
+}
+
+
+/* ---------- Phones (up to 640px) ---------- */
+
+@media (max-width: 640px) {
+
+    .footer-main {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-legal {
+        flex-direction: column;
+        gap: 0.25rem;
     }
 }
 
@@ -2431,6 +1428,7 @@ main:focus {
 @media (min-width: 1081px) and (any-pointer: coarse) {
 
     .site-nav-links a,
+    .site-nav-dropdown > summary,
     .site-nav-actions a {
         display: inline-flex;
         align-items: center;

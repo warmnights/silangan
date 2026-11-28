@@ -8,8 +8,8 @@
     <meta name="description" content="Discover the Philippines one bite at a time. Explore Filipino dishes, regional specialties, recipes, and the stories behind every flavor.">
 
     <link rel="icon" href="assets/images/logo/favicon.svg" type="image/svg+xml">
+    <link rel="preload" href="assets/fonts/Cardo-Regular.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="assets/fonts/Poppins-Regular.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="assets/fonts/Fraunces_72pt-Bold.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="css/style.css">
     <script src="js/nav.js" defer></script>
 </head>
@@ -19,6 +19,8 @@
 
         <header class="site-header">
             <nav class="site-nav full-bleed" aria-label="Main navigation">
+                <a href="index.html" class="site-nav-logo">SILANGAN</a>
+
                 <button
                     class="site-nav-toggle"
                     type="button"
@@ -41,7 +43,12 @@
                     <li><a href="pages/near-me.html">Near Me</a></li>
                     <li>
                         <details class="site-nav-dropdown">
-                            <summary>More</summary>
+                            <summary>
+                                More
+                                <svg class="site-nav-chevron" viewBox="0 0 24 24" aria-hidden="true">
+                                    <path d="M6 9l6 6 6-6"></path>
+                                </svg>
+                            </summary>
                             <ul class="site-nav-dropdown-menu list-reset">
                                 <li><a href="pages/recipes.html">Recipes</a></li>
                                 <li><a href="pages/map.html">Map</a></li>
@@ -52,6 +59,8 @@
                 </ul>
 
                 <div class="site-nav-actions">
+                    <span class="site-nav-divider" aria-hidden="true"></span>
+
                     <a href="pages/login.html" class="site-nav-cta">
                         Log In
                     </a>
@@ -62,376 +71,348 @@
         <main id="main" tabindex="-1">
             <section class="hero full-bleed">
                 <div class="hero-content">
-                    <h1 class="hero-logo">
-                        <img
-                            src="assets/images/logo/hero-logo.png"
-                            width="2400"
-                            height="702"
-                            alt="Silangan">
-                    </h1>
-
-                    <form class="hero-search" action="#" method="get">
-                        <img
-                            src="assets/images/icons/search.svg"
-                            width="24"
-                            height="24"
-                            alt=""
-                            aria-hidden="true">
-                            
-                        <input
-                            type="search"
-                            name="q"
-                            maxlength="100"
-                            placeholder="Adobo or garlic"
-                            aria-label="Search Filipino dishes or ingredients"
-                            disabled>
-                        <button type="submit" disabled>Search</button>
-                    </form>
-
-                    <div class="search-suggestions">
-                        <span class="search-suggestions-label">Try a search:</span>
-                        <a href="pages/food-details.html">Chicken Adobo</a>
-                        <a href="pages/food-details.html">Sinigang</a>
-                    </div>
-                </div>
-            </section>
-
-            <section class="near-me-section full-bleed">
-                <div class="near-me-header">
                     <div>
-                        <h2>Albay Sample Area</h2>
-                    </div>
+                        <h1 class="hero-title">
+                            Discover the Philippines,
+                            <em>One Bite at a Time.</em>
+                        </h1>
 
-                    <div class="near-me-actions">
-                        <div class="restaurant-status">
-                            <span class="restaurant-status-dot"></span>
-                            <span>SAMPLE</span>
-                        </div>
-
-                        <a href="pages/near-me.html" class="button button-outline">
-                            See the Albay sample area →
-                        </a>
-                    </div>
-                </div>
-
-                <p class="restaurant-disclaimer">
-                    Near Me doesn't use your location yet. Albay is shown as a sample area,
-                    and no restaurants are listed or recommended.
-                </p>
-
-                <div class="restaurant-preview-notice">
-                    <h3>No listings available</h3>
-                    <p>
-                        Restaurant names and details are left out until they can be backed by reliable sources.
-                    </p>
-                </div>
-            </section>
-
-            <section class="fresh-finds-section full-bleed">
-                <div class="fresh-finds-header">
-                    <div>
-                        <h2>Bicol Specialties</h2>
-                        <p>
-                            These regional attributions are based on general
-                            knowledge and are not formally cited.
+                        <p class="hero-intro">
+                            Explore Filipino dishes, regional specialties,
+                            and the stories behind every flavor.
                         </p>
+
+                        <form class="hero-search" action="#" method="get">
+                            <input
+                                type="search"
+                                name="q"
+                                maxlength="100"
+                                placeholder="Adobo or garlic"
+                                aria-label="Search Filipino dishes or ingredients"
+                                disabled>
+                            <button type="submit" disabled>Search</button>
+                        </form>
+
+                        <div class="search-suggestions">
+                            <span class="search-suggestions-label">Try a search:</span>
+                            <a href="pages/food-details.html" class="text-link">Chicken Adobo</a>
+                            <a href="pages/food-details.html" class="text-link">Sinigang</a>
+                        </div>
                     </div>
 
-                    <a href="pages/foods.html" class="button button-outline">
-                        Browse Filipino Foods →
-                    </a>
+                    <div class="hero-plate">
+                        <figure class="plate-image">
+                            <img
+                                src="assets/images/plates/chicken-adobo.png"
+                                width="800"
+                                height="800"
+                                alt="Chicken adobo, seen from above">
+                        </figure>
+                    </div>
                 </div>
+            </section>
 
-                <div class="fresh-finds-grid">
-                    <article class="card fresh-find-card">
-                        <img
-                            loading="lazy"
-                            src="assets/images/foods/kinunot.jpg"
-                            width="1300"
-                            height="731"
-                            alt="Traditional Bicolano Kinunot">
+            <section class="fresh-finds-section full-bleed" aria-labelledby="fresh-finds-title">
+                <header class="section-header">
+                    <h2 id="fresh-finds-title">Bicol Specialties</h2>
+                    <p>
+                        These regional attributions are based on general
+                        knowledge and are not formally cited.
+                    </p>
+                </header>
 
-                        <div class="fresh-find-info">
-                            <span class="fresh-find-category">REGIONAL SPECIALTY</span>
+                <ul class="plates-grid list-reset">
+                    <li class="plate">
+                        <figure class="plate-image">
+                            <img
+                                loading="lazy"
+                                src="assets/images/plates/kinunot.png"
+                                width="800"
+                                height="800"
+                                alt="Kinunot, seen from above">
+                        </figure>
+
+                        <div>
+                            <p class="label">CAMARINES SUR, BICOL</p>
 
                             <h3>Kinunot</h3>
 
-                            <p class="fresh-find-location">
-                                Camarines Sur, Bicol
-                            </p>
-
-                            <p class="fresh-find-description">
+                            <p class="plate-description">
                                 A traditional Bicolano dish made with shredded
                                 stingray or shark meat cooked in coconut milk.
                             </p>
 
-                            <a href="pages/food-details.html">
-                                Read about Kinunot →
+                            <a href="pages/food-details.html" class="text-link">
+                                Read about Kinunot
                             </a>
                         </div>
-                    </article>
+                    </li>
 
-                    <article class="card fresh-find-card">
-                        <img
-                            loading="lazy"
-                            src="assets/images/foods/pinangat.jpg"
-                            width="1300"
-                            height="975"
-                            alt="Traditional Bicolano Pinangat">
+                    <li class="plate">
+                        <figure class="plate-image">
+                            <img
+                                loading="lazy"
+                                src="assets/images/plates/pinangat.png"
+                                width="800"
+                                height="800"
+                                alt="Pinangat, seen from above">
+                        </figure>
 
-                        <div class="fresh-find-info">
-                            <span class="fresh-find-category">BICOL SPECIALTY</span>
+                        <div>
+                            <p class="label">CAMALIG, ALBAY</p>
 
                             <h3>Pinangat</h3>
 
-                            <p class="fresh-find-location">
-                                Camalig, Albay
-                            </p>
-
-                            <p class="fresh-find-description">
+                            <p class="plate-description">
                                 Taro leaves filled with a savory coconut mixture,
                                 wrapped and slowly cooked until tender.
                             </p>
 
-                            <a href="pages/food-details.html">
-                                Read about Pinangat →
+                            <a href="pages/food-details.html" class="text-link">
+                                Read about Pinangat
                             </a>
                         </div>
-                    </article>
+                    </li>
 
-                    <article class="card fresh-find-card">
-                        <img
-                            loading="lazy"
-                            src="assets/images/foods/kinalas.jpg"
-                            width="1300"
-                            height="566"
-                            alt="Naga City's Kinalas noodle soup">
+                    <li class="plate">
+                        <figure class="plate-image">
+                            <img
+                                loading="lazy"
+                                src="assets/images/plates/kinalas.png"
+                                width="800"
+                                height="800"
+                                alt="Kinalas noodle soup, seen from above">
+                        </figure>
 
-                        <div class="fresh-find-info">
-                            <span class="fresh-find-category">NOODLE SOUP</span>
+                        <div>
+                            <p class="label">NAGA CITY, CAMARINES SUR</p>
 
                             <h3>Kinalas</h3>
 
-                            <p class="fresh-find-location">
-                                Naga City, Camarines Sur
-                            </p>
-
-                            <p class="fresh-find-description">
+                            <p class="plate-description">
                                 A hearty noodle soup featuring tender meat,
                                 rich broth, and a distinctive savory sauce.
                             </p>
 
-                            <a href="pages/food-details.html">
-                                Read about Kinalas →
+                            <a href="pages/food-details.html" class="text-link">
+                                Read about Kinalas
                             </a>
                         </div>
-                    </article>
+                    </li>
+                </ul>
+            </section>
+
+            <section class="popular-foods-section full-bleed" aria-labelledby="popular-foods-title">
+                <header class="section-header">
+                    <h2 id="popular-foods-title">Filipino Dishes to Explore</h2>
+                    <p>Get to know three dishes and the flavors behind them.</p>
+                </header>
+
+                <ul class="plates-grid list-reset">
+                    <li class="plate">
+                        <figure class="plate-image">
+                            <img
+                                loading="lazy"
+                                src="assets/images/plates/chicken-adobo.png"
+                                width="800"
+                                height="800"
+                                alt="Chicken adobo, seen from above">
+                        </figure>
+
+                        <div>
+                            <p class="label">FILIPINO CLASSIC</p>
+
+                            <h3>Chicken Adobo</h3>
+
+                            <p class="plate-description">
+                                Tender chicken simmered in soy sauce,
+                                vinegar, garlic, and aromatic spices.
+                            </p>
+
+                            <a href="pages/food-details.html" class="text-link">
+                                Read about Chicken Adobo
+                            </a>
+                        </div>
+                    </li>
+
+                    <li class="plate">
+                        <figure class="plate-image">
+                            <img
+                                loading="lazy"
+                                src="assets/images/plates/sinigang.png"
+                                width="800"
+                                height="800"
+                                alt="Sinigang, seen from above">
+                        </figure>
+
+                        <div>
+                            <p class="label">COMFORT FOOD</p>
+
+                            <h3>Sinigang</h3>
+
+                            <p class="plate-description">
+                                A comforting sour soup filled with
+                                tender meat, vegetables, and a flavorful broth.
+                            </p>
+
+                            <a href="pages/food-details.html" class="text-link">
+                                Read about Sinigang
+                            </a>
+                        </div>
+                    </li>
+
+                    <li class="plate">
+                        <figure class="plate-image">
+                            <img
+                                loading="lazy"
+                                src="assets/images/plates/lechon.png"
+                                width="800"
+                                height="800"
+                                alt="Lechon, seen from above">
+                        </figure>
+
+                        <div>
+                            <p class="label">FESTIVE FAVORITE</p>
+
+                            <h3>Lechon</h3>
+
+                            <p class="plate-description">
+                                A whole roasted pig known for its
+                                crispy golden skin and flavorful meat.
+                            </p>
+
+                            <a href="pages/food-details.html" class="text-link">
+                                Read about Lechon
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+
+                <div class="popular-foods-footer">
+                    <a href="pages/foods.html" class="button button-outline">
+                        Explore All Filipino Foods
+                    </a>
                 </div>
             </section>
 
-            <section class="trivia-section full-bleed">
-                <div class="trivia-header">
-                    <h2>Did You Know?</h2>
-                    <p>Discover interesting facts and stories behind Filipino food.</p>
-                </div>
+            <section
+                class="regional-discoveries-section full-bleed"
+                aria-labelledby="regional-discoveries-title">
+                <header class="section-header">
+                    <h2 id="regional-discoveries-title">From Around the Philippines</h2>
+                    <p>Explore food traditions across Luzon, Visayas, and Mindanao.</p>
+                </header>
 
-                <article class="trivia-card">
-                    <div class="trivia-image">
+                <ul class="regions-list list-reset">
+                    <li class="region">
+                        <div class="region-name">
+                            <h3>Luzon</h3>
+                            <p class="label">NORTHERN PHILIPPINES</p>
+                        </div>
+
+                        <p class="region-description">
+                            Discover rich culinary traditions, hearty specialties, and
+                            regional favorites from the country's largest island group.
+                        </p>
+
+                        <a href="pages/regions.html" class="text-link">
+                            Explore Luzon
+                        </a>
+                    </li>
+
+                    <li class="region">
+                        <div class="region-name">
+                            <h3>Visayas</h3>
+                            <p class="label">CENTRAL PHILIPPINES</p>
+                        </div>
+
+                        <p class="region-description">
+                            Experience a variety of island flavors, beloved local
+                            delicacies, and distinctive cooking traditions.
+                        </p>
+
+                        <a href="pages/regions.html" class="text-link">
+                            Explore Visayas
+                        </a>
+                    </li>
+
+                    <li class="region">
+                        <div class="region-name">
+                            <h3>Mindanao</h3>
+                            <p class="label">SOUTHERN PHILIPPINES</p>
+                        </div>
+
+                        <p class="region-description">
+                            Explore diverse culinary influences, traditional dishes,
+                            and flavors shaped by its many communities.
+                        </p>
+
+                        <a href="pages/regions.html" class="text-link">
+                            Explore Mindanao
+                        </a>
+                    </li>
+                </ul>
+            </section>
+
+            <section class="trivia-section full-bleed" aria-labelledby="trivia-title">
+                <div class="trivia-content">
+                    <figure class="plate-image">
                         <img
                             loading="lazy"
-                            src="assets/images/foods/halo-halo.jpg"
-                            width="1300"
-                            height="640"
-                            alt="A glass of traditional Filipino halo-halo">
-                    </div>
+                            src="assets/images/plates/halo-halo.png"
+                            width="800"
+                            height="800"
+                            alt="A glass of halo-halo">
+                    </figure>
 
-                    <div class="trivia-info">
-                        <span class="trivia-category">FILIPINO FOOD FACT</span>
+                    <div>
+                        <p class="label">FILIPINO FOOD FACT</p>
 
-                        <h3>The Meaning Behind Halo-Halo</h3>
+                        <h2 id="trivia-title">The Meaning Behind Halo-Halo</h2>
 
-                        <p>
+                        <p class="trivia-description">
                             The name "Halo-Halo" literally means "mix-mix" in Filipino.
                             It comes from the way its ingredients are combined before
                             eating, bringing together different textures and flavors
                             in one refreshing dessert.
                         </p>
 
-                        <span class="trivia-highlight">
-                            A little mix of everything!
-                        </span>
+                        <p class="trivia-highlight">A little mix of everything!</p>
                     </div>
-                </article>
-            </section>
-
-            <section class="regional-discoveries-section full-bleed">
-                <div class="regional-header">
-                    <h2>From Around the Philippines</h2>
-                    <p>Explore food traditions across Luzon, Visayas, and Mindanao.</p>
-                </div>
-
-                <div class="regional-grid">
-                    <article class="card regional-card">
-                        <img
-                            loading="lazy"
-                            src="assets/images/regions/luzon.jpg"
-                            width="1979"
-                            height="1200"
-                            alt="A scenic view representing Luzon">
-
-                        <div class="regional-info">
-                            <span class="regional-label">NORTHERN PHILIPPINES</span>
-                            <h3>Luzon</h3>
-                            <p>
-                                Discover rich culinary traditions, hearty
-                                specialties, and regional favorites from
-                                the country's largest island group.
-                            </p>
-                            <a href="pages/regions.html">
-                                Explore Luzon →
-                            </a>
-                        </div>
-                    </article>
-
-                    <article class="card regional-card">
-                        <img
-                            loading="lazy"
-                            src="assets/images/regions/visayas.jpg"
-                            width="2497"
-                            height="1201"
-                            alt="A scenic view representing Visayas">
-
-                        <div class="regional-info">
-                            <span class="regional-label">CENTRAL PHILIPPINES</span>
-                            <h3>Visayas</h3>
-                            <p>
-                                Experience a variety of island flavors,
-                                beloved local delicacies, and distinctive
-                                cooking traditions.
-                            </p>
-                            <a href="pages/regions.html">
-                                Explore Visayas →
-                            </a>
-                        </div>
-                    </article>
-
-                    <article class="card regional-card">
-                        <img
-                            loading="lazy"
-                            src="assets/images/regions/mindanao.jpg"
-                            width="2000"
-                            height="1125"
-                            alt="A scenic view representing Mindanao">
-
-                        <div class="regional-info">
-                            <span class="regional-label">SOUTHERN PHILIPPINES</span>
-                            <h3>Mindanao</h3>
-                            <p>
-                                Explore diverse culinary influences,
-                                traditional dishes, and flavors shaped
-                                by its many communities.
-                            </p>
-                            <a href="pages/regions.html">
-                                Explore Mindanao →
-                            </a>
-                        </div>
-                    </article>
                 </div>
             </section>
 
-            <section class="popular-foods-section full-bleed">
-                <div class="popular-foods-header">
-                    <h2>Filipino Dishes to Explore</h2>
-                    <p>
-                        Get to know three dishes and the flavors behind them.
-                    </p>
-                </div>
+            <section class="near-me-section full-bleed" aria-labelledby="near-me-title">
+                <div class="near-me-content">
+                    <div class="near-me-info">
+                        <p class="label">SAMPLE</p>
 
-                <div class="popular-foods-grid">
-                    <article class="card popular-food-card">
-                        <img
-                            loading="lazy"
-                            src="assets/images/foods/chicken-adobo.jpg"
-                            width="450"
-                            height="578"
-                            alt="Filipino Chicken Adobo">
+                        <h2 id="near-me-title">Albay Sample Area</h2>
 
-                        <div class="popular-food-info">
-                            <span class="popular-food-category">FILIPINO CLASSIC</span>
-                            <h3>Chicken Adobo</h3>
-                            <p>
-                                Tender chicken simmered in soy sauce,
-                                vinegar, garlic, and aromatic spices.
-                            </p>
-                            <a href="pages/food-details.html">
-                                Read about Chicken Adobo →
-                            </a>
-                        </div>
-                    </article>
+                        <p class="near-me-description">
+                            Near Me doesn't use your location yet. Albay is shown as a
+                            sample area, and no restaurants are listed or recommended.
+                        </p>
 
-                    <article class="card popular-food-card">
-                        <img
-                            loading="lazy"
-                            src="assets/images/foods/sinigang.jpg"
-                            width="1300"
-                            height="566"
-                            alt="Traditional Filipino Sinigang">
+                        <p class="near-me-description">
+                            No listings available. Restaurant names and details are left
+                            out until they can be backed by reliable sources.
+                        </p>
+                    </div>
 
-                        <div class="popular-food-info">
-                            <span class="popular-food-category">COMFORT FOOD</span>
-                            <h3>Sinigang</h3>
-                            <p>
-                                A comforting sour soup filled with
-                                tender meat, vegetables, and a flavorful broth.
-                            </p>
-                            <a href="pages/food-details.html">
-                                Read about Sinigang →
-                            </a>
-                        </div>
-                    </article>
-
-                    <article class="card popular-food-card">
-                        <img
-                            loading="lazy"
-                            src="assets/images/foods/lechon.jpg"
-                            width="1300"
-                            height="566"
-                            alt="Filipino roasted Lechon">
-
-                        <div class="popular-food-info">
-                            <span class="popular-food-category">FESTIVE FAVORITE</span>
-                            <h3>Lechon</h3>
-                            <p>
-                                A whole roasted pig known for its
-                                crispy golden skin and flavorful meat.
-                            </p>
-                            <a href="pages/food-details.html">
-                                Read about Lechon →
-                            </a>
-                        </div>
-                    </article>
-                </div>
-
-                <div class="popular-foods-footer">
-                    <a href="pages/foods.html" class="button button-outline">
-                        Explore All Filipino Foods →
+                    <a href="pages/near-me.html" class="button button-outline">
+                        See the Albay Sample Area
                     </a>
                 </div>
             </section>
 
-            <section class="random-food-section full-bleed">
-                <div class="random-food-container">
-
-                    <h2>Need an idea for your next meal?</h2>
-
-                    <p>
-                        Get a surprise Filipino dish, then browse more ideas.
-                    </p>
-
+            <section class="random-food-section full-bleed" aria-labelledby="random-food-title">
+                <div class="random-food-content">
+                    <h2 id="random-food-title">Need an Idea for Your Next Meal?</h2>
+                    <p>Get a surprise Filipino dish, then browse more ideas.</p>
                     <a href="pages/random-food.html" class="button">
-                        Get a surprise dish →
+                        Get a surprise dish
                     </a>
-
                 </div>
             </section>
         </main>
@@ -440,15 +421,13 @@
             <div class="footer-main">
                 <div class="footer-brand">
                     <a href="index.html" class="footer-logo">
-                        Silangan
+                        SILANGAN
                     </a>
-
                     <p>
                         Discover the Philippines, one bite at a time.
                         Explore Filipino dishes, regional specialties,
                         and the stories behind every flavor.
                     </p>
-
                     <span class="footer-brand-tagline">
                         Sarap ng Pilipinas, tikman at tuklasin!
                     </span>
@@ -456,7 +435,6 @@
 
                 <div class="footer-links">
                     <h3>Explore</h3>
-
                     <ul class="list-reset">
                         <li><a href="pages/top-foods.html">Top Foods</a></li>
                         <li><a href="pages/foods.html">All Foods</a></li>
@@ -467,7 +445,6 @@
 
                 <div class="footer-links">
                     <h3>Discover</h3>
-
                     <ul class="list-reset">
                         <li><a href="pages/near-me.html">Near Me</a></li>
                         <li><a href="pages/regions.html">Regions</a></li>
@@ -477,15 +454,13 @@
 
                 <div class="footer-about">
                     <h3>About Silangan</h3>
-
                     <p>
                         More than just food, every Filipino dish
                         tells a story of culture, tradition,
                         and togetherness.
                     </p>
-
-                    <a href="pages/foods.html" class="footer-explore-link">
-                        Start Exploring →
+                    <a href="pages/foods.html" class="text-link">
+                        Start Exploring
                     </a>
                 </div>
             </div>
