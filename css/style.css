@@ -1044,6 +1044,24 @@ main:focus {
     transform: translate(-50%, 50%) rotate(45deg);
 }
 
+/*
+
+    Add .page-header-only next to .page-header-section on a page that has
+    nothing under its header, like a coming soon page. The thin line and
+    the diamond divide the header from the content below it, and here
+    the footer is what comes next, so they are switched off:
+    class="page-header-section page-header-only full-bleed"
+
+*/
+
+.page-header-only {
+    border-block-end: 0;
+}
+
+.page-header-only::after {
+    display: none;
+}
+
 .page-header-content {
     max-width: 48rem;
     margin: 0 auto;
@@ -1632,6 +1650,21 @@ main:focus {
 
 /*
 
+    .button-row puts two or more buttons side by side, centered, with a
+    gap. It wraps on narrow screens and stacks on phones:
+    <div class="button-row">
+
+*/
+
+.button-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+
+/*
+
     .form-footer is the area under a form: a thin line, then a short line
     of text and a button, all centered. Use it for "New here?" or
     "Already have an account?" links.
@@ -2166,6 +2199,12 @@ main:focus {
     .plates-rows .plate-image {
         max-width: 16rem;
         margin: 0 auto;
+    }
+
+    /* Button rows stack, one button per line */
+
+    .button-row {
+        flex-direction: column;
     }
 }
 
